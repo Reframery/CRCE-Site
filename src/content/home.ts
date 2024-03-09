@@ -31,6 +31,9 @@ export const focusGroups = [
   },
 ];
 
+export const directorMessage =
+  "Welcome to the McMaster Digital Transformation Research Centre (MDTRC), where we make sense of the digital transformation that is affecting everything we do in our professional, educational, and personal lives. At this innovative facility, we leverage neuroscience tools and techniques to provide us with an understanding of how the use of technology impacts us. We gain a deep understanding of the user experience through the traditional and neurophysiological data we collect. Our goal is to expand knowledge of digital transformation opportunities and challenges to allow researchers to create rich and meaningful user experiences. We hope to collaborate with you soon.";
+
 export const visionMission = [
   {
     title: "Vision",

@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import { directorMessage } from "@/content/home.ts";
+import focus1 from "@/images/home/focus-1.jpg";
+---
+
+<div class="bg-[#efefef] mt-8">
+  <div class="flex gap-14 p-12 max-w-6xl mx-auto flex-col md:flex-row">
+    <div class="grid place-items-center max-lg:self-center sm:basis-72">
+      <Image
+        src={focus1}
+        alt="A group of people working together"
+        class="size-60 object-top object-cover rounded-full border-mcmaster-gold border-4 sm:size-72"
+      />
+    </div>
+    <div class="flex gap-4 flex-col flex-[4]">
+      <h2 class="text-3xl font-bold text-primary-500">
+        Message from the Director
+      </h2>
+      <p>{directorMessage}</p>
+      <a
+        href="/about"
+        class="bg-mcmaster-maroon px-6 py-3 rounded-full inline items-center text-white font-medium text-lg w-fit hover:bg-mcmaster-maroon/85 transition-colors duration-[250ms] ease-in-out"
+      >
+        Learn More
+      </a>
+    </div>
+  </div>
+</div>

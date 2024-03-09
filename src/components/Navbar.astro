@@ -1,0 +1,44 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+
+const links = [
+  {
+    label: "Home",
+    pathname: "/",
+  },
+  {
+    label: "About",
+    pathname: "/about",
+  },
+  {
+    label: "People",
+    pathname: "/people-researchers-students-faculty",
+  },
+  {
+    label: "Initiatives & Services",
+    pathname: "/initiatives-services",
+  },
+];
+---
+
+<header class="bg-mcmaster-maroon text-white text-lg">
+  <nav>
+    <ul class="flex justify-center">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              class="hover:bg-white hover:text-black transition-colors px-4 py-2 block text-center"
+              class:list={[
+                { "border-b-white border-b-2": pathname === link.pathname },
+              ]}
+              href={link.pathname}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

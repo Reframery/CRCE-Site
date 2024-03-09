@@ -1,0 +1,61 @@
+---
+import { Icon } from "astro-icon/components";
+import dsbLogo from "@/images/dsb-logo.png";
+import { Image } from "astro:assets";
+
+const socials = [
+  {
+    name: "fa-brands:facebook-f",
+    link: "https://www.facebook.com/MacDTRC/",
+  },
+  {
+    name: "fa-brands:twitter",
+    link: "https://twitter.com/MacDTRC",
+  },
+  {
+    name: "fa-brands:instagram",
+    link: "https://www.instagram.com/macdtrc/?igshid=YmMyMTA2M2Y%3D",
+  },
+  {
+    name: "fa-brands:linkedin-in",
+    link: "https://www.linkedin.com/company/mdtrc/",
+  },
+];
+---
+
+<footer class="bg-dsg-nevada p-8 text-white relative">
+  <div class="absolute h-0.5 w-full bg-dsg-nevada -top-[2px] z-10 left-0">
+  </div>
+  <div class="container flex justify-between flex-wrap gap-10">
+    <div class="flex flex-col items-center gap-4">
+      <Image src={dsbLogo} alt="DSB Logo" class="w-60" />
+      <div class="flex gap-2">
+        {
+          socials.map((social) => (
+            <a
+              href={social.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-1.5 rounded-full border-white hover:bg-white hover:text-black transition-colors duration-250 border inline-flex"
+              aria-label={social.name}
+            >
+              <Icon name={social.name} size={20} />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+    <div class="text-sm">
+      <p class="mb-2 font-semibold text-base">Address Information</p>
+      <p>McMaster University</p>
+      <p>Ron Joyce Centre</p>
+      <p>4350 South Service Road</p>
+      <p>Burlington, ON L7L5R8</p>
+    </div>
+    <div class="text-sm">
+      <p class="mb-2 font-semibold text-base">Contact Information</p>
+      <p>Phone: 905-525-9140 x28149</p>
+      <p>Email: <a href="mailto:">mdtrc@mcmaster.ca</a></p>
+    </div>
+  </div>
+</footer>

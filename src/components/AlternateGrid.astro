@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  content: Array<{
+    title: string;
+    description: string;
+    image: ImageMetadata;
+  }>;
+}
+
+const { content } = Astro.props;
+---
+
+<div class="grid md:grid-rows-2">
+  {
+    content.map((item, i) => {
+      return (
+        <div class="grid md:grid-cols-2 group overflow-hidden">
+          <div
+            class="overflow-hidden self-stretch"
+            class:list={[
+              {
+                "md:order-2": i % 2 === 0,
+              },
+            ]}
+          >
+            <Image
+              src={item.image}
+              alt={item.title}
+              class="object-cover md:scale-105 h-full w-full md:group-hover:scale-100 md:transition-transform md:duration-300 ease-in-out"
+            />
+          </div>
+          <div class="p-6 m-auto md:w-3/4 space-y-4">
+            <h3 class="text-3xl font-bold">{item.title}</h3>
+            <div class="w-10 h-1 bg-mcmaster-maroon" />
+            <p>{item.description}</p>
+          </div>
+        </div>
+      );
+    })
+  }
+</div>

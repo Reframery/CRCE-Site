@@ -1,0 +1,17 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+const content =
+  "The page you're looking for doesn't exist. Try revising the URL or checking the link that brought you here.";
+---
+
+<Layout title="Page not found" description={content}>
+  <div class="flex h-full w-full">
+    <div class="container p-8 text-center flex-grow">
+      <h1 class="text-5xl font-medium font-sans-condensed scroll-m-20">
+        404 - Page not found.
+      </h1>
+      <p>{content}</p>
+    </div>
+  </div>
+</Layout>

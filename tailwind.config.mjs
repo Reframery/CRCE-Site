@@ -4,13 +4,26 @@ import defaultTheme from "tailwindcss/defaultTheme";
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       fontFamily: {
         sans: ["Roboto", ...defaultTheme.fontFamily.sans],
         "sans-condensed": ["Roboto Condensed", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        siren: "#7a003c",
+        mcmaster: {
+          maroon: "#7a003c",
+          gold: "#fdbf57",
+        },
+        dsg: {
+          nevada: "#5e6a71",
+        },
       },
     },
   },

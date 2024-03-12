@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<header
+  class="px-6 sm:px-8 py-6 pb-4 md:px-12 lg:px-16 md:py-8 md:pb-5 flex justify-between items-center max-md:flex-wrap gap-x-12 gap-y-4 bg-gradient-to-b from-white to-nevada/20 from-85%"
+>
+  <Icon name="mcmaster-logo" class="w-[144px] h-20" />
+  <Icon
+    name="mdtrc-header"
+    class="w-[324px] h-[69px] max-md:order-last max-md:mx-auto relative md:-top-1"
+  />
+  <section class="text-nevada flex items-center gap-4">
+    <button class="p-2 text-lg flex flex-col items-center font-medium">
+      <Icon name="lucide:search" size={32} />
+      Search
+    </button>
+    <button class="p-2 text-lg flex flex-col items-center font-medium">
+      <Icon name="lucide:menu" size={32} />
+      Menu
+    </button>
+  </section>
+</header>

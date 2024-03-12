@@ -1,0 +1,105 @@
+---
+import { Icon } from "astro-icon/components";
+
+const links = [
+  {
+    title: "Contact",
+    link: "http://www.mcmaster.ca/opr/html/opr/contact_us/main/contact_us.html",
+  },
+  {
+    title: "Terms & Conditions",
+    link: "http://www.mcmaster.ca/opr/html/footer/main/terms_of_use.html",
+  },
+  {
+    title: "Privacy Policy",
+    link: "http://www.mcmaster.ca/privacy/",
+  },
+];
+
+const socials = [
+  {
+    name: "fa-brands:instagram",
+    link: "https://www.instagram.com/macdtrc/?igshid=YmMyMTA2M2Y%3D",
+  },
+  {
+    name: "fa-brands:twitter",
+    link: "https://twitter.com/MacDTRC",
+  },
+  {
+    name: "fa-brands:facebook-f",
+    link: "https://www.facebook.com/MacDTRC/",
+  },
+  {
+    name: "fa-brands:youtube",
+    link: "https://www.youtube.com/channel/UC9",
+  },
+  {
+    name: "fa-brands:linkedin-in",
+    link: "https://www.linkedin.com/company/mdtrc/",
+  },
+];
+---
+
+<footer
+  class="py-8 px-4 bg-mcmaster-maroon flex flex-col items-center text-white"
+>
+  <Icon name="mcmaster-footer-logo" class="w-[400px] h-[120px]" />
+  <nav
+    class="flex py-4 border-nevada/60 gap-x-20 border-y w-full justify-center my-4 font-semibold font-sans-condensed tracking-widest text-[15px] flex-col md:flex-row gap-y-4 items-center"
+  >
+    {
+      links.map((link) => (
+        <a
+          href={link.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:underline"
+        >
+          {link.title}
+        </a>
+      ))
+    }
+  </nav>
+  <nav class="flex md:gap-12 py-4 gap-8">
+    {
+      socials.map((social) => (
+        <a
+          href={social.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-1.5 rounded-full hover:border-mcmaster-gold hover:text-mcmaster-gold transition-colors duration-250 inline-flex border-[2px]"
+          aria-label={social.name}
+        >
+          <Icon name={social.name} size={18} />
+        </a>
+      ))
+    }
+  </nav>
+  <nav class="py-4 flex items-center gap-4 flex-wrap">
+    <a
+      class="hover:underline text-[13px] font-sans-condensed tracking-widest font-semibold"
+      href="https://www.google.ca/maps/place/McMaster+University/@43.260879,-79.919225,17z/data=%213m1%214b1%214m2%213m1%211s0x882c84ac44f72ac1:0x399e00ea6143011c"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      1280 Main Street West &nbsp;
+      Hamilton,&nbsp;Ontario&nbsp;&nbsp;L8S&nbsp;4L8
+    </a>
+    <a
+      class="hover:underline text-[13px] font-sans-condensed tracking-widest font-semibold"
+      href="tel:+19055259140"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      (905) 525-9140
+    </a>
+  </nav>
+  <a
+    class="text-[13px] font-sans-condensed tracking-wider my-4 hover:underline"
+    href="http://www.mcmaster.ca/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    &copy; {new Date().getFullYear()} McMaster University.
+  </a>
+</footer>

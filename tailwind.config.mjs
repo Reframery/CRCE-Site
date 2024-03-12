@@ -14,7 +14,10 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Roboto", ...defaultTheme.fontFamily.sans],
-        "sans-condensed": ["Roboto Condensed", ...defaultTheme.fontFamily.sans],
+        "sans-condensed": [
+          "Roboto Condensed Variable",
+          ...defaultTheme.fontFamily.sans,
+        ],
       },
       colors: {
         nevada: "#5e6a71",
@@ -22,8 +25,7 @@ export default {
           maroon: "#7a003c",
           gold: "#fdbf57",
         },
-        dsg: {
-        },
+        dsg: {},
       },
     },
   },

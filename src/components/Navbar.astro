@@ -1,4 +1,6 @@
 ---
+import { cn } from "@/lib/utils.ts";
+import { Icon } from "astro-icon/components";
 const pathname = new URL(Astro.request.url).pathname;
 
 const links = [
@@ -18,27 +20,31 @@ const links = [
     label: "Initiatives & Services",
     pathname: "/initiatives-services",
   },
+  {
+    label: "Contact Us",
+    pathname: "/contact",
+  },
 ];
 ---
 
-<header class="bg-mcmaster-maroon text-white text-lg">
-  <nav>
-    <ul class="flex justify-center">
-      {
-        links.map((link) => (
-          <li>
-            <a
-              class="hover:bg-white hover:text-black transition-colors px-4 py-2 block text-center"
-              class:list={[
-                { "border-b-white border-b-2": pathname === link.pathname },
-              ]}
-              href={link.pathname}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+<header class="bg-mcmaster-maroon text-white text-xl font-sans-condensed">
+  <nav class="flex items-center justify-center">
+    {
+      links.map((link) => (
+        <a
+          class={cn(
+            "hover:bg-white hover:text-black px-8 py-4 inline-flex gap-2 items-center text-center transition-colors duration-300 relative hover:shadow-lg",
+            pathname === link.pathname &&
+              "after:content-[''] after:absolute after:bottom-0 after:w-[80%] after:h-1 after:bg-white after:left-1/2 after:-translate-x-1/2",
+          )}
+          href={link.pathname}
+        >
+          {link.pathname === "/" && (
+            <Icon size={20} name="lucide:home" aria-hidden="true" />
+          )}
+          {link.label}
+        </a>
+      ))
+    }
   </nav>
 </header>

@@ -17,12 +17,12 @@ export default {
         "sans-condensed": ["Roboto Condensed", ...defaultTheme.fontFamily.sans],
       },
       colors: {
+        nevada: "#5e6a71",
         mcmaster: {
           maroon: "#7a003c",
           gold: "#fdbf57",
         },
         dsg: {
-          nevada: "#5e6a71",
         },
       },
     },

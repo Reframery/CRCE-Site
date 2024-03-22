@@ -1,12 +1,9 @@
 ---
 import { Icon } from "astro-icon/components"
-import { cn } from "@/lib/utils.ts"
+import { cn, isActive } from "@/lib/utils.ts"
 import { siteLinks } from "@/configs/navigation.ts"
 
-const pathname = Astro.url.pathname
-
-const isActive = (href: string) =>
-  href === pathname || href === pathname.replace(/\/$/, "")
+const pathname = new URL(Astro.request.url).pathname
 ---
 
 <header class="bg-mcmaster-maroon font-sans-condensed text-xl text-white">
@@ -16,7 +13,7 @@ const isActive = (href: string) =>
         <a
           class={cn(
             "relative inline-flex items-center gap-2 px-8 py-4 text-center transition-colors duration-300 hover:bg-white hover:text-black hover:shadow-lg",
-            isActive(link.pathname) &&
+            isActive(link.pathname, pathname) &&
               "after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-[80%] after:-translate-x-1/2 after:bg-white after:content-['']"
           )}
           href={link.pathname}

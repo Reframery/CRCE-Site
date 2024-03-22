@@ -1,5 +1,6 @@
 ---
 import { siteLinks } from "@/configs/navigation.ts"
+import { isActive } from "@/lib/utils"
 const pathname = new URL(Astro.request.url).pathname
 ---
 
@@ -19,7 +20,7 @@ const pathname = new URL(Astro.request.url).pathname
 
             return (
               <li class="list-inside list-disc">
-                {path === pathname ? (
+                {isActive(path, pathname) ? (
                   <span class="text-nevada">{link?.label || path}</span>
                 ) : (
                   <a href={path}>{link?.label || path}</a>

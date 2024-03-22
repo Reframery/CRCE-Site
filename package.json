@@ -3,10 +3,11 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "predev": "cp -r dist/pagefind public/",
     "dev": "astro dev",
     "format": "prettier --write .",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -25,7 +26,9 @@
   "devDependencies": {
     "@iconify-json/fa-brands": "^1.1.8",
     "@iconify-json/lucide": "^1.1.173",
+    "pagefind": "^1.0.4",
     "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0"
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-tailwindcss": "^0.5.12"
   }
 }

@@ -1,26 +1,26 @@
 ---
-import { Image } from "astro:assets";
-import { directorMessage } from "@/content/home.ts";
-import focus1 from "@/images/home/focus-1.jpg";
+import { Image } from "astro:assets"
+import { directorMessage } from "@/content/home.ts"
+import focus1 from "@/images/home/focus-1.jpg"
 ---
 
 <div class="bg-[#efefef]">
-  <div class="flex gap-14 p-12 container flex-col md:flex-row">
-    <div class="grid place-items-center max-lg:self-center flex-[1]">
+  <div class="container flex flex-col gap-14 p-8 md:flex-row md:p-12">
+    <div class="grid flex-[1] place-items-center max-lg:self-center">
       <Image
         src={focus1}
         alt="A group of people working together"
-        class="object-top object-cover rounded-full border-mcmaster-gold border-4 max-w-72 max-h-72 w-full h-full aspect-square"
+        class="aspect-square h-full max-h-72 w-full max-w-72 rounded-full border-4 border-mcmaster-gold object-cover object-top"
       />
     </div>
-    <div class="flex gap-4 flex-col flex-[2]">
-      <h2 class="text-3xl font-bold text-primary-500">
+    <div class="flex flex-[2] flex-col gap-4">
+      <h2 class="text-primary-500 text-3xl font-bold">
         Message from the Director
       </h2>
       <p>{directorMessage}</p>
       <a
         href="/about"
-        class="bg-mcmaster-maroon px-6 py-3 rounded-full inline items-center text-white font-medium text-lg w-fit hover:bg-mcmaster-maroon/85 transition-colors duration-[250ms] ease-in-out"
+        class="inline w-fit items-center rounded-full bg-mcmaster-maroon px-6 py-3 text-lg font-medium text-white transition-colors duration-[250ms] ease-in-out hover:bg-mcmaster-maroon/85"
       >
         Learn More
       </a>

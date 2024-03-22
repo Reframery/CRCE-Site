@@ -1,46 +1,46 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from "astro:assets"
 
 interface Props {
-  href: string;
-  title: string;
-  description: string;
-  action: string;
-  image: ImageMetadata;
+  href: string
+  title: string
+  description: string
+  action: string
+  image: ImageMetadata
 }
 
-const { href, title, description, action, image } = Astro.props;
+const { href, title, description, action, image } = Astro.props
 ---
 
 <a
   href={href}
-  class="group flex flex-col max-w-[720px] border lg:border-r-0 lg:last:border-r"
+  class="group flex max-w-[720px] flex-col border lg:border-r-0 lg:last:border-r"
 >
   <Image
     src={image}
     alt={title}
     loading="eager"
-    class="group-hover:shadow-2xl transition-shadow duration-[250ms] w-full"
+    class="w-full transition-shadow duration-[250ms] group-hover:shadow-2xl"
   />
   <div
-    class="flex flex-col gap-4 p-6 group-hover:bg-mcmaster-maroon group-hover:text-white transition-colors duration-[250ms] flex-grow"
+    class="flex flex-grow flex-col gap-4 p-6 transition-colors duration-[250ms] group-hover:bg-mcmaster-maroon group-hover:text-white"
   >
     <h2 class="text-2xl font-bold">
       {title}
     </h2>
     <div
-      class="w-10 h-1 bg-mcmaster-maroon group-hover:bg-mcmaster-gold transition-colors duration-[250ms]"
+      class="h-1 w-10 bg-mcmaster-maroon transition-colors duration-[250ms] group-hover:bg-mcmaster-gold"
     >
     </div>
     <p
-      class="text-nevada group-hover:text-white transition-colors duration-[250ms]"
+      class="text-nevada transition-colors duration-[250ms] group-hover:text-white"
     >
       {description}
     </p>
-    <div class="flex justify-between items-center mt-auto">
-      <span class="font-medium text-lg">{action}</span>
+    <div class="mt-auto flex items-center justify-between">
+      <span class="text-lg font-medium">{action}</span>
       <svg
-        class="rounded-full p-1 size-5 -translate-x-3 group-hover:translate-x-0 transition-all duration-[250ms] bg-mcmaster-maroon text-white group-hover:bg-mcmaster-gold group-hover:text-black"
+        class="size-5 -translate-x-3 rounded-full bg-mcmaster-maroon p-1 text-white transition-all duration-[250ms] group-hover:translate-x-0 group-hover:bg-mcmaster-gold group-hover:text-black"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

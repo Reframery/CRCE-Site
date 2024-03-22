@@ -1,0 +1,38 @@
+---
+import { siteLinks } from "@/configs/navigation.ts"
+const pathname = new URL(Astro.request.url).pathname
+---
+
+<div class="px-8 md:px-12">
+  <nav class="container border-b border-b-nevada/20 px-0 pb-5 pt-6">
+    <ul class="flex gap-[14px] text-sm marker:text-nevada">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      {
+        pathname
+          .split("/")
+          .filter(Boolean)
+          .map((_, i, arr) => {
+            const path = `/${arr.slice(0, i + 1).join("/")}`
+            const link = siteLinks.find((link) => link.pathname === path)
+
+            return (
+              <li class="list-inside list-disc">
+                {path === pathname ? (
+                  <span class="text-nevada">{link?.label || path}</span>
+                ) : (
+                  <a href={path}>{link?.label || path}</a>
+                )}
+              </li>
+            )
+          })
+      }
+    </ul>
+  </nav>
+</div>
+<style>
+  a:hover {
+    text-decoration: underline;
+  }
+</style>

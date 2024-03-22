@@ -1,14 +1,14 @@
 ---
-import NavHeader from "@/components/NavHeader.astro";
-import Navbar from "@/components/Navbar.astro";
-import DSBFooter from "@/components/DSBFooter.astro";
-import McMasterFooter from "@/components/McMasterFooter.astro";
+import NavHeader from "@/components/NavHeader.astro"
+import Navbar from "@/components/Navbar.astro"
+import DSBFooter from "@/components/DSBFooter.astro"
+import McMasterFooter from "@/components/McMasterFooter.astro"
 ---
 
-<div class="flex flex-col min-h-screen">
+<div class="flex min-h-screen flex-col">
   <NavHeader />
   <Navbar />
-  <main class="flex-1">
+  <main class="flex-1" data-pagefind-body>
     <slot />
   </main>
   <DSBFooter />

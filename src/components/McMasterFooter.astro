@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from "astro-icon/components"
 
 const links = [
   {
@@ -14,7 +14,7 @@ const links = [
     title: "Privacy Policy",
     link: "http://www.mcmaster.ca/privacy/",
   },
-];
+]
 
 const socials = [
   {
@@ -37,15 +37,15 @@ const socials = [
     name: "fa-brands:linkedin-in",
     link: "https://www.linkedin.com/company/mdtrc/",
   },
-];
+]
 ---
 
 <footer
-  class="py-8 pt-4 px-4 bg-mcmaster-maroon flex flex-col items-center text-white"
+  class="flex flex-col items-center bg-mcmaster-maroon px-4 py-8 pt-4 text-white"
 >
-  <Icon name="mcmaster-footer-logo" class="w-[400px] h-[120px]" />
+  <Icon name="mcmaster-footer-logo" class="h-[120px] w-[400px]" />
   <nav
-    class="flex py-5 border-nevada/60 gap-x-24 border-y w-full justify-center mt-6 mb-4 font-semibold font-sans-condensed tracking-wider flex-col md:flex-row gap-y-4 items-center"
+    class="mb-4 mt-6 flex w-full flex-col items-center justify-center gap-x-24 gap-y-4 border-y border-nevada/60 py-5 font-sans-condensed font-semibold tracking-wider md:flex-row"
   >
     {
       links.map((link) => (
@@ -60,14 +60,14 @@ const socials = [
       ))
     }
   </nav>
-  <nav class="flex md:gap-11 py-4 gap-8">
+  <nav class="flex gap-8 py-4 md:gap-11">
     {
       socials.map((social) => (
         <a
           href={social.link}
           target="_blank"
           rel="noopener noreferrer"
-          class="p-1.5 rounded-full hover:border-mcmaster-gold hover:text-mcmaster-gold transition-colors duration-250 inline-flex border-[2px]"
+          class="duration-250 inline-flex rounded-full border-[2px] p-1.5 transition-colors hover:border-mcmaster-gold hover:text-mcmaster-gold"
           aria-label={social.name}
         >
           <Icon name={social.name} size={18} />
@@ -75,9 +75,9 @@ const socials = [
       ))
     }
   </nav>
-  <nav class="py-4 flex items-center gap-6 flex-wrap">
+  <nav class="flex flex-wrap items-center gap-6 py-4">
     <a
-      class="hover:underline text-sm font-sans-condensed tracking-wider font-semibold"
+      class="font-sans-condensed text-sm font-semibold tracking-wider hover:underline"
       href="https://www.google.ca/maps/place/McMaster+University/@43.260879,-79.919225,17z/data=%213m1%214b1%214m2%213m1%211s0x882c84ac44f72ac1:0x399e00ea6143011c"
       target="_blank"
       rel="noopener noreferrer"
@@ -86,7 +86,7 @@ const socials = [
       Hamilton,&nbsp;Ontario&nbsp;&nbsp;L8S&nbsp;4L8
     </a>
     <a
-      class="hover:underline text-sm font-sans-condensed tracking-wider font-semibold"
+      class="font-sans-condensed text-sm font-semibold tracking-wider hover:underline"
       href="tel:+19055259140"
       target="_blank"
       rel="noopener noreferrer"
@@ -95,7 +95,7 @@ const socials = [
     </a>
   </nav>
   <a
-    class="text-[13px] font-sans-condensed tracking-wider my-4 hover:underline"
+    class="my-4 font-sans-condensed text-[13px] tracking-wider hover:underline"
     href="http://www.mcmaster.ca/"
     target="_blank"
     rel="noopener noreferrer"

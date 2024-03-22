@@ -1,41 +1,20 @@
 ---
-import { cn } from "@/lib/utils.ts";
-import { Icon } from "astro-icon/components";
-const pathname = new URL(Astro.request.url).pathname;
+import { Icon } from "astro-icon/components"
+import { cn } from "@/lib/utils.ts"
+import { siteLinks } from "@/configs/navigation.ts"
 
-const links = [
-  {
-    label: "Home",
-    pathname: "/",
-  },
-  {
-    label: "About",
-    pathname: "/about",
-  },
-  {
-    label: "People",
-    pathname: "/people-researchers-students-faculty",
-  },
-  {
-    label: "Initiatives & Services",
-    pathname: "/initiatives-services",
-  },
-  {
-    label: "Contact Us",
-    pathname: "/contact",
-  },
-];
+const pathname = new URL(Astro.request.url).pathname
 ---
 
-<header class="bg-mcmaster-maroon text-white text-xl font-sans-condensed">
+<header class="bg-mcmaster-maroon font-sans-condensed text-xl text-white">
   <nav class="flex items-center justify-center">
     {
-      links.map((link) => (
+      siteLinks.map((link) => (
         <a
           class={cn(
-            "hover:bg-white hover:text-black px-8 py-4 inline-flex gap-2 items-center text-center transition-colors duration-300 relative hover:shadow-lg",
+            "relative inline-flex items-center gap-2 px-8 py-4 text-center transition-colors duration-300 hover:bg-white hover:text-black hover:shadow-lg",
             pathname === link.pathname &&
-              "after:content-[''] after:absolute after:bottom-0 after:w-[80%] after:h-1 after:bg-white after:left-1/2 after:-translate-x-1/2",
+              "after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-[80%] after:-translate-x-1/2 after:bg-white after:content-['']"
           )}
           href={link.pathname}
         >

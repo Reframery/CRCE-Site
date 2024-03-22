@@ -1,7 +1,69 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets"
+import { Icon } from "astro-icon/components"
+import Layout from "@/layouts/Layout.astro"
+import Banner from "@/components/Banner.astro"
+import Breadcrumbs from "@/components/Breadcrumbs.astro"
+import { people, type SocialType } from "@/content/people.ts"
+import image from "@/images/banner/people.jpg"
+
+const iconMap: Record<SocialType, string> = {
+  email: "lucide:mail",
+  linkedin: "fa-brands:linkedin-in",
+  profile: "lucide:info",
+  publication: "lucide:graduation-cap",
+}
 ---
 
 <Layout title="People">
-  <h1 class="text-4xl text-center">People</h1>
+  <Banner title="People" {image} />
+  <Breadcrumbs />
+  <div class="px-8 md:px-12">
+    <div class="container mb-12 p-0">
+      <h1 class="my-12 text-4xl font-semibold">CREC Team</h1>
+      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {
+          people.map((person) => (
+            <div class="group flex flex-col items-center border bg-white p-4 text-center shadow-xl transition-shadow hover:shadow-2xl">
+              <Image
+                src={person.image}
+                alt={person.name}
+                class="h-36 w-36 rounded-full border-4 border-mcmaster-gold object-cover object-top transition-shadow group-hover:shadow-xl"
+              />
+              <h2 class="my-2 text-2xl font-semibold">{person.name}</h2>
+              <h3 class="text-lg font-semibold text-nevada">{person.title}</h3>
+              <div class="mb-2">
+                {person.subTitles &&
+                  person.subTitles.length > 0 &&
+                  person.subTitles.map((subTitle) => (
+                    <p class="text-[13px]">{subTitle}</p>
+                  ))}
+              </div>
+              <div class="flex w-full flex-col items-center">
+                {person.socials.map((social) => (
+                  <a
+                    href={
+                      social.href
+                        ? social.href
+                        : social.type === "email"
+                          ? `mailto:${social.label}`
+                          : social.label
+                    }
+                    class="flex w-full justify-center rounded px-2 py-1 text-[13px] font-semibold text-[#7d0040] transition-colors hover:bg-[#f8f9fa] hover:text-[#495057]"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <span class="flex flex-wrap items-center justify-center gap-2 break-all">
+                      <Icon name={iconMap[social.type]} size={14} />
+                      {social.label}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
 </Layout>

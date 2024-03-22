@@ -1,0 +1,68 @@
+---
+import { Icon } from "astro-icon/components"
+---
+
+<dialog
+  id="search-dialog"
+  class="pagefind-dialog w-full max-w-2xl rounded-lg bg-mcmaster-modal-background shadow-lg"
+>
+  <div class="relative mx-auto max-w-2xl p-4 pt-10">
+    <button class="pagefind-dialog-close absolute right-3 top-3 text-nevada">
+      <Icon name="lucide:x" size={24} />
+    </button>
+    <div id="search"></div>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        // @ts-ignore
+        new PagefindUI({
+          element: "#search",
+          showSubResults: true,
+          showImages: false,
+        })
+
+        const searchDialog = document.getElementById(
+          "search-dialog"
+        ) as HTMLDialogElement | null
+
+        const searchButton = document.getElementById("search-button")
+
+        const searchCloseButtons = document.querySelectorAll(
+          ".pagefind-dialog-close"
+        )
+
+        if (searchDialog) {
+          const openDialog = () => {
+            searchDialog.showModal()
+            document.querySelector(".pagefind-ui__search-input")?.focus()
+            document.body.style.overflow = "hidden"
+          }
+
+          if (searchButton) searchButton.addEventListener("click", openDialog)
+
+          const closeDialog = () => {
+            searchDialog.close()
+            document.body.style.overflow = "auto"
+          }
+
+          searchDialog.addEventListener("click", (e) => {
+            if (e.currentTarget === e.target) closeDialog()
+          })
+
+          searchCloseButtons.forEach((button) => {
+            button.addEventListener("click", closeDialog)
+          })
+          searchDialog.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeDialog()
+          })
+        }
+      })
+    </script>
+  </div>
+
+  <style>
+    #search-dialog::backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(2px);
+    }
+  </style>
+</dialog>

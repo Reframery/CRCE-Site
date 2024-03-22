@@ -1,7 +1,7 @@
 ---
-import { Icon } from "astro-icon/components";
-import dsbLogo from "@/images/dsb-logo.png";
-import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components"
+import dsbLogo from "@/images/dsb-logo.png"
+import { Image } from "astro:assets"
 
 const socials = [
   {
@@ -20,12 +20,12 @@ const socials = [
     name: "fa-brands:linkedin-in",
     link: "https://www.linkedin.com/company/mdtrc/",
   },
-];
+]
 ---
 
-<footer class="bg-nevada p-8 text-white relative">
-  <div class="absolute h-0.5 w-full bg-nevada -top-[2px] z-10 left-0"></div>
-  <div class="container flex justify-evenly flex-wrap gap-10">
+<footer class="relative bg-nevada p-8 text-white md:p-12">
+  <div class="absolute -top-[2px] left-0 z-10 h-0.5 w-full bg-nevada"></div>
+  <div class="container flex flex-wrap gap-10 max-lg:justify-center lg:gap-32">
     <div class="flex flex-col items-center gap-4">
       <Image src={dsbLogo} alt="DSB Logo" class="w-60" />
       <div class="flex gap-2">
@@ -35,7 +35,7 @@ const socials = [
               href={social.link}
               target="_blank"
               rel="noopener noreferrer"
-              class="p-1.5 rounded-full border-white hover:bg-white hover:text-black transition-colors duration-250 border inline-flex"
+              class="duration-250 inline-flex rounded-full border border-white p-1.5 transition-colors hover:bg-white hover:text-black"
               aria-label={social.name}
             >
               <Icon name={social.name} size={20} />
@@ -44,8 +44,8 @@ const socials = [
         }
       </div>
     </div>
-    <div class="text-sm">
-      <p class="mb-2 font-semibold text-lg tracking-wider font-sans-condensed">
+    <div class="text-sm max-lg:text-center">
+      <p class="mb-2 font-sans-condensed text-lg font-semibold">
         Address Information
       </p>
       <p>McMaster University</p>
@@ -53,12 +53,14 @@ const socials = [
       <p>4350 South Service Road</p>
       <p>Burlington, ON L7L5R8</p>
     </div>
-    <div class="text-sm">
-      <p class="mb-2 font-semibold text-lg tracking-wider font-sans-condensed">
+    <div class="text-sm max-lg:text-center">
+      <p class="mb-2 font-sans-condensed text-lg font-semibold">
         Contact Information
       </p>
       <p>Phone: 905-525-9140 x28149</p>
-      <p>Email: <a href="mailto:">mdtrc@mcmaster.ca</a></p>
+      <p>
+        Email: <a href="mailto:" class="hover:underline">mdtrc@mcmaster.ca</a>
+      </p>
     </div>
   </div>
 </footer>

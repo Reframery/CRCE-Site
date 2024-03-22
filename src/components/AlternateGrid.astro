@@ -1,24 +1,24 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from "astro:assets"
 
 interface Props {
   content: Array<{
-    title: string;
-    description: string;
-    image: ImageMetadata;
-  }>;
+    title: string
+    description: string
+    image: ImageMetadata
+  }>
 }
 
-const { content } = Astro.props;
+const { content } = Astro.props
 ---
 
 <div class="grid md:grid-rows-2">
   {
     content.map((item, i) => {
       return (
-        <div class="grid md:grid-cols-2 group overflow-hidden">
+        <div class="group grid overflow-hidden md:grid-cols-2">
           <div
-            class="overflow-hidden self-stretch"
+            class="self-stretch overflow-hidden"
             class:list={[
               {
                 "md:order-2": i % 2 === 0,
@@ -28,16 +28,16 @@ const { content } = Astro.props;
             <Image
               src={item.image}
               alt={item.title}
-              class="object-cover md:scale-105 h-full w-full md:group-hover:scale-100 md:transition-transform md:duration-300 ease-in-out"
+              class="h-full w-full object-cover ease-in-out md:scale-105 md:transition-transform md:duration-300 md:group-hover:scale-100"
             />
           </div>
-          <div class="p-6 m-auto md:w-3/4 space-y-4">
+          <div class="m-auto space-y-4 p-6 md:w-3/4">
             <h3 class="text-3xl font-bold">{item.title}</h3>
-            <div class="w-10 h-1 bg-mcmaster-maroon" />
+            <div class="h-1 w-10 bg-mcmaster-maroon" />
             <p class="text-nevada">{item.description}</p>
           </div>
         </div>
-      );
+      )
     })
   }
 </div>

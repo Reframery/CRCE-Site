@@ -15,12 +15,15 @@ const iconMap: Record<SocialType, string> = {
 }
 ---
 
-<Layout title="People">
+<Layout
+  title="People"
+  description="The CRCE is home to world-class researchers, students, and McMaster faculty from a variety of academic backgrounds."
+>
   <Banner title="People" {image} />
   <Breadcrumbs />
   <div class="px-8 md:px-12">
     <div class="container mb-12 p-0">
-      <h1 class="my-12 text-4xl font-semibold">CREC Team</h1>
+      <h1 class="my-12 text-4xl font-semibold">CRCE Team</h1>
       <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {
           people.map((person) => (

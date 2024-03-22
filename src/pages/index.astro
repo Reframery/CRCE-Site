@@ -3,9 +3,10 @@ import Layout from "@/layouts/Layout.astro"
 import FocusAreas from "@/components/FocusAreas.astro"
 import DirectorsMessage from "@/components/DirectorsMessage.astro"
 import VisionAndMission from "@/components/VisionAndMission.astro"
+import { SITE_DESCRIPTION } from "@/configs/site.ts"
 ---
 
-<Layout title="Home">
+<Layout title="Home" description={SITE_DESCRIPTION}>
   <FocusAreas />
   <DirectorsMessage />
   <VisionAndMission />

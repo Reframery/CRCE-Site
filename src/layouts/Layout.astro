@@ -8,15 +8,18 @@ import "@fontsource/roboto/900.css"
 import "@fontsource-variable/roboto-condensed"
 import PageLayout from "./PageLayout.astro"
 import SearchDialog from "@/components/SearchDialog.astro"
+import { SITE_TITLE } from "@/configs/site"
 
 interface Props {
   title: string
   description?: string
 }
 
-const { title, description } = Astro.props
+const { title: propTitle, description } = Astro.props
 
-const siteTitle = "Centre for Research on Community-oriented Entrepreneurship"
+const title = `${propTitle} - ${SITE_TITLE}`
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
 <!doctype html>
@@ -31,9 +34,23 @@ const siteTitle = "Centre for Research on Community-oriented Entrepreneurship"
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#7a003c" />
     <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
     <script src="/pagefind/pagefind-ui.js" is:inline></script>
+    <!--  Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+    <!-- Primary Meta Tags -->
     <meta name="generator" content={Astro.generator} />
-    {description && <meta name="description" content={description} />}
-    <title>{title} - {siteTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="title" content={title} />
+    <title>{title}</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
   </head>
   <body>
     <PageLayout>

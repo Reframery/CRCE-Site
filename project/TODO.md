@@ -3,11 +3,13 @@
 Base Website: <https://mdtrc.mcmaster.ca/>
 Resources: <https://www.30secondsofcode.org/css/p/1/>
 
+- <https://brighterworld.mcmaster.ca/articles/centre-for-research-on-community-oriented-entrepreneurship/>
+
 ## Features
 
 - [ ] google maps integration (<https://developers.google.com/maps/documentation/javascript/adding-a-google-map#maps_add_map-typescript>)
 - [ ] youtube video integration (<https://www.npmjs.com/package/@astro-community/astro-embed-youtube>)
-- [ ] SEO
+- [ ] SEO <https://github.com/withastro/astro/blob/main/examples/blog/src/components/BaseHead.astro>
 - [x] site-wide search (<https://www.youtube.com/watch?v=v79VRrfVau8>)
 
 ## Styling

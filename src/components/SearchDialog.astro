@@ -24,16 +24,18 @@ import { Icon } from "astro-icon/components"
           "search-dialog"
         ) as HTMLDialogElement | null
 
-        const searchButton = document.getElementById("search-button")
+        const searchInput = document.querySelector(".pagefind-ui__search-input") as HTMLInputElement | null
+
+        const searchButton = document.getElementById("search-button") as HTMLButtonElement | null
 
         const searchCloseButtons = document.querySelectorAll(
           ".pagefind-dialog-close"
-        )
+        ) as NodeListOf<HTMLButtonElement>
 
         if (searchDialog) {
           const openDialog = () => {
             searchDialog.showModal()
-            document.querySelector(".pagefind-ui__search-input")?.focus()
+            if (searchInput) searchInput.focus()
             document.body.style.overflow = "hidden"
           }
 

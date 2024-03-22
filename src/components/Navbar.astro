@@ -3,7 +3,7 @@ import { Icon } from "astro-icon/components"
 import { cn } from "@/lib/utils.ts"
 import { siteLinks } from "@/configs/navigation.ts"
 
-const pathname = new URL(Astro.request.url).pathname
+const pathname = Astro.url.pathname
 ---
 
 <header class="bg-mcmaster-maroon font-sans-condensed text-xl text-white">

@@ -8,7 +8,7 @@ export default {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1350px",
       },
     },
     extend: {
@@ -21,9 +21,13 @@ export default {
       },
       colors: {
         nevada: "#5e6a71",
+        muted: "#4F595F",
         mcmaster: {
           maroon: "#7a003c",
           gold: "#fdbf57",
+          modal: {
+            background: "#c6cbce",
+          },
         },
         dsg: {},
       },

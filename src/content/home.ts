@@ -1,31 +1,31 @@
-import focus1 from "@/images/home/focus-1.jpg";
-import focus2 from "@/images/home/focus-2.jpg";
-import focus3 from "@/images/home/focus-3.jpg";
-import vision1 from "@/images/home/vision-1.jpg";
-import vision2 from "@/images/home/vision-2.jpg";
+import research from "@/images/home/research.jpg";
+import outreach from "@/images/home/outreach.jpg";
+import education from "@/images/home/education.jpg";
+import vision from "@/images/home/vision.jpg";
+import mission from "@/images/home/mission.jpg";
 
 export const focusGroups = [
   {
     title: "Research",
     description:
-      "At the MDTRC, we engage in cutting-edge multidisciplinary research aimed at better understanding critical implications of digital transformation. We are open to local and international collaborations with academic colleagues as well as organizations undergoing their own transformations.",
+      "At CRCE, we pioneer community-driven entrepreneurship, empowering marginalized individuals through innovative research and practical support. Discover how we transform challenges into opportunities for sustainable growth and inclusive impact.",
     action: "Research With Us",
-    image: focus1,
+    image: research,
     href: "/cutting-edge-multidisciplinary-research",
   },
   {
     title: "Outreach",
     description:
-      "We're actively building collaborations and engaging with joint research projects with key partners and affiliates in academia and the public, private and not-for-profit sectors. Some projects are eligible for securing additional funding from various grant bodies.",
-    image: focus2,
+      "Join CRCE in expanding the horizon for underserved entrepreneurs through global outreach, innovative virtual incubation, and inclusive support programs. Explore how we're shaping futures and fostering change.",
+    image: outreach,
     action: "Learn More",
     href: "/cutting-edge-multidisciplinary-research",
   },
   {
     title: "Education",
     description:
-      "By supporting our executive and graduate educational programs, we aim to empower managers, employees, and students, building their capabilities to effectively manage and lead digital transformation.",
-    image: focus3,
+      "Shaping the next wave of entrepreneurs with cutting-edge community-oriented entrepreneurship education and virtual incubation. Learn how we equip diverse minds for impactful ventures.",
+    image: education,
     action: "Learn More",
     href: "/cutting-edge-multidisciplinary-research",
   },
@@ -38,13 +38,13 @@ export const visionMission = [
   {
     title: "Vision",
     description:
-      "The McMaster Digital Transformation Research Centre's (MDTRC) vision is to become a self-sustaining world leading research centre and knowledge hub. We primarily focus on the leadership and management of digital transformation and its impact on people, organizations, and society.",
-    image: vision1,
+      "The Centre for Research on Community-oriented Entrepreneurship (CRCE) seeks to develop future generations of diverse entrepreneurs through innovative scholarship and educational services supporting environmentally responsible and socially inclusive entrepreneurship.",
+    image: vision,
   },
   {
     title: "Mission",
     description:
-      "The centre's mission is to engage in innovative research projects that investigate the booming digital innovations that are prevailing through and transforming all aspects of our modern society. This timely and important research will lead to a fundamental shift in our understanding of the developing digital revolution and its challenges and opportunities, with far-reaching implications for managerial practice and society at large. Student and executive training at the MDTRC will contribute to the development of a unique breed of Highly Qualified Personnel (HQP) with specialized skill sets, enabling them to become the digital transformation leaders of tomorrow.",
-    image: vision2,
+      "The mission of CRCE is to support research that yields communities that are not simply resilient but are prosperous and thriving. Focusing on environmentally sustainable and community-oriented research, CRCE supports diverse individuals, with a particular focus on marginalized and minority persons, to facilitate ingenious solutions to existing and emerging problems. Through engaging in research that helps communities design socially responsible, sustainable enterprises, and community projects, and by providing educational tools and services, CRCE guides and empowers participants to develop organizations that align their own economic, social, and environmental goals. The aim is to generate economic prosperity combined with environmental sustainability and social inclusion.",
+    image: mission,
   },
 ];

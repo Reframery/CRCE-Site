@@ -38,7 +38,7 @@ export const visionMission = [
   {
     title: "Vision",
     description:
-      "The Centre for Research on Community-oriented Entrepreneurship (CRCE) seeks to develop future generations of diverse entrepreneurs through innovative scholarship and educational services supporting environmentally responsible and socially inclusive entrepreneurship.",
+      "The <strong>Centre for Research on Community-oriented Entrepreneurship (CRCE)</strong> seeks to develop future generations of diverse entrepreneurs through innovative scholarship and educational services supporting environmentally responsible and socially inclusive entrepreneurship.",
     image: vision,
   },
   {

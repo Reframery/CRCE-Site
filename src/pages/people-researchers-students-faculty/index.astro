@@ -13,6 +13,8 @@ const iconMap: Record<SocialType, string> = {
   profile: "lucide:info",
   publication: "lucide:graduation-cap",
 }
+
+const linkedIn = (name: string) => `https://www.linkedin.com/in/${name}`
 ---
 
 <Layout
@@ -22,16 +24,17 @@ const iconMap: Record<SocialType, string> = {
   <Banner title="People" {image} />
   <Breadcrumbs />
   <div class="px-8 md:px-12">
-    <div class="container mb-12 p-0">
+    <div class="container mb-12 p-0 max-md:!max-w-xl">
       <h1 class="my-12 text-4xl font-semibold">CRCE Team</h1>
       <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {
           people.map((person) => (
-            <div class="group flex flex-col items-center border bg-white p-4 text-center shadow-xl transition-shadow hover:shadow-2xl">
+            <div class="group flex flex-col items-center border bg-white p-6 text-center shadow-mcmaster shadow-nevada/20 transition-shadow duration-300 hover:shadow-nevada/60">
               <Image
                 src={person.image}
                 alt={person.name}
-                class="h-36 w-36 rounded-full border-4 border-mcmaster-gold object-cover object-top transition-shadow group-hover:shadow-xl"
+                quality={100}
+                class="h-[140px] w-[140px] rounded-full object-cover object-top ring-2 ring-mcmaster-gold transition-shadow duration-300 group-hover:shadow-mcmasterSmall group-hover:ring-4"
               />
               <h2 class="my-2 text-2xl font-semibold">{person.name}</h2>
               <h3 class="text-lg font-semibold text-nevada">{person.title}</h3>
@@ -43,25 +46,31 @@ const iconMap: Record<SocialType, string> = {
                   ))}
               </div>
               <div class="flex w-full flex-col items-center">
-                {person.socials.map((social) => (
-                  <a
-                    href={
-                      social.href
-                        ? social.href
-                        : social.type === "email"
-                          ? `mailto:${social.label}`
-                          : social.label
-                    }
-                    class="flex w-full justify-center rounded px-2 py-1 text-[13px] font-semibold text-[#7d0040] transition-colors hover:bg-[#f8f9fa] hover:text-[#495057]"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <span class="flex flex-wrap items-center justify-center gap-2 break-all">
-                      <Icon name={iconMap[social.type]} size={14} />
-                      {social.label}
-                    </span>
-                  </a>
-                ))}
+                {person.socials.map((social) => {
+                  return (
+                    <a
+                      href={
+                        social.href
+                          ? social.href
+                          : social.type === "email"
+                            ? `mailto:${social.label}`
+                            : social.type === "linkedin"
+                              ? linkedIn(social.label)
+                              : social.label
+                      }
+                      class="group flex w-full justify-center rounded px-2 py-1 text-[13px] font-semibold text-[#495057] transition-colors duration-300 hover:bg-[#f8f9fa] "
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <span class="flex flex-wrap items-center justify-center gap-2 break-all">
+                        <Icon name={iconMap[social.type]} size={14} />
+                        <span class="text-[#7d0040] group-hover:text-[#495057]">
+                          {social.label}
+                        </span>
+                      </span>
+                    </a>
+                  )
+                })}
               </div>
             </div>
           ))

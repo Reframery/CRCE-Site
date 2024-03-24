@@ -19,9 +19,13 @@ export default {
           ...defaultTheme.fontFamily.sans,
         ],
       },
+      boxShadow: {
+        mcmaster: "0 0 32px 0 rgba(94, 106, 113, 0.6)",
+        mcmasterSmall: "0 0 16px 0 rgba(94, 106, 113, 0.6)",
+      },
       colors: {
-        nevada: "#5e6a71",
         muted: "#4F595F",
+        nevada: "#5e6a71",
         mcmaster: {
           maroon: "#7a003c",
           gold: "#fdbf57",
@@ -29,7 +33,6 @@ export default {
             background: "#c6cbce",
           },
         },
-        dsg: {},
       },
     },
   },

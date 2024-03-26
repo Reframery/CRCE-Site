@@ -3,7 +3,7 @@ import image from "@/images/mcm-dsb-crce.png"
 import { Image } from "astro:assets"
 ---
 
-<div class="relative h-full max-h-[500px] overflow-hidden">
+<div class="relative h-full max-h-[500px] overflow-hidden bg-black">
   <video
     autoplay
     muted
@@ -27,13 +27,15 @@ import { Image } from "astro:assets"
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    const video = document.querySelector("video") as HTMLVideoElement | null
+
     const button = document.querySelector(
       ".video-button"
     ) as HTMLButtonElement | null
+
     const buttonImage = document.querySelector(
       ".video-button img"
     ) as HTMLImageElement | null
-    const video = document.querySelector("video") as HTMLVideoElement | null
 
     if (video && button && buttonImage) {
       button.addEventListener("click", function () {

@@ -1,12 +1,14 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-import FocusAreas from "@/components/FocusAreas.astro"
 import DirectorsMessage from "@/components/DirectorsMessage.astro"
+import FocusAreas from "@/components/FocusAreas.astro"
+import HeroVideo from "@/components/HeroVideo.astro"
 import VisionAndMission from "@/components/VisionAndMission.astro"
 import { SITE_DESCRIPTION } from "@/configs/site.ts"
+import Layout from "@/layouts/Layout.astro"
 ---
 
 <Layout title="Home" description={SITE_DESCRIPTION}>
+  <HeroVideo />
   <FocusAreas />
   <DirectorsMessage />
   <VisionAndMission />

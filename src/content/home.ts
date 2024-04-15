@@ -1,6 +1,6 @@
-import research from "@/images/home/research.jpg";
-import outreach from "@/images/home/outreach.jpg";
-import education from "@/images/home/education.jpg";
+import left from "@/images/home/left.jpg";
+import center from "@/images/home/center.jpg";
+import right from "@/images/home/right.png";
 import vision from "@/images/home/vision.jpg";
 import mission from "@/images/home/mission.jpg";
 
@@ -8,31 +8,31 @@ export const focusGroups = [
   {
     title: "Research",
     description:
-      "At CRCE, we pioneer community-driven entrepreneurship, empowering marginalized individuals through innovative research and practical support. Discover how we transform challenges into opportunities for sustainable growth and inclusive impact.",
-    action: "Research With Us",
-    image: research,
+      "Reframery is an online platform and community that empowers diverse individuals around the world to develop their ideas, existing businesses, and entrepreneurship skills, while adopting a community-oriented vision and striving for ingenuity, inclusion, and impact.",
+    action: "Learn More",
+    image: left,
     href: "/cutting-edge-multidisciplinary-research",
   },
   {
-    title: "Outreach",
+    title: "Student Training",
     description:
-      "Join CRCE in expanding the horizon for underserved entrepreneurs through global outreach, innovative virtual incubation, and inclusive support programs. Explore how we're shaping futures and fostering change.",
-    image: outreach,
+      "Empowering students through hands-on learning, CRCE places student training at the forefront of its mission. Our students immerse themselves in research, project management, social innovation, and the practical application of academic knowledge. Discover the impactful work our student members are engaged in and explore how they're shaping the future.",
+    image: center,
     action: "Learn More",
     href: "/cutting-edge-multidisciplinary-research",
   },
   {
     title: "Education",
     description:
-      "Shaping the next wave of entrepreneurs with cutting-edge community-oriented entrepreneurship education and virtual incubation. Learn how we equip diverse minds for impactful ventures.",
-    image: education,
+      " RISE connects entrepreneurs worldwide with mentors and offers interdisciplinary entrepreneurship training for students across Canadian universities. Focused on inclusivity and innovation, RISE nurtures a diverse entrepreneurial community, fostering skills and opportunities for entrepreneurs of all backgrounds. Discover how RISE is shaping the future of entrepreneurship.",
+    image: right,
     action: "Learn More",
-    href: "/cutting-edge-multidisciplinary-research",
+    href: "/research-inclusion-and-social-entrepreneurship",
   },
 ];
 
 export const directorMessage =
-  "Welcome to the McMaster Digital Transformation Research Centre (MDTRC), where we make sense of the digital transformation that is affecting everything we do in our professional, educational, and personal lives. At this innovative facility, we leverage neuroscience tools and techniques to provide us with an understanding of how the use of technology impacts us. We gain a deep understanding of the user experience through the traditional and neurophysiological data we collect. Our goal is to expand knowledge of digital transformation opportunities and challenges to allow researchers to create rich and meaningful user experiences. We hope to collaborate with you soon.";
+  "At CRCE, we believe in fostering inclusive and sustainable entrepreneurship to empower marginalized communities locally and globally. Our journey began with the establishment of the Reframery, driven by the urgent need to address the disproportionate impact of COVID-19 on immigrants, women, persons with disabilities, and minority-owned businesses. Recognizing the existing disparities in access to resources and support, we are dedicated to creating a nurturing environment where everyone has the opportunity to thrive.";
 
 export const visionMission = [
   {
@@ -44,7 +44,7 @@ export const visionMission = [
   {
     title: "Mission",
     description:
-      "The mission of CRCE is to support research that yields communities that are not simply resilient but are prosperous and thriving. Focusing on environmentally sustainable and community-oriented research, CRCE supports diverse individuals, with a particular focus on marginalized and minority persons, to facilitate ingenious solutions to existing and emerging problems. Through engaging in research that helps communities design socially responsible, sustainable enterprises, and community projects, and by providing educational tools and services, CRCE guides and empowers participants to develop organizations that align their own economic, social, and environmental goals. The aim is to generate economic prosperity combined with environmental sustainability and social inclusion.",
+      "CRCE's mission is to foster research that builds prosperous and resilient communities, emphasizing environmental sustainability and community focus. By supporting diverse individuals CRCE aims to spur innovative solutions to current and future challenges. CRCE's goal is to promote economic prosperity, environmental sustainability, and social inclusion.",
     image: mission,
   },
 ];

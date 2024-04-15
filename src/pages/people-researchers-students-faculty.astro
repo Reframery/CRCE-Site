@@ -1,0 +1,22 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro"
+import MembersGrid from "@/components/MembersGrid.astro"
+import { coreMembers, advisoryCommittee } from "@/content/people.ts"
+import Layout from "@/layouts/Layout.astro"
+
+const title = "People"
+const description =
+  "The CRCE is home to world-class researchers, students, and faculty from a variety of academic backgrounds."
+---
+
+<Layout {title} {description}>
+  <!-- <Banner title="People" {image} /> -->
+  <Breadcrumbs />
+  <div class="px-8 md:px-12">
+    <div class="container mb-12 p-0 max-md:!max-w-xl">
+      <h1 class="my-12 text-4xl font-semibold">CRCE Team</h1>
+      <MembersGrid members={coreMembers} />
+      <MembersGrid members={advisoryCommittee} title="Advisory Committee" />
+    </div>
+  </div>
+</Layout>

@@ -10,7 +10,7 @@ export default function MobileNavbar({ pathname }: { pathname: string }) {
         className="relative w-full px-8 py-4 text-center uppercase transition-colors duration-[250ms] hover:bg-black/40"
         onClick={() => setOpen(!open)}
       >
-        {siteLinks.find((link) => link.pathname === pathname)?.label}
+        {siteLinks.find((link) => isActive(link.pathname, pathname))?.label}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

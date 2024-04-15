@@ -6,12 +6,12 @@ import mission from "@/images/home/mission.jpg";
 
 export const focusGroups = [
   {
-    title: "Research",
+    title: "Reframery",
     description:
       "Reframery is an online platform and community that empowers diverse individuals around the world to develop their ideas, existing businesses, and entrepreneurship skills, while adopting a community-oriented vision and striving for ingenuity, inclusion, and impact.",
     action: "Learn More",
     image: left,
-    href: "/cutting-edge-multidisciplinary-research",
+    href: "https://reframery.org",
   },
   {
     title: "Student Training",
@@ -19,10 +19,10 @@ export const focusGroups = [
       "Empowering students through hands-on learning, CRCE places student training at the forefront of its mission. Our students immerse themselves in research, project management, social innovation, and the practical application of academic knowledge. Discover the impactful work our student members are engaged in and explore how they're shaping the future.",
     image: center,
     action: "Learn More",
-    href: "/cutting-edge-multidisciplinary-research",
+    href: "/student-training",
   },
   {
-    title: "Education",
+    title: "RISE",
     description:
       " RISE connects entrepreneurs worldwide with mentors and offers interdisciplinary entrepreneurship training for students across Canadian universities. Focused on inclusivity and innovation, RISE nurtures a diverse entrepreneurial community, fostering skills and opportunities for entrepreneurs of all backgrounds. Discover how RISE is shaping the future of entrepreneurship.",
     image: right,

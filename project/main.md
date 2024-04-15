@@ -1,7 +1,7 @@
 # CRCE Website Development
 
 - Center Article: <https://brighterworld.mcmaster.ca/articles/centre-for-research-on-community-oriented-entrepreneurship/>
-- Domain: `crce.info`
+- Url: <https://www.crce.info/>
 
 ## Todo
 
@@ -10,8 +10,6 @@
 - [ ] Contact
 
 ### Features
-
-- [ ] google maps integration (<https://developers.google.com/maps/documentation/javascript/adding-a-google-map#maps_add_map-typescript>)
 
 #### Contact Form
 

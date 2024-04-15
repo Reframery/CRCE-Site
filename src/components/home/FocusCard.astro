@@ -14,22 +14,22 @@ const { href, title, description, action, image } = Astro.props
 
 <a
   href={href}
-  class="group flex max-w-[720px] flex-col border lg:border-r-0 lg:last:border-r"
+  class="border-maroon group flex max-w-[720px] flex-col border lg:border-r-0 lg:last:border-r"
 >
   <Image
     src={image}
     alt={title}
     loading="eager"
-    class="border-b transition-all duration-[250ms] group-hover:border-b-mcmaster-maroon group-hover:shadow-2xl"
+    class="border-b-maroon border-b transition-all duration-[250ms] group-hover:shadow-2xl"
   />
   <div
-    class="flex flex-grow flex-col gap-4 p-6 transition-colors duration-[250ms] group-hover:bg-mcmaster-maroon group-hover:text-white"
+    class="group-hover:bg-maroon flex flex-grow flex-col gap-4 p-6 transition-colors duration-[250ms] group-hover:text-white"
   >
     <h2 class="text-2xl font-bold">
       {title}
     </h2>
     <div
-      class="h-1 w-10 bg-mcmaster-maroon transition-colors duration-[250ms] group-hover:bg-mcmaster-gold"
+      class="group-hover:bg-gold bg-maroon h-1 w-10 transition-colors duration-[250ms]"
     >
     </div>
     <p
@@ -40,7 +40,7 @@ const { href, title, description, action, image } = Astro.props
     <div class="mt-auto flex items-center justify-between">
       <span class="text-lg font-medium">{action}</span>
       <svg
-        class="size-5 -translate-x-3 rounded-full bg-mcmaster-maroon p-1 text-white transition-all duration-[250ms] group-hover:translate-x-0 group-hover:bg-mcmaster-gold group-hover:text-black"
+        class="group-hover:bg-gold bg-maroon size-5 -translate-x-3 rounded-full p-1 text-white transition-all duration-[250ms] group-hover:translate-x-0 group-hover:text-black"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

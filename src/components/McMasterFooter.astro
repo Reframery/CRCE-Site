@@ -42,9 +42,7 @@ const socials = [
 ]
 ---
 
-<footer
-  class="flex flex-col items-center bg-mcmaster-maroon px-4 py-8 text-white"
->
+<footer class="bg-maroon flex flex-col items-center px-4 py-8 text-white">
   <Image src={mcmasterLogo} alt="McMcaster logo" class="w-[420px]" />
   <nav
     class="mb-4 mt-6 flex w-full flex-col items-center justify-center gap-x-24 gap-y-4 border-y border-nevada/60 py-5 font-sans-condensed font-semibold tracking-wider md:flex-row"
@@ -69,7 +67,7 @@ const socials = [
           href={social.link}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex rounded-full border-[2px] p-1.5 transition-colors duration-[250ms] hover:border-mcmaster-gold hover:text-mcmaster-gold"
+          class="hover:border-gold hover:text-gold inline-flex rounded-full border-[2px] p-1.5 transition-colors duration-[250ms]"
           aria-label={social.name}
         >
           <Icon name={social.name} size={18} />

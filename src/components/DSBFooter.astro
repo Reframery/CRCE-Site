@@ -1,66 +1,36 @@
 ---
-import { Icon } from "astro-icon/components"
-import dsbLogo from "@/images/mcm-dsb-crce.png"
 import { Image } from "astro:assets"
-
-const socials = [
-  {
-    name: "fa-brands:facebook-f",
-    link: "https://www.facebook.com/MacDTRC/",
-  },
-  {
-    name: "fa-brands:twitter",
-    link: "https://twitter.com/MacDTRC",
-  },
-  {
-    name: "fa-brands:instagram",
-    link: "https://www.instagram.com/macdtrc/?igshid=YmMyMTA2M2Y%3D",
-  },
-  {
-    name: "fa-brands:linkedin-in",
-    link: "https://www.linkedin.com/company/mdtrc/",
-  },
-]
+import { emails } from "@/configs/contact"
+import Address from "@/components/Address.astro"
+import dsbLogo from "@/images/mcm-dsb-crce.png"
 ---
 
 <footer class="relative bg-nevada p-8 text-white md:p-12">
   <div class="absolute -top-[2px] left-0 z-10 h-0.5 w-full bg-nevada"></div>
   <div class="container flex flex-wrap gap-10 max-lg:justify-center lg:gap-32">
-    <div class="flex flex-col items-center gap-4">
+    <div class="flex flex-col items-center">
       <Image src={dsbLogo} alt="DSB Logo" class="w-72 brightness-200" />
-      <div class="flex gap-2">
-        {
-          socials.map((social) => (
-            <a
-              href={social.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex rounded-full border border-white p-1.5 transition-colors duration-[250ms] hover:bg-white hover:text-black"
-              aria-label={social.name}
-            >
-              <Icon name={social.name} size={20} />
-            </a>
-          ))
-        }
-      </div>
     </div>
     <div class="text-sm max-lg:text-center">
       <p class="mb-2 font-sans-condensed text-lg font-semibold">
         Address Information
       </p>
-      <p>McMaster University</p>
-      <p>Ron Joyce Centre</p>
-      <p>4350 South Service Road</p>
-      <p>Burlington, ON L7L5R8</p>
+      <Address />
     </div>
     <div class="text-sm max-lg:text-center">
       <p class="mb-2 font-sans-condensed text-lg font-semibold">
         Contact Information
       </p>
-      <p>Phone: 905-525-9140 x28149</p>
-      <p>
-        Email: <a href="mailto:" class="hover:underline">mdtrc@mcmaster.ca</a>
-      </p>
+      {
+        emails.map((email) => (
+          <p>
+            Email:{" "}
+            <a href={`mailto:${email}`} class="hover:underline">
+              {email}
+            </a>
+          </p>
+        ))
+      }
     </div>
   </div>
 </footer>

@@ -24,13 +24,13 @@ export default {
       },
       colors: {
         muted: "#4F595F",
+        "heading-foreground": "#333",
+        gallery: "#ebebeb",
         nevada: "#5e6a71",
-        mcmaster: {
-          maroon: "#7a003c",
-          gold: "#fdbf57",
-          modal: {
-            background: "#c6cbce",
-          },
+        maroon: "#7a003c",
+        gold: "#fdbf57",
+        modal: {
+          background: "#c6cbce",
         },
       },
     },

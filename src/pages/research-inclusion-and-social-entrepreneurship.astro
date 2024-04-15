@@ -11,9 +11,9 @@ import riseLogo from "@/images/rise/rise-logo.png"
 <Layout title="Rise" {description}>
   <Breadcrumbs />
   <div class="p-8 md:p-12 md:pt-8">
-    <header class="container mb-10 text-center">
+    <header class="container mb-12 text-center">
       <Image src={riseLogo} alt="RISE" class="mx-auto mb-4 w-96" />
-      <h1 class="mb-4 text-4xl font-semibold">
+      <h1 class="mb-6 text-4xl font-semibold">
         Research, Inclusion, and Social Entrepreneurship (RISE)
       </h1>
       <p class="text-xl text-nevada">{description}</p>
@@ -36,12 +36,12 @@ import riseLogo from "@/images/rise/rise-logo.png"
               <hr class="my-4 border-[1.5px]" />
               <div class="space-y-4">
                 {box.content.map((content) => (
-                  <p class="text-lg text-[#7d0040]">{content}</p>
+                  <p class="text-lg text-nevada">{content}</p>
                 ))}
                 {box.link && (
                   <a
                     href={box.link.href}
-                    class="block w-fit items-center rounded-full bg-mcmaster-maroon px-6 py-3 text-lg font-medium text-white transition-colors duration-[250ms] ease-in-out hover:bg-mcmaster-maroon/85"
+                    class="bg-maroon hover:bg-maroon/85 block w-fit items-center rounded-full px-6 py-3 text-lg font-medium text-white transition-colors duration-[250ms] ease-in-out"
                   >
                     {box.link.label}
                   </a>

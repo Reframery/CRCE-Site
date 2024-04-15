@@ -13,12 +13,12 @@ const title = "About"
   <Image
     src={banner}
     alt="DeGroote School of Business, Building"
-    class="mx-auto max-h-80 border-b-[6px] border-mcmaster-gold object-cover object-[50%,66%]"
+    class="border-gold mx-auto max-h-80 border-b-[6px] object-cover object-[50%,66%]"
     loading="eager"
   />
   <section class="container p-8 md:py-12">
     <h1
-      class="mx-auto mb-4 w-fit border-b-4 border-mcmaster-maroon pb-0.5 text-2xl font-semibold"
+      class="border-maroon mx-auto mb-4 w-fit border-b-4 pb-0.5 text-2xl font-semibold"
     >
       {content.about.title}
     </h1>
@@ -26,7 +26,7 @@ const title = "About"
       {content.about.main}
     </p>
   </section>
-  <section class="grid overflow-hidden bg-[#ebebeb] md:mb-12 md:grid-cols-2">
+  <section class="bg-gallery grid overflow-hidden md:mb-12 md:grid-cols-2">
     <Image
       src={image}
       alt="Group of people having a meeting"
@@ -36,7 +36,7 @@ const title = "About"
       {
         content.missionVision.map((item) => (
           <div>
-            <h2 class="mb-2 w-max border-b-4 border-mcmaster-maroon pb-0.5 text-xl font-semibold">
+            <h2 class="border-maroon mb-2 w-max border-b-4 pb-0.5 text-xl font-semibold">
               {item.title}
             </h2>
             <p>{item.main}</p>
@@ -47,7 +47,7 @@ const title = "About"
   </section>
   <div class="bg-nevada p-8 md:py-12">
     <section
-      class="container grid divide-y divide-mcmaster-modal-background overflow-hidden rounded-sm bg-white shadow-md max-lg:max-w-2xl md:divide-x lg:grid-cols-2"
+      class="divide-modal-background container grid divide-y overflow-hidden rounded-sm bg-white shadow-md max-lg:max-w-2xl md:divide-x lg:grid-cols-2"
     >
       {
         content.cards.map((item, i) => (
@@ -58,11 +58,11 @@ const title = "About"
               i == 2 && "md:!border-x-0"
             )}
           >
-            <div class="mx-auto size-40 rounded-full border-4 border-mcmaster-gold p-8 shadow-nevada transition-all duration-200 group-hover:bg-mcmaster-gold group-hover:shadow-mcmaster">
+            <div class="border-gold group-hover:bg-gold mx-auto size-40 rounded-full border-4 p-8 shadow-nevada transition-all duration-200 group-hover:shadow-mcmaster">
               <Image src={item.image} alt={item.title} />
             </div>
             <h3 class="text-2xl font-semibold">{item.title}</h3>
-            <hr class="mx-auto h-[5px] w-10 bg-mcmaster-maroon" />
+            <hr class="bg-maroon mx-auto h-[5px] w-10" />
             <p class="text-nevada">{item.main}</p>
           </div>
         ))

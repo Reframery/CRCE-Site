@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets"
 import { Icon } from "astro-icon/components"
+import mcmasterLogo from "@/images/mcmaster-footer-logo.png"
 
 const links = [
   {
@@ -41,9 +43,9 @@ const socials = [
 ---
 
 <footer
-  class="flex flex-col items-center bg-mcmaster-maroon px-4 py-8 pt-4 text-white"
+  class="flex flex-col items-center bg-mcmaster-maroon px-4 py-8 text-white"
 >
-  <Icon name="mcmaster-footer-logo" class="h-[120px] w-[400px]" />
+  <Image src={mcmasterLogo} alt="McMcaster logo" class="w-[420px]" />
   <nav
     class="mb-4 mt-6 flex w-full flex-col items-center justify-center gap-x-24 gap-y-4 border-y border-nevada/60 py-5 font-sans-condensed font-semibold tracking-wider md:flex-row"
   >
@@ -67,7 +69,7 @@ const socials = [
           href={social.link}
           target="_blank"
           rel="noopener noreferrer"
-          class="duration-[250ms] inline-flex rounded-full border-[2px] p-1.5 transition-colors hover:border-mcmaster-gold hover:text-mcmaster-gold"
+          class="inline-flex rounded-full border-[2px] p-1.5 transition-colors duration-[250ms] hover:border-mcmaster-gold hover:text-mcmaster-gold"
           aria-label={social.name}
         >
           <Icon name={social.name} size={18} />

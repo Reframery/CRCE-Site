@@ -4,9 +4,10 @@ import { Icon } from "astro-icon/components"
 
 <dialog
   id="search-dialog"
-  class="pagefind-dialog w-full max-w-2xl rounded-lg bg-mcmaster-modal-background shadow-lg"
+  class="pagefind-dialog w-full max-w-2xl md:rounded-lg bg-mcmaster-modal-background shadow-lg"
 >
-  <div class="relative mx-auto max-w-2xl p-4 pt-10">
+  <div class="relative mx-auto max-w-2xl p-4">
+    <h2 class="text-2xl font-semibold mb-2">Search</h2>
     <button class="pagefind-dialog-close absolute right-3 top-3 text-nevada">
       <Icon name="lucide:x" size={24} />
     </button>
@@ -24,9 +25,13 @@ import { Icon } from "astro-icon/components"
           "search-dialog"
         ) as HTMLDialogElement | null
 
-        const searchInput = document.querySelector(".pagefind-ui__search-input") as HTMLInputElement | null
+        const searchInput = document.querySelector(
+          ".pagefind-ui__search-input"
+        ) as HTMLInputElement | null
 
-        const searchButton = document.getElementById("search-button") as HTMLButtonElement | null
+        const searchButton = document.getElementById(
+          "search-button"
+        ) as HTMLButtonElement | null
 
         const searchCloseButtons = document.querySelectorAll(
           ".pagefind-dialog-close"

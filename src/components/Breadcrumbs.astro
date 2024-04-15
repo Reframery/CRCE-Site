@@ -1,11 +1,23 @@
 ---
 import { siteLinks } from "@/configs/navigation.ts"
-import { isActive, titelize } from "@/lib/utils"
+import { cn, isActive, titelize } from "@/lib/utils"
+
+interface Props {
+  border?: boolean
+}
+
+const { border = true } = Astro.props
+
 const pathname = new URL(Astro.request.url).pathname
 ---
 
 <div class="px-8 md:px-12">
-  <nav class="container border-b border-b-nevada/20 px-0 pb-5 pt-6">
+  <nav
+    class={cn(
+      "container  px-0 pb-5 pt-6",
+      border && "border-b border-b-nevada/20"
+    )}
+  >
     <ul class="flex gap-[14px] text-sm marker:text-nevada">
       <li>
         <a href="/">Home</a>

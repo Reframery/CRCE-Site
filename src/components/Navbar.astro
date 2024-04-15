@@ -2,12 +2,13 @@
 import { Icon } from "astro-icon/components"
 import { cn, isActive } from "@/lib/utils.ts"
 import { siteLinks } from "@/configs/navigation.ts"
+import MobileNavbar from "./MobileNavbar"
 
 const pathname = new URL(Astro.request.url).pathname
 ---
 
 <header class="bg-mcmaster-maroon font-sans-condensed text-xl text-white">
-  <nav class="flex items-center justify-center">
+  <nav class="hidden items-center justify-center md:flex">
     {
       siteLinks.map((link) => (
         <a
@@ -26,4 +27,5 @@ const pathname = new URL(Astro.request.url).pathname
       ))
     }
   </nav>
+  <MobileNavbar pathname={pathname} client:load />
 </header>

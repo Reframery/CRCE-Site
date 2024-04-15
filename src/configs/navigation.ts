@@ -12,7 +12,11 @@ export const siteLinks = [
     pathname: "/people-researchers-students-faculty",
   },
   {
-    label: "Initiatives & Services",
-    pathname: "/initiatives-services",
+    label: "RISE",
+    pathname: "/research-inclusion-and-social-entrepreneurship",
+  },
+  {
+    label: "Contact Us",
+    pathname: "/contact",
   },
 ];

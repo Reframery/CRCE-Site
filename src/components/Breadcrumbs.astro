@@ -1,6 +1,6 @@
 ---
 import { siteLinks } from "@/configs/navigation.ts"
-import { isActive } from "@/lib/utils"
+import { isActive, titelize } from "@/lib/utils"
 const pathname = new URL(Astro.request.url).pathname
 ---
 
@@ -13,17 +13,18 @@ const pathname = new URL(Astro.request.url).pathname
       {
         pathname
           .split("/")
-          .filter(Boolean)
+          .filter((path) => path !== "")
           .map((_, i, arr) => {
             const path = `/${arr.slice(0, i + 1).join("/")}`
             const link = siteLinks.find((link) => link.pathname === path)
+            const label = link?.label || titelize(path.slice(1))
 
             return (
               <li class="list-inside list-disc">
                 {isActive(path, pathname) ? (
-                  <span class="text-nevada">{link?.label || path}</span>
+                  <span class="text-nevada">{label}</span>
                 ) : (
-                  <a href={path}>{link?.label || path}</a>
+                  <a href={path}>{label}</a>
                 )}
               </li>
             )

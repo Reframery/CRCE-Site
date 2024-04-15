@@ -1,10 +1,11 @@
 import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
-import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://crce.mcmaster.ca",
-  integrations: [tailwind(), icon(), sitemap()],
+  site: "https://crce.info",
+  integrations: [react(), tailwind(), icon(), sitemap()]
 });

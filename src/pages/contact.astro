@@ -1,0 +1,14 @@
+---
+import Banner from "@/components/Banner.astro"
+import Breadcrumbs from "@/components/Breadcrumbs.astro"
+import image from "@/images/banner/contact.jpg"
+import Layout from "@/layouts/Layout.astro"
+
+const title = "Contact Us"
+const description = "Contact us for any questions or queries."
+---
+
+<Layout {title} {description}>
+  <Banner title="Contact Us" {image} />
+  <Breadcrumbs />
+</Layout>

@@ -1,6 +1,9 @@
 ---
+import Address from "@/components/Address.astro"
 import Banner from "@/components/Banner.astro"
 import Breadcrumbs from "@/components/Breadcrumbs.astro"
+import { emails } from "@/configs/contact"
+import { SITE_TITLE } from "@/configs/site"
 import image from "@/images/banner/contact.jpg"
 import Layout from "@/layouts/Layout.astro"
 
@@ -10,5 +13,32 @@ const description = "Contact us for any questions or queries."
 
 <Layout {title} {description}>
   <Banner title="Contact Us" {image} />
-  <Breadcrumbs />
+  <Breadcrumbs border={false}/>
+  <div class="bg-gallery p-8 md:p-12">
+    <section class="container flex flex-col items-center gap-8 md:flex-row">
+      <div class="flex-grow space-y-6 text-heading-foreground">
+        <h2 class="text-3xl font-semibold">Location</h2>
+        <Address />
+        <p>
+          Do you have a general question about the McMaster<br />
+          {SITE_TITLE}?<br />Please reach out to us via email at<br />
+          <a href={`mailto:${emails[0]}`} class="underline hover:no-underline">
+            {emails[0]}
+          </a> or <a
+            href={`mailto:${emails[1]}`}
+            class="underline hover:no-underline">{emails[1]}</a
+          >.
+        </p>
+      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11621.955317040398!2d-79.9214528!3d43.2621339!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c853aa640c501%3A0x79c3ae03596c42e5!2sTandem%20Accelerator%20Building!5e0!3m2!1sen!2sca!4v1713218752824!5m2!1sen!2sca"
+        width="880"
+        height="520"
+        class="max-md:w-full"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  </div>
 </Layout>

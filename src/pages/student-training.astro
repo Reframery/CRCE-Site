@@ -43,8 +43,8 @@ const description = focusGroups[1].description
                       <a
                         href={
                           social.type === "Email"
-                            ? email(social.type)
-                            : linkedIn(social.type)
+                            ? email(social.label)
+                            : linkedIn(social.label)
                         }
                         class="mr-4 hover:underline"
                         target="_blank"

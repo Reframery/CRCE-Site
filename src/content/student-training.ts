@@ -1,12 +1,12 @@
 import type { ImageMetadata } from "astro";
 
 import placeholder from "@/images/people/placeholder.png";
-import allison from "@/images/student-training/allison-preyra.png";
+import allison from "@/images/student-training/allison-preyra.jpg";
 import ayat from "@/images/student-training/ayat-atif.jpeg";
 import haley from "@/images/student-training/haley-piper.jpg";
 import mia from "@/images/student-training/mia-aamir.jpg";
 import saad from "@/images/student-training/saad-tariq.jpg";
-import salina from "@/images/student-training/salina-tellis.png";
+import salina from "@/images/student-training/salina-tellis.jpg";
 import sehyeon from "@/images/student-training/sehyeon-hong.jpg";
 import shayla from "@/images/student-training/shayla-bird.jpeg";
 import veerash from "@/images/student-training/veerash-palanichamy.jpg";

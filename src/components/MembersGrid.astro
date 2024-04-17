@@ -35,7 +35,7 @@ const linkedIn = (name: string) => `https://www.linkedin.com/in/${name}`
           class="h-[140px] w-[140px] rounded-full object-cover object-top ring-2 ring-gold transition-shadow duration-300 group-hover:shadow-mcmasterSmall group-hover:ring-4"
         />
         <h2 class="mb-1 mt-2 text-2xl font-semibold">{member.name}</h2>
-        {title !== undefined && (
+        {member.title !== undefined && (
           <h3 class="text-lg font-semibold text-nevada">{member.title}</h3>
         )}
         <div class="mb-2">

@@ -1,9 +1,10 @@
 ---
-import Layout from "@/layouts/Layout.astro"
 import { Image } from "astro:assets"
+import Breadcrumbs from "@/components/Breadcrumbs.astro"
 import * as content from "@/content/about.ts"
 import banner from "@/images/about/banner.jpg"
 import image from "@/images/about/middle.jpg"
+import Layout from "@/layouts/Layout.astro"
 import { cn } from "@/lib/utils"
 
 const title = "About"
@@ -13,12 +14,13 @@ const title = "About"
   <Image
     src={banner}
     alt="DeGroote School of Business, Building"
-    class="border-gold mx-auto max-h-80 border-b-[6px] object-cover object-[50%,66%]"
+    class="mx-auto max-h-80 border-b-[6px] border-gold object-cover object-[50%,66%]"
     loading="eager"
   />
+  <Breadcrumbs />
   <section class="container p-8 md:py-12">
     <h1
-      class="border-maroon mx-auto mb-4 w-fit border-b-4 pb-0.5 text-2xl font-semibold"
+      class="mx-auto mb-4 w-fit border-b-4 border-maroon pb-0.5 text-2xl font-semibold"
     >
       {content.about.title}
     </h1>
@@ -26,7 +28,7 @@ const title = "About"
       {content.about.main}
     </p>
   </section>
-  <section class="bg-gallery grid overflow-hidden md:mb-12 md:grid-cols-2">
+  <section class="grid overflow-hidden bg-gallery md:mb-12 md:grid-cols-2">
     <Image
       src={image}
       alt="Group of people having a meeting"
@@ -36,7 +38,7 @@ const title = "About"
       {
         content.missionVision.map((item) => (
           <div>
-            <h2 class="border-maroon mb-2 w-max border-b-4 pb-0.5 text-xl font-semibold">
+            <h2 class="mb-2 w-max border-b-4 border-maroon pb-0.5 text-xl font-semibold">
               {item.title}
             </h2>
             <p>{item.main}</p>
@@ -47,7 +49,7 @@ const title = "About"
   </section>
   <div class="bg-nevada p-8 md:py-12">
     <section
-      class="divide-modal-background container grid divide-y overflow-hidden rounded-sm bg-white shadow-md max-lg:max-w-2xl md:divide-x lg:grid-cols-2"
+      class="container grid divide-y overflow-hidden rounded-sm bg-white shadow-md max-lg:max-w-2xl md:divide-x lg:grid-cols-2"
     >
       {
         content.cards.map((item, i) => (
@@ -58,11 +60,11 @@ const title = "About"
               i == 2 && "md:!border-x-0"
             )}
           >
-            <div class="border-gold group-hover:bg-gold mx-auto size-40 rounded-full border-4 p-8 shadow-nevada transition-all duration-200 group-hover:shadow-mcmaster">
+            <div class="mx-auto size-40 rounded-full border-4 border-gold p-8 shadow-nevada transition-all duration-200 group-hover:bg-gold group-hover:shadow-mcmaster">
               <Image src={item.image} alt={item.title} />
             </div>
             <h3 class="text-2xl font-semibold">{item.title}</h3>
-            <hr class="bg-maroon mx-auto h-[5px] w-10" />
+            <hr class="mx-auto h-[5px] w-10 bg-maroon" />
             <p class="text-nevada">{item.main}</p>
           </div>
         ))

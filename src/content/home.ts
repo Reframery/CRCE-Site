@@ -29,7 +29,7 @@ export const focusGroups = [
     action: "Learn More",
     href: "/research-inclusion-and-social-entrepreneurship",
   },
-];
+] as const;
 
 export const directorMessage =
   "At CRCE, we believe in fostering inclusive and sustainable entrepreneurship to empower marginalized communities locally and globally. Our journey began with the establishment of the Reframery, driven by the urgent need to address the disproportionate impact of COVID-19 on immigrants, women, persons with disabilities, and minority-owned businesses. Recognizing the existing disparities in access to resources and support, we are dedicated to creating a nurturing environment where everyone has the opportunity to thrive.";

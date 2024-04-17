@@ -4,26 +4,24 @@ import { directorMessage } from "@/content/home.ts"
 import benson from "@/images/home/benson.png"
 ---
 
-<div class="bg-[#efefef]">
-  <div class="container flex flex-col gap-14 p-8 md:flex-row md:p-12">
-    <div class="grid flex-[1] place-items-center max-lg:self-center">
-      <Image
-        src={benson}
-        alt="Benson Honig, CRCE Director"
-        class="border-gold aspect-square h-full max-h-72 w-full max-w-72 rounded-full border-4 object-cover object-top"
-      />
-    </div>
-    <div class="flex flex-[2] flex-col gap-4">
-      <h2 class="text-primary-500 text-3xl font-bold">
-        Message from the Director
-      </h2>
-      <p>{directorMessage}</p>
-      <a
-        href="/about"
-        class="bg-maroon hover:bg-maroon/85 inline w-fit items-center rounded-full px-6 py-3 text-lg font-medium text-white transition-colors duration-[250ms] ease-in-out"
-      >
-        Learn More
-      </a>
-    </div>
+<section class="container flex flex-col gap-14 p-8 md:flex-row md:p-12">
+  <div class="grid flex-[1] place-items-center max-lg:self-center">
+    <Image
+      src={benson}
+      alt="Benson Honig, CRCE Director"
+      class="aspect-square h-full max-h-72 w-full max-w-72 rounded-full border-4 border-gold object-cover object-top"
+    />
   </div>
-</div>
+  <div class="flex flex-[2] flex-col gap-4">
+    <h2 class="text-primary-500 text-3xl font-bold">
+      Message from the Director
+    </h2>
+    <p>{directorMessage}</p>
+    <a
+      href="/about"
+      class="inline w-fit items-center rounded-full bg-maroon px-6 py-3 text-lg font-medium text-white transition-colors duration-[250ms] ease-in-out hover:bg-maroon/85"
+    >
+      Learn More
+    </a>
+  </div>
+</section>

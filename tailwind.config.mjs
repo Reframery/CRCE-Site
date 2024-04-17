@@ -23,8 +23,8 @@ export default {
         mcmasterSmall: "0 0 16px 0 rgba(94, 106, 113, 0.6)",
       },
       colors: {
-        muted: "#4F595F",
-        "heading-foreground": "#333",
+        muted: { DEFAULT: "#f8f9fa", foreground: "#495057" },
+        foreground: "#111",
         gallery: "#ebebeb",
         nevada: "#5e6a71",
         maroon: "#7a003c",

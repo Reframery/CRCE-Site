@@ -8,14 +8,14 @@ const pathname = new URL(Astro.request.url).pathname
 ---
 
 <header class="bg-maroon font-sans-condensed text-xl text-white">
-  <nav class="hidden items-center justify-center md:flex">
+  <nav class="hidden items-center justify-center lg:flex">
     {
       siteLinks.map((link) => (
         <a
           class={cn(
-            "relative inline-flex items-center gap-2 px-8 py-4 text-center transition-colors duration-[250ms] hover:bg-white hover:text-black hover:shadow-lg",
+            "relative inline-flex items-center gap-2 px-8 py-4 text-center transition-colors duration-[250ms] hover:bg-white hover:text-foreground hover:shadow-lg",
             isActive(link.pathname, pathname) &&
-              "after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-[80%] after:-translate-x-1/2 after:bg-white after:content-['']"
+              "after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-[80%] after:-translate-x-1/2 after:bg-gold after:content-['']"
           )}
           href={link.pathname}
         >

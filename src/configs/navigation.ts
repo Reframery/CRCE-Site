@@ -12,6 +12,14 @@ export const siteLinks = [
     pathname: "/people-researchers-students-faculty",
   },
   {
+    label: "Student Training",
+    pathname: "/student-training",
+  },
+  {
+    label: "Reframery",
+    pathname: "https://reframery.org/",
+  },
+  {
     label: "RISE",
     pathname: "/research-inclusion-and-social-entrepreneurship",
   },

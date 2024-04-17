@@ -5,9 +5,9 @@ import { siteLinks } from "@/configs/navigation.ts";
 export default function MobileNavbar({ pathname }: { pathname: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="block md:hidden">
+    <nav className="block lg:hidden">
       <button
-        className="relative w-full px-8 py-4 text-center uppercase transition-colors duration-[250ms] hover:bg-black/40"
+        className="relative w-full px-8 py-4 text-center uppercase transition-colors duration-[250ms] hover:bg-foreground/40"
         onClick={() => setOpen(!open)}
       >
         {siteLinks.find((link) => isActive(link.pathname, pathname))?.label}
@@ -41,8 +41,8 @@ export default function MobileNavbar({ pathname }: { pathname: string }) {
             <a
               key={link.pathname}
               className={cn(
-                "relative inline-flex items-center justify-center gap-2 px-8 py-4 text-center transition-colors duration-[250ms] hover:bg-white hover:text-black hover:shadow-lg",
-                isActive(link.pathname, pathname) && "bg-black/40",
+                "relative inline-flex items-center justify-center gap-2 px-8 py-4 text-center transition-colors duration-[250ms] hover:bg-white hover:text-foreground hover:shadow-lg",
+                isActive(link.pathname, pathname) && "bg-foreground/40",
               )}
               href={link.pathname}
             >

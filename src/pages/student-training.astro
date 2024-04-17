@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets"
+import Breadcrumbs from "@/components/Breadcrumbs.astro"
+import { focusGroups } from "@/content/home"
+import { students, email, linkedIn } from "@/content/student-training"
+import Layout from "@/layouts/Layout.astro"
+
+const title = "Student Training"
+const description = focusGroups[1].description
+---
+
+<Layout {title} {description}>
+  <Breadcrumbs border={false} />
+  <div class="bg-gallery p-8 md:p-12">
+    <section class="container">
+      <h1 class="mb-8 text-4xl font-semibold md:mb-12">Student Training</h1>
+      <div class="space-y-8 md:space-y-12">
+        {
+          students.map((student) => (
+            <div class="flex flex-col border bg-white lg:flex-row">
+              <div class="image-container flex shrink-0 items-center px-6 lg:px-0 lg:py-6">
+                <Image
+                  src={student.image}
+                  alt={student.name}
+                  class="size-36 rounded-full border-[6px] border-white shadow-mcmasterSmall shadow-nevada/40 md:size-40 lg:size-44"
+                />
+              </div>
+              <div class="p-6 md:border-r lg:flex-grow lg:pl-12">
+                <h2 class="mb-2 text-3xl font-semibold">{student.name}</h2>
+                <h3 class="mb-4 text-2xl font-semibold text-maroon">
+                  {student.role}
+                </h3>
+                <p class="text-muted-foreground">{student.roleDescription}</p>
+              </div>
+              <div class="border-t p-6 lg:shrink-0 lg:border-t-0">
+                <h2 class="mb-4 text-xl font-semibold text-maroon">
+                  Contact Information
+                </h2>
+                <div class="space-y-2">
+                  {student.socials.map((social) => (
+                    <p>
+                      <span class="text-muted-foreground">{social.type}:</span>
+                      <a
+                        href={
+                          social.type === "Email"
+                            ? email(social.type)
+                            : linkedIn(social.type)
+                        }
+                        class="mr-4 hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {social.label}
+                      </a>
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .image-container {
+    background: linear-gradient(
+      to bottom,
+      #ebebeb 0%,
+      #ebebeb 50%,
+      #fff 50%,
+      #fff 100%
+    );
+  }
+
+  @media (min-width: 1024px) {
+    .image-container {
+      background: linear-gradient(
+        to right,
+        #ebebeb 0%,
+        #ebebeb 50%,
+        #fff 50%,
+        #fff 100%
+      );
+    }
+  }
+</style>

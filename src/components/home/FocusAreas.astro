@@ -3,8 +3,10 @@ import FocusCard from "@/components/home/FocusCard.astro"
 import { focusGroups } from "@/content/home.ts"
 ---
 
-<div
-  class="container grid grid-cols-1 p-8 max-lg:place-items-center md:p-12 lg:grid-cols-3"
->
-  {focusGroups.map((group) => <FocusCard {...group} />)}
+<div class="bg-[#efefef] p-8 md:p-12">
+  <section
+    class="container grid grid-cols-1 gap-6 max-lg:place-items-center lg:grid-cols-3"
+  >
+    {focusGroups.map((group) => <FocusCard {...group} />)}
+  </section>
 </div>

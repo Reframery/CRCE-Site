@@ -12,35 +12,36 @@ interface Props {
 const { href, title, description, action, image } = Astro.props
 ---
 
-<a
-  href={href}
-  class="border-maroon group flex max-w-[720px] flex-col border lg:border-r-0 lg:last:border-r"
->
-  <Image
-    src={image}
-    alt={title}
-    loading="eager"
-    class="border-b-maroon border-b transition-all duration-[250ms] group-hover:shadow-2xl"
-  />
+<a href={href} class="group flex max-w-[620px] flex-col border">
   <div
-    class="group-hover:bg-maroon flex flex-grow flex-col gap-4 p-6 transition-colors duration-[250ms] group-hover:text-white"
+    class="overflow-hidden border-b transition-all duration-300 group-hover:border-b-maroon group-hover:shadow-2xl"
+  >
+    <Image
+      src={image}
+      alt={title}
+      loading="eager"
+      class="scale-105 transition-transform duration-300 group-hover:scale-100"
+    />
+  </div>
+  <div
+    class="flex flex-grow flex-col gap-4 p-6 transition-colors duration-300 group-hover:bg-maroon group-hover:text-white bg-white"
   >
     <h2 class="text-2xl font-bold">
       {title}
     </h2>
     <div
-      class="group-hover:bg-gold bg-maroon h-1 w-10 transition-colors duration-[250ms]"
+      class="h-1 w-10 bg-maroon transition-colors duration-300 group-hover:bg-gold"
     >
     </div>
     <p
-      class="text-nevada transition-colors duration-[250ms] group-hover:text-white"
+      class="text-nevada transition-colors duration-300 group-hover:text-white"
     >
       {description}
     </p>
     <div class="mt-auto flex items-center justify-between">
-      <span class="text-lg font-medium">{action}</span>
+      <span class="text-lg font-sans-condensed">{action}</span>
       <svg
-        class="group-hover:bg-gold bg-maroon size-5 -translate-x-3 rounded-full p-1 text-white transition-all duration-[250ms] group-hover:translate-x-0 group-hover:text-black"
+        class="size-5 -translate-x-3 rounded-full bg-maroon p-1 text-white transition-all duration-300 group-hover:translate-x-0 group-hover:bg-gold group-hover:text-black"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

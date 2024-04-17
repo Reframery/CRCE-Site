@@ -15,7 +15,7 @@ const description =
   <div class="px-8 md:px-12">
     <section class="container mb-12 p-0 max-md:!max-w-xl">
       <h1 class="my-12 text-4xl font-semibold">CRCE Team</h1>
-      <MembersGrid members={coreMembers} />
+      <MembersGrid members={coreMembers} eagerlyLoad={6} />
       <MembersGrid members={advisoryCommittee} title="Advisory Committee" />
     </section>
   </div>

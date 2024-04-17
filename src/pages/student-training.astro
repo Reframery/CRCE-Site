@@ -16,12 +16,13 @@ const description = focusGroups[1].description
       <h1 class="mb-8 text-4xl font-semibold md:mb-12">Student Training</h1>
       <div class="space-y-8 md:space-y-12">
         {
-          students.map((student) => (
+          students.map((student, i) => (
             <div class="flex flex-col border bg-white lg:flex-row">
               <div class="image-container flex shrink-0 items-center px-6 lg:px-0 lg:py-6">
                 <Image
                   src={student.image}
                   alt={student.name}
+                  loading={i < 2 ? "eager" : "lazy"}
                   class="size-32 rounded-full border-[6px] border-white shadow-mcmasterSmall shadow-nevada/40 sm:size-36 md:size-40 lg:size-44"
                 />
               </div>

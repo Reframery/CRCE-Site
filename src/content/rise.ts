@@ -31,6 +31,6 @@ export const boxes = [
     link: {
       label: "Contact Us",
       href: "/contact",
-    }
+    },
   },
 ];

@@ -12,15 +12,20 @@ import riseLogo from "@/images/rise/rise-logo.png"
   <Breadcrumbs />
   <div class="p-8 md:p-12 md:pt-8">
     <header class="container mb-12 text-center">
-      <Image src={riseLogo} alt="RISE" class="mx-auto mb-4 w-96" />
+      <Image
+        src={riseLogo}
+        alt="RISE"
+        class="mx-auto mb-4 w-96"
+        loading="eager"
+      />
       <h1 class="mb-6 text-4xl font-semibold">
         Research, Inclusion, and Social Entrepreneurship (RISE)
       </h1>
-      <p class="max-w-5xl text-xl text-nevada mx-auto">{description}</p>
+      <p class="mx-auto max-w-5xl text-xl text-nevada">{description}</p>
     </header>
     <section class="container space-y-10">
       {
-        boxes.map((box) => (
+        boxes.map((box, i) => (
           <div
             class="box grid grid-flow-row border-b-2 border-b-nevada
           shadow-mcmaster md:grid-cols-6
@@ -29,6 +34,7 @@ import riseLogo from "@/images/rise/rise-logo.png"
             <Image
               src={box.image}
               alt={box.title}
+              loading={i === 0 ? "eager" : "lazy"}
               class="self-stretch object-cover md:col-span-2"
             />
             <div class="p-6 md:col-span-4">

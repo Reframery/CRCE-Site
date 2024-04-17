@@ -42,7 +42,7 @@ const socials = [
 ]
 ---
 
-<footer class="bg-maroon flex flex-col items-center p-8 md:p-12 text-white">
+<footer class="flex flex-col items-center bg-maroon p-8 text-white md:p-12">
   <Image src={mcmasterLogo} alt="McMcaster logo" class="w-[420px]" />
   <nav
     class="mb-4 mt-6 flex w-full flex-col items-center justify-center gap-x-24 gap-y-4 border-y border-nevada/60 py-5 font-sans-condensed font-semibold tracking-wider md:flex-row"
@@ -60,14 +60,14 @@ const socials = [
       ))
     }
   </nav>
-  <nav class="flex gap-4 sm:gap-8 py-4 md:gap-11 flex-wrap justify-center">
+  <nav class="flex flex-wrap justify-center gap-4 py-4 sm:gap-8 md:gap-11">
     {
       socials.map((social) => (
         <a
           href={social.link}
           target="_blank"
           rel="noopener noreferrer"
-          class="hover:border-gold hover:text-gold inline-flex rounded-full border-[2px] p-[5px] transition-colors duration-[250ms]"
+          class="inline-flex rounded-full border-[2px] p-[5px] transition-colors duration-[250ms] hover:border-gold hover:text-gold"
           aria-label={social.name}
         >
           <Icon name={social.name} size={18} />
@@ -75,7 +75,9 @@ const socials = [
       ))
     }
   </nav>
-  <nav class="flex flex-wrap items-center gap-4 sm:gap-6 py-4 text-center justify-center">
+  <nav
+    class="flex flex-wrap items-center justify-center gap-4 py-4 text-center sm:gap-6"
+  >
     <a
       class="font-sans-condensed text-sm font-semibold tracking-wider hover:underline"
       href="https://www.google.ca/maps/place/McMaster+University/@43.260879,-79.919225,17z/data=%213m1%214b1%214m2%213m1%211s0x882c84ac44f72ac1:0x399e00ea6143011c"

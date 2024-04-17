@@ -24,7 +24,7 @@ const { href, title, description, action, image } = Astro.props
     />
   </div>
   <div
-    class="flex flex-grow flex-col gap-4 p-6 transition-colors duration-300 group-hover:bg-maroon group-hover:text-white bg-white"
+    class="flex flex-grow flex-col gap-4 bg-white p-6 transition-colors duration-300 group-hover:bg-maroon group-hover:text-white"
   >
     <h2 class="text-2xl font-bold">
       {title}
@@ -39,7 +39,7 @@ const { href, title, description, action, image } = Astro.props
       {description}
     </p>
     <div class="mt-auto flex items-center justify-between">
-      <span class="text-lg font-sans-condensed">{action}</span>
+      <span class="font-sans-condensed text-lg">{action}</span>
       <svg
         class="size-5 -translate-x-3 rounded-full bg-maroon p-1 text-white transition-all duration-300 group-hover:translate-x-0 group-hover:bg-gold group-hover:text-foreground"
         fill="none"

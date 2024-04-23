@@ -2,8 +2,9 @@
 import { Image } from "astro:assets"
 import Breadcrumbs from "@/components/Breadcrumbs.astro"
 import { focusGroups } from "@/content/home"
-import { students, email, linkedIn } from "@/content/student-training"
+import { students } from "@/content/student-training"
 import Layout from "@/layouts/Layout.astro"
+import { email, linkedIn } from "@/lib/socials"
 
 const title = "Student Training"
 const description = focusGroups[1].description

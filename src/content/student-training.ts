@@ -5,12 +5,14 @@ import allison from "@/images/student-training/allison-preyra.jpg";
 import ayat from "@/images/student-training/ayat-atif.jpeg";
 import haley from "@/images/student-training/haley-piper.jpg";
 import mia from "@/images/student-training/mia-aamir.jpg";
+import musfirah from "@/images/student-training/musfirah-muzafar.jpeg";
 import saad from "@/images/student-training/saad-tariq.jpg";
 import salina from "@/images/student-training/salina-tellis.jpg";
 import sehyeon from "@/images/student-training/sehyeon-hong.jpg";
 import shayla from "@/images/student-training/shayla-bird.jpeg";
 import veerash from "@/images/student-training/veerash-palanichamy.jpg";
 import wonu from "@/images/student-training/wonu-adelusi.jpeg";
+import yusra from "@/images/student-training/yusra-hassan.jpg";
 
 type Social = {
   type: "Email" | "LinkedIn";
@@ -24,11 +26,6 @@ type Student = {
   roleDescription: string;
   socials: Social[];
 };
-
-export const email = (label: string) => `mailto:${label}`;
-
-export const linkedIn = (label: string) =>
-  `https://www.linkedin.com/in/${label}`;
 
 export const students: Student[] = [
   {
@@ -96,6 +93,40 @@ export const students: Student[] = [
       {
         type: "LinkedIn",
         label: "saad-tariq-cs",
+      },
+    ],
+  },
+  {
+    image: musfirah,
+    name: "Musfirah Muzafar",
+    role: "Business Research & Development Strategist",
+    roleDescription:
+      "I am responsible for developing comprehensive modules on fundamental business principles, tailored to accommodate varying levels of complexity in business plans and operations across different entrepreneurial learner groups globally. I adapt resource structures for optimal learning outcomes, and actively contribute to research initiatives by gathering and analyzing existing research/data for case development and workshop advancement. I have also served as a bridge between Reframery and partner entities maintaining strong community ties. My goal is to strengthen my business expertise, strong research skills, a cross-cultural understanding, communication abilities, and work with those who share my passion of a global outlook on business.",
+    socials: [
+      {
+        type: "Email",
+        label: "muzafarm@mcmaster.ca",
+      },
+      {
+        type: "LinkedIn",
+        label: "musfirahmuzafar",
+      },
+    ],
+  },
+  {
+    image: yusra,
+    name: "Yusra Hassan",
+    role: "Research & Curriculum Development Specialist",
+    roleDescription:
+      "In my role as a curriculum development and research professional, I am in charge of designing educational business courses that align with our organization's objectives. At Reframery, my work takes on an interesting dimension as I conduct in-depth research on demographic patterns in regions such as Ukraine and Kenya. This research informs the development of courses to ensure the best results for the populations that we serve. By staying attuned to the evolving nature of our target markets, I am able to design course content in a manner that is not only academically rigorous but is also relevant and engaging in their given circumstances.",
+    socials: [
+      {
+        type: "Email",
+        label: "hassay18@mcmaster.ca",
+      },
+      {
+        type: "LinkedIn",
+        label: "yusrahassan0511",
       },
     ],
   },

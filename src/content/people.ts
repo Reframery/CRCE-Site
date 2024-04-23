@@ -1,26 +1,27 @@
 import placeholder from "@/images/people/placeholder.png";
 
-import bensonHonig from "@/images/people/benson-honig.jpg";
-import anaSiqueira from "@/images/people/ana-siquiera.jpg";
-import sandeepRaha from "@/images/people/sandeep-raha.jpg";
-import trishRuebottom from "@/images/people/trish-ruebottom.jpg";
-import brentMcKnight from "@/images/people/brent-mcknight.jpg";
-import baniyelmeZoogah from "@/images/people/baniyelme-zoogah.jpg";
-import sashVaid from "@/images/people/sash-vaid.jpg";
 import addisuLashitew from "@/images/people/addisu-lashitew.jpg";
-import yoontaeJeon from "@/images/people/yoontae-jeon.jpg";
+import anaSiqueira from "@/images/people/ana-siquiera.jpg";
+import baniyelmeZoogah from "@/images/people/baniyelme-zoogah.jpg";
+import bensonHonig from "@/images/people/benson-honig.jpg";
+import brentMcKnight from "@/images/people/brent-mcknight.jpg";
 import jacquesCarette from "@/images/people/jacques-carette.jpg";
+import javidNafari from "@/images/people/javid-nafari.jpg";
 import khalidNainar from "@/images/people/khalid-nainar.jpg";
+import sandeepRaha from "@/images/people/sandeep-raha.jpg";
+import sashVaid from "@/images/people/sash-vaid.jpg";
+import toliAmare from "@/images/people/toli-amare.jpg";
+import trishRuebottom from "@/images/people/trish-ruebottom.jpg";
+import yoontaeJeon from "@/images/people/yoontae-jeon.jpg";
 
-import shahamakRezaei from "@/images/people/shahamak-rezaei.png";
-import mikaelSamuelsson from "@/images/people/mikael-samuelsson.jpg";
 import johnChinnick from "@/images/people/john-chinnick.jpeg";
+import mikaelSamuelsson from "@/images/people/mikael-samuelsson.jpg";
+import shahamakRezaei from "@/images/people/shahamak-rezaei.png";
 
-export type SocialType = "email" | "linkedin" | "profile" | "publication";
+export type SocialType = "email" | "linkedin";
 
 type Social = {
   type: SocialType;
-  href?: string;
   label: string;
 };
 
@@ -67,6 +68,28 @@ export const coreMembers: Person[] = [
       {
         type: "email",
         label: "siqueiraa@wpunj.edu",
+      },
+    ],
+  },
+  {
+    image: javidNafari,
+    name: "Javid Nafari",
+    subTitles: ["PhD Candidate", DSB],
+    socials: [
+      {
+        type: "email",
+        label: "nafarij@mcmaster.ca",
+      },
+    ],
+  },
+  {
+    image: toliAmare,
+    name: "Toli Amare",
+    subTitles: ["PhD Candidate", DSB],
+    socials: [
+      {
+        type: "email",
+        label: "amaret1@mcmaster.ca",
       },
     ],
   },

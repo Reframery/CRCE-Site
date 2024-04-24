@@ -14,8 +14,12 @@ const { href, title, description, action, image } = Astro.props
 
 <a href={href} class="group flex max-w-[620px] flex-col border">
   <div
-    class="overflow-hidden border-b transition-all duration-300 group-hover:border-b-maroon group-hover:shadow-2xl"
+    class="relative overflow-hidden transition-shadow duration-300 group-hover:shadow-2xl"
   >
+    <div
+      class="absolute bottom-0 z-10 h-[1px] w-full bg-[#e5e7eb] transition-colors duration-300 group-hover:bg-maroon"
+    >
+    </div>
     <Image
       src={image}
       alt={title}

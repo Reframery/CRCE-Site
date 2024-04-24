@@ -1,8 +1,8 @@
 ---
-import { Icon } from "astro-icon/components"
 import { Image } from "astro:assets"
-import type { Person, SocialType } from "@/content/people"
-import { email, linkedIn } from "@/lib/socials"
+import { Icon } from "astro-icon/components"
+import type { Person } from "@/content/people"
+import { email, iconMap, linkedIn } from "@/lib/socials"
 
 interface Props {
   title?: string
@@ -11,11 +11,6 @@ interface Props {
 }
 
 const { members, title, eagerlyLoad } = Astro.props
-
-const iconMap: Record<SocialType, string> = {
-  email: "lucide:mail",
-  linkedin: "fa-brands:linkedin-in",
-}
 ---
 
 {title && <h2 class="mb-8 mt-12 text-3xl font-semibold">{title}</h2>}
@@ -47,7 +42,7 @@ const iconMap: Record<SocialType, string> = {
             return (
               <a
                 href={
-                  social.type === "email"
+                  social.type === "Email"
                     ? email(social.label)
                     : linkedIn(social.label)
                 }

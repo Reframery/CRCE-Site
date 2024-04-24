@@ -23,7 +23,7 @@ export default function MobileNavbar({ pathname }: { pathname: string }) {
           strokeLinejoin="round"
           className={cn(
             "absolute right-4 top-1/2 -translate-y-1/2",
-            open && "rotate-180 transform",
+            open && "rotate-180 transform"
           )}
         >
           <path d="m6 9 6 6 6-6" />
@@ -32,9 +32,8 @@ export default function MobileNavbar({ pathname }: { pathname: string }) {
       <div
         className={cn(
           "grid grid-rows-[0fr] transition-all duration-[300ms]",
-          open && "grid-rows-[1fr]",
+          open && "grid-rows-[1fr]"
         )}
-        aria-hidden={!open}
       >
         <div className="flex flex-col overflow-hidden">
           {siteLinks.map((link) => (
@@ -42,7 +41,7 @@ export default function MobileNavbar({ pathname }: { pathname: string }) {
               key={link.pathname}
               className={cn(
                 "relative inline-flex items-center justify-center gap-2 px-8 py-4 text-center transition-colors duration-[250ms] hover:bg-white hover:text-foreground hover:shadow-lg",
-                isActive(link.pathname, pathname) && "bg-foreground/40",
+                isActive(link.pathname, pathname) && "bg-foreground/40"
               )}
               href={link.pathname}
             >

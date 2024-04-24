@@ -1,4 +1,5 @@
 import type { ImageMetadata } from "astro";
+import type { Social } from "@/lib/socials";
 
 import placeholder from "@/images/people/placeholder.png";
 import allison from "@/images/student-training/allison-preyra.jpg";
@@ -13,11 +14,6 @@ import shayla from "@/images/student-training/shayla-bird.jpeg";
 import veerash from "@/images/student-training/veerash-palanichamy.jpg";
 import wonu from "@/images/student-training/wonu-adelusi.jpeg";
 import yusra from "@/images/student-training/yusra-hassan.jpg";
-
-type Social = {
-  type: "Email" | "LinkedIn";
-  label: string;
-};
 
 type Student = {
   image: ImageMetadata;

@@ -85,7 +85,7 @@ export const coreMembers: Person[] = [
   person("Benson Honig, Ph.D.", bensonHonig)
     .title("Director, CRCE")
     .subTitles(
-      "Chair of Entrepreneurial Leadership",
+      "Business Research Chair in Social Entrepreneurship",
       "Co-founder Reframery",
       DSB,
       McMaster

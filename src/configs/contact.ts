@@ -1,1 +1,1 @@
-export const emails = ["bhonig@mcmaster.ca", "nafarij@mcmaster.ca"];
+export const emails = ["bhonig@mcmaster.ca", "nafarij@mcmaster.ca"]

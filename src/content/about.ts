@@ -1,12 +1,12 @@
-import approach from "@/images/about/approach.png";
-import services from "@/images/about/services-and-impact.png";
-import unique from "@/images/about/unique-position.png";
-import collaborate from "@/images/about/why-collaborate-with-us.png";
+import approach from "@/images/about/approach.png"
+import services from "@/images/about/services-and-impact.png"
+import unique from "@/images/about/unique-position.png"
+import collaborate from "@/images/about/why-collaborate-with-us.png"
 
 export const about = {
   title: "About CRCE",
   main: "The Research Centre for Community Oriented Entrepreneurship (CRCE) was born out of the Reframery initiative, a response to the disproportionate impact of COVID-19 on immigrant women, persons with disabilities, and minority-owned businesses. Recognizing the unique challenges and underrepresentation in entrepreneurship among these groups, CRCE aims to foster sustainable and inclusive business practices, contributing to a more equitable entrepreneurial landscape.",
-};
+}
 
 export const missionVision = [
   {
@@ -17,7 +17,7 @@ export const missionVision = [
     title: "Our Vision",
     main: "CRCE seeks to develop future generations of diverse entrepreneurs through innovative scholarship and educational services supporting environmentally responsible and socially inclusive entrepreneurship.",
   },
-];
+]
 
 export const cards = [
   {
@@ -40,4 +40,4 @@ export const cards = [
     title: "Our Unique Position ",
     main: "What sets CRCE apart is our unwavering dedication to inclusivity, social impact, and community-oriented entrepreneurship. Our commitment is not just to equity but to creating a level playing field where every entrepreneur has the opportunity to succeed. Our extensive network of partnerships and our research-driven, evidence-based approach enable us to maximize impact and drive significant, positive change, making CRCE a beacon of hope and a leader in fostering sustainable entrepreneurial ecosystems.",
   },
-];
+]

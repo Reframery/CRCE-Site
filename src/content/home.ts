@@ -1,8 +1,8 @@
-import left from "@/images/home/left.jpg";
-import center from "@/images/home/center.jpg";
-import right from "@/images/home/right.png";
-import vision from "@/images/home/vision.jpg";
-import mission from "@/images/home/mission.jpg";
+import left from "@/images/home/left.jpg"
+import center from "@/images/home/center.jpg"
+import right from "@/images/home/right.png"
+import vision from "@/images/home/vision.jpg"
+import mission from "@/images/home/mission.jpg"
 
 export const focusGroups = [
   {
@@ -29,10 +29,10 @@ export const focusGroups = [
     action: "Learn More",
     href: "/research-inclusion-and-social-entrepreneurship",
   },
-] as const;
+] as const
 
 export const directorMessage =
-  "At CRCE, we believe in fostering inclusive and sustainable entrepreneurship to empower marginalized communities locally and globally. Our journey began with the establishment of the Reframery, driven by the urgent need to address the disproportionate impact of COVID-19 on immigrants, women, persons with disabilities, and minority-owned businesses. Recognizing the existing disparities in access to resources and support, we are dedicated to creating a nurturing environment where everyone has the opportunity to thrive.";
+  "At CRCE, we believe in fostering inclusive and sustainable entrepreneurship to empower marginalized communities locally and globally. Our journey began with the establishment of the Reframery, driven by the urgent need to address the disproportionate impact of COVID-19 on immigrants, women, persons with disabilities, and minority-owned businesses. Recognizing the existing disparities in access to resources and support, we are dedicated to creating a nurturing environment where everyone has the opportunity to thrive."
 
 export const visionMission = [
   {
@@ -47,4 +47,4 @@ export const visionMission = [
       "CRCE's mission is to foster research that builds prosperous and resilient communities, emphasizing environmental sustainability and community focus. By supporting diverse individuals CRCE aims to spur innovative solutions to current and future challenges. CRCE's goal is to promote economic prosperity, environmental sustainability, and social inclusion.",
     image: mission,
   },
-];
+]

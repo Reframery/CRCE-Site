@@ -1,9 +1,9 @@
-import mentorship from "@/images/rise/mentorship.jpg";
-import interdisciplinary from "@/images/rise/interdisciplinary.jpg";
-import collaborate from "@/images/rise/collaborate.jpg";
+import mentorship from "@/images/rise/mentorship.jpg"
+import interdisciplinary from "@/images/rise/interdisciplinary.jpg"
+import collaborate from "@/images/rise/collaborate.jpg"
 
 export const description =
-  "RISE is situated at the intersection of cutting-edge research and practical social change. It embodies our commitment to creating more inclusive and diverse entrepreneurial ecosystems. We aim to dismantle barriers and foster a community where all entrepreneurs can thrive. Leveraging the strength of interdisciplinary collaboration across faculties and universities, RISE is not just a program but a movement towards fostering sustainable business practices that are inclusive and accessible to all.";
+  "RISE is situated at the intersection of cutting-edge research and practical social change. It embodies our commitment to creating more inclusive and diverse entrepreneurial ecosystems. We aim to dismantle barriers and foster a community where all entrepreneurs can thrive. Leveraging the strength of interdisciplinary collaboration across faculties and universities, RISE is not just a program but a movement towards fostering sustainable business practices that are inclusive and accessible to all."
 
 export const boxes = [
   {
@@ -33,4 +33,4 @@ export const boxes = [
       href: "/contact",
     },
   },
-];
+]

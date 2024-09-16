@@ -1,85 +1,85 @@
-import type { Social } from "@/lib/socials";
+import type { Social } from "@/lib/socials"
 
-import placeholder from "@/images/people/placeholder.png";
+import placeholder from "@/images/people/placeholder.png"
 
-import addisuLashitew from "@/images/people/addisu-lashitew.jpg";
-import anaSiqueira from "@/images/people/ana-siquiera.jpg";
-import baniyelmeZoogah from "@/images/people/baniyelme-zoogah.jpg";
-import bensonHonig from "@/images/people/benson-honig.jpg";
-import brentMcKnight from "@/images/people/brent-mcknight.jpg";
-import jacquesCarette from "@/images/people/jacques-carette.jpg";
-import javidNafari from "@/images/people/javid-nafari.jpg";
-import khalidNainar from "@/images/people/khalid-nainar.jpg";
-import nancyDoubleday from "@/images/people/nancy-doubleday.jpg";
-import sandeepRaha from "@/images/people/sandeep-raha.jpg";
-import sashVaid from "@/images/people/sash-vaid.jpg";
-import toliAmare from "@/images/people/toli-amare.jpg";
-import trishRuebottom from "@/images/people/trish-ruebottom.jpg";
-import yoontaeJeon from "@/images/people/yoontae-jeon.jpg";
+import addisuLashitew from "@/images/people/addisu-lashitew.jpg"
+import anaSiqueira from "@/images/people/ana-siquiera.jpg"
+import baniyelmeZoogah from "@/images/people/baniyelme-zoogah.jpg"
+import bensonHonig from "@/images/people/benson-honig.jpg"
+import brentMcKnight from "@/images/people/brent-mcknight.jpg"
+import jacquesCarette from "@/images/people/jacques-carette.jpg"
+import javidNafari from "@/images/people/javid-nafari.jpg"
+import khalidNainar from "@/images/people/khalid-nainar.jpg"
+import nancyDoubleday from "@/images/people/nancy-doubleday.jpg"
+import sandeepRaha from "@/images/people/sandeep-raha.jpg"
+import sashVaid from "@/images/people/sash-vaid.jpg"
+import toliAmare from "@/images/people/toli-amare.jpg"
+import trishRuebottom from "@/images/people/trish-ruebottom.jpg"
+import yoontaeJeon from "@/images/people/yoontae-jeon.jpg"
 
-import alexandraDavid from "@/images/people/alexandra-david.jpg";
-import danielaBolzani from "@/images/people/daniela-bolzani.jpg";
-import dominikaBosekRak from "@/images/people/dominika-bosek.jpg";
-import johnChinnick from "@/images/people/john-chinnick.jpeg";
-import josephLampel from "@/images/people/joseph-lampel.jpg";
-import kimKlyver from "@/images/people/kim-klyver.jpg";
-import mariaAluchna from "@/images/people/maria-aluchna.jpeg";
-import martaPachocka from "@/images/people/marta-pachocka.jpg";
-import michelleRichey from "@/images/people/michelle-richey.jpg";
-import mikaelSamuelsson from "@/images/people/mikael-samuelsson.jpg";
-import shahamakRezaei from "@/images/people/shahamak-rezaei.png";
+import alexandraDavid from "@/images/people/alexandra-david.jpg"
+import danielaBolzani from "@/images/people/daniela-bolzani.jpg"
+import dominikaBosekRak from "@/images/people/dominika-bosek.jpg"
+import johnChinnick from "@/images/people/john-chinnick.jpeg"
+import josephLampel from "@/images/people/joseph-lampel.jpg"
+import kimKlyver from "@/images/people/kim-klyver.jpg"
+import mariaAluchna from "@/images/people/maria-aluchna.jpeg"
+import martaPachocka from "@/images/people/marta-pachocka.jpg"
+import michelleRichey from "@/images/people/michelle-richey.jpg"
+import mikaelSamuelsson from "@/images/people/mikael-samuelsson.jpg"
+import shahamakRezaei from "@/images/people/shahamak-rezaei.png"
 
 export type Person = {
-  image: ImageMetadata;
-  name: string;
-  title?: string;
-  bio?: string;
-  subTitles?: string[];
-  socials: Social[];
-};
+  image: ImageMetadata
+  name: string
+  title?: string
+  bio?: string
+  subTitles?: string[]
+  socials: Social[]
+}
 
 class PersonBuilder {
-  private person: Person;
+  private person: Person
 
   constructor(name: string, image: ImageMetadata) {
     this.person = {
       image,
       name,
       socials: [],
-    };
+    }
   }
 
   title(title: string) {
-    this.person.title = title;
-    return this;
+    this.person.title = title
+    return this
   }
 
   subTitles(...subTitles: string[]) {
-    this.person.subTitles = subTitles;
-    return this;
+    this.person.subTitles = subTitles
+    return this
   }
 
   bio(bio: string) {
-    this.person.bio = bio;
-    return this;
+    this.person.bio = bio
+    return this
   }
 
   socials(...socials: Social[]) {
-    this.person.socials = socials;
-    return this;
+    this.person.socials = socials
+    return this
   }
 
   build() {
-    return this.person;
+    return this.person
   }
 }
 
 const person = (name: string, image: ImageMetadata = placeholder) =>
-  new PersonBuilder(name, image);
+  new PersonBuilder(name, image)
 
-const DSB = "DeGroote School of Business";
-const McMaster = "McMaster University";
-const SGH = "SGH Warsaw School of Economics";
+const DSB = "DeGroote School of Business"
+const McMaster = "McMaster University"
+const SGH = "SGH Warsaw School of Economics"
 
 export const coreMembers: Person[] = [
   person("Benson Honig, Ph.D.", bensonHonig)
@@ -217,7 +217,7 @@ export const coreMembers: Person[] = [
     )
     .socials({ type: "Email", label: "doublen@mcmaster.ca" })
     .build(),
-];
+]
 
 export const advisoryCommittee: Person[] = [
   person("Shahamak Rezaei", shahamakRezaei)
@@ -293,4 +293,4 @@ export const advisoryCommittee: Person[] = [
     .subTitles("Assistant Professor", `${SGH} and Centre of Migration Research`)
     .socials({ type: "Email", label: "mpachoc@sgh.waw.pl" })
     .build(),
-];
+]

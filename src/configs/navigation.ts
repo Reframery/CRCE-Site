@@ -27,4 +27,4 @@ export const siteLinks = [
     label: "Contact Us",
     pathname: "/contact",
   },
-];
+]

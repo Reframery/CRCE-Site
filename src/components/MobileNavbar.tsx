@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { cn, isActive } from "@/lib/utils.ts";
-import { siteLinks } from "@/configs/navigation.ts";
+import { useState } from "react"
+import { cn, isActive } from "@/lib/utils.ts"
+import { siteLinks } from "@/configs/navigation.ts"
 
 export default function MobileNavbar({ pathname }: { pathname: string }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   return (
     <nav className="block lg:hidden">
       <button
@@ -51,5 +51,5 @@ export default function MobileNavbar({ pathname }: { pathname: string }) {
         </div>
       </div>
     </nav>
-  );
+  )
 }

@@ -7,7 +7,7 @@ export type Social = {
 
 export const iconMap: Record<SocialType, string> = {
   Email: "lucide:mail",
-  LinkedIn: "fa-brands:linkedin-in",
+  LinkedIn: "fa6-brands:linkedin-in",
 }
 
 export const email = (label: string) => `mailto:${label}`

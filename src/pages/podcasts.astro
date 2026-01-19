@@ -1,0 +1,12 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import PodcastsPage from "@/components/PodcastsPage"
+
+const title = "Podcasts"
+const description =
+  "Explore our podcast series on entrepreneurship and community building."
+---
+
+<Layout {title} {description}>
+  <PodcastsPage client:load />
+</Layout>

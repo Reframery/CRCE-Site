@@ -20,6 +20,8 @@
     "@fontsource/roboto": "^5.2.9",
     "astro": "^5.16.6",
     "astro-icon": "^1.1.5",
+    "lucide-react": "^0.562.0",
+    "motion": "^12.27.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "tailwind-merge": "^2.6.0"

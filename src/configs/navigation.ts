@@ -1,20 +1,12 @@
 export const siteLinks = [
-  {
-    label: "Home",
-    pathname: "/",
-  },
-  {
-    label: "About",
-    pathname: "/about",
-  },
+  { label: "Home", pathname: "/" },
+  { label: "About", pathname: "/about" },
   {
     label: "People",
     pathname: "/people-researchers-students-faculty",
   },
-  {
-    label: "Student Training",
-    pathname: "/student-training",
-  },
+  { label: "Student Training", pathname: "/student-training" },
+  { label: "Podcasts", pathname: "/podcasts" },
   {
     label: "Reframery",
     pathname: "https://reframery.org/",
@@ -23,8 +15,5 @@ export const siteLinks = [
     label: "RISE",
     pathname: "/research-inclusion-and-social-entrepreneurship",
   },
-  {
-    label: "Contact Us",
-    pathname: "/contact",
-  },
+  { label: "Contact Us", pathname: "/contact" },
 ]

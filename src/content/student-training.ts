@@ -78,7 +78,7 @@ export const students: Student[] = [
   {
     image: saad,
     name: "Saad Tariq",
-    role: "Web Developer",
+    role: "Software Developer",
     roleDescription:
       "Saad Tariq is a student in the Computer Science program at McMaster University with a keen interest in full-stack web development. He is responsible for rebuilding the Reframery website, adding new features, and developing and integrating new applications, including an administrative portal, learning management system, and forum, as well as developing the CRCE website.",
     socials: [

@@ -88,7 +88,7 @@ export const students: Student[] = [
       },
       {
         type: "LinkedIn",
-        label: "saad-tariq-cs",
+        label: "saad-tariq-ca",
       },
     ],
   },

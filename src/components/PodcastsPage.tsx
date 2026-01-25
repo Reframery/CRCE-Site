@@ -10,7 +10,7 @@ export default function Podcast() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-white">
       {/* Animated Grid Background */}
-      <div className="pointer-events-none fixed inset-0 z-0">
+      <div className="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
         <motion.div
           className="absolute inset-0 opacity-[0.03]"
           animate={{

@@ -1,11 +1,17 @@
 import { motion } from "motion/react"
-import { Calendar, Mic, Sparkles, UserCheck } from "lucide-react"
+import { Mic, Sparkles, UserCheck } from "lucide-react"
 
-import { episodes, type Episode } from "@/content/podcasts"
-import { Button } from "./ui/Button"
+import { episodes } from "@/content/podcasts"
+import { Button } from "../ui/Button"
+import { EpisodeCard } from "./EpisodeCard"
 
 export default function Podcast() {
-  const latestEpisode = episodes[0]
+  const publishedEpisodes = episodes
+    .filter((e) => e.isPublished)
+    .sort((a, b) => b.episodeNumber - a.episodeNumber)
+
+  const latestEpisode =
+    publishedEpisodes.length > 0 ? publishedEpisodes[0] : undefined
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-white">
@@ -216,9 +222,28 @@ export default function Podcast() {
             >
               Latest Episode
             </motion.h2>
-            <LatestEpisodeCard episode={latestEpisode} />
+            <EpisodeCard episode={latestEpisode} showLatestBadge />
           </motion.div>
         )}
+        {/* Other Episodes (if any) */}
+        {publishedEpisodes.length > 1 && (
+          <motion.div
+            className="mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <h2 className="mb-6 text-3xl font-bold text-slate-900">
+              All Episodes
+            </h2>
+            <div className="grid gap-6">
+              {publishedEpisodes.slice(1).map((ep) => (
+                <EpisodeCard key={ep.id} episode={ep} />
+              ))}
+            </div>
+          </motion.div>
+        )}
+
         {/* About Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -285,66 +310,5 @@ export default function Podcast() {
         </motion.div>
       </div>
     </div>
-  )
-}
-
-function LatestEpisodeCard({ episode }: { episode: Episode }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -5, boxShadow: "0 20px 40px -10px rgba(122,0,60,0.3)" }}
-      className="relative overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl"
-    >
-      <div className="relative z-10 p-8">
-        <div className="grid items-start gap-8 md:grid-cols-10">
-          {/* Left Side - Episode Info (30%) */}
-          <div className="md:col-span-3">
-            <div className="h-full rounded-xl border border-slate-200 bg-slate-50 p-6">
-              <div className="mb-4 flex flex-col gap-2">
-                <span className="rounded-lg bg-[#7A003C] px-3 py-1.5 text-center text-xs font-semibold text-white">
-                  Episode {episode.episodeNumber}
-                </span>
-                <span className="rounded-lg bg-[#FDBF38] px-3 py-1.5 text-center text-xs font-semibold text-[#7A003C]">
-                  Latest Episode
-                </span>
-              </div>
-              <h3 className="mb-4 text-xl font-bold leading-tight text-slate-900">
-                {episode.title}
-              </h3>
-              <p className="mb-6 text-base leading-relaxed text-slate-700">
-                {episode.description}
-              </p>
-              {episode.publishDate && (
-                <div className="flex items-center gap-2 border-t border-slate-200 pt-4 text-sm text-slate-500">
-                  <Calendar className="h-4 w-4" />
-                  <span>
-                    {new Date(episode.publishDate).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                    })}
-                  </span>
-                </div>
-              )}
-            </div>
-          </div>
-          {/* Right Side - Video Player (70%) */}
-          {episode.videoUrl && (
-            <div className="w-full overflow-hidden rounded-lg bg-slate-900 shadow-lg md:col-span-7">
-              <div className="aspect-video w-full">
-                <iframe
-                  src={episode.videoUrl}
-                  className="h-full w-full"
-                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                  allowFullScreen
-                  title={episode.title}
-                />
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    </motion.div>
   )
 }

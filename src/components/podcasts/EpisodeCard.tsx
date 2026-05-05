@@ -1,6 +1,6 @@
 import { motion } from "motion/react"
 import { Calendar } from "lucide-react"
-import { type Episode } from "@/content/podcasts"
+import type { Episode } from "@/content/podcasts"
 
 export function EpisodeCard({
   episode,

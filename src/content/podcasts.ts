@@ -22,4 +22,16 @@ export const episodes: Episode[] = [
     duration: "39:56",
     isPublished: true,
   },
+  {
+    id: "2",
+    episodeNumber: 2,
+    title: "Episode 2: How do a founder's personal values shape a business?",
+    description:
+      "In this CRCE podcast, Professor François Neville explores authenticity, growth, identity, and what happens when values meet entrepreneurship.",
+    videoUrl:
+      "https://drive.google.com/file/d/1absNtWxSE5cmIVJStrqT2rMFlx0qoFe3/preview",
+    publishDate: "2026-05-04",
+    duration: "49:50",
+    isPublished: true,
+  },
 ]

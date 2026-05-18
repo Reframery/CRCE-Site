@@ -5,7 +5,7 @@ import { episodes } from "@/content/podcasts"
 import { Button } from "../ui/Button"
 import { EpisodeCard } from "./EpisodeCard"
 
-export default function Podcast() {
+export const PodcastsPage = () => {
   const publishedEpisodes = episodes
     .filter((e) => e.isPublished)
     .sort((a, b) => b.episodeNumber - a.episodeNumber)

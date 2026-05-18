@@ -1,64 +1,9 @@
 ---
-import { Image } from "astro:assets"
-
 import Layout from "@/layouts/Layout.astro"
-import Breadcrumbs from "@/components/Breadcrumbs.astro"
 import { description } from "@/content/rise"
-import { boxes } from "@/content/rise"
-import riseLogo from "@/images/rise/rise-logo.png"
+import Rise from "@/components/rise/RisePage"
 ---
 
 <Layout title="RISE" {description}>
-  <Breadcrumbs />
-  <div class="p-8 md:p-12 md:pt-8">
-    <header class="container mb-12 text-center">
-      <Image
-        src={riseLogo}
-        alt="RISE"
-        class="mx-auto mb-4 w-96"
-        loading="eager"
-      />
-      <h1 class="mb-6 text-4xl font-semibold">
-        Research, Inclusion, and Social Entrepreneurship (RISE)
-      </h1>
-      <p class="mx-auto max-w-5xl text-xl text-nevada">{description}</p>
-    </header>
-    <section class="container space-y-10">
-      {
-        boxes.map((box, i) => (
-          <div class="box grid grid-flow-row border-b-2 border-b-nevada shadow-mcmaster md:grid-cols-6">
-            <Image
-              src={box.image}
-              alt={box.title}
-              loading={i === 0 ? "eager" : "lazy"}
-              class="self-stretch object-cover md:col-span-2"
-            />
-            <div class="p-6 md:col-span-4">
-              <h2 class="text-3xl font-semibold">{box.title}</h2>
-              <hr class="my-4 border-[1.5px]" />
-              <div class="space-y-4">
-                {box.content.map((content) => (
-                  <p class="text-nevada">{content}</p>
-                ))}
-                {box.link && (
-                  <a
-                    href={box.link.href}
-                    class="block w-fit items-center rounded-full bg-maroon px-6 py-3 font-medium text-white transition-colors duration-[250ms] ease-in-out hover:bg-maroon/85"
-                  >
-                    {box.link.label}
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        ))
-      }
-    </section>
-  </div>
+  <Rise client:load />
 </Layout>
-
-<style>
-  .box {
-    box-shadow: 10px 10px 30px rgb(0 0 0 / 20%);
-  }
-</style>

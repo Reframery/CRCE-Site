@@ -1,8 +1,6 @@
 ---
-import Breadcrumbs from "@/components/Breadcrumbs.astro"
-import MembersGrid from "@/components/MembersGrid.astro"
-import { coreMembers, advisoryCommittee } from "@/content/people.ts"
 import Layout from "@/layouts/Layout.astro"
+import { TeamPage } from "@/components/team/TeamPage"
 
 const title = "People"
 const description =
@@ -10,13 +8,5 @@ const description =
 ---
 
 <Layout {title} {description}>
-  <!-- <Banner title="People" {image} /> -->
-  <Breadcrumbs />
-  <div class="px-8 md:px-12">
-    <section class="container mb-12 p-0 max-md:!max-w-xl">
-      <h1 class="my-12 text-4xl font-semibold">CRCE Team</h1>
-      <MembersGrid members={coreMembers} eagerlyLoad={6} />
-      <MembersGrid members={advisoryCommittee} title="Advisory Committee" />
-    </section>
-  </div>
+  <TeamPage client:load />
 </Layout>

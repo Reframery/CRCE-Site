@@ -2,14 +2,15 @@ export const siteLinks = [
   { label: "Home", pathname: "/" },
   { label: "About", pathname: "/about" },
   {
-    label: "People",
+    label: "Our Team",
     pathname: "/people-researchers-students-faculty",
   },
-  { label: "Student Training", pathname: "/student-training" },
   { label: "Podcasts", pathname: "/podcasts" },
+  { label: "Upcoming Conferences", pathname: "/upcoming-conferences" },
   {
     label: "Reframery",
     pathname: "https://reframery.org/",
+    isExternal: true,
   },
   {
     label: "RISE",

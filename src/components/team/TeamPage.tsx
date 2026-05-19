@@ -22,11 +22,10 @@ export const TeamPage = () => {
 
   return (
     <div className="min-h-screen overflow-hidden bg-[#f5f4f2]">
-      {/* ── HERO ── */}
+      {/* ── Hero ── */}
       <section
         ref={heroRef}
-        className="relative flex flex-col items-center justify-center overflow-hidden"
-        style={{ backgroundColor: "#7A003C", minHeight: "60vh" }}
+        className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden bg-[#7A003C]"
       >
         <motion.div
           className="absolute inset-0 bg-cover bg-center"
@@ -112,7 +111,7 @@ export const TeamPage = () => {
                 type: "spring",
                 stiffness: 90,
               }}
-              className="block text-6xl font-black leading-none tracking-tight md:text-8xl"
+              className="block font-sans-condensed text-6xl font-bold leading-none tracking-tight md:text-8xl"
               style={
                 wi === 1
                   ? {
@@ -130,7 +129,7 @@ export const TeamPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.55 }}
-            className="mx-auto mt-6 max-w-xl text-base text-white/80 md:text-lg"
+            className="mx-auto mb-3 mt-6 max-w-xl text-base text-white/80 md:text-lg"
           >
             Researchers, faculty, and students driving inclusive and
             community-oriented entrepreneurship.
@@ -159,11 +158,11 @@ export const TeamPage = () => {
         </div>
       </section>
       {/* Breadcrumb */}
-      <div className="mx-auto max-w-7xl px-4 py-5 text-sm text-gray-400 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-5 text-sm text-gray-600 sm:px-6 lg:px-8">
         <a href="/" className="transition-colors hover:text-gray-700">
           Home
         </a>
-        <span className="mx-2 text-gray-300">›</span>
+        <span className="mx-2 text-gray-500">›</span>
         <span className="font-semibold text-gray-700">Our Team</span>
       </div>
       {/* ── CRCE TEAM ── */}
@@ -185,7 +184,7 @@ export const TeamPage = () => {
           ))}
         </div>
       </section>
-      {/* ── INTERNAL ADVISORY COMMITTEE ── */}
+      {/* ── Internal Advisory Committee ── */}
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
         <SectionHeader
           icon={Users}
@@ -204,7 +203,7 @@ export const TeamPage = () => {
           ))}
         </div>
       </section>
-      {/* ── EXTERNAL ADVISORY COMMITTEE ── */}
+      {/* ── External Advisory Committee ── */}
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
         <SectionHeader
           icon={Globe}
@@ -223,7 +222,7 @@ export const TeamPage = () => {
           ))}
         </div>
       </section>
-      {/* ── STUDENT TEAM ── */}
+      {/* ── Student Team ── */}
       <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
         <SectionHeader
           icon={GraduationCap}

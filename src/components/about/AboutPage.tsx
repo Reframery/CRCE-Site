@@ -1,7 +1,6 @@
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "motion/react"
 import { ArrowRight, ChevronDown, Handshake, Target } from "lucide-react"
-
 import { sections } from "@/content/about"
 import { SectionCard } from "./SectionCard"
 import { StatsBar } from "./StatsBar"
@@ -18,7 +17,7 @@ export const AboutPage = () => {
   const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0])
 
   return (
-    <div className="bg-background min-h-screen overflow-hidden">
+    <div className="min-h-screen overflow-hidden bg-background">
       {/* ── Hero ── */}
       <section
         ref={heroRef}
@@ -109,34 +108,27 @@ export const AboutPage = () => {
               CRCE — About Us
             </span>
           </motion.div>
-          {/* Title — staggered words */}
-          <div className="mb-7">
-            {["About", "CRCE"].map((word, wi) => (
-              <motion.div
-                key={word}
-                initial={{ opacity: 0, y: 50, skewY: 4 }}
-                animate={{ opacity: 1, y: 0, skewY: 0 }}
-                transition={{
-                  duration: 0.7,
-                  delay: 0.2 + wi * 0.18,
-                  type: "spring",
-                  stiffness: 90,
-                }}
-                className="block font-sans-condensed text-6xl font-bold leading-none tracking-tight md:text-8xl"
-                style={
-                  wi === 1
-                    ? {
-                        color: "var(--gold)",
-                        textShadow:
-                          "0 0 60px rgba(253,191,56,0.45), 0 4px 30px rgba(0,0,0,0.4)",
-                      }
-                    : { textShadow: "0 4px 30px rgba(0,0,0,0.4)" }
-                }
-              >
-                {word}
-              </motion.div>
-            ))}
-          </div>
+          {/* Title  */}
+          <motion.h1
+            className="mb-6 text-5xl font-bold tracking-tight text-white md:text-7xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.2,
+              type: "spring",
+              stiffness: 100,
+            }}
+            style={{ textShadow: "0 4px 30px rgba(0,0,0,0.4)" }}
+          >
+            About{" "}
+            <span
+              className="text-gold"
+              style={{ textShadow: "0 0 40px rgba(253,191,56,0.5)" }}
+            >
+              CRCE
+            </span>
+          </motion.h1>
           {/* Subtitle pill */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -183,14 +175,11 @@ export const AboutPage = () => {
         </motion.div>
         {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5 text-white/50"
+          className="absolute bottom-12 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5 text-white/50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.3 }}
         >
-          <span className="text-xs font-semibold uppercase tracking-widest">
-            Scroll
-          </span>
           <motion.div
             animate={{ y: [0, 9, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
@@ -200,7 +189,7 @@ export const AboutPage = () => {
         </motion.div>
         {/* Wave */}
         <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10">
-          <svg viewBox="0 0 1440 80" className="fill-background h-auto w-full">
+          <svg viewBox="0 0 1440 80" className="h-auto w-full fill-background">
             <path d="M0,40L60,36C120,32,240,24,360,28C480,32,600,48,720,52C840,56,960,48,1080,40C1200,32,1320,24,1380,20L1440,16L1440,80L0,80Z" />
           </svg>
         </div>
@@ -215,7 +204,6 @@ export const AboutPage = () => {
         <span className="mx-2 text-gray-500">›</span>
         <span className="font-semibold text-gray-700">About</span>
       </div>
-      {/* ── Stats Bar ── */}
       <StatsBar />
       {/* ── Section Cards ── */}
       <section className="mx-auto max-w-7xl space-y-10 px-4 pb-16 sm:px-6 lg:px-8">

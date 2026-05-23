@@ -281,7 +281,10 @@ export const PodcastsPage = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Button className="bg-[#7A003C] px-6 py-3 text-white hover:bg-[#5C0028]">
+                <Button
+                  type="button"
+                  className="bg-[#7A003C] px-6 py-3 text-white hover:bg-[#5C0028]"
+                >
                   Learn About CRCE
                 </Button>
               </motion.div>
@@ -291,7 +294,10 @@ export const PodcastsPage = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Button className="border border-[#7A003C] px-6 py-3 text-[#7A003C] hover:bg-[#7A003C] hover:text-white">
+                <Button
+                  type="button"
+                  className="border border-[#7A003C] px-6 py-3 text-[#7A003C] hover:bg-[#7A003C] hover:text-white"
+                >
                   Explore Reframery
                 </Button>
               </motion.div>
@@ -301,7 +307,10 @@ export const PodcastsPage = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Button className="border border-[#7A003C] px-6 py-3 text-[#7A003C] hover:bg-[#7A003C] hover:text-white">
+                <Button
+                  type="button"
+                  className="border border-[#7A003C] px-6 py-3 text-[#7A003C] hover:bg-[#7A003C] hover:text-white"
+                >
                   Contact Us
                 </Button>
               </motion.div>

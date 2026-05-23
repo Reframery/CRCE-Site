@@ -222,7 +222,7 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
         className="relative flex items-center justify-center overflow-hidden lg:w-5/12"
         style={{
           minHeight: "300px",
-          background: "linear-gradient(135deg, #7A003C 0%, #5a0029 100%)",
+          background: "linear-gradient(135deg, var(--maroon) 0%, #5a0029 100%)",
         }}
       >
         {/* Animated background pattern */}
@@ -264,7 +264,7 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
               border: "2px solid rgba(253,191,56,0.5)",
             }}
           >
-            <Icon className="h-10 w-10 text-[#FDBF38]" />
+            <Icon className="h-10 w-10 text-gold" />
           </div>
           <span className="text-xs font-bold uppercase tracking-widest text-white/60">
             {section.tag}
@@ -272,7 +272,7 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
         </motion.div>
         {/* Gold shimmer line on hover */}
         <motion.div
-          className="absolute bottom-0 left-0 h-1 rounded-full bg-[#FDBF38]"
+          className="absolute bottom-0 left-0 h-1 rounded-full bg-gold"
           animate={{ width: hovered ? "100%" : "0%" }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         />
@@ -281,12 +281,12 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
       <div className="relative flex flex-col justify-center overflow-hidden p-10 md:p-14 lg:w-7/12">
         {/* Bg orb */}
         <motion.div
-          className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-[#7A003C] blur-3xl"
+          className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-maroon blur-3xl"
           animate={{ opacity: hovered ? 0.08 : 0 }}
           transition={{ duration: 0.5 }}
         />
         <motion.div
-          className="pointer-events-none absolute left-0 top-0 h-48 w-48 rounded-full bg-[#FDBF38] blur-3xl"
+          className="pointer-events-none absolute left-0 top-0 h-48 w-48 rounded-full bg-gold blur-3xl"
           animate={{ opacity: hovered ? 0.04 : 0 }}
           transition={{ duration: 0.5 }}
         />
@@ -298,12 +298,12 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <motion.div
-            className="h-1 rounded-full bg-[#7A003C]"
+            className="h-1 rounded-full bg-maroon"
             initial={{ width: 0 }}
             animate={isInView ? { width: 40 } : {}}
             transition={{ duration: 0.6, delay: 0.35 }}
           />
-          <span className="text-xs font-bold uppercase tracking-widest text-[#7A003C]">
+          <span className="text-xs font-bold uppercase tracking-widest text-maroon">
             CRCE
           </span>
         </motion.div>

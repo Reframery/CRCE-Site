@@ -15,7 +15,7 @@ export const StatsBar = () => {
         transition={{ duration: 0.7, type: "spring", stiffness: 70 }}
         className="relative overflow-hidden rounded-3xl shadow-2xl"
         style={{
-          background: "linear-gradient(135deg, #7A003C 0%, #5a0029 100%)",
+          background: "linear-gradient(135deg, var(--maroon) 0%, #5a0029 100%)",
         }}
       >
         {/* Hex pattern bg */}
@@ -27,12 +27,12 @@ export const StatsBar = () => {
           }}
         />
         <motion.div
-          className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-[#FDBF38] opacity-25 blur-3xl"
+          className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-gold opacity-25 blur-3xl"
           animate={{ scale: [1, 1.3, 1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-[#FDBF38] opacity-15 blur-3xl"
+          className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-gold opacity-15 blur-3xl"
           animate={{ scale: [1.2, 0.9, 1.2] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -44,11 +44,10 @@ export const StatsBar = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex flex-shrink-0 flex-col items-center gap-3 md:items-start md:pt-1"
           >
-            <Target className="h-8 w-8 text-[#FDBF38]" />
+            <Target className="h-8 w-8 text-gold" />
             <span
-              className="font-sans-condensed text-2xl font-black uppercase tracking-widest md:text-3xl"
+              className="font-sans-condensed text-2xl font-black uppercase tracking-widest text-gold md:text-3xl"
               style={{
-                color: "#FDBF38",
                 writingMode: "vertical-rl",
                 transform: "rotate(180deg)",
               }}

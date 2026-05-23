@@ -15,16 +15,21 @@ export const Ticker = () => (
   <div
     className="relative overflow-hidden py-3"
     style={{
-      background: "linear-gradient(90deg, #7A003C, #9a0050, #7A003C)",
+      background:
+        "linear-gradient(90deg, var(--maroon), #9a0050, var(--maroon))",
     }}
   >
     <div
       className="absolute bottom-0 left-0 top-0 z-10 w-16"
-      style={{ background: "linear-gradient(90deg, #7A003C, transparent)" }}
+      style={{
+        background: "linear-gradient(90deg, var(--maroon), transparent)",
+      }}
     />
     <div
       className="absolute bottom-0 right-0 top-0 z-10 w-16"
-      style={{ background: "linear-gradient(270deg, #7A003C, transparent)" }}
+      style={{
+        background: "linear-gradient(270deg, var(--maroon), transparent)",
+      }}
     />
     <motion.div
       className="flex justify-center gap-8 whitespace-nowrap"
@@ -36,7 +41,7 @@ export const Ticker = () => (
           key={i}
           className="inline-flex items-center gap-3 font-sans-condensed text-sm font-semibold uppercase tracking-widest text-white/80"
         >
-          <span className="inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#FDBF38]" />
+          <span className="inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gold" />
           {item}
         </span>
       ))}

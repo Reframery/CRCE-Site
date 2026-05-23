@@ -25,7 +25,6 @@ export default {
       colors: {
         muted: { DEFAULT: "#f8f9fa", foreground: "#495057" },
         foreground: "#111",
-        gallery: "#ebebeb",
         nevada: "#5e6a71",
         maroon: "#7a003c",
         gold: "#fdbf57",

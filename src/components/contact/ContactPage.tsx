@@ -1,195 +1,19 @@
-import { motion, useInView, useScroll, useTransform } from "motion/react"
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "motion/react"
 import {
   ArrowRight,
-  Building2,
-  CheckCircle,
   ChevronDown,
   ExternalLink,
   Mail,
   MapPin,
   MessageSquare,
-  Send,
 } from "lucide-react"
-import { useRef, useState } from "react"
+import { infoCards } from "@/content/contact"
 import banner from "@/images/banner/contact.jpg"
-
-const infoCards = [
-  {
-    icon: <MapPin className="h-6 w-6" />,
-    title: "Our Location",
-    lines: [
-      "Tandem Accelerator Building",
-      "1280 Main St W, Bldg #32",
-      "Hamilton, ON L8S 4K1",
-    ],
-    cta: {
-      label: "Get Directions",
-      href: "https://maps.google.com/maps/dir//Tandem+Accelerator+Building+TA+1280+Main+St+W+Building+%23+32+Hamilton,+ON+L8S+4K1",
-      external: true,
-    },
-    accentColor: "#7A003C",
-  },
-  {
-    icon: <Mail className="h-6 w-6" />,
-    title: "Email Us",
-    lines: ["bhonig@mcmaster.ca", "nafarij@mcmaster.ca"],
-    cta: {
-      label: "Send Email",
-      href: "mailto:bhonig@mcmaster.ca",
-      external: false,
-    },
-    accentColor: "#7A003C",
-  },
-  {
-    icon: <Building2 className="h-6 w-6" />,
-    title: "Institution",
-    lines: [
-      "McMaster University",
-      "DeGroote School of Business",
-      "Centre for Community-Oriented Entrepreneurship",
-    ],
-    accentColor: "#7A003C",
-  },
-]
-
-function InfoCard({ card, index }: any) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-80px" })
-  const [hovered, setHovered] = useState(false)
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 70, scale: 0.92 }}
-      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-      transition={{
-        duration: 0.7,
-        delay: index * 0.15,
-        type: "spring",
-        stiffness: 80,
-      }}
-      whileHover={{ y: -10, boxShadow: "0 30px 60px rgba(122,0,60,0.18)" }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="group flex cursor-default flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-xl"
-    >
-      {/* Top strip with icon inside */}
-      <div
-        className="relative flex h-20 items-end overflow-hidden px-6 pb-3"
-        style={{
-          background: "linear-gradient(135deg, #9a0050 0%, #5a0029 100%)",
-        }}
-      >
-        {/* Animated hex pattern */}
-        <motion.div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 0 L56 16 L56 50 L28 66 L0 50 L0 16 Z' fill='none' stroke='rgba(253,191,56,0.25)' stroke-width='1.5'/%3E%3Cpath d='M28 66 L56 50 L56 84 L28 100 L0 84 L0 50 Z' fill='none' stroke='rgba(253,191,56,0.25)' stroke-width='1.5'/%3E%3C/svg%3E")`,
-            backgroundSize: "28px 50px",
-          }}
-          animate={{ opacity: hovered ? 0.6 : 0.3 }}
-          transition={{ duration: 0.4 }}
-        />
-        {/* Gold shimmer orb on hover */}
-        <motion.div
-          className="pointer-events-none absolute rounded-full blur-2xl"
-          style={{
-            backgroundColor: "rgba(253,191,56,0.35)",
-            width: 120,
-            height: 120,
-            top: -40,
-            left: -20,
-          }}
-          animate={{ scale: hovered ? 1.8 : 1, opacity: hovered ? 1 : 0.3 }}
-          transition={{ duration: 0.5 }}
-        />
-        {/* Icon inside strip */}
-        <motion.div
-          className="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl text-white shadow-lg"
-          style={{
-            backgroundColor: "rgba(255,255,255,0.15)",
-            border: "2px solid rgba(253,191,56,0.6)",
-          }}
-          initial={{ scale: 0, rotate: -15 }}
-          animate={isInView ? { scale: 1, rotate: 0 } : {}}
-          whileHover={{ rotate: 10, scale: 1.15 }}
-          transition={{
-            duration: 0.5,
-            delay: 0.25 + index * 0.15,
-            type: "spring",
-            stiffness: 200,
-          }}
-        >
-          {card.icon}
-        </motion.div>
-        {/* Bottom gold line */}
-        <motion.div
-          className="absolute bottom-0 left-0 h-0.5 rounded-full"
-          style={{ backgroundColor: "#FDBF38" }}
-          initial={{ width: 0 }}
-          animate={isInView ? { width: "100%" } : {}}
-          transition={{ duration: 0.9, delay: 0.4 + index * 0.15 }}
-        />
-      </div>
-
-      {/* Content */}
-      <div className="flex flex-1 flex-col px-6 pb-6 pt-5">
-        <motion.div
-          className="mb-4 h-0.5 rounded-full"
-          style={{ backgroundColor: "#7A003C" }}
-          initial={{ width: 0 }}
-          animate={isInView ? { width: 40 } : {}}
-          transition={{ duration: 0.6, delay: 0.3 + index * 0.15 }}
-        />
-        <motion.h3
-          className="mb-3 text-lg font-extrabold text-gray-900"
-          animate={{ color: hovered ? "#7A003C" : "#111827" }}
-          transition={{ duration: 0.25 }}
-        >
-          {card.title}
-        </motion.h3>
-        {card.lines.map((line: any, j: any) => (
-          <motion.p
-            key={j}
-            className="text-sm leading-relaxed text-gray-500"
-            initial={{ opacity: 0, x: -10 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{
-              duration: 0.4,
-              delay: 0.35 + index * 0.15 + j * 0.07,
-            }}
-          >
-            {line}
-          </motion.p>
-        ))}
-        {card.cta && (
-          <motion.a
-            href={card.cta.href}
-            target={card.cta.external ? "_blank" : undefined}
-            rel={card.cta.external ? "noopener noreferrer" : undefined}
-            whileHover={{ x: 6 }}
-            className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-bold"
-            style={{ color: "#7A003C" }}
-          >
-            {card.cta.label}{" "}
-            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-          </motion.a>
-        )}
-      </div>
-    </motion.div>
-  )
-}
+import { ContactForm } from "./ContactForm"
+import { InfoCard } from "./InfoCard"
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
-  const [submitted, setSubmitted] = useState(false)
-  const [focusedField, setFocusedField] = useState<any>(null)
-
   const heroRef = useRef(null)
   const { scrollYProgress: heroScroll } = useScroll({
     target: heroRef,
@@ -198,24 +22,12 @@ export default function ContactPage() {
   const heroY = useTransform(heroScroll, [0, 1], [0, 120])
   const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0])
 
-  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const mailto = `mailto:bhonig@mcmaster.ca?subject=${encodeURIComponent(formData.subject || "General Inquiry")}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`
-    window.location.href = mailto
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 5000)
-  }
-
   return (
-    <div
-      className="min-h-screen overflow-hidden"
-      style={{ backgroundColor: "#f5f4f2" }}
-    >
+    <div className="bg-background min-h-screen overflow-hidden">
       {/* ── HERO ── */}
       <section
         ref={heroRef}
-        className="relative flex flex-col items-center justify-center overflow-hidden"
-        style={{ backgroundColor: "#7A003C" }}
+        className="relative flex flex-col items-center justify-center overflow-hidden bg-maroon"
       >
         {/* Parallax building photo */}
         <motion.div
@@ -242,44 +54,6 @@ export default function ContactPage() {
               "linear-gradient(to bottom, rgba(122,0,60,0.5) 0%, rgba(122,0,60,0.35) 50%, rgba(122,0,60,0.85) 100%)",
           }}
         />
-        {/* Floating orbs */}
-        {[
-          {
-            size: 500,
-            color: "rgba(253,191,56,0.15)",
-            x: -200,
-            y: -100,
-            dur: 12,
-          },
-          {
-            size: 400,
-            color: "rgba(255,255,255,0.06)",
-            x: 300,
-            y: 200,
-            dur: 15,
-          },
-          { size: 300, color: "rgba(122,0,60,0.2)", x: 100, y: 300, dur: 10 },
-        ].map((orb, i) => (
-          <motion.div
-            key={i}
-            className="pointer-events-none absolute rounded-full blur-3xl"
-            style={{
-              width: orb.size,
-              height: orb.size,
-              backgroundColor: orb.color,
-              left: `calc(50% + ${orb.x}px)`,
-              top: `calc(50% + ${orb.y}px)`,
-              transform: "translate(-50%,-50%)",
-            }}
-            animate={{ scale: [1, 1.3, 1], x: [0, 40, 0], y: [0, -30, 0] }}
-            transition={{
-              duration: orb.dur,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 2,
-            }}
-          />
-        ))}
         <motion.div
           className="relative z-10 px-4 py-20 text-center text-white md:py-28"
           style={{ opacity: heroOpacity }}
@@ -295,13 +69,13 @@ export default function ContactPage() {
               animate={{ rotate: [0, 12, -12, 0] }}
               transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
             >
-              <Mail className="h-4 w-4" style={{ color: "#FDBF38" }} />
+              <Mail className="h-4 w-4 text-gold" />
             </motion.div>
             <span className="text-sm font-semibold">CRCE — Get in Touch</span>
           </motion.div>
           {/* Title */}
           <motion.h1
-            className="mb-6 text-5xl font-black tracking-tight text-white md:text-7xl"
+            className="mb-6 text-5xl font-bold tracking-tight text-white md:text-7xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -314,10 +88,8 @@ export default function ContactPage() {
           >
             Contact{" "}
             <span
-              style={{
-                color: "#FDBF38",
-                textShadow: "0 0 40px rgba(253,191,56,0.5)",
-              }}
+              className="text-gold"
+              style={{ textShadow: "0 0 40px rgba(253,191,56,0.5)" }}
             >
               Us
             </span>
@@ -330,10 +102,7 @@ export default function ContactPage() {
             className="inline-flex items-center gap-2.5 rounded-full border border-white/30 px-6 py-3.5 text-base font-medium text-white shadow-lg backdrop-blur-md"
             style={{ background: "rgba(90,0,41,0.6)" }}
           >
-            <MessageSquare
-              className="h-4 w-4 flex-shrink-0"
-              style={{ color: "#FDBF38" }}
-            />
+            <MessageSquare className="h-4 w-4 flex-shrink-0 text-gold" />
             Questions about research, partnerships, or community
             entrepreneurship? We're here and ready to connect.
           </motion.div>
@@ -357,13 +126,8 @@ export default function ContactPage() {
                 whileHover={{ scale: 1.08, y: -4 }}
                 className="cursor-default rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-center shadow-lg backdrop-blur-md"
               >
-                <div
-                  className="text-sm font-black"
-                  style={{ color: "#FDBF38" }}
-                >
-                  {s.val}
-                </div>
-                <div className="mt-0.5 text-xs uppercase tracking-widest text-white/55">
+                <div className="text-sm font-black text-gold">{s.val}</div>
+                <div className="mt-0.5 text-xs uppercase tracking-widest text-white/60">
                   {s.sub}
                 </div>
               </motion.div>
@@ -387,32 +151,22 @@ export default function ContactPage() {
         </motion.div>
         {/* Wave */}
         <div className="pointer-events-none absolute bottom-0 left-0 right-0">
-          <svg
-            viewBox="0 0 1440 80"
-            className="h-auto w-full"
-            style={{ fill: "#f5f4f2" }}
-          >
+          <svg viewBox="0 0 1440 80" className="fill-background h-auto w-full">
             <path d="M0,40L60,36C120,32,240,24,360,28C480,32,600,48,720,52C840,56,960,48,1080,40C1200,32,1320,24,1380,20L1440,16L1440,80L0,80Z" />
           </svg>
         </div>
       </section>
       {/* Breadcrumb */}
-      <div className="mx-auto max-w-7xl px-4 py-5 text-sm text-gray-500 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-5 text-sm text-gray-600 sm:px-6 lg:px-8">
         <a href="/" className="transition-colors hover:text-gray-700">
           Home
         </a>
-        <span className="mx-2 text-gray-300">›</span>
+        <span className="mx-2 text-gray-400">›</span>
         <span className="font-semibold text-gray-700">Contact Us</span>
       </div>
       {/* ── INFO CARDS ── */}
-      <section
-        className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8"
-        style={{ overflow: "visible" }}
-      >
-        <div
-          className="mb-14 grid grid-cols-1 gap-6 md:grid-cols-3"
-          style={{ overflow: "visible" }}
-        >
+      <section className="mx-auto max-w-7xl overflow-visible px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mb-14 grid grid-cols-1 gap-6 overflow-visible md:grid-cols-3">
           {infoCards.map((card, i) => (
             <InfoCard key={i} card={card} index={i} />
           ))}
@@ -430,23 +184,22 @@ export default function ContactPage() {
             {/* Top accent bar */}
             <div
               className="h-2"
-              style={{ background: "linear-gradient(90deg, #7A003C, #FDBF38)" }}
+              style={{
+                background:
+                  "linear-gradient(90deg, var(--maroon), var(--gold))",
+              }}
             />
             <div className="p-8 md:p-10">
               {/* Section label */}
               <div className="mb-2 flex items-center gap-3">
                 <motion.div
-                  className="h-1 rounded-full"
-                  style={{ backgroundColor: "#7A003C" }}
+                  className="h-1 rounded-full bg-maroon"
                   initial={{ width: 0 }}
                   whileInView={{ width: 40 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 />
-                <span
-                  className="text-xs font-bold uppercase tracking-widest"
-                  style={{ color: "#7A003C" }}
-                >
+                <span className="text-xs font-bold uppercase tracking-widest text-maroon">
                   CRCE
                 </span>
               </div>
@@ -455,7 +208,7 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.15 }}
-                className="mb-1 text-2xl font-extrabold text-gray-900 md:text-3xl"
+                className="mb-1 text-2xl font-bold text-gray-900 md:text-3xl"
               >
                 Send a Message
               </motion.h2>
@@ -469,164 +222,7 @@ export default function ContactPage() {
                 Have a question or collaboration idea? We'll connect you with
                 the right person.
               </motion.p>
-              {submitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ type: "spring", stiffness: 150 }}
-                  className="flex flex-col items-center justify-center py-16 text-center"
-                >
-                  <motion.div
-                    animate={{ scale: [0, 1.2, 1] }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <CheckCircle
-                      className="mb-4 h-16 w-16"
-                      style={{ color: "#7A003C" }}
-                    />
-                  </motion.div>
-                  <h3 className="mb-2 text-2xl font-extrabold text-gray-900">
-                    You're all set!
-                  </h3>
-                  <p className="max-w-xs text-gray-500">
-                    Your email client opened. Hit send and we'll be in touch
-                    soon.
-                  </p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                    {[
-                      {
-                        id: "name",
-                        label: "Full Name",
-                        type: "text",
-                        placeholder: "Jane Smith",
-                      },
-                      {
-                        id: "email",
-                        label: "Email Address",
-                        type: "email",
-                        placeholder: "jane@example.com",
-                      },
-                    ].map((field, gi) => (
-                      <motion.div
-                        key={field.id}
-                        initial={{ opacity: 0, y: 15 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: 0.1 + gi * 0.08 }}
-                      >
-                        <label
-                          htmlFor={field.id}
-                          className="mb-1.5 block text-sm font-bold text-gray-700"
-                        >
-                          {field.label} *
-                        </label>
-                        <input
-                          id={field.id}
-                          required
-                          type={field.type}
-                          value={formData[field.id as keyof typeof formData]}
-                          onChange={(e) =>
-                            setFormData((p) => ({
-                              ...p,
-                              [field.id]: e.target.value,
-                            }))
-                          }
-                          placeholder={field.placeholder}
-                          onFocus={() => setFocusedField(field.id)}
-                          onBlur={() => setFocusedField(null)}
-                          className="w-full rounded-xl border-2 bg-gray-50 px-4 py-3.5 font-medium text-gray-900 placeholder-gray-300 transition-all duration-200 focus:outline-none"
-                          style={{
-                            borderColor:
-                              focusedField === field.id ? "#7A003C" : "#e5e7eb",
-                          }}
-                        />
-                      </motion.div>
-                    ))}
-                  </div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 15 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.2 }}
-                  >
-                    <label
-                      htmlFor="subject"
-                      className="mb-1.5 block text-sm font-bold text-gray-700"
-                    >
-                      Subject
-                    </label>
-                    <input
-                      id="subject"
-                      type="text"
-                      value={formData.subject}
-                      onChange={(e) =>
-                        setFormData((p) => ({ ...p, subject: e.target.value }))
-                      }
-                      placeholder="Research collaboration, general inquiry…"
-                      onFocus={() => setFocusedField("subject")}
-                      onBlur={() => setFocusedField(null)}
-                      className="w-full rounded-xl border-2 bg-gray-50 px-4 py-3.5 font-medium text-gray-900 placeholder-gray-300 transition-all duration-200 focus:outline-none"
-                      style={{
-                        borderColor:
-                          focusedField === "subject" ? "#7A003C" : "#e5e7eb",
-                      }}
-                    />
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 15 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.28 }}
-                  >
-                    <label
-                      htmlFor="message"
-                      className="mb-1.5 block text-sm font-bold text-gray-700"
-                    >
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={(e) =>
-                        setFormData((p) => ({ ...p, message: e.target.value }))
-                      }
-                      placeholder="Tell us how we can help…"
-                      onFocus={() => setFocusedField("message")}
-                      onBlur={() => setFocusedField(null)}
-                      className="w-full resize-none rounded-xl border-2 bg-gray-50 px-4 py-3.5 font-medium text-gray-900 placeholder-gray-300 transition-all duration-200 focus:outline-none"
-                      style={{
-                        borderColor:
-                          focusedField === "message" ? "#7A003C" : "#e5e7eb",
-                      }}
-                    />
-                  </motion.div>
-                  <motion.button
-                    type="submit"
-                    initial={{ opacity: 0, y: 15 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.36 }}
-                    whileHover={{
-                      scale: 1.03,
-                      y: -3,
-                      boxShadow: "0 16px 40px rgba(122,0,60,0.3)",
-                    }}
-                    whileTap={{ scale: 0.97 }}
-                    className="flex w-full items-center justify-center gap-2.5 rounded-xl py-4 text-base font-black text-white shadow-lg"
-                    style={{
-                      background: "linear-gradient(135deg, #7A003C, #5a0029)",
-                    }}
-                  >
-                    <Send className="h-5 w-5" />
-                    Send Message
-                  </motion.button>
-                </form>
-              )}
+              <ContactForm />
             </div>
           </motion.div>
           {/* Map card */}
@@ -640,23 +236,22 @@ export default function ContactPage() {
             {/* Top accent bar */}
             <div
               className="h-2"
-              style={{ background: "linear-gradient(90deg, #FDBF38, #7A003C)" }}
+              style={{
+                background:
+                  "linear-gradient(90deg, var(--gold), var(--maroon))",
+              }}
             />
             <div className="flex flex-1 flex-col gap-6 p-8 md:p-10">
               <div>
                 <div className="mb-2 flex items-center gap-3">
                   <motion.div
-                    className="h-1 rounded-full"
-                    style={{ backgroundColor: "#7A003C" }}
+                    className="h-1 rounded-full bg-maroon"
                     initial={{ width: 0 }}
                     whileInView={{ width: 40 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                   />
-                  <span
-                    className="text-xs font-bold uppercase tracking-widest"
-                    style={{ color: "#7A003C" }}
-                  >
+                  <span className="text-xs font-bold uppercase tracking-widest text-maroon">
                     Location
                   </span>
                 </div>
@@ -665,7 +260,7 @@ export default function ContactPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.15 }}
-                  className="mb-1 text-2xl font-extrabold text-gray-900 md:text-3xl"
+                  className="mb-1 text-2xl font-bold text-gray-900 md:text-3xl"
                 >
                   Find Us
                 </motion.h2>
@@ -673,12 +268,7 @@ export default function ContactPage() {
                   Come visit us at the heart of McMaster's innovation ecosystem.
                 </p>
               </div>
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                transition={{ duration: 0.3 }}
-                className="flex-1 overflow-hidden rounded-2xl shadow-lg"
-                style={{ minHeight: "260px" }}
-              >
+              <div className="min-h-[260px] flex-1 overflow-hidden rounded-2xl shadow-lg">
                 <iframe
                   title="CRCE Location"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.5!2d-79.9214528!3d43.2621339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c853aa640c501%3A0x79c3ae03596c42e5!2sTandem%20Accelerator%20Building!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca"
@@ -689,16 +279,13 @@ export default function ContactPage() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
-              </motion.div>
+              </div>
               <motion.div
                 whileHover={{ x: 4 }}
                 transition={{ duration: 0.2 }}
                 className="flex items-start gap-4 rounded-2xl border border-gray-100 bg-gray-50 p-5"
               >
-                <div
-                  className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl shadow"
-                  style={{ backgroundColor: "#7A003C" }}
-                >
+                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-maroon shadow">
                   <MapPin className="h-5 w-5 text-white" />
                 </div>
                 <div className="flex-1">
@@ -715,8 +302,7 @@ export default function ContactPage() {
                     href="https://maps.google.com/maps/dir//Tandem+Accelerator+Building+TA+1280+Main+St+W+Building+%23+32+Hamilton,+ON+L8S+4K1"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold hover:underline"
-                    style={{ color: "#7A003C" }}
+                    className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-maroon hover:underline"
                   >
                     Open in Google Maps <ExternalLink className="h-3.5 w-3.5" />
                   </a>
@@ -725,7 +311,7 @@ export default function ContactPage() {
             </div>
           </motion.div>
         </div>
-        {/* ── BOTTOM CTA — matches RISE bottom CTA ── */}
+        {/* --- Bottom CTA --- */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -738,14 +324,12 @@ export default function ContactPage() {
         >
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <motion.div
-              className="absolute -right-20 -top-20 h-80 w-80 rounded-full opacity-20 blur-3xl"
-              style={{ backgroundColor: "#FDBF38" }}
+              className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-gold opacity-20 blur-3xl"
               animate={{ scale: [1, 1.4, 1], rotate: [0, 90, 0] }}
               transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div
-              className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full opacity-15 blur-3xl"
-              style={{ backgroundColor: "#C0392B" }}
+              className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-[#C0392B] opacity-15 blur-3xl"
               animate={{ scale: [1.2, 0.8, 1.2] }}
               transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -758,7 +342,7 @@ export default function ContactPage() {
             />
           </div>
           <div className="relative z-10 p-12 text-center text-white md:p-16">
-            <h2 className="mb-4 text-3xl font-black md:text-4xl">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
               Want to collaborate with CRCE?
             </h2>
             <p className="mx-auto mb-10 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
@@ -774,8 +358,7 @@ export default function ContactPage() {
                   boxShadow: "0 20px 50px rgba(0,0,0,0.35)",
                 }}
                 whileTap={{ scale: 0.96 }}
-                className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-bold shadow-2xl"
-                style={{ backgroundColor: "#FDBF38", color: "#7A003C" }}
+                className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-maroon shadow-2xl"
               >
                 Learn About Us <ArrowRight className="h-4 w-4" />
               </motion.a>
@@ -785,7 +368,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.07, y: -3 }}
                 whileTap={{ scale: 0.96 }}
-                className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 px-8 py-3.5 text-sm font-bold transition-colors hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 px-6 py-3 text-sm font-bold transition-colors hover:bg-white/10"
               >
                 Explore Reframery <ExternalLink className="h-4 w-4" />
               </motion.a>

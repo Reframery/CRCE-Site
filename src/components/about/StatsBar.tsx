@@ -42,16 +42,10 @@ export const StatsBar = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-shrink-0 flex-col items-center gap-3 md:items-start md:pt-1"
+            className="flex flex-shrink-0 items-center gap-3 md:flex-col md:items-start md:pt-1"
           >
             <Target className="h-8 w-8 text-gold" />
-            <span
-              className="font-sans-condensed text-2xl font-extrabold uppercase tracking-widest text-gold md:text-3xl"
-              style={{
-                writingMode: "vertical-rl",
-                transform: "rotate(180deg)",
-              }}
-            >
+            <span className="font-sans-condensed text-2xl font-extrabold uppercase tracking-widest text-gold md:text-3xl md:[transform:rotate(180deg)] md:[writing-mode:vertical-rl]">
               Our Story
             </span>
           </motion.div>

@@ -46,7 +46,7 @@ export const StatsBar = () => {
           >
             <Target className="h-8 w-8 text-gold" />
             <span
-              className="font-sans-condensed text-2xl font-black uppercase tracking-widest text-gold md:text-3xl"
+              className="font-sans-condensed text-2xl font-extrabold uppercase tracking-widest text-gold md:text-3xl"
               style={{
                 writingMode: "vertical-rl",
                 transform: "rotate(180deg)",

@@ -126,7 +126,7 @@ export default function ContactPage() {
                 whileHover={{ scale: 1.08, y: -4 }}
                 className="cursor-default rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-center shadow-lg backdrop-blur-md"
               >
-                <div className="text-sm font-black text-gold">{s.val}</div>
+                <div className="text-sm font-extrabold text-gold">{s.val}</div>
                 <div className="mt-0.5 text-xs uppercase tracking-widest text-white/60">
                   {s.sub}
                 </div>

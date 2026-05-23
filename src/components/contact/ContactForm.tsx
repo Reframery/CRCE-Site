@@ -161,7 +161,7 @@ export const ContactForm = () => {
           boxShadow: "0 16px 40px rgba(122,0,60,0.3)",
         }}
         whileTap={{ scale: 0.97 }}
-        className="flex w-full items-center justify-center gap-2.5 rounded-xl py-4 text-base font-black text-white shadow-lg"
+        className="flex w-full items-center justify-center gap-2.5 rounded-xl py-4 text-base font-semibold text-white shadow-lg"
         style={{
           background: "linear-gradient(135deg, #7A003C, #5a0029)",
         }}

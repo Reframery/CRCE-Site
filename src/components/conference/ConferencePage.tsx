@@ -9,6 +9,7 @@ import {
   Mic,
 } from "lucide-react"
 import { activities, stats } from "@/content/conference"
+import mcmasterHub from "@/images/conference/mcmaster-hub.png"
 import { ActivityCard } from "./ActivityCard"
 import { AnimatedCounter } from "./AnimatedCounter"
 import { AnimatedGlobe } from "./AnimateGlobe"
@@ -24,12 +25,11 @@ export const ConferencePage = () => {
 
   return (
     <div className="min-h-screen overflow-hidden bg-[#f5ede2]">
-      {/* ── HERO ── */}
+      {/* Hero */}
       <section
         ref={heroRef}
-        className="relative flex flex-col items-center justify-center overflow-hidden"
+        className="relative flex min-h-[65vh] flex-col items-center justify-center overflow-hidden"
         style={{
-          minHeight: "100vh",
           background:
             "linear-gradient(160deg, #12000c 0%, var(--maroon) 50%, #3a0020 100%)",
         }}
@@ -90,7 +90,7 @@ export const ConferencePage = () => {
           />
         ))}
         <motion.div
-          className="relative z-10 mx-auto w-full max-w-5xl px-4 py-20 text-center text-white"
+          className="relative z-10 mx-auto w-full max-w-5xl px-4 py-14 text-center text-white md:py-20"
           style={{ opacity: heroOpacity, y: heroY }}
         >
           {/* Badge */}
@@ -116,7 +116,7 @@ export const ConferencePage = () => {
               Centre for Research on Community Oriented Entrepreneurship
             </span>
           </motion.div>
-          {/* Main title — letters stagger in */}
+          {/* Main title */}
           <motion.h1
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -166,7 +166,7 @@ export const ConferencePage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.55 }}
-            className="mb-14 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
+            className="mb-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
           >
             {[
               { Icon: Calendar, text: "September 21–23, 2026" },
@@ -194,14 +194,11 @@ export const ConferencePage = () => {
         </motion.div>
         {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5 text-white/40"
+          className="absolute bottom-12 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5 text-white/50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.6 }}
+          transition={{ delay: 1.3 }}
         >
-          <span className="text-xs font-semibold uppercase tracking-widest">
-            Scroll
-          </span>
           <motion.div
             animate={{ y: [0, 9, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
@@ -216,7 +213,7 @@ export const ConferencePage = () => {
           </svg>
         </div>
       </section>
-      {/* ── STATS BAND ── */}
+      {/* Stats Band */}
       <section
         style={{
           backgroundColor: "#f5ede2",
@@ -246,7 +243,7 @@ export const ConferencePage = () => {
           </div>
         </div>
       </section>
-      {/* ── ABOUT ── */}
+      {/* About */}
       <section className="bg-[#f5ede2] py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-16 md:grid-cols-2">
@@ -306,8 +303,8 @@ export const ConferencePage = () => {
           </div>
         </div>
       </section>
-      {/* ── ACTIVITIES GRID ── */}
-      <section className="bg-[#f5ede2] py-24">
+      {/* Activities Grid */}
+      <section className="bg-[#f5ede2] py-10">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <motion.div
             className="mb-16 text-center"
@@ -338,8 +335,8 @@ export const ConferencePage = () => {
           </div>
         </div>
       </section>
-      {/* ── VENUE ── */}
-      <section className="bg-[#f5ede2] py-24">
+      {/* Venue */}
+      <section className="bg-[#f5ede2] pb-20 pt-10">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <motion.div
             className="mb-14 text-center"
@@ -374,7 +371,7 @@ export const ConferencePage = () => {
             >
               <div className="relative h-96 overflow-hidden">
                 <motion.img
-                  src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/99f84475a_image.png"
+                  src={mcmasterHub.src}
                   alt="The Hub at McMaster University"
                   className="h-full w-full object-cover"
                   whileHover={{ scale: 1.05 }}
@@ -498,9 +495,9 @@ export const ConferencePage = () => {
           </div>
         </div>
       </section>
-      {/* ── SPEAKERS ── */}
+      {/* Speakers */}
       <section
-        className="relative overflow-hidden py-28"
+        className="relative overflow-hidden py-16"
         style={{
           background: "linear-gradient(135deg, var(--maroon) 0%, #4a0024 100%)",
         }}
@@ -577,7 +574,7 @@ export const ConferencePage = () => {
           </motion.div>
         </div>
       </section>
-      {/* ── SCHEDULE NOTE ── */}
+      {/* Schedule Note */}
       <section className="bg-[#f5ede2] py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <motion.div
@@ -613,13 +610,13 @@ export const ConferencePage = () => {
           </motion.div>
         </div>
       </section>
-      {/* ── ORGANIZED BY ── */}
+      {/* Organized By ── */}
       <section
         style={{
           background:
             "linear-gradient(135deg, #f4ebe0 0%, #f9f3eb 50%, #f0e8dd 100%)",
         }}
-        className="py-20"
+        className="py-16 pb-24"
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid items-center gap-12 md:grid-cols-2">

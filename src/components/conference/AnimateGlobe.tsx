@@ -2,7 +2,7 @@ import { motion } from "motion/react"
 import { Globe } from "lucide-react"
 
 export const AnimatedGlobe = () => (
-  <div className="relative mx-auto h-80 w-80 md:h-[440px] md:w-[440px]">
+  <div className="relative mx-auto size-80 md:size-[440px]">
     {/* Outermost pulse rings */}
     {[0, 1, 2].map((i) => (
       <motion.div
@@ -28,7 +28,6 @@ export const AnimatedGlobe = () => (
       animate={{ rotate: 360 }}
       transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
     />
-
     {/* Middle spinning ring (dashed, opposite direction) */}
     <motion.div
       className="absolute inset-10 rounded-full"

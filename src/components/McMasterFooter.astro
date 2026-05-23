@@ -1,7 +1,6 @@
 ---
-import { Image } from "astro:assets"
 import { Icon } from "astro-icon/components"
-import mcmasterLogo from "@/images/mcmaster-footer-logo.png"
+import McMasterFooterLogo from "@/icons/mcmaster-footer-logo-v2.svg"
 
 const links = [
   {
@@ -42,10 +41,12 @@ const socials = [
 ]
 ---
 
-<footer class="flex flex-col items-center bg-maroon p-8 text-white md:p-12">
-  <Image src={mcmasterLogo} alt="McMcaster logo" class="w-[420px]" />
+<footer class="flex flex-col items-center bg-maroon p-8 text-white">
+  <div class="w-full max-w-[400px]">
+    <McMasterFooterLogo />
+  </div>
   <nav
-    class="mb-4 mt-6 flex w-full flex-col items-center justify-center gap-x-24 gap-y-4 border-y border-nevada/60 py-5 font-sans-condensed font-semibold tracking-wider md:flex-row"
+    class="mb-4 mt-6 flex w-full flex-col items-center justify-center gap-x-24 gap-y-4 border-y border-gray-600 py-5 font-sans-condensed font-semibold tracking-wider md:flex-row"
   >
     {
       links.map((link) => (

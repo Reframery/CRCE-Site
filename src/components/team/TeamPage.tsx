@@ -224,7 +224,10 @@ export const TeamPage = () => {
         </div>
       </section>
       {/* ── Student Team ── */}
-      <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
+      <section
+        id="student-team"
+        className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8"
+      >
         <SectionHeader
           icon={GraduationCap}
           label="Student Training"

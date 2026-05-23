@@ -7,12 +7,18 @@ interface Props {
   description: string
   action: string
   image: ImageMetadata
+  external?: boolean
 }
 
-const { href, title, description, action, image } = Astro.props
+const { href, title, description, action, image, external } = Astro.props
 ---
 
-<a href={href} class="group flex max-w-[620px] flex-col border">
+<a
+  href={href}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+  class="group flex max-w-[620px] flex-col border"
+>
   <div
     class="relative overflow-hidden transition-shadow duration-300 group-hover:shadow-2xl"
   >

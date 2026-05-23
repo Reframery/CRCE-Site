@@ -12,6 +12,7 @@ export const focusGroups = [
     action: "Learn More",
     image: left,
     href: "https://reframery.org",
+    external: true,
   },
   {
     title: "Student Training",
@@ -19,7 +20,7 @@ export const focusGroups = [
       "Empowering students through hands-on learning, CRCE places student training at the forefront of its mission. Our students immerse themselves in research, project management, social innovation, and the practical application of academic knowledge. Discover the impactful work our student members are engaged in and explore how they're shaping the future.",
     image: center,
     action: "Learn More",
-    href: "/student-training",
+    href: "/people-researchers-students-faculty#student-team",
   },
   {
     title: "RISE",

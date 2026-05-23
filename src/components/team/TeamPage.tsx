@@ -22,11 +22,11 @@ export const TeamPage = () => {
   const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0])
 
   return (
-    <div className="bg-background min-h-screen overflow-hidden">
-      {/* ── Hero ── */}
+    <div className="min-h-screen overflow-hidden bg-background">
+      {/* Hero */}
       <section
         ref={heroRef}
-        className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden bg-maroon"
+        className="relative flex flex-col items-center justify-center overflow-hidden bg-maroon"
       >
         {/* <motion.div
           className="absolute inset-0 bg-cover bg-center"
@@ -36,6 +36,7 @@ export const TeamPage = () => {
             opacity: 0.25,
           }}
         /> */}
+        {/* Grid overlay */}
         <div
           className="absolute inset-0 opacity-[0.06]"
           style={{
@@ -43,6 +44,7 @@ export const TeamPage = () => {
             backgroundSize: "60px 60px",
           }}
         />
+        {/* Gradient overlay */}
         <div
           className="absolute inset-0"
           style={{
@@ -50,6 +52,7 @@ export const TeamPage = () => {
               "linear-gradient(to bottom, rgba(122,0,60,0.5) 0%, rgba(122,0,60,0.25) 45%, rgba(122,0,60,0.9) 100%)",
           }}
         />
+        {/* Orbs */}
         {[
           {
             size: 500,
@@ -86,6 +89,7 @@ export const TeamPage = () => {
             }}
           />
         ))}
+        {/* Hero content */}
         <motion.div
           className="relative z-10 mx-auto w-full max-w-4xl px-4 py-14 text-center text-white md:py-20"
           style={{ opacity: heroOpacity }}
@@ -101,6 +105,7 @@ export const TeamPage = () => {
               CRCE — People
             </span>
           </motion.div>
+          {/* Hero title */}
           {["Our", "Team"].map((word, wi) => (
             <motion.div
               key={word}
@@ -126,6 +131,7 @@ export const TeamPage = () => {
               {word}
             </motion.div>
           ))}
+          {/* Hero subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -136,15 +142,13 @@ export const TeamPage = () => {
             community-oriented entrepreneurship.
           </motion.p>
         </motion.div>
+        {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5 text-white/50"
+          className="absolute bottom-12 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5 text-white/50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
+          transition={{ delay: 1.3 }}
         >
-          <span className="text-xs font-semibold uppercase tracking-widest">
-            Scroll
-          </span>
           <motion.div
             animate={{ y: [0, 9, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
@@ -152,8 +156,9 @@ export const TeamPage = () => {
             <ChevronDown className="h-5 w-5" />
           </motion.div>
         </motion.div>
+        {/* Wave */}
         <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10">
-          <svg viewBox="0 0 1440 80" className="fill-background h-auto w-full">
+          <svg viewBox="0 0 1440 80" className="h-auto w-full fill-background">
             <path d="M0,40L60,36C120,32,240,24,360,28C480,32,600,48,720,52C840,56,960,48,1080,40C1200,32,1320,24,1380,20L1440,16L1440,80L0,80Z" />
           </svg>
         </div>
@@ -166,7 +171,7 @@ export const TeamPage = () => {
         <span className="mx-2 text-gray-500">›</span>
         <span className="font-semibold text-gray-700">Our Team</span>
       </div>
-      {/* ── CRCE TEAM ── */}
+      {/* CRCE Team */}
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
         <SectionHeader
           icon={Users}
@@ -185,7 +190,7 @@ export const TeamPage = () => {
           ))}
         </div>
       </section>
-      {/* ── Internal Advisory Committee ── */}
+      {/* Internal Advisory Committee */}
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
         <SectionHeader
           icon={Users}
@@ -204,7 +209,7 @@ export const TeamPage = () => {
           ))}
         </div>
       </section>
-      {/* ── External Advisory Committee ── */}
+      {/* External Advisory Committee */}
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
         <SectionHeader
           icon={Globe}
@@ -223,7 +228,7 @@ export const TeamPage = () => {
           ))}
         </div>
       </section>
-      {/* ── Student Team ── */}
+      {/* Student Team  */}
       <section
         id="student-team"
         className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8"

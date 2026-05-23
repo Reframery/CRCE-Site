@@ -14,7 +14,7 @@ export const PodcastsPage = () => {
     publishedEpisodes.length > 0 ? publishedEpisodes[0] : undefined
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-white">
+    <div className="bg-background relative min-h-screen overflow-hidden">
       {/* Animated Grid Background */}
       <div className="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
         <motion.div
@@ -30,7 +30,7 @@ export const PodcastsPage = () => {
           }}
         />
         <motion.div
-          className="absolute left-10 top-20 h-64 w-64 rounded-full bg-[#7A003C]/5 blur-3xl"
+          className="absolute left-10 top-20 h-64 w-64 rounded-full bg-maroon/5 blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 30, 0],
@@ -39,7 +39,7 @@ export const PodcastsPage = () => {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 h-80 w-80 rounded-full bg-[#FDBF38]/5 blur-3xl"
+          className="absolute bottom-20 right-10 h-80 w-80 rounded-full bg-gold/5 blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -20, 0],
@@ -49,7 +49,7 @@ export const PodcastsPage = () => {
         />
       </div>
       {/* Hero Section */}
-      <section className="relative z-10 overflow-hidden bg-gradient-to-br from-[#7A003C] via-[#8B0A46] to-[#5C0028] px-4 py-20 text-white">
+      <section className="relative z-10 overflow-hidden bg-gradient-to-br from-maroon via-[#8B0A46] to-[#5C0028] px-4 py-20 text-white">
         <motion.div
           className="absolute inset-0 opacity-10"
           animate={{
@@ -73,7 +73,7 @@ export const PodcastsPage = () => {
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-20 left-20 h-16 w-16 rounded-lg border-2 border-[#FDBF38]/30"
+          className="absolute bottom-20 left-20 h-16 w-16 rounded-lg border-2 border-gold/30"
           animate={{
             y: [0, 20, 0],
             rotate: [0, -180, -360],
@@ -124,7 +124,7 @@ export const PodcastsPage = () => {
               Entrepreneurship
               <br />
               <motion.span
-                className="text-[#FDBF38]"
+                className="text-gold"
                 animate={{
                   textShadow: [
                     "0 0 20px rgba(253,191,56,0.3)",
@@ -173,7 +173,7 @@ export const PodcastsPage = () => {
                       ease: "linear",
                     }}
                   >
-                    <Sparkles className="h-4 w-4 text-[#FDBF38]" />
+                    <Sparkles className="h-4 w-4 text-gold" />
                   </motion.div>
                   <span className="text-sm font-medium">
                     New episodes coming soon
@@ -194,7 +194,7 @@ export const PodcastsPage = () => {
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    <UserCheck className="h-4 w-4 text-[#FDBF38]" />
+                    <UserCheck className="h-4 w-4 text-gold" />
                   </motion.div>
                   <span className="text-sm font-medium">
                     Expert guests & researchers
@@ -215,7 +215,7 @@ export const PodcastsPage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.h2
-              className="mb-6 text-3xl font-bold text-slate-900"
+              className="mb-6 text-3xl font-bold text-gray-900"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -233,7 +233,7 @@ export const PodcastsPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h2 className="mb-6 text-3xl font-bold text-slate-900">
+            <h2 className="mb-6 text-3xl font-bold text-gray-900">
               All Episodes
             </h2>
             <div className="grid gap-6">
@@ -243,7 +243,6 @@ export const PodcastsPage = () => {
             </div>
           </motion.div>
         )}
-
         {/* About Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -251,15 +250,15 @@ export const PodcastsPage = () => {
           viewport={{ once: true }}
           className="py-16 text-center"
         >
-          <h2 className="mb-6 text-3xl font-bold text-slate-900">
+          <h2 className="mb-6 text-3xl font-bold text-gray-900">
             About the Podcast
           </h2>
-          <p className="mx-auto mb-4 max-w-4xl leading-relaxed text-slate-600">
+          <p className="mx-auto mb-4 max-w-4xl leading-relaxed text-gray-600">
             "Entrepreneurship for the Rest of Us" is brought to you by the
             Centre for Research on Community-Oriented Entrepreneurship (CRCE) at
             McMaster University's DeGroote School of Business.
           </p>
-          <p className="mx-auto mb-8 max-w-4xl leading-relaxed text-slate-600">
+          <p className="mx-auto mb-8 max-w-4xl leading-relaxed text-gray-600">
             Through engaging conversations with leading researchers,
             entrepreneurs, and community builders, we explore innovative
             approaches to entrepreneurship that prioritize environmental
@@ -283,7 +282,7 @@ export const PodcastsPage = () => {
               >
                 <Button
                   type="button"
-                  className="bg-[#7A003C] px-6 py-3 text-white hover:bg-[#5C0028]"
+                  className="bg-maroon px-6 py-3 text-white hover:bg-[#5C0028]"
                 >
                   Learn About CRCE
                 </Button>
@@ -296,7 +295,7 @@ export const PodcastsPage = () => {
               >
                 <Button
                   type="button"
-                  className="border border-[#7A003C] px-6 py-3 text-[#7A003C] hover:bg-[#7A003C] hover:text-white"
+                  className="border border-maroon px-6 py-3 text-maroon hover:bg-maroon hover:text-white"
                 >
                   Explore Reframery
                 </Button>
@@ -309,7 +308,7 @@ export const PodcastsPage = () => {
               >
                 <Button
                   type="button"
-                  className="border border-[#7A003C] px-6 py-3 text-[#7A003C] hover:bg-[#7A003C] hover:text-white"
+                  className="border border-maroon px-6 py-3 text-maroon hover:bg-maroon hover:text-white"
                 >
                   Contact Us
                 </Button>

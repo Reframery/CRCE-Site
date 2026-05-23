@@ -1,9 +1,9 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import { description } from "@/content/rise"
-import Rise from "@/components/rise/RisePage"
+import { RisePage } from "@/components/rise/RisePage"
 ---
 
 <Layout title="RISE" {description}>
-  <Rise client:load />
+  <RisePage client:load />
 </Layout>

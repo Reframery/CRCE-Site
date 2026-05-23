@@ -1,9 +1,10 @@
 import { useRef, useState } from "react"
 import { motion, useInView } from "motion/react"
 import { StudentModal } from "./StudentModal"
+import type { Person } from "@/content/team"
 
 type StudentCardProps = {
-  person: any
+  person: Person
   index: number
   loading?: React.ImgHTMLAttributes<HTMLImageElement>["loading"]
 }

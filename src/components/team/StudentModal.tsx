@@ -1,8 +1,9 @@
 import { AnimatePresence, motion } from "motion/react"
 import { Linkedin, Mail, X } from "lucide-react"
+import type { Person } from "@/content/team"
 
 type StudentModalProps = {
-  person: any
+  person: Person
   onClose: () => void
   loading?: React.ImgHTMLAttributes<HTMLImageElement>["loading"]
 }
@@ -73,7 +74,7 @@ export const StudentModal = ({
               {person.email && (
                 <a
                   href={`mailto:${person.email}`}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#7A003C] px-4 py-2 text-sm font-bold text-white shadow-md"
+                  className="inline-flex items-center gap-2 rounded-full bg-maroon px-4 py-2 text-sm font-bold text-white shadow-md"
                 >
                   <Mail className="h-4 w-4" /> Email
                 </a>
@@ -83,7 +84,7 @@ export const StudentModal = ({
                   href={`https://www.linkedin.com/in/${person.linkedin}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-[#7A003C] px-4 py-2 text-sm font-bold text-[#7A003C]"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-maroon px-4 py-2 text-sm font-bold text-maroon"
                 >
                   <Linkedin className="h-4 w-4" /> LinkedIn
                 </a>

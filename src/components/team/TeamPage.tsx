@@ -21,11 +21,11 @@ export const TeamPage = () => {
   const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0])
 
   return (
-    <div className="min-h-screen overflow-hidden bg-[#f5f4f2]">
+    <div className="bg-background min-h-screen overflow-hidden">
       {/* ── Hero ── */}
       <section
         ref={heroRef}
-        className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden bg-[#7A003C]"
+        className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden bg-maroon"
       >
         <motion.div
           className="absolute inset-0 bg-cover bg-center"
@@ -95,7 +95,7 @@ export const TeamPage = () => {
             transition={{ duration: 0.6, type: "spring", stiffness: 120 }}
             className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-5 py-2.5 shadow-lg backdrop-blur-md"
           >
-            <Users className="h-4 w-4 text-[#FDBF38]" />
+            <Users className="h-4 w-4 text-gold" />
             <span className="text-sm font-semibold tracking-wide">
               CRCE — People
             </span>
@@ -115,7 +115,7 @@ export const TeamPage = () => {
               style={
                 wi === 1
                   ? {
-                      color: "#FDBF38",
+                      color: "var(--gold)",
                       textShadow:
                         "0 0 60px rgba(253,191,56,0.45), 0 4px 30px rgba(0,0,0,0.4)",
                     }
@@ -152,7 +152,7 @@ export const TeamPage = () => {
           </motion.div>
         </motion.div>
         <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10">
-          <svg viewBox="0 0 1440 80" className="h-auto w-full fill-[#f5f4f2]">
+          <svg viewBox="0 0 1440 80" className="fill-background h-auto w-full">
             <path d="M0,40L60,36C120,32,240,24,360,28C480,32,600,48,720,52C840,56,960,48,1080,40C1200,32,1320,24,1380,20L1440,16L1440,80L0,80Z" />
           </svg>
         </div>
@@ -228,7 +228,7 @@ export const TeamPage = () => {
           icon={GraduationCap}
           label="Student Training"
           title="Student Team"
-          color="#FDBF38"
+          color="var(--gold)"
         />
         <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {studentTeam.map((person, i) => (

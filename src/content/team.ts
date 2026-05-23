@@ -1,7 +1,17 @@
+export type Person = {
+  name: string
+  role: string
+  details?: string[]
+  email: string | null
+  linkedin?: string | null
+  image: string
+  bio?: string
+}
+
 const PLACEHOLDER =
   "https://ui-avatars.com/api/?background=7A003C&color=fff&size=200&bold=true&name="
 
-export const coreTeam = [
+export const coreTeam: Person[] = [
   {
     name: "Benson Honig, Ph.D.",
     role: "Director, CRCE",
@@ -32,7 +42,7 @@ export const coreTeam = [
   },
 ]
 
-export const internalAdvisory = [
+export const internalAdvisory: Person[] = [
   {
     name: "Jacques Carette",
     role: "Associate Professor, Computing and Software",
@@ -145,7 +155,7 @@ export const internalAdvisory = [
   },
 ]
 
-export const externalAdvisory = [
+export const externalAdvisory: Person[] = [
   {
     name: "Maria Aluchna",
     role: "Associate Professor",
@@ -257,7 +267,7 @@ export const externalAdvisory = [
   },
 ]
 
-export const studentTeam = [
+export const studentTeam: Person[] = [
   {
     name: "Veerash Palanichamy",
     role: "Software Developer",

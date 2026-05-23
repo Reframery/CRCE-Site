@@ -1,9 +1,10 @@
 import { useRef, useState } from "react"
 import { motion, useInView } from "motion/react"
 import { Linkedin, Mail } from "lucide-react"
+import type { Person } from "@/content/team"
 
 type PersonCardProps = {
-  person: any
+  person: Person
   index: number
   accentColor?: string
   loading?: React.ImgHTMLAttributes<HTMLImageElement>["loading"]
@@ -105,9 +106,9 @@ export const PersonCard = ({
         </p>
         {person.details && person.details.length > 0 && (
           <div className="mt-auto space-y-0.5 pt-2">
-            {person.details.map((d: any, i: any) => (
+            {person.details.map((detail, i) => (
               <p key={i} className="text-xs leading-snug text-gray-400">
-                {d}
+                {detail}
               </p>
             ))}
           </div>

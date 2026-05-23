@@ -109,7 +109,7 @@ export const ConferencePage = () => {
             <span className="text-xs font-semibold uppercase tracking-widest text-white/70">
               Hosted by
             </span>
-            <span className="text-sm font-black tracking-widest text-gold">
+            <span className="text-sm font-extrabold tracking-widest text-gold">
               CRCE
             </span>
             <span className="hidden text-xs text-white/50 sm:inline">
@@ -323,7 +323,7 @@ export const ConferencePage = () => {
               </span>
               <div className="h-px w-10 rounded-full bg-maroon" />
             </div>
-            <h2 className="mb-3 text-3xl font-black text-[#1a1a1a] md:text-4xl">
+            <h2 className="mb-3 text-3xl font-bold text-[#1a1a1a] md:text-4xl">
               Conference Activities
             </h2>
             <p className="mx-auto max-w-2xl text-base leading-relaxed text-[#4a4a4a]">
@@ -355,7 +355,7 @@ export const ConferencePage = () => {
               </span>
               <div className="h-px w-10 rounded-full bg-maroon" />
             </div>
-            <h2 className="mb-3 text-3xl font-black text-[#1a1a1a] md:text-4xl">
+            <h2 className="mb-3 text-3xl font-bold text-[#1a1a1a] md:text-4xl">
               Venue & Details
             </h2>
           </motion.div>
@@ -389,7 +389,7 @@ export const ConferencePage = () => {
                   }}
                 />
                 <div className="absolute bottom-5 left-6">
-                  <span className="text-xl font-black text-white drop-shadow">
+                  <span className="text-xl font-extrabold text-white drop-shadow">
                     The Hub
                   </span>
                   <p className="text-sm text-white/70">
@@ -410,7 +410,7 @@ export const ConferencePage = () => {
                   <MapPin className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-black text-[#e8dcc8]">
+                  <h3 className="text-xl font-bold text-[#e8dcc8]">
                     The Hub, McMaster University
                   </h3>
                   <p className="text-base text-[#c9b5a0]">
@@ -437,7 +437,7 @@ export const ConferencePage = () => {
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-maroon">
                   <Calendar className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="mb-1 text-lg font-black text-[#e8dcc8]">
+                <h4 className="mb-1 text-lg font-extrabold text-[#e8dcc8]">
                   September 21–23, 2026
                 </h4>
                 <p className="text-sm text-[#d4c4aa]">
@@ -474,7 +474,7 @@ export const ConferencePage = () => {
                   <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-maroon">
                     <MapPin className="h-5 w-5 text-white" />
                   </div>
-                  <h4 className="mb-1 text-lg font-black text-[#e8dcc8]">
+                  <h4 className="mb-1 text-lg font-extrabold text-[#e8dcc8]">
                     Directions
                   </h4>
                   <p className="text-sm leading-relaxed text-[#d4c4aa]">
@@ -552,7 +552,7 @@ export const ConferencePage = () => {
                 }}
               />
             </motion.div>
-            <h2 className="mb-8 text-3xl font-black leading-tight md:text-5xl">
+            <h2 className="mb-8 text-3xl font-bold leading-tight md:text-5xl">
               Keynote Speakers & Presenters
             </h2>
             <div
@@ -601,9 +601,9 @@ export const ConferencePage = () => {
               <Calendar className="h-6 w-6 text-gold" />
             </div>
             <div>
-              <h4 className="mb-2 text-lg font-bold text-[#e8dcc8]">
+              <h3 className="mb-2 text-lg font-bold text-[#e8dcc8]">
                 Schedule Coming Soon
-              </h4>
+              </h3>
               <p className="text-sm leading-relaxed text-[#d4c4aa]">
                 The full conference schedule is still being finalized and will
                 be released closer to the conference date, approximately two
@@ -630,7 +630,7 @@ export const ConferencePage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="mb-6 text-5xl font-black leading-tight text-maroon md:text-6xl">
+              <h2 className="mb-6 text-5xl font-bold leading-tight text-maroon md:text-6xl">
                 Organized By
               </h2>
               <div className="h-1 w-20 rounded-full bg-maroon" />
@@ -711,7 +711,7 @@ export const ConferencePage = () => {
                   >
                     DeGroote School of Business
                   </p>
-                  <p className="text-xl font-black text-[#e8dcc8]">
+                  <p className="text-xl font-extrabold text-[#e8dcc8]">
                     McMaster University
                   </p>
                 </div>
@@ -744,7 +744,9 @@ export const ConferencePage = () => {
                   <span className="text-sm font-black text-gold">CRCE</span>
                 </div>
                 <div>
-                  <p className="mb-1 text-xl font-black text-[#e8dcc8]">CRCE</p>
+                  <p className="mb-1 text-xl font-extrabold text-[#e8dcc8]">
+                    CRCE
+                  </p>
                   <p className="text-xs leading-relaxed text-[#c9b5a0]">
                     Centre for Research on Community
                     <br />

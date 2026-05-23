@@ -61,7 +61,7 @@ export const ActivityCard = ({ activity, index }: ActivityCardProps) => {
       >
         <Icon className="h-7 w-7 text-gold" />
       </motion.div>
-      <h3 className="mb-2 text-lg font-black leading-snug text-[#e8dcc8]">
+      <h3 className="mb-2 text-lg font-bold leading-snug text-[#e8dcc8]">
         {activity.label}
       </h3>
       <p className="text-sm leading-relaxed text-[#c9b5a0]">{activity.desc}</p>

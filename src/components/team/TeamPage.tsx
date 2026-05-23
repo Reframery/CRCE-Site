@@ -17,6 +17,7 @@ export const TeamPage = () => {
     target: heroRef,
     offset: ["start start", "end start"],
   })
+  // @ts-expect-error
   const heroY = useTransform(heroScroll, [0, 1], [0, 120])
   const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0])
 
@@ -27,14 +28,14 @@ export const TeamPage = () => {
         ref={heroRef}
         className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden bg-maroon"
       >
-        <motion.div
+        {/* <motion.div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url("https://www.crce.info/_astro/banner.EKBvg0l8_Z9FPRt.webp")`,
             y: heroY,
             opacity: 0.25,
           }}
-        />
+        /> */}
         <div
           className="absolute inset-0 opacity-[0.06]"
           style={{

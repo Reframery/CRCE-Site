@@ -13,7 +13,7 @@ import banner from "@/images/banner/contact.jpg"
 import { ContactForm } from "./ContactForm"
 import { InfoCard } from "./InfoCard"
 
-export default function ContactPage() {
+export const ContactPage = () => {
   const heroRef = useRef(null)
   const { scrollYProgress: heroScroll } = useScroll({
     target: heroRef,

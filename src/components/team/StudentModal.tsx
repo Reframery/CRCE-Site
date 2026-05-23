@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence, motion } from "motion/react"
 import { Linkedin, Mail, X } from "lucide-react"
 
 type StudentModalProps = {
@@ -43,6 +43,7 @@ export const StudentModal = ({
             loading={loading}
           />
           <button
+            type="button"
             onClick={onClose}
             className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white transition-colors hover:bg-white/40"
           >

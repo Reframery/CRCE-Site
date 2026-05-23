@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import { motion, useInView } from "framer-motion"
+import { motion, useInView } from "motion/react"
 import { Linkedin, Mail } from "lucide-react"
 
 type PersonCardProps = {

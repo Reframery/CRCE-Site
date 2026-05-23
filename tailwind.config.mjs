@@ -6,9 +6,7 @@ export default {
   theme: {
     container: {
       center: true,
-      screens: {
-        "2xl": "1350px",
-      },
+      screens: { "2xl": "1350px" },
     },
     extend: {
       fontFamily: {
@@ -27,10 +25,7 @@ export default {
         foreground: "#111",
         nevada: "#5e6a71",
         maroon: "#7a003c",
-        gold: "#fdbf57",
-        modal: {
-          background: "#c6cbce",
-        },
+        gold: "#fdbf38",
       },
     },
   },

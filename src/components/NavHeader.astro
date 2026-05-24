@@ -1,28 +1,36 @@
 ---
 import { Image } from "astro:assets"
 import { Icon } from "astro-icon/components"
+import { SITE_TITLE } from "@/configs/site"
 import SearchButton from "./SearchButton.astro"
 import crceLogo from "@/images/crce-logo.png"
 ---
 
 <header
+  role="banner"
   class="flex items-center justify-between gap-x-12 gap-y-4 bg-linear-to-b from-white from-85% to-gray-600/20 px-6 py-6 pb-4 sm:px-8 md:px-12 lg:px-20"
 >
   <a
     href="https://www.mcmaster.ca/"
     rel="noopener noreferrer"
     target="_blank"
-    aria-label="External link to McMaster University"
+    aria-label="McMaster University (opens in new tab)"
   >
-    <Icon name="mcmaster-logo" class="h-20 w-36" />
+    <Icon name="mcmaster-logo" class="h-20 w-36" aria-hidden="true" />
   </a>
-  <Image
-    src={crceLogo}
-    alt="CRCE Logo"
-    quality={100}
-    loading="eager"
-    class="relative max-w-[min(100%,394px)] object-contain md:-top-1"
-  />
+  <a
+    id="crce-logo"
+    href="/"
+    class="relative mx-auto max-w-[min(100%,394px)] object-contain md:-top-1"
+    aria-label={`${SITE_TITLE} (CRCE) homepage`}
+  >
+    <Image
+      src={crceLogo}
+      alt={`${SITE_TITLE} (CRCE) logo`}
+      quality={100}
+      loading="eager"
+    />
+  </a>
   <SearchButton />
 </header>
 
@@ -32,7 +40,7 @@ import crceLogo from "@/images/crce-logo.png"
       flex-wrap: wrap;
     }
 
-    header img {
+    #crce-logo {
       order: 999;
       margin-inline: auto;
     }

@@ -1,55 +1,72 @@
 import { useState } from "react"
+import { ExternalLink, ChevronDown } from "lucide-react"
 import { cn, isActive } from "@/lib/utils.ts"
 import { siteLinks } from "@/configs/navigation.ts"
 
 export default function MobileNavbar({ pathname }: { pathname: string }) {
   const [open, setOpen] = useState(false)
+  const menuId = "mobile-nav-menu"
+
+  const activeLink = siteLinks.find((link) => isActive(link.pathname, pathname))
+
   return (
-    <nav className="block lg:hidden">
+    <nav aria-label="Main navigation" className="block lg:hidden">
       <button
         type="button"
-        className="hover:bg-foreground/40 relative w-full px-8 py-4 text-center uppercase transition-colors duration-250"
+        aria-expanded={open}
+        aria-controls={menuId}
+        className={cn(
+          "hover:bg-foreground/40 relative w-full border-b border-transparent px-8 py-3 text-center uppercase transition-colors duration-250 hover:cursor-pointer",
+          open && "border-b-gray-600"
+        )}
         onClick={() => setOpen(!open)}
       >
-        {siteLinks.find((link) => isActive(link.pathname, pathname))?.label}
-        <svg
+        {activeLink?.label ?? "Menu"}
+        <span className="sr-only"> — {open ? "close" : "open"} navigation</span>
+        <ChevronDown
           aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
           className={cn(
-            "absolute top-1/2 right-4 -translate-y-1/2",
-            open && "rotate-180 transform"
+            "absolute top-1/2 right-4 -translate-y-1/2 transition-transform duration-300",
+            open && "rotate-180"
           )}
-        >
-          <path d="m6 9 6 6 6-6" />
-        </svg>
+        />
       </button>
       <div
+        id={menuId}
+        // inert removes hidden links from tab order and the accessibility tree.
+        // Without it, keyboard users can focus invisible links when the menu is closed.
+        inert={!open}
         className={cn(
           "grid grid-rows-[0fr] transition-all duration-300",
           open && "grid-rows-[1fr]"
         )}
       >
         <div className="flex flex-col overflow-hidden">
-          {siteLinks.map((link) => (
-            <a
-              key={link.pathname}
-              className={cn(
-                "hover:text-foreground relative inline-flex items-center justify-center gap-2 px-8 py-4 text-center transition-colors duration-250 hover:bg-white hover:shadow-lg",
-                isActive(link.pathname, pathname) && "bg-foreground/40"
-              )}
-              href={link.pathname}
-            >
-              {link.label}
-            </a>
-          ))}
+          {siteLinks.map((link) => {
+            const active = isActive(link.pathname, pathname)
+            return (
+              <a
+                key={link.pathname}
+                className={cn(
+                  "hover:text-foreground relative inline-flex items-center justify-center gap-2 border-b border-gray-600 px-8 py-3 text-center transition-colors duration-250 hover:bg-white hover:shadow-lg",
+                  active && "bg-foreground/40"
+                )}
+                href={link.pathname}
+                aria-current={active ? "page" : undefined}
+                {...(link.isExternal
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+              >
+                {link.label}
+                {link.isExternal && (
+                  <>
+                    <ExternalLink size={20} aria-hidden="true" />
+                    <span className="sr-only">(opens in new tab)</span>
+                  </>
+                )}
+              </a>
+            )
+          })}
         </div>
       </div>
     </nav>

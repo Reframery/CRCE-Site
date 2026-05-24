@@ -7,34 +7,45 @@ import MobileNavbar from "./MobileNavbar"
 const pathname = new URL(Astro.request.url).pathname
 ---
 
-<header class="bg-maroon font-sans-condensed text-xl text-white">
-  <nav class="hidden items-center justify-center lg:flex">
+<div class="bg-maroon font-sans-condensed text-xl text-white">
+  <nav
+    aria-label="Main navigation"
+    class="hidden items-center justify-center lg:flex"
+  >
     {
-      siteLinks.map((link) => (
-        <a
-          class={cn(
-            "hover:text-foreground relative inline-flex items-center gap-2 self-stretch px-8 py-3 text-center transition-colors duration-250 hover:bg-white hover:shadow-lg",
-            isActive(link.pathname, pathname) &&
-              "after:bg-gold after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-[80%] after:-translate-x-1/2 after:content-['']"
-          )}
-          href={link.pathname}
-          {...(link.isExternal
-            ? {
-                target: "_blank",
-                rel: "noopener noreferrer",
-              }
-            : {})}
-        >
-          {link.pathname === "/" && (
-            <Icon size={20} name="lucide:home" aria-hidden="true" />
-          )}
-          {link.label}
-          {link.isExternal && (
-            <Icon size={20} name="lucide:external-link" aria-hidden="true" />
-          )}
-        </a>
-      ))
+      siteLinks.map((link) => {
+        const active = isActive(link.pathname, pathname)
+        return (
+          <a
+            class={cn(
+              "hover:text-foreground relative inline-flex items-center gap-2 self-stretch px-6 py-3 text-center transition-colors duration-250 hover:bg-white hover:shadow-lg",
+              active &&
+                "after:bg-gold after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-[80%] after:-translate-x-1/2 after:content-['']"
+            )}
+            href={link.pathname}
+            aria-current={active ? "page" : undefined}
+            {...(link.isExternal
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
+          >
+            {link.pathname === "/" && (
+              <Icon size={20} name="lucide:home" aria-hidden="true" />
+            )}
+            {link.label}
+            {link.isExternal && (
+              <>
+                <Icon
+                  size={20}
+                  name="lucide:external-link"
+                  aria-hidden="true"
+                />
+                <span class="sr-only">(opens in new tab)</span>
+              </>
+            )}
+          </a>
+        )
+      })
     }
   </nav>
   <MobileNavbar pathname={pathname} client:load />
-</header>
+</div>

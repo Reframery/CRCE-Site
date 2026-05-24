@@ -14,7 +14,7 @@ export const PodcastsPage = () => {
     publishedEpisodes.length > 0 ? publishedEpisodes[0] : undefined
 
   return (
-    <div className="bg-background relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden bg-background">
       {/* Animated Grid Background */}
       <div className="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
         <motion.div
@@ -30,7 +30,7 @@ export const PodcastsPage = () => {
           }}
         />
         <motion.div
-          className="absolute left-10 top-20 h-64 w-64 rounded-full bg-maroon/5 blur-3xl"
+          className="bg-maroon/5 absolute left-10 top-20 h-64 w-64 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 30, 0],
@@ -39,7 +39,7 @@ export const PodcastsPage = () => {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 h-80 w-80 rounded-full bg-gold/5 blur-3xl"
+          className="bg-gold/5 absolute bottom-20 right-10 h-80 w-80 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -20, 0],
@@ -73,7 +73,7 @@ export const PodcastsPage = () => {
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-20 left-20 h-16 w-16 rounded-lg border-2 border-gold/30"
+          className="border-gold/30 absolute bottom-20 left-20 h-16 w-16 rounded-lg border-2"
           animate={{
             y: [0, 20, 0],
             rotate: [0, -180, -360],
@@ -116,7 +116,7 @@ export const PodcastsPage = () => {
               </div>
             </motion.div>
             <motion.h1
-              className="mb-6 text-4xl font-bold leading-tight md:text-6xl"
+              className="mb-6 text-5xl font-bold leading-none tracking-tight md:text-7xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -205,8 +205,8 @@ export const PodcastsPage = () => {
           </motion.div>
         </div>
       </section>
+      {/* Latest Episode Section */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-12">
-        {/* Latest Episode Section */}
         {latestEpisode && (
           <motion.div
             className="mb-16"

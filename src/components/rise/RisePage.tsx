@@ -214,7 +214,8 @@ export const RisePage = () => {
           transition={{ duration: 0.8, type: "spring", stiffness: 70 }}
           className="relative overflow-hidden rounded-3xl shadow-2xl"
           style={{
-            background: "linear-gradient(135deg, #7A003C 0%, #4a0024 100%)",
+            background:
+              "linear-gradient(135deg, hsl(var(--maroon)) 0%, #4a0024 100%)",
           }}
         >
           {/* Background shapes */}

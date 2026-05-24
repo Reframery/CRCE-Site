@@ -15,7 +15,8 @@ export const StatsBar = () => {
         transition={{ duration: 0.7, type: "spring", stiffness: 70 }}
         className="relative overflow-hidden rounded-3xl shadow-2xl"
         style={{
-          background: "linear-gradient(135deg, var(--maroon) 0%, #5a0029 100%)",
+          background:
+            "linear-gradient(135deg, hsl(var(--maroon)) 0%, #5a0029 100%)",
         }}
       >
         {/* Hex pattern bg */}

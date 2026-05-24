@@ -23,10 +23,9 @@ export default {
       colors: {
         muted: { DEFAULT: "#f8f9fa", foreground: "#495057" },
         foreground: "#111",
-        nevada: "#5e6a71",
-        background: "var(--background)",
-        maroon: "var(--maroon)",
-        gold: "var(--gold)",
+        background: "hsl(var(--background))",
+        maroon: "hsl(var(--maroon))",
+        gold: "hsl(var(--gold))",
       },
     },
   },

@@ -10,14 +10,21 @@ export const ContactForm = () => {
     message: "",
   })
   const [submitted, setSubmitted] = useState(false)
-  const [focusedField, setFocusedField] = useState<any>(null)
 
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault()
     const mailto = `mailto:bhonig@mcmaster.ca?subject=${encodeURIComponent(formData.subject || "General Inquiry")}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`
     window.location.href = mailto
     setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 5000)
+    setTimeout(() => {
+      setSubmitted(false)
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      })
+    }, 5000)
   }
 
   return submitted ? (
@@ -82,12 +89,7 @@ export const ContactForm = () => {
                 }))
               }
               placeholder={field.placeholder}
-              onFocus={() => setFocusedField(field.id)}
-              onBlur={() => setFocusedField(null)}
-              className="w-full rounded-xl border-2 bg-gray-50 px-4 py-3.5 font-medium text-gray-900 placeholder-gray-300 transition-all duration-200 focus:outline-none"
-              style={{
-                borderColor: focusedField === field.id ? "#7A003C" : "#e5e7eb",
-              }}
+              className="w-full rounded-xl border-2 bg-white px-4 py-2 font-medium text-gray-900 placeholder-gray-400 ring-2 ring-transparent transition-all duration-200 focus-visible:outline-none focus-visible:ring-maroon invalid:focus-visible:ring-red-500"
             />
           </motion.div>
         ))}
@@ -112,12 +114,7 @@ export const ContactForm = () => {
             setFormData((p) => ({ ...p, subject: e.target.value }))
           }
           placeholder="Research collaboration, general inquiry…"
-          onFocus={() => setFocusedField("subject")}
-          onBlur={() => setFocusedField(null)}
-          className="w-full rounded-xl border-2 bg-gray-50 px-4 py-3.5 font-medium text-gray-900 placeholder-gray-300 transition-all duration-200 focus:outline-none"
-          style={{
-            borderColor: focusedField === "subject" ? "#7A003C" : "#e5e7eb",
-          }}
+          className="w-full rounded-xl border-2 bg-white px-4 py-2 font-medium text-gray-900 placeholder-gray-400 ring-2 ring-transparent transition-all duration-200 focus-visible:outline-none focus-visible:ring-maroon invalid:focus-visible:ring-red-500"
         />
       </motion.div>
       <motion.div
@@ -141,12 +138,7 @@ export const ContactForm = () => {
             setFormData((p) => ({ ...p, message: e.target.value }))
           }
           placeholder="Tell us how we can help…"
-          onFocus={() => setFocusedField("message")}
-          onBlur={() => setFocusedField(null)}
-          className="w-full resize-none rounded-xl border-2 bg-gray-50 px-4 py-3.5 font-medium text-gray-900 placeholder-gray-300 transition-all duration-200 focus:outline-none"
-          style={{
-            borderColor: focusedField === "message" ? "#7A003C" : "#e5e7eb",
-          }}
+          className="w-full resize-none rounded-xl border-2 bg-white px-4 py-2 font-medium text-gray-900 placeholder-gray-400 ring-2 ring-transparent transition-all duration-200 focus-visible:outline-none focus-visible:ring-maroon invalid:focus-visible:ring-red-500"
         />
       </motion.div>
       <motion.button
@@ -155,16 +147,7 @@ export const ContactForm = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: 0.36 }}
-        whileHover={{
-          scale: 1.03,
-          y: -3,
-          boxShadow: "0 16px 40px rgba(122,0,60,0.3)",
-        }}
-        whileTap={{ scale: 0.97 }}
-        className="flex w-full items-center justify-center gap-2.5 rounded-xl py-4 text-base font-semibold text-white shadow-lg"
-        style={{
-          background: "linear-gradient(135deg, #7A003C, #5a0029)",
-        }}
+        className="hover:bg-maroon/90 flex w-full items-center justify-center gap-2.5 rounded-xl bg-maroon py-3 text-base font-semibold text-white shadow-lg transition-colors duration-200 hover:text-gold"
       >
         <Send className="h-5 w-5" />
         Send Message

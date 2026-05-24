@@ -186,7 +186,7 @@ export const ContactPage = () => {
               className="h-2"
               style={{
                 background:
-                  "linear-gradient(90deg, var(--maroon), var(--gold))",
+                  "linear-gradient(90deg, hsl(var(--maroon)), hsl(var(--gold)))",
               }}
             />
             <div className="p-8 md:p-10">
@@ -238,7 +238,7 @@ export const ContactPage = () => {
               className="h-2"
               style={{
                 background:
-                  "linear-gradient(90deg, var(--gold), var(--maroon))",
+                  "linear-gradient(90deg, hsl(var(--gold)), hsl(var(--maroon)))",
               }}
             />
             <div className="flex flex-1 flex-col gap-6 p-8 md:p-10">
@@ -319,7 +319,8 @@ export const ContactPage = () => {
           transition={{ duration: 0.8, type: "spring", stiffness: 70 }}
           className="relative mb-12 overflow-hidden rounded-3xl shadow-2xl"
           style={{
-            background: "linear-gradient(135deg, #7A003C 0%, #4a0024 100%)",
+            background:
+              "linear-gradient(135deg, hsl(var(--maroon)) 0%, #4a0024 100%)",
           }}
         >
           <div className="pointer-events-none absolute inset-0 overflow-hidden">

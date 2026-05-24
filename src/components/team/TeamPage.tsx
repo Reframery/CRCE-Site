@@ -121,7 +121,7 @@ export const TeamPage = () => {
               style={
                 wi === 1
                   ? {
-                      color: "var(--gold)",
+                      color: "hsl(var(--gold))",
                       textShadow:
                         "0 0 60px rgba(253,191,56,0.45), 0 4px 30px rgba(0,0,0,0.4)",
                     }
@@ -237,7 +237,7 @@ export const TeamPage = () => {
           icon={GraduationCap}
           label="Student Training"
           title="Student Team"
-          color="var(--gold)"
+          color="hsl(var(--gold))"
         />
         <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {studentTeam.map((person, i) => (

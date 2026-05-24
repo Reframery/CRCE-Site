@@ -221,7 +221,7 @@ export const AboutPage = () => {
           className="relative overflow-hidden rounded-3xl shadow-2xl"
           style={{
             background:
-              "linear-gradient(135deg, var(--maroon) 0%, #4a0024 100%)",
+              "linear-gradient(135deg, hsl(var(--maroon)) 0%, #4a0024 100%)",
           }}
         >
           <div className="pointer-events-none absolute inset-0 overflow-hidden">

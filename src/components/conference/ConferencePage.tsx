@@ -31,7 +31,7 @@ export const ConferencePage = () => {
         className="relative flex min-h-[65vh] flex-col items-center justify-center overflow-hidden"
         style={{
           background:
-            "linear-gradient(160deg, #12000c 0%, var(--maroon) 50%, #3a0020 100%)",
+            "linear-gradient(160deg, #12000c 0%, hsl(var(--maroon)) 50%, #3a0020 100%)",
         }}
       >
         {/* Animated dot grid */}
@@ -499,7 +499,8 @@ export const ConferencePage = () => {
       <section
         className="relative overflow-hidden py-16"
         style={{
-          background: "linear-gradient(135deg, var(--maroon) 0%, #4a0024 100%)",
+          background:
+            "linear-gradient(135deg, hsl(var(--maroon)) 0%, #4a0024 100%)",
         }}
       >
         {/* Pattern */}

@@ -13,7 +13,7 @@ export const SectionHeader = ({
   icon: Icon,
   label,
   title,
-  color = "var(--maroon)",
+  color = "hsl(var(--maroon))",
 }: SectionHeaderProps) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-60px" })

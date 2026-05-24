@@ -34,7 +34,8 @@ export const StudentModal = ({
         <div
           className="relative h-32 overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, #B8860B 0%, #7A003C 100%)",
+            background:
+              "linear-gradient(135deg, #B8860B 0%, hsl(var(--maroon)) 100%)",
           }}
         >
           <img

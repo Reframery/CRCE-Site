@@ -53,7 +53,7 @@ export const AnimatedGlobe = () => (
       className="absolute inset-28 flex items-center justify-center rounded-full"
       style={{
         background:
-          "radial-gradient(circle at 35% 35%, var(--maroon), #4a0024 60%, #2a0014)",
+          "radial-gradient(circle at 35% 35%, hsl(var(--maroon)), #4a0024 60%, #2a0014)",
         boxShadow: "0 0 40px rgba(122,0,60,0.8), 0 0 80px rgba(122,0,60,0.4)",
       }}
     >

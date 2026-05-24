@@ -201,7 +201,8 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
         className="relative flex items-center justify-center overflow-hidden lg:w-5/12"
         style={{
           minHeight: "300px",
-          background: "linear-gradient(135deg, var(--maroon) 0%, #5a0029 100%)",
+          background:
+            "linear-gradient(135deg, hsl(var(--maroon)) 0%, #5a0029 100%)",
         }}
       >
         {/* Animated SVG pattern */}
@@ -295,7 +296,8 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
         <motion.div
           className="mb-5 h-px rounded-full"
           style={{
-            background: "linear-gradient(90deg, #7A003C33, transparent)",
+            background:
+              "linear-gradient(90deg, hsl(var(--maroon) / 0.2), transparent)",
           }}
           initial={{ scaleX: 0, originX: 0 }}
           animate={isInView ? { scaleX: 1 } : {}}

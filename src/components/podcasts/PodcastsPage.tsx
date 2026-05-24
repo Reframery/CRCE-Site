@@ -25,7 +25,7 @@ export const PodcastsPage = () => {
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           style={{
             backgroundImage:
-              "linear-gradient(to right, #7A003C 1px, transparent 1px), linear-gradient(to bottom, #7A003C 1px, transparent 1px)",
+              "linear-gradient(to right, hsl(var(--maroon)) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--maroon)) 1px, transparent 1px)",
             backgroundSize: "40px 40px",
           }}
         />

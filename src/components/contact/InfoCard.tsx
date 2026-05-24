@@ -96,7 +96,7 @@ export const InfoCard = ({ card, index }: InfoCardProps) => {
         />
         <motion.h2
           className="mb-3 text-lg font-extrabold text-gray-900"
-          animate={{ color: hovered ? "#7A003C" : "#111827" }}
+          animate={{ color: hovered ? "hsl(var(--maroon))" : "#111827" }}
           transition={{ duration: 0.25 }}
         >
           {card.title}

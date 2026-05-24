@@ -16,19 +16,19 @@ export const Ticker = () => (
     className="relative overflow-hidden py-3"
     style={{
       background:
-        "linear-gradient(90deg, var(--maroon), #9a0050, var(--maroon))",
+        "linear-gradient(90deg, hsl(var(--maroon)), #9a0050, hsl(var(--maroon)))",
     }}
   >
     <div
       className="absolute bottom-0 left-0 top-0 z-10 w-16"
       style={{
-        background: "linear-gradient(90deg, var(--maroon), transparent)",
+        background: "linear-gradient(90deg, hsl(var(--maroon)), transparent)",
       }}
     />
     <div
       className="absolute bottom-0 right-0 top-0 z-10 w-16"
       style={{
-        background: "linear-gradient(270deg, var(--maroon), transparent)",
+        background: "linear-gradient(270deg, hsl(var(--maroon)), transparent)",
       }}
     />
     <motion.div

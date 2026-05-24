@@ -39,6 +39,7 @@ export const AboutPage = () => {
             backgroundImage: `linear-gradient(rgba(253,191,56,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,56,1) 1px, transparent 1px)`,
             backgroundSize: "60px 60px",
           }}
+          aria-hidden="true"
         />
         {/* Gradient tint */}
         <div
@@ -47,6 +48,7 @@ export const AboutPage = () => {
             background:
               "linear-gradient(to bottom, rgba(122,0,60,0.5) 0%, rgba(122,0,60,0.25) 45%, rgba(122,0,60,0.9) 100%)",
           }}
+          aria-hidden="true"
         />
         {/* Animated orbs */}
         {[
@@ -85,6 +87,7 @@ export const AboutPage = () => {
               ease: "easeInOut",
               delay: i * 1.8,
             }}
+            aria-hidden="true"
           />
         ))}
         <motion.div className="relative z-10 mx-auto w-full max-w-5xl px-4 py-14 text-center text-white md:py-20">
@@ -94,6 +97,7 @@ export const AboutPage = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.6, type: "spring", stiffness: 120 }}
             className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-5 py-2.5 shadow-lg backdrop-blur-md"
+            aria-hidden="true"
           >
             <motion.div
               animate={{ rotate: [0, 12, -12, 0] }}
@@ -177,6 +181,7 @@ export const AboutPage = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.3 }}
+          aria-hidden="true"
         >
           <motion.div
             animate={{ y: [0, 9, 0] }}

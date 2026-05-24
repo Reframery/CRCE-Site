@@ -7,6 +7,7 @@ import {
   externalAdvisory,
   studentTeam,
 } from "@/content/team"
+import { Breadcrumbs } from "../ui/Breadcrumbs"
 import { PersonCard } from "./PersonCard"
 import { SectionHeader } from "./SectionHeader"
 import { StudentCard } from "./StudentCard"
@@ -42,6 +43,7 @@ export const TeamPage = () => {
             backgroundImage: `linear-gradient(rgba(253,191,56,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,56,1) 1px, transparent 1px)`,
             backgroundSize: "60px 60px",
           }}
+          aria-hidden="true"
         />
         {/* Gradient overlay */}
         <div
@@ -50,6 +52,7 @@ export const TeamPage = () => {
             background:
               "linear-gradient(to bottom, rgba(122,0,60,0.5) 0%, rgba(122,0,60,0.25) 45%, rgba(122,0,60,0.9) 100%)",
           }}
+          aria-hidden="true"
         />
         {/* Orbs */}
         {[
@@ -86,6 +89,7 @@ export const TeamPage = () => {
               ease: "easeInOut",
               delay: i * 2,
             }}
+            aria-hidden="true"
           />
         ))}
         {/* Hero content */}
@@ -95,6 +99,7 @@ export const TeamPage = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, type: "spring", stiffness: 120 }}
             className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-5 py-2.5 shadow-lg backdrop-blur-md"
+            aria-hidden="true"
           >
             <Users className="text-gold h-4 w-4" />
             <span className="text-sm font-semibold tracking-wide">
@@ -102,31 +107,33 @@ export const TeamPage = () => {
             </span>
           </motion.div>
           {/* Hero title */}
-          {["Our", "Team"].map((word, wi) => (
-            <motion.div
-              key={word}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.7,
-                delay: 0.2 + wi * 0.18,
-                type: "spring",
-                stiffness: 90,
-              }}
-              className="font-sans-condensed block text-6xl leading-none font-bold tracking-tight md:text-8xl"
-              style={
-                wi === 1
-                  ? {
-                      color: "hsl(var(--gold))",
-                      textShadow:
-                        "0 0 60px rgba(253,191,56,0.45), 0 4px 30px rgba(0,0,0,0.4)",
-                    }
-                  : { textShadow: "0 4px 30px rgba(0,0,0,0.4)" }
-              }
-            >
-              {word}
-            </motion.div>
-          ))}
+          <h1>
+            {["Our", "Team"].map((word, wi) => (
+              <motion.div
+                key={word}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.2 + wi * 0.18,
+                  type: "spring",
+                  stiffness: 90,
+                }}
+                className="font-sans-condensed block text-6xl leading-none font-bold tracking-tight md:text-8xl"
+                style={
+                  wi === 1
+                    ? {
+                        color: "hsl(var(--gold))",
+                        textShadow:
+                          "0 0 60px rgba(253,191,56,0.45), 0 4px 30px rgba(0,0,0,0.4)",
+                      }
+                    : { textShadow: "0 4px 30px rgba(0,0,0,0.4)" }
+                }
+              >
+                {word}
+              </motion.div>
+            ))}
+          </h1>
           {/* Hero subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -144,6 +151,7 @@ export const TeamPage = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.3 }}
+          aria-hidden="true"
         >
           <motion.div
             animate={{ y: [0, 9, 0] }}
@@ -153,20 +161,16 @@ export const TeamPage = () => {
           </motion.div>
         </motion.div>
         {/* Wave */}
-        <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-10">
+        <div
+          className="pointer-events-none absolute right-0 bottom-0 left-0 z-10"
+          aria-hidden="true"
+        >
           <svg viewBox="0 0 1440 80" className="fill-background h-auto w-full">
             <path d="M0,40L60,36C120,32,240,24,360,28C480,32,600,48,720,52C840,56,960,48,1080,40C1200,32,1320,24,1380,20L1440,16L1440,80L0,80Z" />
           </svg>
         </div>
       </section>
-      {/* Breadcrumb */}
-      <div className="mx-auto max-w-7xl px-4 py-5 text-sm text-gray-600 sm:px-6 lg:px-8">
-        <a href="/" className="transition-colors hover:text-gray-700">
-          Home
-        </a>
-        <span className="mx-2 text-gray-500">›</span>
-        <span className="font-semibold text-gray-700">Our Team</span>
-      </div>
+      <Breadcrumbs pageTitle="Our Team" />
       {/* CRCE Team */}
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
         <SectionHeader

@@ -25,6 +25,7 @@ export const SectionHeader = ({
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.5 }}
         className="mb-2 flex items-center gap-3"
+        aria-hidden="true"
       >
         <div
           className="flex h-10 w-10 items-center justify-center rounded-xl shadow-md"

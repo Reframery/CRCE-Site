@@ -17,7 +17,7 @@ const { href, title, description, action, image, external } = Astro.props
   href={href}
   target={external ? "_blank" : undefined}
   rel={external ? "noopener noreferrer" : undefined}
-  class="group flex max-w-[620px] flex-col border"
+  class="group flex max-w-155 flex-col border"
 >
   <div
     class="relative overflow-hidden transition-shadow duration-300 group-hover:shadow-2xl"
@@ -29,18 +29,18 @@ const { href, title, description, action, image, external } = Astro.props
       class="scale-105 transition-transform duration-300 group-hover:scale-100"
     />
     <div
-      class="absolute bottom-0 z-10 h-[1px] w-full bg-[#e5e7eb] transition-colors duration-300 group-hover:bg-maroon"
+      class="group-hover:bg-maroon absolute bottom-0 z-10 h-px w-full bg-[#e5e7eb] transition-colors duration-300"
     >
     </div>
   </div>
   <div
-    class="flex flex-grow flex-col gap-4 bg-white p-6 transition-colors duration-300 group-hover:bg-maroon group-hover:text-white"
+    class="group-hover:bg-maroon flex grow flex-col gap-4 bg-white p-6 transition-colors duration-300 group-hover:text-white"
   >
     <h2 class="text-2xl font-bold">
       {title}
     </h2>
     <div
-      class="h-1 w-10 bg-maroon transition-colors duration-300 group-hover:bg-gold"
+      class="bg-maroon group-hover:bg-gold h-1 w-10 transition-colors duration-300"
     >
     </div>
     <p
@@ -51,7 +51,7 @@ const { href, title, description, action, image, external } = Astro.props
     <div class="mt-auto flex items-center justify-between">
       <span class="font-sans-condensed text-lg">{action}</span>
       <svg
-        class="size-5 -translate-x-3 rounded-full bg-maroon p-1 text-white transition-all duration-300 group-hover:translate-x-0 group-hover:bg-gold group-hover:text-foreground"
+        class="bg-maroon group-hover:bg-gold group-hover:text-foreground size-5 -translate-x-3 rounded-full p-1 text-white transition-all duration-300 group-hover:translate-x-0"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

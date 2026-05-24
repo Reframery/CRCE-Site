@@ -4,15 +4,17 @@ import { Icon } from "astro-icon/components"
 
 <dialog
   id="search-dialog"
-  class="pagefind-dialog w-full max-w-2xl bg-[#c6cbce] shadow-lg md:rounded-lg"
+  aria-labelledby="search-dialog-title"
+  class="pagefind-dialog m-auto w-full max-w-2xl bg-[#c6cbce] shadow-lg md:rounded-lg"
 >
   <div class="relative mx-auto max-w-2xl p-4">
-    <h2 class="mb-2 text-2xl font-semibold">Search</h2>
+    <h2 id="search-dialog-title" class="mb-2 text-2xl font-semibold">Search</h2>
     <button
       type="button"
-      class="pagefind-dialog-close absolute right-3 top-3 text-gray-600 transition-colors hover:text-foreground"
+      aria-label="Close search dialog"
+      class="pagefind-dialog-close hover:text-foreground absolute top-3 right-3 text-gray-600 transition-colors hover:cursor-pointer"
     >
-      <Icon name="lucide:x" size={24} />
+      <Icon name="lucide:x" size={24} aria-hidden="true" />
     </button>
     <div id="search"></div>
     <script>
@@ -47,13 +49,16 @@ import { Icon } from "astro-icon/components"
             document.body.style.overflow = "hidden"
           }
 
+          const closeDialog = () => searchDialog.close()
+
+          // Restore overflow whenever dialog closes (covers Escape, backdrop, button)
+          searchDialog.addEventListener("close", () => {
+            document.body.style.overflow = ""
+          })
+
           if (searchButton) searchButton.addEventListener("click", openDialog)
 
-          const closeDialog = () => {
-            searchDialog.close()
-            document.body.style.overflow = "auto"
-          }
-
+          // Backdrop click
           searchDialog.addEventListener("click", (e) => {
             if (e.currentTarget === e.target) closeDialog()
           })
@@ -61,14 +66,10 @@ import { Icon } from "astro-icon/components"
           searchCloseButtons.forEach((button) => {
             button.addEventListener("click", closeDialog)
           })
-          searchDialog.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") closeDialog()
-          })
         }
       })
     </script>
   </div>
-
   <style>
     #search-dialog::backdrop {
       background-color: rgba(0, 0, 0, 0.5);

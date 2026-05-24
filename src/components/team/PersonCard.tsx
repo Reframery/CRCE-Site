@@ -40,7 +40,7 @@ export const PersonCard = ({
       }}
     >
       {/* Photo */}
-      <div className="relative h-[200px] overflow-hidden">
+      <div className="relative h-50 overflow-hidden">
         <motion.img
           src={person.image}
           alt={person.name}
@@ -51,7 +51,7 @@ export const PersonCard = ({
         />
         {/* Gradient overlay */}
         <div
-          className="duration-400 absolute inset-0 transition-opacity"
+          className="absolute inset-0 transition-opacity duration-400"
           style={{
             background: `linear-gradient(to top, ${accentColor}cc 0%, transparent 50%)`,
             opacity: hovered ? 0.85 : 0.5,
@@ -61,7 +61,7 @@ export const PersonCard = ({
         {person.email && (
           <motion.a
             href={`mailto:${person.email}`}
-            className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-lg"
+            className="absolute right-3 bottom-3 flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-lg"
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: hovered ? 1 : 0, scale: hovered ? 1 : 0.7 }}
             transition={{ duration: 0.2 }}
@@ -76,7 +76,7 @@ export const PersonCard = ({
             href={`https://www.linkedin.com/in/${person.linkedin}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute bottom-3 right-14 flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-lg"
+            className="absolute right-14 bottom-3 flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-lg"
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: hovered ? 1 : 0, scale: hovered ? 1 : 0.7 }}
             transition={{ duration: 0.2, delay: 0.05 }}
@@ -95,7 +95,7 @@ export const PersonCard = ({
           animate={{ width: hovered ? 40 : 32 }}
           transition={{ duration: 0.3 }}
         />
-        <h3 className="mb-1 text-base font-extrabold leading-tight text-gray-900">
+        <h3 className="mb-1 text-base leading-tight font-extrabold text-gray-900">
           {person.name}
         </h3>
         <p

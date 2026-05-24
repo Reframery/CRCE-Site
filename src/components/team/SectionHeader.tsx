@@ -33,7 +33,7 @@ export const SectionHeader = ({
           <Icon className="h-5 w-5 text-white" />
         </div>
         <span
-          className="text-xs font-bold uppercase tracking-widest"
+          className="text-xs font-bold tracking-widest uppercase"
           style={{ color }}
         >
           {label}

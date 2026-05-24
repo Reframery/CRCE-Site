@@ -14,11 +14,11 @@ export const RisePage = () => {
   const heroY = useTransform(heroScroll, [0, 1], [0, 120])
 
   return (
-    <div className="min-h-screen overflow-hidden bg-background">
+    <div className="bg-background min-h-screen overflow-hidden">
       {/* ── Hero ── */}
       <section
         ref={heroRef}
-        className="relative flex flex-col items-center justify-center overflow-hidden bg-maroon"
+        className="bg-maroon relative flex flex-col items-center justify-center overflow-hidden"
       >
         {/* Animated dot grid bg */}
         <div
@@ -109,7 +109,7 @@ export const RisePage = () => {
                 initial={{ opacity: 0, x: 40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
-                className="text-6xl font-thin leading-none tracking-[0.2em] md:text-7xl"
+                className="text-6xl leading-none font-thin tracking-[0.2em] md:text-7xl"
                 style={{ textShadow: "0 4px 30px rgba(0,0,0,0.4)" }}
               >
                 RISE
@@ -118,7 +118,7 @@ export const RisePage = () => {
                 initial={{ opacity: 0, scaleX: 0 }}
                 animate={{ opacity: 1, scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="mt-2 h-0.5 w-full origin-left bg-gold"
+                className="bg-gold mt-2 h-0.5 w-full origin-left"
               />
             </div>
           </motion.div>
@@ -126,7 +126,7 @@ export const RisePage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="mb-3 text-xs font-semibold uppercase tracking-widest text-white/70 md:text-sm"
+            className="mb-3 text-xs font-semibold tracking-widest text-white/70 uppercase md:text-sm"
           >
             Research · Inclusion · Social Entrepreneurship
           </motion.h1>
@@ -156,10 +156,10 @@ export const RisePage = () => {
                 whileHover={{ scale: 1.08, y: -4 }}
                 className="cursor-default rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-center shadow-lg backdrop-blur-md"
               >
-                <div className="text-sm font-extrabold text-gold">
+                <div className="text-gold text-sm font-extrabold">
                   {stat.value}
                 </div>
-                <div className="mt-0.5 text-xs uppercase tracking-widest text-white/60">
+                <div className="mt-0.5 text-xs tracking-widest text-white/60 uppercase">
                   {stat.label}
                 </div>
               </motion.div>
@@ -181,8 +181,8 @@ export const RisePage = () => {
           </motion.div>
         </motion.div>
         {/* Wave */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 80" className="h-auto w-full fill-background">
+        <div className="pointer-events-none absolute right-0 bottom-0 left-0">
+          <svg viewBox="0 0 1440 80" className="fill-background h-auto w-full">
             <path d="M0,40L60,36C120,32,240,24,360,28C480,32,600,48,720,52C840,56,960,48,1080,40C1200,32,1320,24,1380,20L1440,16L1440,80L0,80Z" />
           </svg>
         </div>
@@ -217,7 +217,7 @@ export const RisePage = () => {
           {/* Background shapes */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <motion.div
-              className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-gold opacity-20 blur-3xl"
+              className="bg-gold absolute -top-20 -right-20 h-80 w-80 rounded-full opacity-20 blur-3xl"
               animate={{ scale: [1, 1.4, 1], rotate: [0, 90, 0] }}
               transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -271,7 +271,7 @@ export const RisePage = () => {
                   boxShadow: "0 20px 50px rgba(0,0,0,0.35)",
                 }}
                 whileTap={{ scale: 0.96 }}
-                className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-maroon shadow-2xl"
+                className="bg-gold text-maroon inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold shadow-2xl"
               >
                 Get in Touch <ArrowRight className="h-4 w-4" />
               </motion.a>

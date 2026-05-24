@@ -41,12 +41,12 @@ const socials = [
 ]
 ---
 
-<footer class="flex flex-col items-center bg-maroon p-8 text-white">
-  <div class="w-full max-w-[400px]">
+<footer class="bg-maroon flex flex-col items-center p-8 text-white">
+  <div class="w-full max-w-100">
     <McMasterFooterLogo />
   </div>
   <nav
-    class="mb-4 mt-6 flex w-full flex-col items-center justify-center gap-x-24 gap-y-4 border-y border-gray-600 py-5 font-sans-condensed font-semibold tracking-wider md:flex-row"
+    class="font-sans-condensed mt-6 mb-4 flex w-full flex-col items-center justify-center gap-x-24 gap-y-4 border-y border-gray-600 py-5 font-semibold tracking-wider md:flex-row"
   >
     {
       links.map((link) => (
@@ -68,7 +68,7 @@ const socials = [
           href={social.link}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex rounded-full border-[2px] p-[5px] transition-colors duration-[250ms] hover:border-gold hover:text-gold"
+          class="hover:border-gold hover:text-gold inline-flex rounded-full border-2 p-1.25 transition-colors duration-250"
           aria-label={social.name}
         >
           <Icon name={social.name} size={18} />
@@ -98,7 +98,7 @@ const socials = [
     </a>
   </nav>
   <a
-    class="my-4 font-sans-condensed text-[13px] tracking-wider hover:underline"
+    class="font-sans-condensed my-4 text-[13px] tracking-wider hover:underline"
     href="https://www.mcmaster.ca/"
     target="_blank"
     rel="noopener noreferrer"

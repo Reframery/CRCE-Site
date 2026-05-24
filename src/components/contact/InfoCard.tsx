@@ -80,16 +80,16 @@ export const InfoCard = ({ card, index }: InfoCardProps) => {
         </motion.div>
         {/* Bottom gold line */}
         <motion.div
-          className="absolute bottom-0 left-0 h-0.5 rounded-full bg-gold"
+          className="bg-gold absolute bottom-0 left-0 h-0.5 rounded-full"
           initial={{ width: 0 }}
           animate={isInView ? { width: "100%" } : {}}
           transition={{ duration: 0.9, delay: 0.4 + index * 0.15 }}
         />
       </div>
       {/* Content */}
-      <div className="flex flex-1 flex-col px-6 pb-6 pt-5">
+      <div className="flex flex-1 flex-col px-6 pt-5 pb-6">
         <motion.div
-          className="mb-4 h-0.5 rounded-full bg-maroon"
+          className="bg-maroon mb-4 h-0.5 rounded-full"
           initial={{ width: 0 }}
           animate={isInView ? { width: 40 } : {}}
           transition={{ duration: 0.6, delay: 0.3 + index * 0.15 }}
@@ -121,7 +121,7 @@ export const InfoCard = ({ card, index }: InfoCardProps) => {
             target={card.cta.external ? "_blank" : undefined}
             rel={card.cta.external ? "noopener noreferrer" : undefined}
             whileHover={{ x: 6 }}
-            className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-bold text-maroon"
+            className="text-maroon mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-bold"
           >
             {card.cta.label}{" "}
             <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />

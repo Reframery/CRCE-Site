@@ -28,12 +28,12 @@ export const StatsBar = () => {
           }}
         />
         <motion.div
-          className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-gold opacity-25 blur-3xl"
+          className="bg-gold absolute -top-16 -right-16 h-64 w-64 rounded-full opacity-25 blur-3xl"
           animate={{ scale: [1, 1.3, 1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-gold opacity-15 blur-3xl"
+          className="bg-gold absolute -bottom-16 -left-16 h-48 w-48 rounded-full opacity-15 blur-3xl"
           animate={{ scale: [1.2, 0.9, 1.2] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -43,10 +43,10 @@ export const StatsBar = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-shrink-0 items-center gap-3 md:flex-col md:items-start md:pt-1"
+            className="flex shrink-0 items-center gap-3 md:flex-col md:items-start md:pt-1"
           >
-            <Target className="h-8 w-8 text-gold" />
-            <span className="font-sans-condensed text-2xl font-extrabold uppercase tracking-widest text-gold md:text-3xl md:[transform:rotate(180deg)] md:[writing-mode:vertical-rl]">
+            <Target className="text-gold h-8 w-8" />
+            <span className="font-sans-condensed text-gold text-2xl font-extrabold tracking-widest uppercase md:transform-[rotate(180deg)] md:text-3xl md:[writing-mode:vertical-rl]">
               Our Story
             </span>
           </motion.div>

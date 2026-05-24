@@ -16,11 +16,11 @@ export const AboutPage = () => {
   const heroY = useTransform(heroScroll, [0, 1], [0, 130])
 
   return (
-    <div className="min-h-screen overflow-hidden bg-background">
+    <div className="bg-background min-h-screen overflow-hidden">
       {/* ── Hero ── */}
       <section
         ref={heroRef}
-        className="min-height-[65vh] relative flex flex-col items-center justify-center overflow-hidden bg-maroon"
+        className="min-height-[65vh] bg-maroon relative flex flex-col items-center justify-center overflow-hidden"
       >
         {/* Parallax photo */}
         {/* <motion.div
@@ -98,7 +98,7 @@ export const AboutPage = () => {
               animate={{ rotate: [0, 12, -12, 0] }}
               transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
             >
-              <Target className="h-4 w-4 text-gold" />
+              <Target className="text-gold h-4 w-4" />
             </motion.div>
             <span className="text-sm font-semibold tracking-wide">
               CRCE — About Us
@@ -142,7 +142,7 @@ export const AboutPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="mb-5 mt-10 flex flex-wrap justify-center gap-3"
+            className="mt-10 mb-5 flex flex-wrap justify-center gap-3"
           >
             {[
               { val: "McMaster", sub: "University" },
@@ -161,8 +161,8 @@ export const AboutPage = () => {
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="cursor-default rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-center shadow-lg backdrop-blur-md"
               >
-                <div className="text-sm font-extrabold text-gold">{s.val}</div>
-                <div className="mt-0.5 text-xs uppercase tracking-widest text-white/60">
+                <div className="text-gold text-sm font-extrabold">{s.val}</div>
+                <div className="mt-0.5 text-xs tracking-widest text-white/60 uppercase">
                   {s.sub}
                 </div>
               </motion.div>
@@ -184,8 +184,8 @@ export const AboutPage = () => {
           </motion.div>
         </motion.div>
         {/* Wave */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10">
-          <svg viewBox="0 0 1440 80" className="h-auto w-full fill-background">
+        <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-10">
+          <svg viewBox="0 0 1440 80" className="fill-background h-auto w-full">
             <path d="M0,40L60,36C120,32,240,24,360,28C480,32,600,48,720,52C840,56,960,48,1080,40C1200,32,1320,24,1380,20L1440,16L1440,80L0,80Z" />
           </svg>
         </div>
@@ -222,7 +222,7 @@ export const AboutPage = () => {
         >
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <motion.div
-              className="absolute -right-20 -top-20 h-96 w-96 rounded-full bg-gold opacity-20 blur-3xl"
+              className="bg-gold absolute -top-20 -right-20 h-96 w-96 rounded-full opacity-20 blur-3xl"
               animate={{ scale: [1, 1.4, 1], rotate: [0, 90, 0] }}
               transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -245,9 +245,9 @@ export const AboutPage = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest"
+              className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-bold tracking-widest uppercase"
             >
-              <Handshake className="h-3 w-3 text-gold" /> Partner With Us
+              <Handshake className="text-gold h-3 w-3" /> Partner With Us
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -286,7 +286,7 @@ export const AboutPage = () => {
                   boxShadow: "0 20px 50px rgba(0,0,0,0.35)",
                 }}
                 whileTap={{ scale: 0.96 }}
-                className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-maroon shadow-2xl"
+                className="bg-gold text-maroon inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold shadow-2xl"
               >
                 Explore Reframery <ArrowRight className="h-4 w-4" />
               </motion.a>

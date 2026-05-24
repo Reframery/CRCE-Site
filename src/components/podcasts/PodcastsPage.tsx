@@ -14,7 +14,7 @@ export const PodcastsPage = () => {
     publishedEpisodes.length > 0 ? publishedEpisodes[0] : undefined
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-background">
+    <div className="bg-background relative min-h-screen overflow-hidden">
       {/* Animated Grid Background */}
       <div className="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
         <motion.div
@@ -30,7 +30,7 @@ export const PodcastsPage = () => {
           }}
         />
         <motion.div
-          className="bg-maroon/5 absolute left-10 top-20 h-64 w-64 rounded-full blur-3xl"
+          className="bg-maroon/5 absolute top-20 left-10 h-64 w-64 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 30, 0],
@@ -39,7 +39,7 @@ export const PodcastsPage = () => {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="bg-gold/5 absolute bottom-20 right-10 h-80 w-80 rounded-full blur-3xl"
+          className="bg-gold/5 absolute right-10 bottom-20 h-80 w-80 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -20, 0],
@@ -49,7 +49,7 @@ export const PodcastsPage = () => {
         />
       </div>
       {/* Hero Section */}
-      <section className="relative z-10 overflow-hidden bg-gradient-to-br from-maroon via-[#8B0A46] to-[#5C0028] px-4 py-20 text-white">
+      <section className="from-maroon relative z-10 overflow-hidden bg-linear-to-br via-[#8B0A46] to-[#5C0028] px-4 py-20 text-white">
         <motion.div
           className="absolute inset-0 opacity-10"
           animate={{
@@ -64,7 +64,7 @@ export const PodcastsPage = () => {
         />
         {/* Floating animated shapes */}
         <motion.div
-          className="absolute right-10 top-10 h-20 w-20 rounded-full border-2 border-white/20"
+          className="absolute top-10 right-10 h-20 w-20 rounded-full border-2 border-white/20"
           animate={{
             y: [0, -20, 0],
             rotate: [0, 180, 360],
@@ -88,7 +88,7 @@ export const PodcastsPage = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="mb-6 inline-block rounded-full border border-white/20 bg-white/10 px-6 py-2 backdrop-blur-sm"
+              className="mb-6 inline-block rounded-full border border-white/20 bg-white/10 px-6 py-2 backdrop-blur-xs"
               whileHover={{
                 scale: 1.05,
                 backgroundColor: "rgba(255,255,255,0.15)",
@@ -116,7 +116,7 @@ export const PodcastsPage = () => {
               </div>
             </motion.div>
             <motion.h1
-              className="mb-6 text-5xl font-bold leading-none tracking-tight md:text-7xl"
+              className="mb-6 text-5xl leading-none font-bold tracking-tight md:text-7xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -156,7 +156,7 @@ export const PodcastsPage = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <motion.div
-                className="cursor-pointer rounded-full border border-white/20 bg-white/10 px-6 py-3 backdrop-blur-sm"
+                className="cursor-pointer rounded-full border border-white/20 bg-white/10 px-6 py-3 backdrop-blur-xs"
                 whileHover={{
                   scale: 1.05,
                   backgroundColor: "rgba(255,255,255,0.15)",
@@ -173,7 +173,7 @@ export const PodcastsPage = () => {
                       ease: "linear",
                     }}
                   >
-                    <Sparkles className="h-4 w-4 text-gold" />
+                    <Sparkles className="text-gold h-4 w-4" />
                   </motion.div>
                   <span className="text-sm font-medium">
                     New episodes coming soon
@@ -181,7 +181,7 @@ export const PodcastsPage = () => {
                 </div>
               </motion.div>
               <motion.div
-                className="cursor-pointer rounded-full border border-white/20 bg-white/10 px-6 py-3 backdrop-blur-sm"
+                className="cursor-pointer rounded-full border border-white/20 bg-white/10 px-6 py-3 backdrop-blur-xs"
                 whileHover={{
                   scale: 1.05,
                   backgroundColor: "rgba(255,255,255,0.15)",
@@ -194,7 +194,7 @@ export const PodcastsPage = () => {
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    <UserCheck className="h-4 w-4 text-gold" />
+                    <UserCheck className="text-gold h-4 w-4" />
                   </motion.div>
                   <span className="text-sm font-medium">
                     Expert guests & researchers
@@ -295,7 +295,7 @@ export const PodcastsPage = () => {
               >
                 <Button
                   type="button"
-                  className="border border-maroon px-6 py-3 text-maroon hover:bg-maroon hover:text-white"
+                  className="border-maroon text-maroon hover:bg-maroon border px-6 py-3 hover:text-white"
                 >
                   Explore Reframery
                 </Button>
@@ -308,7 +308,7 @@ export const PodcastsPage = () => {
               >
                 <Button
                   type="button"
-                  className="border border-maroon px-6 py-3 text-maroon hover:bg-maroon hover:text-white"
+                  className="border-maroon text-maroon hover:bg-maroon border px-6 py-3 hover:text-white"
                 >
                   Contact Us
                 </Button>

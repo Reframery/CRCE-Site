@@ -2,7 +2,7 @@ import { motion } from "motion/react"
 import { Globe } from "lucide-react"
 
 export const AnimatedGlobe = () => (
-  <div className="relative mx-auto size-80 md:size-[440px]">
+  <div className="relative mx-auto size-80 md:size-110">
     {/* Outermost pulse rings */}
     {[0, 1, 2].map((i) => (
       <motion.div
@@ -20,7 +20,7 @@ export const AnimatedGlobe = () => (
     ))}
     {/* Outer spinning ring with glow */}
     <motion.div
-      className="absolute inset-2 rounded-full border-2 border-maroon"
+      className="border-maroon absolute inset-2 rounded-full border-2"
       style={{
         boxShadow:
           "0 0 18px rgba(122,0,60,0.7), inset 0 0 18px rgba(122,0,60,0.2)",
@@ -62,7 +62,7 @@ export const AnimatedGlobe = () => (
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       >
         <Globe
-          className="md:w-18 md:h-18 h-14 w-14 text-gold"
+          className="text-gold h-14 w-14 md:h-18 md:w-18"
           style={{
             filter: "drop-shadow(0 0 12px rgba(253,191,56,0.9))",
           }}
@@ -73,12 +73,12 @@ export const AnimatedGlobe = () => (
     {[0, 60, 120, 180, 240, 300].map((deg, i) => (
       <motion.div
         key={`outer-${i}`}
-        className="absolute left-0 top-0 h-full w-full"
+        className="absolute top-0 left-0 h-full w-full"
         animate={{ rotate: [deg, deg + 360] }}
         transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
       >
         <motion.div
-          className="absolute top-[2px] h-3 w-3 rounded-full bg-gold"
+          className="bg-gold absolute top-0.5 h-3 w-3 rounded-full"
           style={{
             left: "calc(50% - 6px)",
             boxShadow:
@@ -98,7 +98,7 @@ export const AnimatedGlobe = () => (
     {[30, 150, 270].map((deg, i) => (
       <motion.div
         key={`mid-${i}`}
-        className="absolute left-[40px] top-[40px]"
+        className="absolute top-10 left-10"
         style={{
           width: "calc(100% - 80px)",
           height: "calc(100% - 80px)",

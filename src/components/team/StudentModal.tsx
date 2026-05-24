@@ -21,7 +21,7 @@ export const StudentModal = ({
       exit={{ opacity: 0 }}
       onClick={onClose}
     >
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-xs" />
       <motion.div
         className="relative z-10 w-full max-w-lg overflow-hidden rounded-3xl bg-white shadow-2xl"
         initial={{ scale: 0.85, y: 40 }}
@@ -47,7 +47,7 @@ export const StudentModal = ({
           <button
             type="button"
             onClick={onClose}
-            className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white transition-colors hover:bg-white/40"
+            className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white transition-colors hover:bg-white/40"
           >
             <X className="h-4 w-4" />
           </button>
@@ -75,7 +75,7 @@ export const StudentModal = ({
               {person.email && (
                 <a
                   href={`mailto:${person.email}`}
-                  className="inline-flex items-center gap-2 rounded-full bg-maroon px-4 py-2 text-sm font-bold text-white shadow-md"
+                  className="bg-maroon inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold text-white shadow-md"
                 >
                   <Mail className="h-4 w-4" /> Email
                 </a>
@@ -85,7 +85,7 @@ export const StudentModal = ({
                   href={`https://www.linkedin.com/in/${person.linkedin}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-maroon px-4 py-2 text-sm font-bold text-maroon"
+                  className="border-maroon text-maroon inline-flex items-center gap-2 rounded-full border-2 px-4 py-2 text-sm font-bold"
                 >
                   <Linkedin className="h-4 w-4" /> LinkedIn
                 </a>

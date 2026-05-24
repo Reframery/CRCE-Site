@@ -45,13 +45,13 @@ export const ActivityCard = ({ activity, index }: ActivityCardProps) => {
       />
       {/* Top accent line */}
       <motion.div
-        className="absolute left-0 top-0 h-0.5 rounded-b-full bg-gold"
+        className="bg-gold absolute top-0 left-0 h-0.5 rounded-b-full"
         animate={{ width: hovered ? "100%" : "30%" }}
         transition={{ duration: 0.4 }}
       />
       {/* Icon */}
       <motion.div
-        className="mb-5 flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl"
+        className="mb-5 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl"
         style={{
           backgroundColor: "rgba(253,191,56,0.12)",
           border: "1px solid rgba(253,191,56,0.3)",
@@ -59,9 +59,9 @@ export const ActivityCard = ({ activity, index }: ActivityCardProps) => {
         animate={{ scale: hovered ? 1.1 : 1 }}
         transition={{ duration: 0.3 }}
       >
-        <Icon className="h-7 w-7 text-gold" />
+        <Icon className="text-gold h-7 w-7" />
       </motion.div>
-      <h3 className="mb-2 text-lg font-bold leading-snug text-[#e8dcc8]">
+      <h3 className="mb-2 text-lg leading-snug font-bold text-[#e8dcc8]">
         {activity.label}
       </h3>
       <p className="text-sm leading-relaxed text-[#c9b5a0]">{activity.desc}</p>

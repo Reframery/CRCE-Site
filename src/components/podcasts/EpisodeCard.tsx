@@ -20,16 +20,16 @@ export const EpisodeCard = ({
         <div className="md:col-span-4 lg:col-span-3">
           <div className="h-full rounded-xl border border-gray-200 bg-gray-50 p-6">
             <div className="mb-4 flex flex-col gap-2">
-              <span className="rounded-lg bg-maroon px-3 py-1.5 text-center text-xs font-semibold text-white">
+              <span className="bg-maroon rounded-lg px-3 py-1.5 text-center text-xs font-semibold text-white">
                 Episode {episode.episodeNumber}
               </span>
               {showLatestBadge && (
-                <span className="rounded-lg bg-gold px-3 py-1.5 text-center text-xs font-semibold text-maroon">
+                <span className="bg-gold text-maroon rounded-lg px-3 py-1.5 text-center text-xs font-semibold">
                   Latest Episode
                 </span>
               )}
             </div>
-            <h3 className="mb-4 text-xl font-bold leading-tight text-gray-900">
+            <h3 className="mb-4 text-xl leading-tight font-bold text-gray-900">
               {episode.title}
             </h3>
             <p className="mb-6 text-base leading-relaxed text-gray-700">

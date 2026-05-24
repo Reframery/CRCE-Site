@@ -38,7 +38,7 @@ export const ContactForm = () => {
         animate={{ scale: [0, 1.2, 1] }}
         transition={{ duration: 0.5 }}
       >
-        <CheckCircle className="mb-4 h-16 w-16 text-maroon" />
+        <CheckCircle className="text-maroon mb-4 h-16 w-16" />
       </motion.div>
       <h3 className="mb-2 text-2xl font-extrabold text-gray-900">
         You're all set!
@@ -90,7 +90,7 @@ export const ContactForm = () => {
                 }))
               }
               placeholder={field.placeholder}
-              className="w-full rounded-xl border-2 bg-white px-3 py-2 text-gray-900 placeholder-gray-400 ring-2 ring-transparent transition-all duration-200 focus-visible:outline-none focus-visible:ring-maroon invalid:focus-visible:ring-red-500"
+              className="focus-visible:ring-maroon w-full rounded-xl border-2 bg-white px-3 py-2 text-gray-900 placeholder-gray-400 ring-2 ring-transparent transition-all duration-200 focus-visible:outline-hidden invalid:focus-visible:ring-red-500"
             />
           </motion.div>
         ))}
@@ -116,7 +116,7 @@ export const ContactForm = () => {
             setFormData((p) => ({ ...p, subject: e.target.value }))
           }
           placeholder="Research collaboration, general inquiry…"
-          className="w-full rounded-xl border-2 bg-white px-3 py-2 text-gray-900 placeholder-gray-400 ring-2 ring-transparent transition-all duration-200 focus-visible:outline-none focus-visible:ring-maroon invalid:focus-visible:ring-red-500"
+          className="focus-visible:ring-maroon w-full rounded-xl border-2 bg-white px-3 py-2 text-gray-900 placeholder-gray-400 ring-2 ring-transparent transition-all duration-200 focus-visible:outline-hidden invalid:focus-visible:ring-red-500"
         />
       </motion.div>
       <motion.div
@@ -141,7 +141,7 @@ export const ContactForm = () => {
             setFormData((p) => ({ ...p, message: e.target.value }))
           }
           placeholder="Tell us how we can help…"
-          className="w-full resize-none rounded-xl border-2 bg-white px-3 py-2 text-gray-900 placeholder-gray-400 ring-2 ring-transparent transition-all duration-200 focus-visible:outline-none focus-visible:ring-maroon invalid:focus-visible:ring-red-500"
+          className="focus-visible:ring-maroon w-full resize-none rounded-xl border-2 bg-white px-3 py-2 text-gray-900 placeholder-gray-400 ring-2 ring-transparent transition-all duration-200 focus-visible:outline-hidden invalid:focus-visible:ring-red-500"
         />
       </motion.div>
       <motion.button
@@ -150,7 +150,7 @@ export const ContactForm = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: 0.36 }}
-        className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-maroon py-3 text-sm font-semibold text-white shadow-lg transition-colors duration-200 hover:bg-maroon/90"
+        className="bg-maroon hover:bg-maroon/90 flex w-full items-center justify-center gap-2.5 rounded-xl py-3 text-sm font-semibold text-white shadow-lg transition-colors duration-200"
       >
         <Send className="h-5 w-5" />
         Send Message

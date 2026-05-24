@@ -20,13 +20,13 @@ export const Ticker = () => (
     }}
   >
     <div
-      className="absolute bottom-0 left-0 top-0 z-10 w-16"
+      className="absolute top-0 bottom-0 left-0 z-10 w-16"
       style={{
         background: "linear-gradient(90deg, hsl(var(--maroon)), transparent)",
       }}
     />
     <div
-      className="absolute bottom-0 right-0 top-0 z-10 w-16"
+      className="absolute top-0 right-0 bottom-0 z-10 w-16"
       style={{
         background: "linear-gradient(270deg, hsl(var(--maroon)), transparent)",
       }}
@@ -39,9 +39,9 @@ export const Ticker = () => (
       {[...tickerItems, ...tickerItems].map((item, i) => (
         <span
           key={i}
-          className="inline-flex items-center gap-3 font-sans-condensed text-sm font-semibold uppercase tracking-widest text-white/80"
+          className="font-sans-condensed inline-flex items-center gap-3 text-sm font-semibold tracking-widest text-white/80 uppercase"
         >
-          <span className="inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gold" />
+          <span className="bg-gold inline-block h-1.5 w-1.5 shrink-0 rounded-full" />
           {item}
         </span>
       ))}

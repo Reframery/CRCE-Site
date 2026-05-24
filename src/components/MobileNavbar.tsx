@@ -8,7 +8,7 @@ export default function MobileNavbar({ pathname }: { pathname: string }) {
     <nav className="block lg:hidden">
       <button
         type="button"
-        className="relative w-full px-8 py-4 text-center uppercase transition-colors duration-[250ms] hover:bg-foreground/40"
+        className="hover:bg-foreground/40 relative w-full px-8 py-4 text-center uppercase transition-colors duration-250"
         onClick={() => setOpen(!open)}
       >
         {siteLinks.find((link) => isActive(link.pathname, pathname))?.label}
@@ -24,7 +24,7 @@ export default function MobileNavbar({ pathname }: { pathname: string }) {
           strokeLinecap="round"
           strokeLinejoin="round"
           className={cn(
-            "absolute right-4 top-1/2 -translate-y-1/2",
+            "absolute top-1/2 right-4 -translate-y-1/2",
             open && "rotate-180 transform"
           )}
         >
@@ -33,7 +33,7 @@ export default function MobileNavbar({ pathname }: { pathname: string }) {
       </button>
       <div
         className={cn(
-          "grid grid-rows-[0fr] transition-all duration-[300ms]",
+          "grid grid-rows-[0fr] transition-all duration-300",
           open && "grid-rows-[1fr]"
         )}
       >
@@ -42,7 +42,7 @@ export default function MobileNavbar({ pathname }: { pathname: string }) {
             <a
               key={link.pathname}
               className={cn(
-                "relative inline-flex items-center justify-center gap-2 px-8 py-4 text-center transition-colors duration-[250ms] hover:bg-white hover:text-foreground hover:shadow-lg",
+                "hover:text-foreground relative inline-flex items-center justify-center gap-2 px-8 py-4 text-center transition-colors duration-250 hover:bg-white hover:shadow-lg",
                 isActive(link.pathname, pathname) && "bg-foreground/40"
               )}
               href={link.pathname}

@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-roboto), sans-serif;
+  --font-sans-condensed: var(--font-roboto-condensed), sans-serif;
+
+  --color-muted: #f8f9fa;
+  --color-muted-foreground: #495057;
+  --color-foreground: #111;
+  --color-background: hsl(var(--background));
+  --color-maroon: hsl(var(--maroon));
+  --color-gold: hsl(var(--gold));
+}
+
+@utility container {
+  margin-inline: auto;
+}
+
+:root {
+  --pagefind-ui-font: var(--font-sans);
+  --background: 40 13% 95%; /*#f5f4f2 */
+  --gold: 38 98% 67%; /* #fdbf57 */
+  --maroon: 330 100% 24%; /* #7a003c */
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  body {
+    @apply text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans-condensed text-pretty;
+  }
+}

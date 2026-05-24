@@ -13,29 +13,27 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
-    "@astrojs/react": "^4.4.2",
+    "@astrojs/react": "^5.0.5",
     "@astrojs/sitemap": "^3.7.2",
-    "@astrojs/tailwind": "^5.1.5",
-    "@fontsource-variable/roboto-condensed": "^5.2.8",
-    "@fontsource/roboto": "^5.2.10",
-    "astro": "^5.16.6",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.3.3",
     "astro-icon": "^1.1.5",
     "lucide-react": "^0.562.0",
     "motion": "^12.38.0",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
-    "tailwind-merge": "^2.6.1"
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
     "@iconify-json/fa6-brands": "^1.2.6",
-    "@iconify-json/lucide": "^1.2.105",
+    "@iconify-json/lucide": "^1.2.108",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "pagefind": "^1.5.2",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.14",
-    "tailwindcss": "^3.4.19",
-    "typescript": "^5.9.3"
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3"
   }
 }

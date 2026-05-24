@@ -22,11 +22,11 @@ export const ContactPage = () => {
   const heroY = useTransform(heroScroll, [0, 1], [0, 120])
 
   return (
-    <div className="min-h-screen overflow-hidden bg-background">
+    <div className="bg-background min-h-screen overflow-hidden">
       {/* Hero */}
       <section
         ref={heroRef}
-        className="relative flex flex-col items-center justify-center overflow-hidden bg-maroon"
+        className="bg-maroon relative flex flex-col items-center justify-center overflow-hidden"
       >
         {/* Parallax building photo */}
         <motion.div
@@ -65,7 +65,7 @@ export const ContactPage = () => {
               animate={{ rotate: [0, 12, -12, 0] }}
               transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
             >
-              <Mail className="h-4 w-4 text-gold" />
+              <Mail className="text-gold h-4 w-4" />
             </motion.div>
             <span className="text-sm font-semibold">CRCE — Get in Touch</span>
           </motion.div>
@@ -98,7 +98,7 @@ export const ContactPage = () => {
             className="inline-flex items-center gap-2.5 rounded-full border border-white/30 px-6 py-3.5 text-base font-medium text-white shadow-lg backdrop-blur-md"
             style={{ background: "rgba(90,0,41,0.6)" }}
           >
-            <MessageSquare className="h-4 w-4 flex-shrink-0 text-gold" />
+            <MessageSquare className="text-gold h-4 w-4 shrink-0" />
             Questions about research, partnerships, or community
             entrepreneurship? We're here and ready to connect.
           </motion.div>
@@ -122,8 +122,8 @@ export const ContactPage = () => {
                 whileHover={{ scale: 1.08, y: -4 }}
                 className="cursor-default rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-center shadow-lg backdrop-blur-md"
               >
-                <div className="text-sm font-extrabold text-gold">{s.val}</div>
-                <div className="mt-0.5 text-xs uppercase tracking-widest text-white/60">
+                <div className="text-gold text-sm font-extrabold">{s.val}</div>
+                <div className="mt-0.5 text-xs tracking-widest text-white/60 uppercase">
                   {s.sub}
                 </div>
               </motion.div>
@@ -145,12 +145,12 @@ export const ContactPage = () => {
           </motion.div>
         </motion.div>
         {/* Wave */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 80" className="h-auto w-full fill-background">
+        <div className="pointer-events-none absolute right-0 bottom-0 left-0">
+          <svg viewBox="0 0 1440 80" className="fill-background h-auto w-full">
             <path d="M0,40L60,36C120,32,240,24,360,28C480,32,600,48,720,52C840,56,960,48,1080,40C1200,32,1320,24,1380,20L1440,16L1440,80L0,80Z" />
           </svg>
         </div>
-        <div className="absolute bottom-0 h-[1px] w-full bg-background" />
+        <div className="bg-background absolute bottom-0 h-px w-full" />
       </section>
       {/* Breadcrumb */}
       <div className="mx-auto max-w-7xl px-4 py-5 text-sm text-gray-600 sm:px-6 lg:px-8">
@@ -189,13 +189,13 @@ export const ContactPage = () => {
               {/* Section label */}
               <div className="mb-2 flex items-center gap-3">
                 <motion.div
-                  className="h-1 rounded-full bg-maroon"
+                  className="bg-maroon h-1 rounded-full"
                   initial={{ width: 0 }}
                   whileInView={{ width: 40 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 />
-                <span className="text-xs font-bold uppercase tracking-widest text-maroon">
+                <span className="text-maroon text-xs font-bold tracking-widest uppercase">
                   CRCE
                 </span>
               </div>
@@ -241,13 +241,13 @@ export const ContactPage = () => {
               <div>
                 <div className="mb-2 flex items-center gap-3">
                   <motion.div
-                    className="h-1 rounded-full bg-maroon"
+                    className="bg-maroon h-1 rounded-full"
                     initial={{ width: 0 }}
                     whileInView={{ width: 40 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                   />
-                  <span className="text-xs font-bold uppercase tracking-widest text-maroon">
+                  <span className="text-maroon text-xs font-bold tracking-widest uppercase">
                     Location
                   </span>
                 </div>
@@ -264,7 +264,7 @@ export const ContactPage = () => {
                   Come visit us at the heart of McMaster's innovation ecosystem.
                 </p>
               </div>
-              <div className="min-h-[260px] flex-1 overflow-hidden rounded-2xl shadow-lg">
+              <div className="min-h-65 flex-1 overflow-hidden rounded-2xl shadow-lg">
                 <iframe
                   title="CRCE Location"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.5!2d-79.9214528!3d43.2621339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c853aa640c501%3A0x79c3ae03596c42e5!2sTandem%20Accelerator%20Building!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca"
@@ -281,7 +281,7 @@ export const ContactPage = () => {
                 transition={{ duration: 0.2 }}
                 className="flex items-start gap-4 rounded-2xl border border-gray-100 bg-gray-50 p-5"
               >
-                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-maroon shadow">
+                <div className="bg-maroon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl shadow">
                   <MapPin className="h-5 w-5 text-white" />
                 </div>
                 <div className="flex-1">
@@ -298,7 +298,7 @@ export const ContactPage = () => {
                     href="https://maps.google.com/maps/dir//Tandem+Accelerator+Building+TA+1280+Main+St+W+Building+%23+32+Hamilton,+ON+L8S+4K1"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-maroon hover:underline"
+                    className="text-maroon mt-3 inline-flex items-center gap-1.5 text-sm font-bold hover:underline"
                   >
                     Open in Google Maps <ExternalLink className="h-3.5 w-3.5" />
                   </a>
@@ -321,7 +321,7 @@ export const ContactPage = () => {
         >
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <motion.div
-              className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-gold opacity-20 blur-3xl"
+              className="bg-gold absolute -top-20 -right-20 h-80 w-80 rounded-full opacity-20 blur-3xl"
               animate={{ scale: [1, 1.4, 1], rotate: [0, 90, 0] }}
               transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -355,7 +355,7 @@ export const ContactPage = () => {
                   boxShadow: "0 20px 50px rgba(0,0,0,0.35)",
                 }}
                 whileTap={{ scale: 0.96 }}
-                className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-maroon shadow-2xl"
+                className="bg-gold text-maroon inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold shadow-2xl"
               >
                 Learn About Us <ArrowRight className="h-4 w-4" />
               </motion.a>

@@ -40,7 +40,7 @@ export const StudentCard = ({
           transition: "box-shadow 0.3s",
         }}
       >
-        <div className="relative h-[200px] overflow-hidden">
+        <div className="relative h-50 overflow-hidden">
           <motion.img
             src={person.image}
             alt={person.name}
@@ -50,7 +50,7 @@ export const StudentCard = ({
             loading={loading}
           />
           <div
-            className="duration-400 absolute inset-0 transition-opacity"
+            className="absolute inset-0 transition-opacity duration-400"
             style={{
               background:
                 "linear-gradient(to top, #B8860Bcc 0%, transparent 55%)",
@@ -58,24 +58,23 @@ export const StudentCard = ({
             }}
           />
           <motion.div
-            className="absolute bottom-3 left-0 right-0 flex justify-center"
+            className="absolute right-0 bottom-3 left-0 flex justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: hovered ? 1 : 0 }}
             transition={{ duration: 0.2 }}
           >
-            <span className="rounded-full bg-black/30 px-3 py-1 text-xs font-bold text-white backdrop-blur-sm">
+            <span className="rounded-full bg-black/30 px-3 py-1 text-xs font-bold text-white backdrop-blur-xs">
               View Profile
             </span>
           </motion.div>
         </div>
         <div className="flex flex-1 flex-col p-5">
           <motion.div
-            className="mb-3 h-0.5 w-8 rounded-full"
-            style={{ backgroundColor: "#B8860B" }}
+            className="mb-3 h-0.5 w-8 rounded-full bg-[#B8860B]"
             animate={{ width: hovered ? 40 : 32 }}
             transition={{ duration: 0.3 }}
           />
-          <h3 className="mb-1 text-base font-extrabold leading-tight text-gray-900">
+          <h3 className="mb-1 text-base leading-tight font-extrabold text-gray-900">
             {person.name}
           </h3>
           <p className="text-sm font-semibold text-[#B8860B]">{person.role}</p>

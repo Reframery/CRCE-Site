@@ -227,7 +227,7 @@ export const TeamPage = () => {
       {/* Student Team  */}
       <section
         id="student-team"
-        className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8"
+        className="mx-auto max-w-7xl scroll-m-4 px-4 pb-24 sm:px-6 lg:px-8"
       >
         <SectionHeader
           icon={GraduationCap}

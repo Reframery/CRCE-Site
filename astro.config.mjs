@@ -8,4 +8,7 @@ import icon from "astro-icon"
 export default defineConfig({
   site: "https://www.crce.info",
   integrations: [react(), tailwind(), icon(), sitemap()],
+  redirects: {
+    "/student-training": "/people-researchers-students-faculty#student-team",
+  },
 })

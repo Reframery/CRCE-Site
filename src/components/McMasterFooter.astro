@@ -19,33 +19,42 @@ const links = [
 
 const socials = [
   {
+    label: "Instagram",
     name: "fa6-brands:instagram",
     link: "https://www.instagram.com/mcmasteru",
   },
   {
+    label: "X (formerly Twitter)",
     name: "fa6-brands:x-twitter",
     link: "https://www.twitter.com/mcmasteru",
   },
   {
+    label: "Facebook",
     name: "fa6-brands:facebook-f",
     link: "https://www.facebook.com/mcmasteruniversity",
   },
   {
+    label: "YouTube",
     name: "fa6-brands:youtube",
     link: "https://www.youtube.com/mcmasterutv",
   },
   {
+    label: "LinkedIn",
     name: "fa6-brands:linkedin-in",
     link: "https://www.linkedin.com/school/164897/",
   },
 ]
 ---
 
-<footer class="bg-maroon flex flex-col items-center p-8 text-white">
-  <div class="w-full max-w-100">
-    <McMasterFooterLogo />
+<footer
+  class="bg-maroon flex flex-col items-center p-8 text-white"
+  aria-label="McMaster University footer"
+>
+  <div class="w-full max-w-100" role="img" aria-label="McMaster University">
+    <McMasterFooterLogo aria-hidden="true" />
   </div>
   <nav
+    aria-label="Legal links"
     class="font-sans-condensed mt-6 mb-4 flex w-full flex-col items-center justify-center gap-x-24 gap-y-4 border-y border-gray-600 py-5 font-semibold tracking-wider md:flex-row"
   >
     {
@@ -54,54 +63,57 @@ const socials = [
           href={link.link}
           target="_blank"
           rel="noopener noreferrer"
-          class="hover:underline"
+          class="underline hover:no-underline"
         >
           {link.title}
         </a>
       ))
     }
   </nav>
-  <nav class="flex flex-wrap justify-center gap-4 py-4 sm:gap-8 md:gap-11">
+  <nav
+    aria-label="McMaster social media"
+    class="flex flex-wrap justify-center gap-4 py-4 sm:gap-8 md:gap-11"
+  >
     {
       socials.map((social) => (
         <a
           href={social.link}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`${social.label} (opens in new tab)`}
           class="hover:border-gold hover:text-gold inline-flex rounded-full border-2 p-1.25 transition-colors duration-250"
-          aria-label={social.name}
         >
-          <Icon name={social.name} size={18} />
+          <Icon name={social.name} size={18} aria-hidden="true" />
         </a>
       ))
     }
   </nav>
   <nav
+    aria-label="McMaster contact details"
     class="flex flex-wrap items-center justify-center gap-4 py-4 text-center sm:gap-6"
   >
     <a
-      class="font-sans-condensed text-sm font-semibold tracking-wider hover:underline"
-      href="https://www.google.ca/maps/place/McMaster+University/@43.260879,-79.919225,17z/data=%213m1%214b1%214m2%213m1%211s0x882c84ac44f72ac1:0x399e00ea6143011c"
-      target="_blank"
+      href="https://www.google.ca/maps/place/?q=place_id:ChIJwSr3RKyELIgRHAFDYeoAnjk"
+      target="
+      _blank"
       rel="noopener noreferrer"
+      class="font-sans-condensed text-sm font-semibold tracking-wider underline hover:no-underline"
     >
       1280 Main Street West &nbsp;
       Hamilton,&nbsp;Ontario&nbsp;&nbsp;L8S&nbsp;4L8
     </a>
     <a
-      class="font-sans-condensed text-sm font-semibold tracking-wider hover:underline"
       href="tel:+19055259140"
-      target="_blank"
-      rel="noopener noreferrer"
+      class="font-sans-condensed text-sm font-semibold tracking-wider underline hover:no-underline"
     >
       (905) 525-9140
     </a>
   </nav>
   <a
-    class="font-sans-condensed my-4 text-[13px] tracking-wider hover:underline"
     href="https://www.mcmaster.ca/"
     target="_blank"
     rel="noopener noreferrer"
+    class="font-sans-condensed my-4 text-[13px] tracking-wider underline hover:no-underline"
   >
     &copy; {new Date().getFullYear()} McMaster University.
   </a>

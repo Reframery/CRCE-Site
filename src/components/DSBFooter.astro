@@ -1,33 +1,52 @@
 ---
 import { Image } from "astro:assets"
 import { emails } from "@/configs/contact"
-import Address from "@/components/Address.astro"
 import dsbLogo from "@/images/mcm-dsb-crce.png"
 ---
 
-<footer class="relative bg-gray-600 p-8 text-white">
-  <div class="absolute -top-0.5 left-0 z-10 h-0.5 w-full bg-gray-600"></div>
+<footer
+  class="relative bg-gray-600 p-8 text-white"
+  aria-label="DeGroote School of Business Footer"
+>
+  <div
+    class="absolute -top-0.5 left-0 z-10 h-0.5 w-full bg-gray-600"
+    aria-hidden="true"
+  >
+  </div>
   <div
     class="container flex flex-wrap gap-8 max-lg:justify-center sm:gap-10 lg:gap-32"
   >
     <div class="flex flex-col items-center">
-      <Image src={dsbLogo} alt="DSB Logo" class="w-72 brightness-200" />
+      <Image
+        src={dsbLogo}
+        alt="McMaster DeGroote School of Business CRCE logo"
+        class="w-72 brightness-200"
+      />
     </div>
     <div class="text-sm max-lg:text-center">
-      <p class="font-sans-condensed mb-1.5 text-xl font-semibold">
+      <h2 class="font-sans-condensed mb-1.5 text-xl font-semibold">
         Address Information
-      </p>
-      <Address />
+      </h2>
+      <a
+        href="https://www.google.com/maps/place/?q=place_id:ChIJAcVApjqFLIgR5UJsWQOuw3k"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline hover:no-underline"
+      >
+        McMaster University<br />
+        Tandem Accelerator Building<br />
+        1280 Main St W Building # 32<br />
+        Hamilton, ON L8S 4K1, Canada<br />
+      </a>
     </div>
     <div class="text-sm max-lg:text-center">
-      <p class="font-sans-condensed mb-1.5 text-xl font-semibold">
+      <h2 class="font-sans-condensed mb-1.5 text-xl font-semibold">
         Contact Information
-      </p>
+      </h2>
       {
         emails.map((email) => (
           <p>
-            Email:{" "}
-            <a href={`mailto:${email}`} class="hover:underline">
+            <a href={`mailto:${email}`} class="underline hover:no-underline">
               {email}
             </a>
           </p>

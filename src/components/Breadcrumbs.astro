@@ -7,7 +7,6 @@ interface Props {
 }
 
 const { border = true } = Astro.props
-
 const pathname = new URL(Astro.request.url).pathname
 ---
 
@@ -17,8 +16,9 @@ const pathname = new URL(Astro.request.url).pathname
       "container  px-0 pb-5 pt-6",
       border && "border-b border-b-gray-600/20"
     )}
+    aria-label="Breadcrumb"
   >
-    <ul class="flex gap-3.5 text-sm marker:text-gray-600">
+    <ol class="flex gap-3.5 text-sm marker:text-gray-600">
       <li>
         <a href="/">Home</a>
       </li>
@@ -34,7 +34,9 @@ const pathname = new URL(Astro.request.url).pathname
             return (
               <li class="list-inside list-disc">
                 {isActive(path, pathname) ? (
-                  <span class="text-gray-600">{label}</span>
+                  <span class="text-gray-600" aria-current="page">
+                    {label}
+                  </span>
                 ) : (
                   <a href={path}>{label}</a>
                 )}
@@ -42,7 +44,7 @@ const pathname = new URL(Astro.request.url).pathname
             )
           })
       }
-    </ul>
+    </ol>
   </nav>
 </div>
 <style>

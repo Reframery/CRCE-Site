@@ -20,7 +20,6 @@ export const ConferencePage = () => {
     target: heroRef,
     offset: ["start start", "end start"],
   })
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 80])
 
   return (
@@ -91,7 +90,7 @@ export const ConferencePage = () => {
         ))}
         <motion.div
           className="relative z-10 mx-auto w-full max-w-5xl px-4 py-14 text-center text-white md:py-20"
-          style={{ opacity: heroOpacity, y: heroY }}
+          style={{ y: heroY }}
         >
           {/* Badge */}
           <motion.div

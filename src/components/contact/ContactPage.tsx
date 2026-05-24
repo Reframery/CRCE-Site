@@ -20,7 +20,6 @@ export const ContactPage = () => {
     offset: ["start start", "end start"],
   })
   const heroY = useTransform(heroScroll, [0, 1], [0, 120])
-  const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0])
 
   return (
     <div className="min-h-screen overflow-hidden bg-background">
@@ -54,10 +53,7 @@ export const ContactPage = () => {
               "linear-gradient(to bottom, rgba(122,0,60,0.5) 0%, rgba(122,0,60,0.35) 50%, rgba(122,0,60,0.85) 100%)",
           }}
         />
-        <motion.div
-          className="relative z-10 px-4 py-14 text-center text-white md:py-20"
-          style={{ opacity: heroOpacity }}
-        >
+        <motion.div className="relative z-10 px-4 py-14 text-center text-white md:py-20">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}

@@ -12,7 +12,6 @@ export const RisePage = () => {
   })
   // @ts-expect-error
   const heroY = useTransform(heroScroll, [0, 1], [0, 120])
-  const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0])
 
   return (
     <div className="min-h-screen overflow-hidden bg-background">
@@ -81,10 +80,7 @@ export const RisePage = () => {
             }}
           />
         ))}
-        <motion.div
-          className="relative z-10 px-4 py-14 text-center text-white md:py-20"
-          style={{ opacity: heroOpacity }}
-        >
+        <motion.div className="relative z-10 px-4 py-14 text-center text-white md:py-20">
           {/* RISE Logo + wordmark */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5, rotate: -20 }}

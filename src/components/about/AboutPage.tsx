@@ -256,7 +256,7 @@ export const AboutPage = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="mb-4 text-3xl font-bold md:text-4xl"
             >
-              Partner with CRCE
+              Partner with <span className="text-gold">CRCE</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 15 }}

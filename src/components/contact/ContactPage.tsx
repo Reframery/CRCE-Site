@@ -340,7 +340,7 @@ export const ContactPage = () => {
           </div>
           <div className="relative z-10 p-12 text-center text-white md:p-16">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              Want to collaborate with CRCE?
+              Want to collaborate with <span className="text-gold">CRCE</span>?
             </h2>
             <p className="mx-auto mb-10 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
               Discover research opportunities, student programs, and

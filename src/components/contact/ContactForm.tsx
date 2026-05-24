@@ -70,6 +70,7 @@ export const ContactForm = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 + gi * 0.08 }}
+            className="text-sm"
           >
             <label
               htmlFor={field.id}
@@ -89,7 +90,7 @@ export const ContactForm = () => {
                 }))
               }
               placeholder={field.placeholder}
-              className="w-full rounded-xl border-2 bg-white px-4 py-2 font-medium text-gray-900 placeholder-gray-400 ring-2 ring-transparent transition-all duration-200 focus-visible:outline-none focus-visible:ring-maroon invalid:focus-visible:ring-red-500"
+              className="w-full rounded-xl border-2 bg-white px-3 py-2 text-gray-900 placeholder-gray-400 ring-2 ring-transparent transition-all duration-200 focus-visible:outline-none focus-visible:ring-maroon invalid:focus-visible:ring-red-500"
             />
           </motion.div>
         ))}
@@ -99,10 +100,11 @@ export const ContactForm = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: 0.2 }}
+        className="text-sm"
       >
         <label
           htmlFor="subject"
-          className="mb-1.5 block text-sm font-bold text-gray-700"
+          className="mb-1.5 block font-bold text-gray-700"
         >
           Subject
         </label>
@@ -114,7 +116,7 @@ export const ContactForm = () => {
             setFormData((p) => ({ ...p, subject: e.target.value }))
           }
           placeholder="Research collaboration, general inquiry…"
-          className="w-full rounded-xl border-2 bg-white px-4 py-2 font-medium text-gray-900 placeholder-gray-400 ring-2 ring-transparent transition-all duration-200 focus-visible:outline-none focus-visible:ring-maroon invalid:focus-visible:ring-red-500"
+          className="w-full rounded-xl border-2 bg-white px-3 py-2 text-gray-900 placeholder-gray-400 ring-2 ring-transparent transition-all duration-200 focus-visible:outline-none focus-visible:ring-maroon invalid:focus-visible:ring-red-500"
         />
       </motion.div>
       <motion.div
@@ -122,10 +124,11 @@ export const ContactForm = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: 0.28 }}
+        className="text-sm"
       >
         <label
           htmlFor="message"
-          className="mb-1.5 block text-sm font-bold text-gray-700"
+          className="mb-1.5 block font-bold text-gray-700"
         >
           Message *
         </label>
@@ -138,7 +141,7 @@ export const ContactForm = () => {
             setFormData((p) => ({ ...p, message: e.target.value }))
           }
           placeholder="Tell us how we can help…"
-          className="w-full resize-none rounded-xl border-2 bg-white px-4 py-2 font-medium text-gray-900 placeholder-gray-400 ring-2 ring-transparent transition-all duration-200 focus-visible:outline-none focus-visible:ring-maroon invalid:focus-visible:ring-red-500"
+          className="w-full resize-none rounded-xl border-2 bg-white px-3 py-2 text-gray-900 placeholder-gray-400 ring-2 ring-transparent transition-all duration-200 focus-visible:outline-none focus-visible:ring-maroon invalid:focus-visible:ring-red-500"
         />
       </motion.div>
       <motion.button
@@ -147,7 +150,7 @@ export const ContactForm = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: 0.36 }}
-        className="hover:bg-maroon/90 flex w-full items-center justify-center gap-2.5 rounded-xl bg-maroon py-3 text-base font-semibold text-white shadow-lg transition-colors duration-200 hover:text-gold"
+        className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-maroon py-3 text-sm font-semibold text-white shadow-lg transition-colors duration-200 hover:bg-maroon/90"
       >
         <Send className="h-5 w-5" />
         Send Message

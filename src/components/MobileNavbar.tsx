@@ -48,7 +48,7 @@ export default function MobileNavbar({ pathname }: { pathname: string }) {
               <a
                 key={link.pathname}
                 className={cn(
-                  "hover:text-foreground relative inline-flex items-center justify-center gap-2 border-b border-gray-600 px-8 py-3 text-center transition-colors duration-250 hover:bg-white hover:shadow-lg",
+                  "hover:text-foreground relative inline-flex items-center justify-center gap-2 border-b border-gray-600 px-8 py-3 text-center transition-colors duration-250 hover:bg-white/90 hover:shadow-lg",
                   active && "bg-foreground/40"
                 )}
                 href={link.pathname}

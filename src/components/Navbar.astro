@@ -18,7 +18,7 @@ const pathname = new URL(Astro.request.url).pathname
         return (
           <a
             class={cn(
-              "hover:text-foreground relative inline-flex items-center gap-2 self-stretch px-6 py-3 text-center transition-colors duration-250 hover:bg-white hover:shadow-lg",
+              "hover:text-foreground relative inline-flex items-center gap-2 self-stretch px-6 py-3 text-center transition-colors duration-250 hover:bg-white/90 hover:shadow-lg",
               active &&
                 "after:bg-gold after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-[80%] after:-translate-x-1/2 after:content-['']"
             )}

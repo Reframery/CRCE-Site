@@ -1,10 +1,10 @@
 export type Person = {
   name: string
   role: string
-  details?: string[]
-  email: string | null
-  linkedin?: string | null
   image: string
+  details?: string[]
+  email?: string
+  linkedin?: string
   bio?: string
 }
 
@@ -133,7 +133,6 @@ export const internalAdvisory: Person[] = [
     name: "Tej Sandhu",
     role: "Internal Advisory Committee Member",
     details: [],
-    email: null,
     image:
       "https://media.base44.com/images/public/69573a816ee3f6e4126a3794/ac99808b6_image.png",
   },
@@ -430,7 +429,6 @@ export const studentTeam: Person[] = [
     name: "Tabitha Lothian",
     role: "Research & Curriculum Development Specialist",
     email: "lothiant@mcmaster.ca",
-    linkedin: null,
     image: PLACEHOLDER + "Tabitha+Lothian",
     bio: "Tabitha Lothian is a Research & Curriculum Development Specialist at McMaster University, contributing to the development of educational materials for Reframery's global entrepreneurship programs.",
   },
@@ -490,8 +488,6 @@ export const studentTeam: Person[] = [
   {
     name: "Mia Aamir",
     role: "Research Assistant (Independent)",
-    email: null,
-    linkedin: null,
     image: PLACEHOLDER + "Mia+Aamir",
     bio: "As a Research Assistant, I play a crucial role in the collection, compilation, and analysis of firsthand research data. My responsibilities include creating detailed reports based on my findings and utilizing this information to advance ongoing research projects.",
   },

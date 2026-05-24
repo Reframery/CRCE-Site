@@ -23,8 +23,8 @@ export const ContactPage = () => {
   const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0])
 
   return (
-    <div className="bg-background min-h-screen overflow-hidden">
-      {/* ── HERO ── */}
+    <div className="min-h-screen overflow-hidden bg-background">
+      {/* Hero */}
       <section
         ref={heroRef}
         className="relative flex flex-col items-center justify-center overflow-hidden bg-maroon"
@@ -55,7 +55,7 @@ export const ContactPage = () => {
           }}
         />
         <motion.div
-          className="relative z-10 px-4 py-20 text-center text-white md:py-28"
+          className="relative z-10 px-4 py-14 text-center text-white md:py-20"
           style={{ opacity: heroOpacity }}
         >
           {/* Badge */}
@@ -94,7 +94,7 @@ export const ContactPage = () => {
               Us
             </span>
           </motion.h1>
-          {/* Subtitle pill — styled like the image */}
+          {/* Subtitle pill */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -136,14 +136,13 @@ export const ContactPage = () => {
         </motion.div>
         {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1 text-white/50"
+          className="absolute bottom-12 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5 text-white/50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
+          transition={{ delay: 1.3 }}
         >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
           <motion.div
-            animate={{ y: [0, 8, 0] }}
+            animate={{ y: [0, 9, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
             <ChevronDown className="h-5 w-5" />
@@ -151,10 +150,11 @@ export const ContactPage = () => {
         </motion.div>
         {/* Wave */}
         <div className="pointer-events-none absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 80" className="fill-background h-auto w-full">
+          <svg viewBox="0 0 1440 80" className="h-auto w-full fill-background">
             <path d="M0,40L60,36C120,32,240,24,360,28C480,32,600,48,720,52C840,56,960,48,1080,40C1200,32,1320,24,1380,20L1440,16L1440,80L0,80Z" />
           </svg>
         </div>
+        <div className="absolute bottom-0 h-[1px] w-full bg-background" />
       </section>
       {/* Breadcrumb */}
       <div className="mx-auto max-w-7xl px-4 py-5 text-sm text-gray-600 sm:px-6 lg:px-8">
@@ -164,16 +164,16 @@ export const ContactPage = () => {
         <span className="mx-2 text-gray-400">›</span>
         <span className="font-semibold text-gray-700">Contact Us</span>
       </div>
-      {/* ── INFO CARDS ── */}
+      {/* Info Cards */}
       <section className="mx-auto max-w-7xl overflow-visible px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mb-14 grid grid-cols-1 gap-6 overflow-visible md:grid-cols-3">
           {infoCards.map((card, i) => (
             <InfoCard key={i} card={card} index={i} />
           ))}
         </div>
-        {/* ── FORM + MAP ── */}
+        {/* Form & Map */}
         <div className="mb-16 grid grid-cols-1 gap-10 lg:grid-cols-2">
-          {/* Form card — white, like RISE text panels */}
+          {/* Form card */}
           <motion.div
             initial={{ opacity: 0, x: -50, scale: 0.97 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
@@ -311,13 +311,13 @@ export const ContactPage = () => {
             </div>
           </motion.div>
         </div>
-        {/* --- Bottom CTA --- */}
+        {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, type: "spring", stiffness: 70 }}
-          className="relative mb-16 overflow-hidden rounded-3xl shadow-2xl"
+          className="relative mb-12 overflow-hidden rounded-3xl shadow-2xl"
           style={{
             background: "linear-gradient(135deg, #7A003C 0%, #4a0024 100%)",
           }}

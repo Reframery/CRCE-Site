@@ -18,6 +18,7 @@ export const Ticker = () => (
       background:
         "linear-gradient(90deg, hsl(var(--maroon)), #9a0050, hsl(var(--maroon)))",
     }}
+    aria-hidden="true"
   >
     <div
       className="absolute top-0 bottom-0 left-0 z-10 w-16"

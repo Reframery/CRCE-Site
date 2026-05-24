@@ -225,6 +225,7 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
           background:
             "linear-gradient(135deg, hsl(var(--maroon)) 0%, #5a0029 100%)",
         }}
+        aria-hidden="true"
       >
         {/* Animated background pattern */}
         <motion.div
@@ -285,11 +286,13 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
           className="bg-maroon pointer-events-none absolute -right-20 -bottom-20 h-64 w-64 rounded-full blur-3xl"
           animate={{ opacity: hovered ? 0.08 : 0 }}
           transition={{ duration: 0.5 }}
+          aria-hidden="true"
         />
         <motion.div
           className="bg-gold pointer-events-none absolute top-0 left-0 h-48 w-48 rounded-full blur-3xl"
           animate={{ opacity: hovered ? 0.04 : 0 }}
           transition={{ duration: 0.5 }}
+          aria-hidden="true"
         />
         {/* Label bar */}
         <motion.div
@@ -297,6 +300,7 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
           initial={{ opacity: 0, x: isEven ? -20 : 20 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
+          aria-hidden="true"
         >
           <motion.div
             className="bg-maroon h-1 rounded-full"
@@ -325,6 +329,7 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
           initial={{ scaleX: 0, originX: 0 }}
           animate={isInView ? { scaleX: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
+          aria-hidden="true"
         />
         <motion.p
           className="text-sm leading-relaxed text-gray-500 md:text-base"

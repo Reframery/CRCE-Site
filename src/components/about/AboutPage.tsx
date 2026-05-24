@@ -2,6 +2,7 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "motion/react"
 import { ArrowRight, ChevronDown, Handshake, Target } from "lucide-react"
 import { sections } from "@/content/about"
+import { Breadcrumbs } from "../ui/Breadcrumbs"
 import { SectionCard } from "./SectionCard"
 import { StatsBar } from "./StatsBar"
 import { Ticker } from "./Ticker"
@@ -143,6 +144,7 @@ export const AboutPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
             className="mt-10 mb-5 flex flex-wrap justify-center gap-3"
+            aria-hidden="true"
           >
             {[
               { val: "McMaster", sub: "University" },
@@ -184,22 +186,17 @@ export const AboutPage = () => {
           </motion.div>
         </motion.div>
         {/* Wave */}
-        <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-10">
+        <div
+          className="pointer-events-none absolute right-0 bottom-0 left-0 z-10"
+          aria-hidden="true"
+        >
           <svg viewBox="0 0 1440 80" className="fill-background h-auto w-full">
             <path d="M0,40L60,36C120,32,240,24,360,28C480,32,600,48,720,52C840,56,960,48,1080,40C1200,32,1320,24,1380,20L1440,16L1440,80L0,80Z" />
           </svg>
         </div>
       </section>
-      {/* ── Ticker ── */}
       <Ticker />
-      {/* Breadcrumb */}
-      <div className="mx-auto max-w-7xl px-4 py-5 text-sm text-gray-600 sm:px-6 lg:px-8">
-        <a href="/" className="transition-colors hover:text-gray-700">
-          Home
-        </a>
-        <span className="mx-2 text-gray-500">›</span>
-        <span className="font-semibold text-gray-700">About</span>
-      </div>
+      <Breadcrumbs pageTitle="About" />
       <StatsBar />
       {/* ── Section Cards ── */}
       <section className="mx-auto max-w-7xl space-y-10 px-4 pb-16 sm:px-6 lg:px-8">
@@ -246,6 +243,7 @@ export const AboutPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-bold tracking-widest uppercase"
+              aria-hidden="true"
             >
               <Handshake className="text-gold h-3 w-3" /> Partner With Us
             </motion.div>

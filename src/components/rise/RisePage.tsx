@@ -15,7 +15,7 @@ export const RisePage = () => {
   const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0])
 
   return (
-    <div className="bg-background min-h-screen overflow-hidden">
+    <div className="min-h-screen overflow-hidden bg-background">
       {/* ── Hero ── */}
       <section
         ref={heroRef}
@@ -172,14 +172,13 @@ export const RisePage = () => {
         </motion.div>
         {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1 text-white/50"
+          className="absolute bottom-12 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5 text-white/50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
+          transition={{ delay: 1.3 }}
         >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
           <motion.div
-            animate={{ y: [0, 8, 0] }}
+            animate={{ y: [0, 9, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
             <ChevronDown className="h-5 w-5" />
@@ -187,7 +186,7 @@ export const RisePage = () => {
         </motion.div>
         {/* Wave */}
         <div className="pointer-events-none absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 80" className="fill-background h-auto w-full">
+          <svg viewBox="0 0 1440 80" className="h-auto w-full fill-background">
             <path d="M0,40L60,36C120,32,240,24,360,28C480,32,600,48,720,52C840,56,960,48,1080,40C1200,32,1320,24,1380,20L1440,16L1440,80L0,80Z" />
           </svg>
         </div>

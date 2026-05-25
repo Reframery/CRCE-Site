@@ -6,13 +6,12 @@ import type { Section } from "@/content/rise"
 // Animated SVG graphic panels for each section
 const graphicPatterns = [
   // Mentorship - network of connected people
-  (hovered: boolean) => (
+  () => (
     <svg
       className="absolute inset-0 h-full w-full"
       viewBox="0 0 400 300"
       preserveAspectRatio="xMidYMid slice"
     >
-      {/* Connection lines */}
       {[
         [200, 150],
         [100, 80],
@@ -20,24 +19,20 @@ const graphicPatterns = [
         [80, 200],
         [320, 200],
         [200, 240],
-        [150, 130],
-        [260, 170],
       ].flatMap(([x1, y1], i, arr) =>
         arr
-          .slice(i + 1, i + 3)
+          .slice(i + 1)
           .map(([x2, y2], j) => (
             <line
-              key={`l${i}-${j}`}
+              key={`${i}-${j}`}
               x1={x1}
               y1={y1}
               x2={x2}
               y2={y2}
-              stroke="hsl(var(--gold) / 0.2)"
-              strokeWidth="1.5"
+              className="stroke-gold/18 stroke-[1.2]"
             />
           ))
       )}
-      {/* Nodes */}
       {[
         [200, 150],
         [100, 80],
@@ -45,27 +40,15 @@ const graphicPatterns = [
         [80, 200],
         [320, 200],
         [200, 240],
-        [150, 130],
-        [260, 170],
       ].map(([cx, cy], i) => (
         <circle
           key={i}
           cx={cx}
           cy={cy}
-          r={i === 0 ? 16 : 10}
-          fill="hsl(var(--gold) / 0.5)"
-          opacity={hovered ? 0.9 : 0.6}
+          r={i === 0 ? 14 : 9}
+          className="fill-gold/50"
         />
       ))}
-      {/* Pulse ring on center */}
-      <circle
-        cx="200"
-        cy="150"
-        r={hovered ? 28 : 22}
-        fill="none"
-        stroke="hsl(var(--gold) / 0.3)"
-        strokeWidth="2"
-      />
     </svg>
   ),
   // Programs - ascending steps / academic arcs
@@ -80,8 +63,7 @@ const graphicPatterns = [
         <path
           key={i}
           d={`M ${200 - r} 150 A ${r} ${r} 0 0 1 ${200 + r} 150`}
-          fill="none"
-          stroke="hsl(var(--gold) / 0.25)"
+          className="stroke-gold/25 fill-none"
           strokeWidth={i === 0 ? 2 : 1.5}
         />
       ))}
@@ -94,7 +76,7 @@ const graphicPatterns = [
           width="28"
           height={h}
           rx="5"
-          fill="hsl(var(--gold) / 0.2)"
+          className="fill-gold/20"
           opacity={hovered ? 0.85 : 0.5}
         />
       ))}
@@ -103,10 +85,9 @@ const graphicPatterns = [
         y1="230"
         x2="340"
         y2="230"
-        stroke="hsl(var(--gold) / 0.3)"
-        strokeWidth="1.5"
+        className="stroke-gold/30 stroke-[1.5]"
       />
-      <circle cx="200" cy="150" r="10" fill="hsl(var(--gold) / 0.6)" />
+      <circle cx="200" cy="150" r="10" className="fill-gold/60" />
     </svg>
   ),
   // Collaborate - globe / orbit rings
@@ -122,36 +103,28 @@ const graphicPatterns = [
         cy="150"
         rx="130"
         ry="55"
-        fill="none"
-        stroke="hsl(var(--gold) / 0.2)"
-        strokeWidth="1.5"
+        className="stroke-gold/20 fill-none stroke-[1.5]"
       />
       <ellipse
         cx="200"
         cy="150"
         rx="90"
         ry="38"
-        fill="none"
-        stroke="hsl(var(--gold) / 0.2)"
-        strokeWidth="1"
+        className="stroke-gold/20 fill-none stroke-1"
       />
       <ellipse
         cx="200"
         cy="150"
         rx="55"
         ry="90"
-        fill="none"
-        stroke="hsl(var(--gold) / 0.15)"
-        strokeWidth="1.5"
+        className="stroke-gold/15 fill-none stroke-[1.5]"
       />
       {/* Globe circle */}
       <circle
         cx="200"
         cy="150"
         r="70"
-        fill="none"
-        stroke="hsl(var(--gold) / 0.25)"
-        strokeWidth="2"
+        className="stroke-gold/25 fill-none stroke-2"
       />
       {/* Dots on orbit */}
       {[0, 72, 144, 216, 288].map((deg, i) => {
@@ -162,12 +135,12 @@ const graphicPatterns = [
             cx={200 + Math.cos(rad) * 130}
             cy={150 + Math.sin(rad) * 55}
             r="7"
-            fill="hsl(var(--gold) / 0.55)"
+            className="fill-gold/55"
             opacity={hovered ? 0.9 : 0.6}
           />
         )
       })}
-      <circle cx="200" cy="150" r="14" fill="hsl(var(--gold) / 0.5)" />
+      <circle cx="200" cy="150" r="14" className="fill-gold/50" />
     </svg>
   ),
 ]

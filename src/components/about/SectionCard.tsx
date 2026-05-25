@@ -13,30 +13,26 @@ const graphicPatterns = [
       {[180, 140, 100, 60, 30].map((r, i) => (
         <circle
           key={i}
+          className="stroke-gold/25 fill-none stroke-[1.5]"
           cx="200"
           cy="150"
           r={r}
-          fill="none"
-          stroke="hsl(var(--gold) / 0.25)"
-          strokeWidth="1.5"
         />
       ))}
-      <circle cx="200" cy="150" r="15" fill="hsl(var(--gold) / 0.6)" />
+      <circle cx="200" cy="150" r="15" className="fill-gold/60" />
       <line
         x1="200"
         y1="0"
         x2="200"
         y2="300"
-        stroke="hsl(var(--gold) / 0.1)"
-        strokeWidth="1"
+        className="stroke-gold/10 stroke-1"
       />
       <line
         x1="0"
         y1="150"
         x2="400"
         y2="150"
-        stroke="hsl(var(--gold) / 0.1)"
-        strokeWidth="1"
+        className="stroke-gold/10 stroke-1"
       />
     </svg>
   ),
@@ -51,8 +47,7 @@ const graphicPatterns = [
         <path
           key={i}
           d={`M 0 ${80 + i * 40} Q 100 ${60 + i * 40}, 200 ${80 + i * 40} T 400 ${80 + i * 40}`}
-          fill="none"
-          stroke="hsl(var(--gold) / 0.2)"
+          className="stroke-gold/20 fill-none"
           strokeWidth={i === 2 ? "2.5" : "1.5"}
           opacity={hovered ? 0.8 : 0.5}
         />
@@ -61,12 +56,10 @@ const graphicPatterns = [
         cx="200"
         cy="150"
         r="32"
-        fill="none"
-        stroke="hsl(var(--gold) / 0.35)"
-        strokeWidth="2"
+        className="stroke-gold/35 fill-none stroke-2"
       />
-      <circle cx="200" cy="150" r="18" fill="hsl(var(--gold) / 0.2)" />
-      <circle cx="200" cy="150" r="8" fill="hsl(var(--gold) / 0.7)" />
+      <circle cx="200" cy="150" r="18" className="fill-gold/20" />
+      <circle cx="200" cy="150" r="8" className="fill-gold/70" />
     </svg>
   ),
   // Approach - hexagonal grid
@@ -90,9 +83,7 @@ const graphicPatterns = [
         <polygon
           key={i}
           points={`${cx},${cy - 28} ${cx + 24},${cy - 14} ${cx + 24},${cy + 14} ${cx},${cy + 28} ${cx - 24},${cy + 14} ${cx - 24},${cy - 14}`}
-          fill="none"
-          stroke="hsl(var(--gold) / 0.3)"
-          strokeWidth="1.5"
+          className="stroke-gold/30 fill-none stroke-[1.5]"
         />
       ))}
     </svg>
@@ -112,7 +103,7 @@ const graphicPatterns = [
           width="20"
           height={h}
           rx="4"
-          fill="hsl(var(--gold) / 0.25)"
+          className="fill-gold/25"
         />
       ))}
       <line
@@ -120,8 +111,7 @@ const graphicPatterns = [
         y1="220"
         x2="360"
         y2="220"
-        stroke="hsl(var(--gold) / 0.3)"
-        strokeWidth="1.5"
+        className="stroke-gold/30 stroke-[1.5]"
       />
     </svg>
   ),
@@ -149,8 +139,7 @@ const graphicPatterns = [
               y1={y1}
               x2={x2}
               y2={y2}
-              stroke="hsl(var(--gold) / 0.18)"
-              strokeWidth="1.2"
+              className="stroke-gold/18 stroke-[1.2]"
             />
           ))
       )}
@@ -167,7 +156,7 @@ const graphicPatterns = [
           cx={cx}
           cy={cy}
           r={i === 0 ? 14 : 9}
-          fill="hsl(var(--gold) / 0.5)"
+          className="fill-gold/50"
         />
       ))}
     </svg>
@@ -183,12 +172,11 @@ const graphicPatterns = [
         <polygon
           key={i}
           points={`200,${150 - 120 * scale} ${200 + 100 * scale},150 200,${150 + 120 * scale} ${200 - 100 * scale},150`}
-          fill="none"
-          stroke="hsl(var(--gold) / 0.3)"
+          className="stroke-gold/30 fill-none"
           strokeWidth={i === 0 ? 2 : 1}
         />
       ))}
-      <circle cx="200" cy="150" r="10" fill="hsl(var(--gold) / 0.7)" />
+      <circle cx="200" cy="150" r="10" className="fill-gold/70" />
     </svg>
   ),
 ]

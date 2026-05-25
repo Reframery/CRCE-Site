@@ -3,6 +3,7 @@ import { Globe } from "lucide-react"
 
 export const AnimatedGlobe = () => (
   <div className="relative mx-auto size-80 md:size-110">
+    <div className="absolute inset-0 z-1 scale-150 rounded-full border-2 border-[#f5ede2]" />
     {/* Outermost pulse rings */}
     {[0, 1, 2].map((i) => (
       <motion.div

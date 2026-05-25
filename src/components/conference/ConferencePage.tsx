@@ -200,6 +200,7 @@ export const ConferencePage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, type: "spring", stiffness: 70 }}
+              className="z-2"
             >
               <div className="mb-5 flex items-center gap-3">
                 <motion.div

@@ -19,7 +19,7 @@ export const StatsBar = () => {
         <div
           className="absolute inset-0 bg-size-[28px_50px] opacity-10"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 0 L56 16 L56 50 L28 66 L0 50 L0 16 Z' fill='none' stroke='hsl(var(--gold))' stroke-width='1'/%3E%3Cpath d='M28 66 L56 50 L56 84 L28 100 L0 84 L0 50 Z' fill='none' stroke='hsl(var(--gold))' stroke-width='1'/%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 0 L56 16 L56 50 L28 66 L0 50 L0 16 Z' fill='none' stroke='rgb(253,191,87)' stroke-width='1'/%3E%3Cpath d='M28 66 L56 50 L56 84 L28 100 L0 84 L0 50 Z' fill='none' stroke='rgb(253,191,87)' stroke-width='1'/%3E%3C/svg%3E")`,
           }}
         />
         <motion.div

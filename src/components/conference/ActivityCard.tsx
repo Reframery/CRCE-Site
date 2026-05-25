@@ -27,19 +27,11 @@ export const ActivityCard = ({ activity, index }: ActivityCardProps) => {
       whileHover={{ y: -8, scale: 1.02 }}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
-      className="group relative cursor-default overflow-hidden rounded-2xl p-7"
-      style={{
-        background: "linear-gradient(135deg, #1a0010 0%, #2d0020 100%)",
-        border: "1px solid rgba(122,0,60,0.4)",
-      }}
+      className="group border-maroon/40 relative cursor-default overflow-hidden rounded-2xl border bg-linear-to-br from-[#1a0010] to-[#2d0020] p-7"
     >
       {/* Animated glow bg */}
       <motion.div
-        className="pointer-events-none absolute inset-0 rounded-2xl"
-        style={{
-          background:
-            "radial-gradient(circle at 70% 30%, rgba(253,191,56,0.12) 0%, transparent 70%)",
-        }}
+        className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_70%_30%,rgba(253,191,87,0.12)_0%,transparent_70%)]"
         animate={{ opacity: hovered ? 1 : 0 }}
         transition={{ duration: 0.4 }}
       />
@@ -53,8 +45,8 @@ export const ActivityCard = ({ activity, index }: ActivityCardProps) => {
       <motion.div
         className="mb-5 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl"
         style={{
-          backgroundColor: "rgba(253,191,56,0.12)",
-          border: "1px solid rgba(253,191,56,0.3)",
+          backgroundColor: "rgba(253,191,87,0.12)",
+          border: "1px solid rgba(253,191,87,0.3)",
         }}
         animate={{ scale: hovered ? 1.1 : 1 }}
         transition={{ duration: 0.3 }}

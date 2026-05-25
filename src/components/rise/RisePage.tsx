@@ -21,18 +21,12 @@ export const RisePage = () => {
         className="bg-maroon relative flex flex-col items-center justify-center overflow-hidden"
       >
         {/* Animated dot grid bg */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `radial-gradient(circle, rgba(253,191,56,0.6) 1px, transparent 1px)`,
-            backgroundSize: "32px 32px",
-          }}
-        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(253,191,87,0.6)_1px,transparent_1px)] bg-size-[32px_32px] opacity-10" />
         {/* Animated grid */}
         <div
           className="absolute inset-0 opacity-[0.07]"
           style={{
-            backgroundImage: `linear-gradient(rgba(253,191,56,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,56,1) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(253,191,87,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,87,1) 1px, transparent 1px)`,
             backgroundSize: "60px 60px",
           }}
         />
@@ -40,7 +34,7 @@ export const RisePage = () => {
         {[
           {
             size: 500,
-            color: "rgba(253,191,56,0.15)",
+            color: "rgba(253,191,87,0.15)",
             x: -200,
             y: -100,
             dur: 12,
@@ -208,11 +202,7 @@ export const RisePage = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, type: "spring", stiffness: 70 }}
-          className="relative overflow-hidden rounded-3xl shadow-2xl"
-          style={{
-            background:
-              "linear-gradient(135deg, hsl(var(--maroon)) 0%, #4a0024 100%)",
-          }}
+          className="from-maroon relative overflow-hidden rounded-3xl bg-linear-to-br to-[#4a0024] shadow-2xl"
         >
           {/* Background shapes */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">

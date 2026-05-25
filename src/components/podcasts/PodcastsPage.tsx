@@ -51,16 +51,9 @@ export const PodcastsPage = () => {
       {/* Hero Section */}
       <section className="from-maroon relative z-10 overflow-hidden bg-linear-to-br via-[#8B0A46] to-[#5C0028] px-4 py-20 text-white">
         <motion.div
-          className="absolute inset-0 opacity-10"
-          animate={{
-            backgroundPosition: ["0% 0%", "100% 100%"],
-          }}
+          className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-size-[50px_50px] opacity-10"
+          animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
           transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px)",
-            backgroundSize: "50px 50px",
-          }}
         />
         {/* Floating animated shapes */}
         <motion.div
@@ -96,9 +89,9 @@ export const PodcastsPage = () => {
               }}
               animate={{
                 boxShadow: [
-                  "0 0 20px rgba(253,191,56,0.2)",
-                  "0 0 40px rgba(253,191,56,0.4)",
-                  "0 0 20px rgba(253,191,56,0.2)",
+                  "0 0 20px rgba(253,191,87,0.2)",
+                  "0 0 40px rgba(253,191,87,0.4)",
+                  "0 0 20px rgba(253,191,87,0.2)",
                 ],
               }}
               transition={{ boxShadow: { duration: 3, repeat: Infinity } }}
@@ -127,9 +120,9 @@ export const PodcastsPage = () => {
                 className="text-gold"
                 animate={{
                   textShadow: [
-                    "0 0 20px rgba(253,191,56,0.3)",
-                    "0 0 40px rgba(253,191,56,0.6)",
-                    "0 0 20px rgba(253,191,56,0.3)",
+                    "0 0 20px rgba(253,191,87,0.3)",
+                    "0 0 40px rgba(253,191,87,0.6)",
+                    "0 0 20px rgba(253,191,87,0.3)",
                   ],
                 }}
                 transition={{ duration: 3, repeat: Infinity }}

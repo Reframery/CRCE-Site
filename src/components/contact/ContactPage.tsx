@@ -10,6 +10,7 @@ import {
 } from "lucide-react"
 import { infoCards } from "@/content/contact"
 import banner from "@/images/banner/contact.jpg"
+import { Breadcrumbs } from "../ui/Breadcrumbs"
 import { ContactForm } from "./ContactForm"
 import { InfoCard } from "./InfoCard"
 
@@ -36,22 +37,21 @@ export const ContactPage = () => {
             y: heroY,
             opacity: 0.45,
           }}
+          aria-hidden="true"
         />
         {/* Grid overlay */}
         <div
           className="absolute inset-0 opacity-[0.07]"
           style={{
-            backgroundImage: `linear-gradient(rgba(253,191,56,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,56,1) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(253,191,87,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,87,1) 1px, transparent 1px)`,
             backgroundSize: "60px 60px",
           }}
+          aria-hidden="true"
         />
         {/* Maroon tint on top of photo */}
         <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(122,0,60,0.5) 0%, rgba(122,0,60,0.35) 50%, rgba(122,0,60,0.85) 100%)",
-          }}
+          className="from-maroon/50 via-maroon/35 to-maroon/85 absolute inset-0 bg-linear-to-b"
+          aria-hidden="true"
         />
         <motion.div className="relative z-10 px-4 py-14 text-center text-white md:py-20">
           {/* Badge */}
@@ -60,6 +60,7 @@ export const ContactPage = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-5 py-2.5 shadow-lg backdrop-blur-md"
+            aria-hidden="true"
           >
             <motion.div
               animate={{ rotate: [0, 12, -12, 0] }}
@@ -85,7 +86,7 @@ export const ContactPage = () => {
             Contact{" "}
             <span
               className="text-gold"
-              style={{ textShadow: "0 0 40px rgba(253,191,56,0.5)" }}
+              style={{ textShadow: "0 0 40px rgba(253,191,87,0.5)" }}
             >
               Us
             </span>
@@ -108,6 +109,7 @@ export const ContactPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.65 }}
             className="mt-8 flex flex-wrap justify-center gap-3"
+            aria-hidden="true"
           >
             {[
               { val: "Hamilton", sub: "Ontario, Canada" },
@@ -136,6 +138,7 @@ export const ContactPage = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.3 }}
+          aria-hidden="true"
         >
           <motion.div
             animate={{ y: [0, 9, 0] }}
@@ -145,21 +148,20 @@ export const ContactPage = () => {
           </motion.div>
         </motion.div>
         {/* Wave */}
-        <div className="pointer-events-none absolute right-0 bottom-0 left-0">
+        <div
+          className="pointer-events-none absolute right-0 bottom-0 left-0"
+          aria-hidden="true"
+        >
           <svg viewBox="0 0 1440 80" className="fill-background h-auto w-full">
             <path d="M0,40L60,36C120,32,240,24,360,28C480,32,600,48,720,52C840,56,960,48,1080,40C1200,32,1320,24,1380,20L1440,16L1440,80L0,80Z" />
           </svg>
         </div>
-        <div className="bg-background absolute bottom-0 h-px w-full" />
+        <div
+          className="bg-background absolute bottom-0 h-px w-full"
+          aria-hidden="true"
+        />
       </section>
-      {/* Breadcrumb */}
-      <div className="mx-auto max-w-7xl px-4 py-5 text-sm text-gray-600 sm:px-6 lg:px-8">
-        <a href="/" className="transition-colors hover:text-gray-700">
-          Home
-        </a>
-        <span className="mx-2 text-gray-400">›</span>
-        <span className="font-semibold text-gray-700">Contact Us</span>
-      </div>
+      <Breadcrumbs pageTitle="Contact Us" />
       {/* Info Cards */}
       <section className="mx-auto max-w-7xl overflow-visible px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mb-14 grid grid-cols-1 gap-6 overflow-visible md:grid-cols-3">
@@ -179,15 +181,12 @@ export const ContactPage = () => {
           >
             {/* Top accent bar */}
             <div
-              className="h-2"
-              style={{
-                background:
-                  "linear-gradient(90deg, hsl(var(--maroon)), hsl(var(--gold)))",
-              }}
+              className="from-maroon to-gold h-2 bg-linear-to-r"
+              aria-hidden="true"
             />
             <div className="p-8 md:p-10">
               {/* Section label */}
-              <div className="mb-2 flex items-center gap-3">
+              <div className="mb-2 flex items-center gap-3" aria-hidden="true">
                 <motion.div
                   className="bg-maroon h-1 rounded-full"
                   initial={{ width: 0 }}
@@ -231,15 +230,15 @@ export const ContactPage = () => {
           >
             {/* Top accent bar */}
             <div
-              className="h-2"
-              style={{
-                background:
-                  "linear-gradient(90deg, hsl(var(--gold)), hsl(var(--maroon)))",
-              }}
+              className="from-gold to-maroon h-2 bg-linear-to-r"
+              aria-hidden="true"
             />
             <div className="flex flex-1 flex-col gap-6 p-8 md:p-10">
               <div>
-                <div className="mb-2 flex items-center gap-3">
+                <div
+                  className="mb-2 flex items-center gap-3"
+                  aria-hidden="true"
+                >
                   <motion.div
                     className="bg-maroon h-1 rounded-full"
                     initial={{ width: 0 }}
@@ -295,7 +294,7 @@ export const ContactPage = () => {
                     Hamilton, ON L8S 4K1, Canada
                   </p>
                   <a
-                    href="https://maps.google.com/maps/dir//Tandem+Accelerator+Building+TA+1280+Main+St+W+Building+%23+32+Hamilton,+ON+L8S+4K1"
+                    href="https://www.google.com/maps/place/?q=place_id:ChIJAcVApjqFLIgR5UJsWQOuw3k"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-maroon mt-3 inline-flex items-center gap-1.5 text-sm font-bold hover:underline"
@@ -313,13 +312,12 @@ export const ContactPage = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, type: "spring", stiffness: 70 }}
-          className="relative mb-12 overflow-hidden rounded-3xl shadow-2xl"
-          style={{
-            background:
-              "linear-gradient(135deg, hsl(var(--maroon)) 0%, #4a0024 100%)",
-          }}
+          className="from-maroon relative mb-12 overflow-hidden rounded-3xl bg-linear-to-br to-[#4a0024] shadow-2xl"
         >
-          <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div
+            className="pointer-events-none absolute inset-0 overflow-hidden"
+            aria-hidden="true"
+          >
             <motion.div
               className="bg-gold absolute -top-20 -right-20 h-80 w-80 rounded-full opacity-20 blur-3xl"
               animate={{ scale: [1, 1.4, 1], rotate: [0, 90, 0] }}

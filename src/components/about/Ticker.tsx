@@ -13,25 +13,11 @@ const tickerItems = [
 
 export const Ticker = () => (
   <div
-    className="relative overflow-hidden py-3"
-    style={{
-      background:
-        "linear-gradient(90deg, hsl(var(--maroon)), #9a0050, hsl(var(--maroon)))",
-    }}
+    className="from-maroon to-maroon relative overflow-hidden bg-linear-to-r via-[#9a0050] py-3"
     aria-hidden="true"
   >
-    <div
-      className="absolute top-0 bottom-0 left-0 z-10 w-16"
-      style={{
-        background: "linear-gradient(90deg, hsl(var(--maroon)), transparent)",
-      }}
-    />
-    <div
-      className="absolute top-0 right-0 bottom-0 z-10 w-16"
-      style={{
-        background: "linear-gradient(270deg, hsl(var(--maroon)), transparent)",
-      }}
-    />
+    <div className="from-maroon absolute top-0 bottom-0 left-0 z-10 w-16 bg-linear-to-r to-transparent" />
+    <div className="from-maroon absolute top-0 right-0 bottom-0 z-10 w-16 bg-linear-to-l to-transparent" />
     <motion.div
       className="flex justify-center gap-8 whitespace-nowrap"
       animate={{ x: ["0%", "-50%"] }}

@@ -31,16 +31,14 @@ export const InfoCard = ({ card, index }: InfoCardProps) => {
     >
       {/* Top strip with icon inside */}
       <div
-        className="relative flex h-20 items-end overflow-hidden px-6 pb-3"
-        style={{
-          background: "linear-gradient(135deg, #9a0050 0%, #5a0029 100%)",
-        }}
+        className="relative flex h-20 items-end overflow-hidden bg-linear-to-br from-[#9a0050] to-[#5a0029] px-6 pb-3"
+        aria-hidden="true"
       >
         {/* Animated hex pattern */}
         <motion.div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 0 L56 16 L56 50 L28 66 L0 50 L0 16 Z' fill='none' stroke='rgba(253,191,56,0.25)' stroke-width='1.5'/%3E%3Cpath d='M28 66 L56 50 L56 84 L28 100 L0 84 L0 50 Z' fill='none' stroke='rgba(253,191,56,0.25)' stroke-width='1.5'/%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 0 L56 16 L56 50 L28 66 L0 50 L0 16 Z' fill='none' stroke='rgba(253,191,87,0.25)' stroke-width='1.5'/%3E%3Cpath d='M28 66 L56 50 L56 84 L28 100 L0 84 L0 50 Z' fill='none' stroke='rgba(253,191,87,0.25)' stroke-width='1.5'/%3E%3C/svg%3E")`,
             backgroundSize: "28px 50px",
           }}
           animate={{ opacity: hovered ? 0.6 : 0.3 }}
@@ -50,7 +48,7 @@ export const InfoCard = ({ card, index }: InfoCardProps) => {
         <motion.div
           className="pointer-events-none absolute rounded-full blur-2xl"
           style={{
-            backgroundColor: "rgba(253,191,56,0.35)",
+            backgroundColor: "rgba(253,191,87,0.35)",
             width: 120,
             height: 120,
             top: -40,
@@ -64,7 +62,7 @@ export const InfoCard = ({ card, index }: InfoCardProps) => {
           className="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl text-white shadow-lg"
           style={{
             backgroundColor: "rgba(255,255,255,0.15)",
-            border: "2px solid rgba(253,191,56,0.6)",
+            border: "2px solid rgba(253,191,87,0.6)",
           }}
           initial={{ scale: 0, rotate: -15 }}
           animate={isInView ? { scale: 1, rotate: 0 } : {}}
@@ -93,6 +91,7 @@ export const InfoCard = ({ card, index }: InfoCardProps) => {
           initial={{ width: 0 }}
           animate={isInView ? { width: 40 } : {}}
           transition={{ duration: 0.6, delay: 0.3 + index * 0.15 }}
+          aria-hidden="true"
         />
         <motion.h2
           className="mb-3 text-lg font-extrabold text-gray-900"
@@ -124,7 +123,10 @@ export const InfoCard = ({ card, index }: InfoCardProps) => {
             className="text-maroon mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-bold"
           >
             {card.cta.label}{" "}
-            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+            <ArrowRight
+              className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
           </motion.a>
         )}
       </div>

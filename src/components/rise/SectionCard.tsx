@@ -32,7 +32,7 @@ const graphicPatterns = [
               y1={y1}
               x2={x2}
               y2={y2}
-              stroke="rgba(253,191,56,0.2)"
+              stroke="rgba(253,191,87,0.2)"
               strokeWidth="1.5"
             />
           ))
@@ -53,7 +53,7 @@ const graphicPatterns = [
           cx={cx}
           cy={cy}
           r={i === 0 ? 16 : 10}
-          fill="rgba(253,191,56,0.5)"
+          fill="rgba(253,191,87,0.5)"
           opacity={hovered ? 0.9 : 0.6}
         />
       ))}
@@ -63,7 +63,7 @@ const graphicPatterns = [
         cy="150"
         r={hovered ? 28 : 22}
         fill="none"
-        stroke="rgba(253,191,56,0.3)"
+        stroke="rgba(253,191,87,0.3)"
         strokeWidth="2"
       />
     </svg>
@@ -81,7 +81,7 @@ const graphicPatterns = [
           key={i}
           d={`M ${200 - r} 150 A ${r} ${r} 0 0 1 ${200 + r} 150`}
           fill="none"
-          stroke="rgba(253,191,56,0.25)"
+          stroke="rgba(253,191,87,0.25)"
           strokeWidth={i === 0 ? 2 : 1.5}
         />
       ))}
@@ -94,7 +94,7 @@ const graphicPatterns = [
           width="28"
           height={h}
           rx="5"
-          fill="rgba(253,191,56,0.2)"
+          fill="rgba(253,191,87,0.2)"
           opacity={hovered ? 0.85 : 0.5}
         />
       ))}
@@ -103,10 +103,10 @@ const graphicPatterns = [
         y1="230"
         x2="340"
         y2="230"
-        stroke="rgba(253,191,56,0.3)"
+        stroke="rgba(253,191,87,0.3)"
         strokeWidth="1.5"
       />
-      <circle cx="200" cy="150" r="10" fill="rgba(253,191,56,0.6)" />
+      <circle cx="200" cy="150" r="10" fill="rgba(253,191,87,0.6)" />
     </svg>
   ),
   // Collaborate - globe / orbit rings
@@ -123,7 +123,7 @@ const graphicPatterns = [
         rx="130"
         ry="55"
         fill="none"
-        stroke="rgba(253,191,56,0.2)"
+        stroke="rgba(253,191,87,0.2)"
         strokeWidth="1.5"
       />
       <ellipse
@@ -132,7 +132,7 @@ const graphicPatterns = [
         rx="90"
         ry="38"
         fill="none"
-        stroke="rgba(253,191,56,0.2)"
+        stroke="rgba(253,191,87,0.2)"
         strokeWidth="1"
       />
       <ellipse
@@ -141,7 +141,7 @@ const graphicPatterns = [
         rx="55"
         ry="90"
         fill="none"
-        stroke="rgba(253,191,56,0.15)"
+        stroke="rgba(253,191,87,0.15)"
         strokeWidth="1.5"
       />
       {/* Globe circle */}
@@ -150,7 +150,7 @@ const graphicPatterns = [
         cy="150"
         r="70"
         fill="none"
-        stroke="rgba(253,191,56,0.25)"
+        stroke="rgba(253,191,87,0.25)"
         strokeWidth="2"
       />
       {/* Dots on orbit */}
@@ -162,12 +162,12 @@ const graphicPatterns = [
             cx={200 + Math.cos(rad) * 130}
             cy={150 + Math.sin(rad) * 55}
             r="7"
-            fill="rgba(253,191,56,0.55)"
+            fill="rgba(253,191,87,0.55)"
             opacity={hovered ? 0.9 : 0.6}
           />
         )
       })}
-      <circle cx="200" cy="150" r="14" fill="rgba(253,191,56,0.5)" />
+      <circle cx="200" cy="150" r="14" fill="rgba(253,191,87,0.5)" />
     </svg>
   ),
 ]
@@ -197,14 +197,7 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
       whileHover={{ y: -6, boxShadow: "0 30px 60px rgba(122,0,60,0.12)" }}
     >
       {/* Graphic Panel */}
-      <div
-        className="relative flex items-center justify-center overflow-hidden lg:w-5/12"
-        style={{
-          minHeight: "300px",
-          background:
-            "linear-gradient(135deg, hsl(var(--maroon)) 0%, #5a0029 100%)",
-        }}
-      >
+      <div className="from-maroon relative flex min-h-75 items-center justify-center overflow-hidden bg-linear-to-br to-[#5a0029] lg:w-5/12">
         {/* Animated SVG pattern */}
         <motion.div
           className="absolute inset-0"
@@ -217,14 +210,13 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
         <div
           className="absolute inset-0 opacity-5"
           style={{
-            backgroundImage: `linear-gradient(rgba(253,191,56,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,56,1) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(253,191,87,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,87,1) 1px, transparent 1px)`,
             backgroundSize: "30px 30px",
           }}
         />
         {/* Tag pill */}
         <motion.div
-          className="absolute top-5 left-5 rounded-full border border-white/30 px-3 py-1 text-xs font-bold tracking-widest text-white uppercase backdrop-blur-md"
-          style={{ background: "rgba(122,0,60,0.7)" }}
+          className="bg-maroon/70 absolute top-5 left-5 rounded-full border border-white/30 px-3 py-1 text-xs font-bold tracking-widest text-white uppercase backdrop-blur-md"
           initial={{ opacity: 0, x: -20 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -240,8 +232,8 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
           <div
             className="flex h-20 w-20 items-center justify-center rounded-2xl shadow-2xl"
             style={{
-              backgroundColor: "rgba(253,191,56,0.15)",
-              border: "2px solid rgba(253,191,56,0.5)",
+              backgroundColor: "rgba(253,191,87,0.15)",
+              border: "2px solid rgba(253,191,87,0.5)",
             }}
           >
             <Icon className="text-gold h-10 w-10" />
@@ -294,11 +286,7 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
           {section.title}
         </motion.h2>
         <motion.div
-          className="mb-5 h-px rounded-full"
-          style={{
-            background:
-              "linear-gradient(90deg, hsl(var(--maroon) / 0.2), transparent)",
-          }}
+          className="from-maroon/20 mb-5 h-px rounded-full bg-linear-to-r to-transparent"
           initial={{ scaleX: 0, originX: 0 }}
           animate={isInView ? { scaleX: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}

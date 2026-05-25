@@ -17,17 +17,17 @@ const graphicPatterns = [
           cy="150"
           r={r}
           fill="none"
-          stroke="rgba(253,191,56,0.25)"
+          stroke="rgba(253,191,87,0.25)"
           strokeWidth="1.5"
         />
       ))}
-      <circle cx="200" cy="150" r="15" fill="rgba(253,191,56,0.6)" />
+      <circle cx="200" cy="150" r="15" fill="rgba(253,191,87,0.6)" />
       <line
         x1="200"
         y1="0"
         x2="200"
         y2="300"
-        stroke="rgba(253,191,56,0.1)"
+        stroke="rgba(253,191,87,0.1)"
         strokeWidth="1"
       />
       <line
@@ -35,7 +35,7 @@ const graphicPatterns = [
         y1="150"
         x2="400"
         y2="150"
-        stroke="rgba(253,191,56,0.1)"
+        stroke="rgba(253,191,87,0.1)"
         strokeWidth="1"
       />
     </svg>
@@ -52,7 +52,7 @@ const graphicPatterns = [
           key={i}
           d={`M 0 ${80 + i * 40} Q 100 ${60 + i * 40}, 200 ${80 + i * 40} T 400 ${80 + i * 40}`}
           fill="none"
-          stroke="rgba(253,191,56,0.2)"
+          stroke="rgba(253,191,87,0.2)"
           strokeWidth={i === 2 ? "2.5" : "1.5"}
           opacity={hovered ? 0.8 : 0.5}
         />
@@ -62,11 +62,11 @@ const graphicPatterns = [
         cy="150"
         r="32"
         fill="none"
-        stroke="rgba(253,191,56,0.35)"
+        stroke="rgba(253,191,87,0.35)"
         strokeWidth="2"
       />
-      <circle cx="200" cy="150" r="18" fill="rgba(253,191,56,0.2)" />
-      <circle cx="200" cy="150" r="8" fill="rgba(253,191,56,0.7)" />
+      <circle cx="200" cy="150" r="18" fill="rgba(253,191,87,0.2)" />
+      <circle cx="200" cy="150" r="8" fill="rgba(253,191,87,0.7)" />
     </svg>
   ),
   // Approach - hexagonal grid
@@ -91,7 +91,7 @@ const graphicPatterns = [
           key={i}
           points={`${cx},${cy - 28} ${cx + 24},${cy - 14} ${cx + 24},${cy + 14} ${cx},${cy + 28} ${cx - 24},${cy + 14} ${cx - 24},${cy - 14}`}
           fill="none"
-          stroke="rgba(253,191,56,0.3)"
+          stroke="rgba(253,191,87,0.3)"
           strokeWidth="1.5"
         />
       ))}
@@ -112,7 +112,7 @@ const graphicPatterns = [
           width="20"
           height={h}
           rx="4"
-          fill="rgba(253,191,56,0.25)"
+          fill="rgba(253,191,87,0.25)"
         />
       ))}
       <line
@@ -120,7 +120,7 @@ const graphicPatterns = [
         y1="220"
         x2="360"
         y2="220"
-        stroke="rgba(253,191,56,0.3)"
+        stroke="rgba(253,191,87,0.3)"
         strokeWidth="1.5"
       />
     </svg>
@@ -149,7 +149,7 @@ const graphicPatterns = [
               y1={y1}
               x2={x2}
               y2={y2}
-              stroke="rgba(253,191,56,0.18)"
+              stroke="rgba(253,191,87,0.18)"
               strokeWidth="1.2"
             />
           ))
@@ -167,7 +167,7 @@ const graphicPatterns = [
           cx={cx}
           cy={cy}
           r={i === 0 ? 14 : 9}
-          fill="rgba(253,191,56,0.5)"
+          fill="rgba(253,191,87,0.5)"
         />
       ))}
     </svg>
@@ -184,11 +184,11 @@ const graphicPatterns = [
           key={i}
           points={`200,${150 - 120 * scale} ${200 + 100 * scale},150 200,${150 + 120 * scale} ${200 - 100 * scale},150`}
           fill="none"
-          stroke="rgba(253,191,56,0.3)"
+          stroke="rgba(253,191,87,0.3)"
           strokeWidth={i === 0 ? 2 : 1}
         />
       ))}
-      <circle cx="200" cy="150" r="10" fill="rgba(253,191,56,0.7)" />
+      <circle cx="200" cy="150" r="10" fill="rgba(253,191,87,0.7)" />
     </svg>
   ),
 ]
@@ -219,12 +219,7 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
     >
       {/* Graphic Panel */}
       <div
-        className="relative flex items-center justify-center overflow-hidden lg:w-5/12"
-        style={{
-          minHeight: "300px",
-          background:
-            "linear-gradient(135deg, hsl(var(--maroon)) 0%, #5a0029 100%)",
-        }}
+        className="from-maroon relative flex min-h-75 items-center justify-center overflow-hidden bg-linear-to-br to-[#5a0029] lg:w-5/12"
         aria-hidden="true"
       >
         {/* Animated background pattern */}
@@ -239,14 +234,13 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
         <div
           className="absolute inset-0 opacity-5"
           style={{
-            backgroundImage: `linear-gradient(rgba(253,191,56,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,56,1) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(253,191,87,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,87,1) 1px, transparent 1px)`,
             backgroundSize: "30px 30px",
           }}
         />
         {/* Tag pill */}
         <motion.div
-          className="absolute top-5 left-5 rounded-full border border-white/30 px-3 py-1 text-xs font-bold tracking-widest text-white uppercase backdrop-blur-md"
-          style={{ background: "rgba(122,0,60,0.7)" }}
+          className="bg-maroon/70 absolute top-5 left-5 rounded-full border border-white/30 px-3 py-1 text-xs font-bold tracking-widest text-white uppercase backdrop-blur-md"
           initial={{ opacity: 0, x: -20 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -262,8 +256,8 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
           <div
             className="flex h-20 w-20 items-center justify-center rounded-2xl shadow-2xl"
             style={{
-              backgroundColor: "rgba(253,191,56,0.15)",
-              border: "2px solid rgba(253,191,56,0.5)",
+              backgroundColor: "rgba(253,191,87,0.15)",
+              border: "2px solid rgba(253,191,87,0.5)",
             }}
           >
             <Icon className="text-gold h-10 w-10" />
@@ -322,10 +316,7 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
         </motion.h2>
         {/* Divider */}
         <motion.div
-          className="mb-5 h-px rounded-full"
-          style={{
-            background: "linear-gradient(90deg, #7A003C33, transparent)",
-          }}
+          className="from-maroon mb-5 h-px rounded-full bg-linear-to-r to-transparent"
           initial={{ scaleX: 0, originX: 0 }}
           animate={isInView ? { scaleX: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}

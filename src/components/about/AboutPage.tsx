@@ -36,25 +36,21 @@ export const AboutPage = () => {
         <div
           className="absolute inset-0 opacity-[0.06]"
           style={{
-            backgroundImage: `linear-gradient(rgba(253,191,56,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,56,1) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(253,191,87,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,87,1) 1px, transparent 1px)`,
             backgroundSize: "60px 60px",
           }}
           aria-hidden="true"
         />
         {/* Gradient tint */}
         <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(122,0,60,0.5) 0%, rgba(122,0,60,0.25) 45%, rgba(122,0,60,0.9) 100%)",
-          }}
+          className="from-maroon/50 via-maroon/25 to-maroon/90 absolute inset-0 bg-linear-to-b via-45%"
           aria-hidden="true"
         />
         {/* Animated orbs */}
         {[
           {
             size: 600,
-            color: "rgba(253,191,56,0.12)",
+            color: "rgba(253,191,87,0.12)",
             x: -250,
             y: -120,
             dur: 14,
@@ -67,7 +63,7 @@ export const AboutPage = () => {
             dur: 17,
           },
           { size: 350, color: "rgba(122,0,60,0.18)", x: 120, y: 320, dur: 11 },
-          { size: 200, color: "rgba(253,191,56,0.1)", x: -100, y: 280, dur: 9 },
+          { size: 200, color: "rgba(253,191,87,0.1)", x: -100, y: 280, dur: 9 },
         ].map((orb, i) => (
           <motion.div
             key={i}
@@ -125,7 +121,7 @@ export const AboutPage = () => {
             About{" "}
             <span
               className="text-gold"
-              style={{ textShadow: "0 0 40px rgba(253,191,56,0.5)" }}
+              style={{ textShadow: "0 0 40px rgba(253,191,87,0.5)" }}
             >
               CRCE
             </span>
@@ -135,8 +131,7 @@ export const AboutPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.55 }}
-            className="mx-auto inline-flex max-w-3xl items-center gap-2.5 rounded-full border border-white/30 px-6 py-3.5 text-sm font-medium text-white shadow-lg backdrop-blur-md md:text-base"
-            style={{ background: "rgba(90,0,41,0.65)" }}
+            className="mx-auto inline-flex max-w-3xl items-center gap-2.5 rounded-full border border-white/30 bg-[rgba(90,0,41,0.65)] px-6 py-3.5 text-sm font-medium text-white shadow-lg backdrop-blur-md md:text-base"
           >
             The Research Centre for Community Oriented Entrepreneurship —
             fostering sustainable and inclusive business practices for a more
@@ -216,11 +211,7 @@ export const AboutPage = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, type: "spring", stiffness: 70 }}
-          className="relative overflow-hidden rounded-3xl shadow-2xl"
-          style={{
-            background:
-              "linear-gradient(135deg, hsl(var(--maroon)) 0%, #4a0024 100%)",
-          }}
+          className="from-maroon relative overflow-hidden rounded-3xl bg-linear-to-br to-[#4a0024] shadow-2xl"
         >
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <motion.div

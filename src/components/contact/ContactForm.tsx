@@ -37,6 +37,7 @@ export const ContactForm = () => {
       <motion.div
         animate={{ scale: [0, 1.2, 1] }}
         transition={{ duration: 0.5 }}
+        aria-hidden="true"
       >
         <CheckCircle className="text-maroon mb-4 h-16 w-16" />
       </motion.div>

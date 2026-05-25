@@ -40,25 +40,21 @@ export const TeamPage = () => {
         <div
           className="absolute inset-0 opacity-[0.06]"
           style={{
-            backgroundImage: `linear-gradient(rgba(253,191,56,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,56,1) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(253,191,87,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,87,1) 1px, transparent 1px)`,
             backgroundSize: "60px 60px",
           }}
           aria-hidden="true"
         />
         {/* Gradient overlay */}
         <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(122,0,60,0.5) 0%, rgba(122,0,60,0.25) 45%, rgba(122,0,60,0.9) 100%)",
-          }}
+          className="from-maroon/50 via-maroon/25 to-maroon/90 absolute inset-0 bg-linear-to-b via-45%"
           aria-hidden="true"
         />
         {/* Orbs */}
         {[
           {
             size: 500,
-            color: "rgba(253,191,56,0.12)",
+            color: "rgba(253,191,87,0.12)",
             x: -200,
             y: -100,
             dur: 14,
@@ -125,7 +121,7 @@ export const TeamPage = () => {
                     ? {
                         color: "hsl(var(--gold))",
                         textShadow:
-                          "0 0 60px rgba(253,191,56,0.45), 0 4px 30px rgba(0,0,0,0.4)",
+                          "0 0 60px rgba(253,191,87,0.45), 0 4px 30px rgba(0,0,0,0.4)",
                       }
                     : { textShadow: "0 4px 30px rgba(0,0,0,0.4)" }
                 }

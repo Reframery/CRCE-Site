@@ -7,8 +7,7 @@ export const AnimatedGlobe = () => (
     {[0, 1, 2].map((i) => (
       <motion.div
         key={i}
-        className="absolute inset-0 rounded-full"
-        style={{ border: "1px solid rgba(122,0,60,0.4)" }}
+        className="border-maroon/40 absolute inset-0 rounded-full border"
         animate={{ scale: [1, 1.5], opacity: [0.5, 0] }}
         transition={{
           duration: 3,
@@ -32,17 +31,16 @@ export const AnimatedGlobe = () => (
     <motion.div
       className="absolute inset-10 rounded-full"
       style={{
-        border: "1.5px dashed rgba(253,191,56,0.5)",
-        boxShadow: "0 0 12px rgba(253,191,56,0.25)",
+        border: "1.5px dashed rgba(253,191,87,0.5)",
+        boxShadow: "0 0 12px rgba(253,191,87,0.25)",
       }}
       animate={{ rotate: -360 }}
       transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
     />
     {/* Inner ring (dotted, same direction as outer) */}
     <motion.div
-      className="absolute inset-20 rounded-full"
+      className="border-maroon/60 absolute inset-20 rounded-full border border-dotted"
       style={{
-        border: "1px dotted rgba(122,0,60,0.6)",
         boxShadow: "0 0 8px rgba(122,0,60,0.4)",
       }}
       animate={{ rotate: 360 }}
@@ -50,10 +48,8 @@ export const AnimatedGlobe = () => (
     />
     {/* Inner sphere */}
     <div
-      className="absolute inset-28 flex items-center justify-center rounded-full"
+      className="absolute inset-28 flex items-center justify-center rounded-full bg-[radial-gradient(circle_at_35%_35%,hsl(var(--maroon)),#4a0024_60%,#2a0014)]"
       style={{
-        background:
-          "radial-gradient(circle at 35% 35%, hsl(var(--maroon)), #4a0024 60%, #2a0014)",
         boxShadow: "0 0 40px rgba(122,0,60,0.8), 0 0 80px rgba(122,0,60,0.4)",
       }}
     >
@@ -64,7 +60,7 @@ export const AnimatedGlobe = () => (
         <Globe
           className="text-gold h-14 w-14 md:h-18 md:w-18"
           style={{
-            filter: "drop-shadow(0 0 12px rgba(253,191,56,0.9))",
+            filter: "drop-shadow(0 0 12px rgba(253,191,87,0.9))",
           }}
         />
       </motion.div>
@@ -82,7 +78,7 @@ export const AnimatedGlobe = () => (
           style={{
             left: "calc(50% - 6px)",
             boxShadow:
-              "0 0 14px rgba(253,191,56,1), 0 0 28px rgba(253,191,56,0.6)",
+              "0 0 14px rgba(253,191,87,1), 0 0 28px rgba(253,191,87,0.6)",
           }}
           animate={{ scale: [1, 1.6, 1], opacity: [0.7, 1, 0.7] }}
           transition={{

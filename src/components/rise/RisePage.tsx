@@ -21,20 +21,19 @@ export const RisePage = () => {
         className="bg-maroon relative flex flex-col items-center justify-center overflow-hidden"
       >
         {/* Animated dot grid bg */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(253,191,87,0.6)_1px,transparent_1px)] bg-size-[32px_32px] opacity-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle,hsl(var(--gold)/0.6)_1px,transparent_1px)] bg-size-[32px_32px] opacity-10" />
         {/* Animated grid */}
         <div
-          className="absolute inset-0 opacity-[0.07]"
+          className="absolute inset-0 bg-size-[60px_60px] opacity-[0.07]"
           style={{
-            backgroundImage: `linear-gradient(rgba(253,191,87,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,87,1) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
+            backgroundImage: `linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)`,
           }}
         />
         {/* Floating orbs */}
         {[
           {
             size: 500,
-            color: "rgba(253,191,87,0.15)",
+            color: "hsl(var(--gold) / 0.15)",
             x: -200,
             y: -100,
             dur: 12,
@@ -218,10 +217,9 @@ export const RisePage = () => {
             />
             {/* Geometric line accents */}
             <div
-              className="absolute inset-0 opacity-5"
+              className="absolute inset-0 bg-size-[40px_40px] opacity-5"
               style={{
-                backgroundImage: `linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)`,
-                backgroundSize: "40px 40px",
+                backgroundImage: `linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)`,
               }}
             />
           </div>

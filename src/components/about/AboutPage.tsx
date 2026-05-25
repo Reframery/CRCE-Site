@@ -34,10 +34,9 @@ export const AboutPage = () => {
         /> */}
         {/* Grid overlay */}
         <div
-          className="absolute inset-0 opacity-[0.06]"
+          className="absolute inset-0 bg-size-[60px_60px] opacity-[0.06]"
           style={{
-            backgroundImage: `linear-gradient(rgba(253,191,87,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,87,1) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
+            backgroundImage: `linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)`,
           }}
           aria-hidden="true"
         />
@@ -50,7 +49,7 @@ export const AboutPage = () => {
         {[
           {
             size: 600,
-            color: "rgba(253,191,87,0.12)",
+            color: "hsl(var(--gold) / 0.12)",
             x: -250,
             y: -120,
             dur: 14,
@@ -62,8 +61,20 @@ export const AboutPage = () => {
             y: 220,
             dur: 17,
           },
-          { size: 350, color: "rgba(122,0,60,0.18)", x: 120, y: 320, dur: 11 },
-          { size: 200, color: "rgba(253,191,87,0.1)", x: -100, y: 280, dur: 9 },
+          {
+            size: 350,
+            color: "hsl(var(--maroon) / 0.18)",
+            x: 120,
+            y: 320,
+            dur: 11,
+          },
+          {
+            size: 200,
+            color: "hsl(var(--gold) / 0.1)",
+            x: -100,
+            y: 280,
+            dur: 9,
+          },
         ].map((orb, i) => (
           <motion.div
             key={i}
@@ -121,7 +132,7 @@ export const AboutPage = () => {
             About{" "}
             <span
               className="text-gold"
-              style={{ textShadow: "0 0 40px rgba(253,191,87,0.5)" }}
+              style={{ textShadow: "0 0 40px hsl(var(--gold) / 0.5)" }}
             >
               CRCE
             </span>
@@ -225,10 +236,9 @@ export const AboutPage = () => {
               transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
             />
             <div
-              className="absolute inset-0 opacity-5"
+              className="absolute inset-0 bg-size-[40px_40px] opacity-5"
               style={{
-                backgroundImage: `linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)`,
-                backgroundSize: "40px 40px",
+                backgroundImage: `linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)`,
               }}
             />
           </div>

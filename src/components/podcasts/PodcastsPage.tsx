@@ -18,7 +18,7 @@ export const PodcastsPage = () => {
       {/* Animated Grid Background */}
       <div className="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
         <motion.div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 bg-size-[40px_40px] opacity-[0.03]"
           animate={{
             backgroundPosition: ["0px 0px", "40px 40px"],
           }}
@@ -26,7 +26,6 @@ export const PodcastsPage = () => {
           style={{
             backgroundImage:
               "linear-gradient(to right, hsl(var(--maroon)) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--maroon)) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
           }}
         />
         <motion.div
@@ -89,9 +88,9 @@ export const PodcastsPage = () => {
               }}
               animate={{
                 boxShadow: [
-                  "0 0 20px rgba(253,191,87,0.2)",
-                  "0 0 40px rgba(253,191,87,0.4)",
-                  "0 0 20px rgba(253,191,87,0.2)",
+                  "0 0 20px hsl(var(--gold) / 0.2)",
+                  "0 0 40px hsl(var(--gold) / 0.4)",
+                  "0 0 20px hsl(var(--gold) / 0.2)",
                 ],
               }}
               transition={{ boxShadow: { duration: 3, repeat: Infinity } }}
@@ -120,9 +119,9 @@ export const PodcastsPage = () => {
                 className="text-gold"
                 animate={{
                   textShadow: [
-                    "0 0 20px rgba(253,191,87,0.3)",
-                    "0 0 40px rgba(253,191,87,0.6)",
-                    "0 0 20px rgba(253,191,87,0.3)",
+                    "0 0 20px hsl(var(--gold) / 0.3)",
+                    "0 0 40px hsl(var(--gold) / 0.6)",
+                    "0 0 20px hsl(var(--gold) / 0.3)",
                   ],
                 }}
                 transition={{ duration: 3, repeat: Infinity }}

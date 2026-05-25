@@ -41,10 +41,9 @@ export const ContactPage = () => {
         />
         {/* Grid overlay */}
         <div
-          className="absolute inset-0 opacity-[0.07]"
+          className="absolute inset-0 bg-size-[60px_60px] opacity-[0.07]"
           style={{
-            backgroundImage: `linear-gradient(rgba(253,191,87,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,87,1) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
+            backgroundImage: `linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)`,
           }}
           aria-hidden="true"
         />
@@ -86,7 +85,7 @@ export const ContactPage = () => {
             Contact{" "}
             <span
               className="text-gold"
-              style={{ textShadow: "0 0 40px rgba(253,191,87,0.5)" }}
+              style={{ textShadow: "0 0 40px hsl(var(--gold)/0.5)" }}
             >
               Us
             </span>
@@ -96,8 +95,7 @@ export const ContactPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="inline-flex items-center gap-2.5 rounded-full border border-white/30 px-6 py-3.5 text-base font-medium text-white shadow-lg backdrop-blur-md"
-            style={{ background: "rgba(90,0,41,0.6)" }}
+            className="inline-flex items-center gap-2.5 rounded-full border border-white/30 bg-[rgba(90,0,41,0.6)] px-6 py-3.5 text-base font-medium text-white shadow-lg backdrop-blur-md"
           >
             <MessageSquare className="text-gold h-4 w-4 shrink-0" />
             Questions about research, partnerships, or community
@@ -329,10 +327,9 @@ export const ContactPage = () => {
               transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
             />
             <div
-              className="absolute inset-0 opacity-5"
+              className="absolute inset-0 bg-size-[40px_40px] opacity-5"
               style={{
-                backgroundImage: `linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)`,
-                backgroundSize: "40px 40px",
+                backgroundImage: `linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)`,
               }}
             />
           </div>

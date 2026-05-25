@@ -38,10 +38,9 @@ export const TeamPage = () => {
         /> */}
         {/* Grid overlay */}
         <div
-          className="absolute inset-0 opacity-[0.06]"
+          className="absolute inset-0 bg-size-[60px_60px] opacity-[0.06]"
           style={{
-            backgroundImage: `linear-gradient(rgba(253,191,87,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,87,1) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
+            backgroundImage: `linear-gradient(hsl(var--gold) 1px, transparent 1px), linear-gradient(90deg, hsl(var--gold) 1px, transparent 1px)`,
           }}
           aria-hidden="true"
         />
@@ -54,7 +53,7 @@ export const TeamPage = () => {
         {[
           {
             size: 500,
-            color: "rgba(253,191,87,0.12)",
+            color: "hsl(var(--gold) / 0.12)",
             x: -200,
             y: -100,
             dur: 14,
@@ -121,7 +120,7 @@ export const TeamPage = () => {
                     ? {
                         color: "hsl(var(--gold))",
                         textShadow:
-                          "0 0 60px rgba(253,191,87,0.45), 0 4px 30px rgba(0,0,0,0.4)",
+                          "0 0 60px hsl(var(--gold) / 0.45), 0 4px 30px rgba(0,0,0,0.4)",
                       }
                     : { textShadow: "0 4px 30px rgba(0,0,0,0.4)" }
                 }

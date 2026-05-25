@@ -24,7 +24,7 @@ export const InfoCard = ({ card, index }: InfoCardProps) => {
         type: "spring",
         stiffness: 80,
       }}
-      whileHover={{ y: -10, boxShadow: "0 30px 60px rgba(122,0,60,0.18)" }}
+      whileHover={{ y: -10, boxShadow: "0 30px 60px hsl(var(--maroon)/0.18)" }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="group flex cursor-default flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-xl"
@@ -36,34 +36,22 @@ export const InfoCard = ({ card, index }: InfoCardProps) => {
       >
         {/* Animated hex pattern */}
         <motion.div
-          className="absolute inset-0"
+          className="absolute inset-0 bg-size-[28px_50px]"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 0 L56 16 L56 50 L28 66 L0 50 L0 16 Z' fill='none' stroke='rgba(253,191,87,0.25)' stroke-width='1.5'/%3E%3Cpath d='M28 66 L56 50 L56 84 L28 100 L0 84 L0 50 Z' fill='none' stroke='rgba(253,191,87,0.25)' stroke-width='1.5'/%3E%3C/svg%3E")`,
-            backgroundSize: "28px 50px",
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 0 L56 16 L56 50 L28 66 L0 50 L0 16 Z' fill='none' stroke='hsl(var(--gold)/0.25)' stroke-width='1.5'/%3E%3Cpath d='M28 66 L56 50 L56 84 L28 100 L0 84 L0 50 Z' fill='none' stroke='hsl(var(--gold)/0.25)' stroke-width='1.5'/%3E%3C/svg%3E")`,
           }}
           animate={{ opacity: hovered ? 0.6 : 0.3 }}
           transition={{ duration: 0.4 }}
         />
         {/* Gold shimmer orb on hover */}
         <motion.div
-          className="pointer-events-none absolute rounded-full blur-2xl"
-          style={{
-            backgroundColor: "rgba(253,191,87,0.35)",
-            width: 120,
-            height: 120,
-            top: -40,
-            left: -20,
-          }}
+          className="bg-gold/35 pointer-events-none absolute -top-10 -left-5 size-30 rounded-full blur-2xl"
           animate={{ scale: hovered ? 1.8 : 1, opacity: hovered ? 1 : 0.3 }}
           transition={{ duration: 0.5 }}
         />
         {/* Icon inside strip */}
         <motion.div
-          className="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl text-white shadow-lg"
-          style={{
-            backgroundColor: "rgba(255,255,255,0.15)",
-            border: "2px solid rgba(253,191,87,0.6)",
-          }}
+          className="border-gold/60 relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl border-2 bg-white/15 text-white shadow-lg"
           initial={{ scale: 0, rotate: -15 }}
           animate={isInView ? { scale: 1, rotate: 0 } : {}}
           whileHover={{ rotate: 10, scale: 1.15 }}

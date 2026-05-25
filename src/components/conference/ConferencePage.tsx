@@ -34,28 +34,33 @@ export const ConferencePage = () => {
         }}
       >
         {/* Animated dot grid */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(253,191,87,0.8)_1px,transparent_1px)] bg-size-[40px_40px] opacity-15" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle,hsl(var(--gold)/0.8)_1px,transparent_1px)] bg-size-[40px_40px] opacity-15" />
         {/* Fine grid */}
         <div
-          className="absolute inset-0 opacity-[0.05]"
+          className="absolute inset-0 bg-size-[100px_100px] opacity-[0.05]"
           style={{
-            backgroundImage: `linear-gradient(rgba(253,191,87,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,87,1) 1px, transparent 1px)`,
-            backgroundSize: "100px 100px",
+            backgroundImage: `linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)`,
           }}
         />
         {/* Floating orbs */}
         {[
           {
             size: 800,
-            color: "rgba(253,191,87,0.08)",
+            color: "hsl(var(--gold) / 0.08)",
             x: -400,
             y: -200,
             dur: 18,
           },
-          { size: 600, color: "rgba(122,0,60,0.4)", x: 400, y: 200, dur: 22 },
+          {
+            size: 600,
+            color: "hsl(var(--maroon) / 0.4)",
+            x: 400,
+            y: 200,
+            dur: 22,
+          },
           {
             size: 400,
-            color: "rgba(253,191,87,0.06)",
+            color: "hsl(var(--gold) / 0.06)",
             x: 100,
             y: 350,
             dur: 14,
@@ -91,8 +96,7 @@ export const ConferencePage = () => {
             initial={{ opacity: 0, y: -30, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.7, type: "spring" }}
-            className="mb-10 inline-flex items-baseline gap-3 rounded-full border border-white/20 px-5 py-2.5 backdrop-blur-md"
-            style={{ background: "rgba(253,191,87,0.1)" }}
+            className="bg-gold/10 mb-10 inline-flex items-baseline gap-3 rounded-full border border-white/20 px-5 py-2.5 backdrop-blur-md"
           >
             <motion.span
               className="bg-gold h-2 w-2 rounded-full"
@@ -139,7 +143,7 @@ export const ConferencePage = () => {
               className="text-gold"
               style={{
                 filter:
-                  "drop-shadow(0 0 20px rgba(253,191,87,0.9)) drop-shadow(0 0 40px rgba(253,191,87,0.6))",
+                  "drop-shadow(0 0 20px hsl(var(--gold) / 0.9)) drop-shadow(0 0 40px hsl(var(--gold) / 0.6))",
               }}
             >
               Global Majority
@@ -171,11 +175,7 @@ export const ConferencePage = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.6 + i * 0.1, duration: 0.4 }}
-                className="flex items-center gap-2.5 rounded-full px-5 py-3 backdrop-blur-md"
-                style={{
-                  background: "rgba(255,255,255,0.07)",
-                  border: "1px solid rgba(255,255,255,0.12)",
-                }}
+                className="flex items-center gap-2.5 rounded-full border border-white/12 bg-white/[0.07] px-5 py-3 backdrop-blur-md"
               >
                 <Icon className="text-gold h-4 w-4 shrink-0" />
                 <span className="text-sm font-semibold text-white/90">
@@ -267,7 +267,7 @@ export const ConferencePage = () => {
                 high-income, formally institutionalized contexts.
               </p>
               <motion.div
-                className="mt-8 h-px w-full rounded-full bg-linear-to-r from-[rgba(253,191,87,0.5)] to-transparent"
+                className="from-gold/50 mt-8 h-px w-full rounded-full bg-linear-to-r to-transparent"
                 initial={{ scaleX: 0, originX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
@@ -349,7 +349,7 @@ export const ConferencePage = () => {
               className="border-maroon overflow-hidden rounded-3xl border-2 md:col-span-2"
               style={{
                 boxShadow:
-                  "0 0 30px rgba(122,0,60,0.6), 0 0 60px rgba(122,0,60,0.3)",
+                  "0 0 30px hsl(var(--maroon)/  0.6), 0 0 60px hsl(var(--maroon) / 0.3)",
               }}
             >
               <div className="relative h-96 overflow-hidden">
@@ -361,13 +361,7 @@ export const ConferencePage = () => {
                   transition={{ duration: 0.6 }}
                   loading="lazy"
                 />
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(to top, rgba(13,0,8,0.9) 0%, transparent 60%)",
-                  }}
-                />
+                <div className="absolute inset-0 bg-linear-to-t from-[rgba(13,0,8,0.9)] to-transparent to-60%" />
                 <div className="absolute bottom-5 left-6">
                   <span className="text-xl font-extrabold text-white drop-shadow-sm">
                     The Hub
@@ -410,7 +404,7 @@ export const ConferencePage = () => {
                 className="border-maroon flex-1 rounded-3xl border-2 bg-linear-to-br from-[#130009] to-[#2a0018] p-6"
                 style={{
                   boxShadow:
-                    "0 0 20px rgba(122,0,60,0.6), 0 0 40px rgba(122,0,60,0.3)",
+                    "0 0 20px hsl(var(--maroon) / 0.6), 0 0 40px hsl(var(--maroon) / 0.3)",
                 }}
               >
                 <div className="bg-maroon mb-4 flex h-10 w-10 items-center justify-center rounded-xl">
@@ -426,11 +420,7 @@ export const ConferencePage = () => {
                   {["21", "22", "23"].map((d) => (
                     <div
                       key={d}
-                      className="text-gold flex-1 rounded-lg py-2 text-center text-sm font-black"
-                      style={{
-                        backgroundColor: "rgba(253,191,87,0.1)",
-                        border: "1px solid rgba(253,191,87,0.2)",
-                      }}
+                      className="text-gold bg-gold/10 border-gold/20 flex-1 rounded-lg border py-2 text-center text-sm font-black"
                     >
                       Sep {d}
                     </div>
@@ -442,11 +432,10 @@ export const ConferencePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="border-maroon flex flex-1 flex-col justify-between rounded-3xl border-2 p-6"
+                className="border-maroon flex flex-1 flex-col justify-between rounded-3xl border-2 bg-linear-to-br from-[#130009] to-[#2a0018] p-6"
                 style={{
-                  background: "linear-gradient(135deg, #130009, #2a0018)",
                   boxShadow:
-                    "0 0 20px rgba(122,0,60,0.6), 0 0 40px rgba(122,0,60,0.3)",
+                    "0 0 20px hsl(var(--maroon)/0.6), 0 0 40px hsl(var(--maroon)/0.3)",
                 }}
               >
                 <div>
@@ -466,7 +455,7 @@ export const ConferencePage = () => {
                   rel="noopener noreferrer"
                   whileHover={{
                     scale: 1.05,
-                    boxShadow: "0 10px 30px rgba(253,191,87,0.2)",
+                    boxShadow: "0 10px 30px hsl(var(--gold)/0.2)",
                   }}
                   className="bg-maroon mt-4 inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white"
                 >
@@ -487,22 +476,19 @@ export const ConferencePage = () => {
       >
         {/* Pattern */}
         <div
-          className="absolute inset-0 opacity-[0.06]"
+          className="absolute inset-0 bg-size-[60px_60px] opacity-[0.06]"
           style={{
-            backgroundImage: `linear-gradient(rgba(253,191,87,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,87,1) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
+            backgroundImage: `linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)`,
           }}
         />
         {/* Animated orbs */}
         <motion.div
-          className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full blur-3xl"
-          style={{ backgroundColor: "rgba(253,191,87,0.15)" }}
+          className="bg-gold/15 pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full blur-3xl"
           animate={{ scale: [1, 1.4, 1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="pointer-events-none absolute -bottom-32 -left-32 h-80 w-80 rounded-full blur-3xl"
-          style={{ backgroundColor: "rgba(0,0,0,0.3)" }}
+          className="pointer-events-none absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-black/30 blur-3xl"
           animate={{ scale: [1.2, 0.8, 1.2] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -528,20 +514,14 @@ export const ConferencePage = () => {
               <Mic
                 className="text-gold mx-auto h-14 w-14"
                 style={{
-                  filter: "drop-shadow(0 0 20px rgba(253,191,87,0.6))",
+                  filter: "drop-shadow(0 0 20px hsl(var(--gold)/0.6))",
                 }}
               />
             </motion.div>
             <h2 className="mb-8 text-3xl leading-tight font-bold md:text-5xl">
               Keynote Speakers & Presenters
             </h2>
-            <div
-              className="mx-auto max-w-2xl rounded-2xl p-8 backdrop-blur-[10px]"
-              style={{
-                background: "rgba(0,0,0,0.25)",
-                border: "1px solid rgba(255,255,255,0.1)",
-              }}
-            >
+            <div className="mx-auto max-w-2xl rounded-2xl border border-white/10 bg-black/25 p-8 backdrop-blur-[10px]">
               <p className="mb-4 text-lg leading-relaxed text-white/80">
                 The conference will feature two invited individuals from{" "}
                 <strong className="text-gold">Kenya</strong> who will share
@@ -564,19 +544,9 @@ export const ConferencePage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="flex items-start gap-5 rounded-2xl p-8"
-            style={{
-              background: "linear-gradient(135deg, #1a0a00, #2a1500)",
-              border: "1px solid rgba(253,191,87,0.25)",
-            }}
+            className="border-gold/25 flex items-start gap-5 rounded-2xl border bg-linear-to-br from-[#1a0a00] to-[#2a1500] p-8"
           >
-            <div
-              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
-              style={{
-                backgroundColor: "rgba(253,191,87,0.15)",
-                border: "1px solid rgba(253,191,87,0.3)",
-              }}
-            >
+            <div className="bg-gold/15 border-gold/30 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border">
               <Calendar className="text-gold h-6 w-6" />
             </div>
             <div>
@@ -635,10 +605,9 @@ export const ConferencePage = () => {
               {[0, 120, 240].map((angle, i) => (
                 <motion.div
                   key={i}
-                  className="bg-cold pointer-events-none absolute top-1/2 h-3 w-3 rounded-full"
+                  className="bg-cold pointer-events-none absolute top-1/2 left-[calc(50%+120px)] h-3 w-3 rounded-full"
                   style={{
-                    boxShadow: "0 0 12px rgba(253,191,87,0.9)",
-                    left: "calc(50% + 120px)",
+                    boxShadow: "0 0 12px hsl(var(--gold)/0.9)",
                   }}
                   animate={{
                     rotate: [angle, angle + 360],
@@ -665,27 +634,18 @@ export const ConferencePage = () => {
                 whileHover={{
                   y: -6,
                   boxShadow:
-                    "0 0 30px rgba(122,0,60,0.5), 0 0 60px rgba(122,0,60,0.2)",
+                    "0 0 30px hsl(var(--maroon)/0.5), 0 0 60px hsl(var(--maroon)/0.2)",
                 }}
                 className="border-maroon relative z-10 flex items-center gap-6 rounded-2xl border-2 bg-linear-to-br from-[#1a0010] to-[#2d0020] p-7"
                 style={{
-                  boxShadow: "0 0 20px rgba(122,0,60,0.4)",
+                  boxShadow: "0 0 20px hsl(var(--maroon)/0.4)",
                 }}
               >
-                <div
-                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl"
-                  style={{
-                    background: "rgba(253,191,87,0.12)",
-                    border: "1px solid rgba(253,191,87,0.3)",
-                  }}
-                >
+                <div className="bg-gold/12 border-gold/30 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border">
                   <span className="text-gold text-xl font-black">M</span>
                 </div>
                 <div>
-                  <p
-                    className="mb-1 text-xs font-bold tracking-widest uppercase"
-                    style={{ color: "rgba(253,191,87,0.7)" }}
-                  >
+                  <p className="text-gold/70 mb-1 text-xs font-bold tracking-widest uppercase">
                     DeGroote School of Business
                   </p>
                   <p className="text-xl font-extrabold text-[#e8dcc8]">
@@ -702,22 +662,16 @@ export const ConferencePage = () => {
                 whileHover={{
                   y: -6,
                   boxShadow:
-                    "0 0 30px rgba(122,0,60,0.5), 0 0 60px rgba(122,0,60,0.2)",
+                    "0 0 30px hsl(var(--maroon)/0.5), 0 0 60px hsl(var(--maroon)/0.2)",
                 }}
                 className="border-maroon relative z-10 flex items-center gap-6 rounded-2xl border-2 p-7"
                 style={{
                   background:
                     "linear-gradient(135deg, #1a0010 0%, #2d0020 100%)",
-                  boxShadow: "0 0 20px rgba(122,0,60,0.4)",
+                  boxShadow: "0 0 20px hsl(var(--maroon)/0.4)",
                 }}
               >
-                <div
-                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl"
-                  style={{
-                    background: "rgba(253,191,87,0.12)",
-                    border: "1px solid rgba(253,191,87,0.3)",
-                  }}
-                >
+                <div className="bg-gold/12 border-gold/30 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border">
                   <span className="text-gold text-sm font-black">CRCE</span>
                 </div>
                 <div>

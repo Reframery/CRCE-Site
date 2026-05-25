@@ -12,7 +12,10 @@ export const EpisodeCard = ({
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
-    whileHover={{ y: -5, boxShadow: "0 20px 40px -10px rgba(122,0,60,0.3)" }}
+    whileHover={{
+      y: -5,
+      boxShadow: "0 20px 40px -10px hsl(var(--maroon)/0.3)",
+    }}
     className="relative overflow-hidden rounded-2xl border-2 border-gray-200 bg-white shadow-xl"
   >
     <div className="relative z-10 p-8">

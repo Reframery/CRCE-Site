@@ -22,17 +22,16 @@ export const AnimatedGlobe = () => (
       className="border-maroon absolute inset-2 rounded-full border-2"
       style={{
         boxShadow:
-          "0 0 18px rgba(122,0,60,0.7), inset 0 0 18px rgba(122,0,60,0.2)",
+          "0 0 18px hsl(var(--maroon) / 0.7), inset 0 0 18px hsl(var(--maroon) / 0.2)",
       }}
       animate={{ rotate: 360 }}
       transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
     />
     {/* Middle spinning ring (dashed, opposite direction) */}
     <motion.div
-      className="absolute inset-10 rounded-full"
+      className="border-gold/50 absolute inset-10 rounded-full border-[1.5px] border-dashed"
       style={{
-        border: "1.5px dashed rgba(253,191,87,0.5)",
-        boxShadow: "0 0 12px rgba(253,191,87,0.25)",
+        boxShadow: "0 0 12px hsl(var(--gold) / 0.25)",
       }}
       animate={{ rotate: -360 }}
       transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
@@ -41,7 +40,7 @@ export const AnimatedGlobe = () => (
     <motion.div
       className="border-maroon/60 absolute inset-20 rounded-full border border-dotted"
       style={{
-        boxShadow: "0 0 8px rgba(122,0,60,0.4)",
+        boxShadow: "0 0 8px hsl(var(--maroon) / 0.4)",
       }}
       animate={{ rotate: 360 }}
       transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
@@ -50,7 +49,8 @@ export const AnimatedGlobe = () => (
     <div
       className="absolute inset-28 flex items-center justify-center rounded-full bg-[radial-gradient(circle_at_35%_35%,hsl(var(--maroon)),#4a0024_60%,#2a0014)]"
       style={{
-        boxShadow: "0 0 40px rgba(122,0,60,0.8), 0 0 80px rgba(122,0,60,0.4)",
+        boxShadow:
+          "0 0 40px hsl(var(--maroon) / 0.8), 0 0 80px hsl(var(--maroon) / 0.4)",
       }}
     >
       <motion.div
@@ -60,7 +60,7 @@ export const AnimatedGlobe = () => (
         <Globe
           className="text-gold h-14 w-14 md:h-18 md:w-18"
           style={{
-            filter: "drop-shadow(0 0 12px rgba(253,191,87,0.9))",
+            filter: "drop-shadow(0 0 12px hsl(var(--gold) / 0.9)",
           }}
         />
       </motion.div>
@@ -74,11 +74,10 @@ export const AnimatedGlobe = () => (
         transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
       >
         <motion.div
-          className="bg-gold absolute top-0.5 h-3 w-3 rounded-full"
+          className="bg-gold absolute top-0.5 left-[calc(50%-6px)] h-3 w-3 rounded-full"
           style={{
-            left: "calc(50% - 6px)",
             boxShadow:
-              "0 0 14px rgba(253,191,87,1), 0 0 28px rgba(253,191,87,0.6)",
+              "0 0 14px hsl(var(--gold)), 0 0 28px hsl(var(--gold) / 0.6)",
           }}
           animate={{ scale: [1, 1.6, 1], opacity: [0.7, 1, 0.7] }}
           transition={{
@@ -94,18 +93,13 @@ export const AnimatedGlobe = () => (
     {[30, 150, 270].map((deg, i) => (
       <motion.div
         key={`mid-${i}`}
-        className="absolute top-10 left-10"
-        style={{
-          width: "calc(100% - 80px)",
-          height: "calc(100% - 80px)",
-        }}
+        className="absolute top-10 left-10 size-[calc(100%-80px)]"
         animate={{ rotate: [-deg, -(deg + 360)] }}
         transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
       >
         <motion.div
-          className="absolute top-0 h-2.5 w-2.5 rounded-full bg-[#c9a0dc]"
+          className="absolute top-0 left-[calc(50%-5px)] h-2.5 w-2.5 rounded-full bg-[#c9a0dc]"
           style={{
-            left: "calc(50% - 5px)",
             boxShadow:
               "0 0 10px rgba(201,160,220,0.9), 0 0 20px rgba(201,160,220,0.5)",
           }}

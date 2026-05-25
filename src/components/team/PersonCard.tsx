@@ -35,7 +35,9 @@ export const PersonCard = ({
       onMouseLeave={() => setHovered(false)}
       className="group flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-md"
       style={{
-        boxShadow: hovered ? "0 20px 50px rgba(122,0,60,0.15)" : undefined,
+        boxShadow: hovered
+          ? "0 20px 50px hsl(var(--maroon) / 0.15)"
+          : undefined,
         transition: "box-shadow 0.3s",
       }}
     >

@@ -31,7 +31,7 @@ export const ActivityCard = ({ activity, index }: ActivityCardProps) => {
     >
       {/* Animated glow bg */}
       <motion.div
-        className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_70%_30%,rgba(253,191,87,0.12)_0%,transparent_70%)]"
+        className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_70%_30%,hsl(var(--gold)/0.12)_0%,transparent_70%)]"
         animate={{ opacity: hovered ? 1 : 0 }}
         transition={{ duration: 0.4 }}
       />
@@ -43,11 +43,7 @@ export const ActivityCard = ({ activity, index }: ActivityCardProps) => {
       />
       {/* Icon */}
       <motion.div
-        className="mb-5 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl"
-        style={{
-          backgroundColor: "rgba(253,191,87,0.12)",
-          border: "1px solid rgba(253,191,87,0.3)",
-        }}
+        className="bg-gold/12 border-gold/30 mb-5 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border"
         animate={{ scale: hovered ? 1.1 : 1 }}
         transition={{ duration: 0.3 }}
       >

@@ -2,8 +2,9 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "motion/react"
 import { ArrowRight, ChevronDown } from "lucide-react"
 import { sections, stats } from "@/content/rise"
-import { SectionCard } from "./SectionCard"
+import { Breadcrumbs } from "../ui/Breadcrumbs"
 import { FloatingOrbs } from "./FloatingOrbs"
+import { SectionCard } from "./SectionCard"
 
 export const RisePage = () => {
   const heroRef = useRef(null)
@@ -132,14 +133,7 @@ export const RisePage = () => {
           </svg>
         </div>
       </section>
-      {/* Breadcrumb */}
-      <div className="mx-auto max-w-7xl px-4 py-5 text-sm text-gray-600 sm:px-6 lg:px-8">
-        <a href="/" className="transition-colors hover:text-gray-700">
-          Home
-        </a>
-        <span className="mx-2 text-gray-500">›</span>
-        <span className="font-semibold text-gray-700">RISE</span>
-      </div>
+      <Breadcrumbs pageTitle="RISE" />
       {/* Cards */}
       <section className="mx-auto max-w-7xl space-y-12 px-4 pb-16 sm:px-6 lg:px-8">
         {sections.map((section, index) => (

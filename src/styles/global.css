@@ -19,8 +19,8 @@
 :root {
   --pagefind-ui-font: var(--font-sans);
   --background: 40 13% 95%; /*#f5f4f2 */
-  --gold: 38 98% 67%; /* #fdbf57 */
-  --maroon: 330 100% 24%; /* #7a003c */
+  --gold: 38 98% 67%; /* #fdbf57 253,191,87*/
+  --maroon: 330 100% 24%; /* #7a003c 122,0,60*/
 }
 
 @layer base {
@@ -44,4 +44,10 @@
   h6 {
     @apply font-sans-condensed text-pretty;
   }
+}
+
+@utility bg-grid-* {
+  background-image:
+    linear-gradient(--value(--color-*) 1px, transparent 1px),
+    linear-gradient(90deg, --value(--color-*) 1px, transparent 1px);
 }

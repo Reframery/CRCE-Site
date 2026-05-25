@@ -39,10 +39,7 @@ export const ConferencePage = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle,hsl(var(--gold)/0.8)_1px,transparent_1px)] bg-size-[40px_40px] opacity-15" />
         {/* Fine grid */}
         <div
-          className="absolute inset-0 bg-size-[100px_100px] opacity-[0.05]"
-          style={{
-            backgroundImage: `linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)`,
-          }}
+          className="bg-grid-gold absolute inset-0 bg-size-[100px_100px] opacity-[0.05]"
           aria-hidden="true"
         />
         <FloatingOrbs />
@@ -441,10 +438,7 @@ export const ConferencePage = () => {
       >
         {/* Pattern */}
         <div
-          className="absolute inset-0 bg-size-[60px_60px] opacity-[0.06]"
-          style={{
-            backgroundImage: `linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)`,
-          }}
+          className="bg-grid-gold absolute inset-0 bg-size-[60px_60px] opacity-[0.06]"
           aria-hidden="true"
         />
         {/* Animated orbs */}

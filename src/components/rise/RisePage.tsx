@@ -24,12 +24,7 @@ export const RisePage = () => {
         {/* Animated dot grid bg */}
         <div className="absolute inset-0 bg-[radial-gradient(circle,hsl(var(--gold)/0.6)_1px,transparent_1px)] bg-size-[32px_32px] opacity-10" />
         {/* Animated grid */}
-        <div
-          className="absolute inset-0 bg-size-[60px_60px] opacity-[0.07]"
-          style={{
-            backgroundImage: `linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)`,
-          }}
-        />
+        <div className="bg-grid-gold absolute inset-0 bg-size-[60px_60px] opacity-[0.07]" />
         <FloatingOrbs />
         <motion.div className="relative z-10 px-4 py-14 text-center text-white md:py-20">
           {/* RISE Logo + wordmark */}
@@ -174,12 +169,7 @@ export const RisePage = () => {
               transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
             />
             {/* Geometric line accents */}
-            <div
-              className="absolute inset-0 bg-size-[40px_40px] opacity-5"
-              style={{
-                backgroundImage: `linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)`,
-              }}
-            />
+            <div className="bg-grid-white absolute inset-0 bg-size-[40px_40px] opacity-5" />
           </div>
           <div className="relative z-10 p-12 text-center text-white md:p-20">
             {/* Mini logo */}

@@ -39,10 +39,7 @@ export const TeamPage = () => {
         /> */}
         {/* Grid overlay */}
         <div
-          className="absolute inset-0 bg-size-[60px_60px] opacity-[0.06]"
-          style={{
-            backgroundImage: `linear-gradient(hsl(var--gold) 1px, transparent 1px), linear-gradient(90deg, hsl(var--gold) 1px, transparent 1px)`,
-          }}
+          className="bg-grid-gold absolute inset-0 bg-size-[60px_60px] opacity-[0.06]"
           aria-hidden="true"
         />
         {/* Gradient overlay */}

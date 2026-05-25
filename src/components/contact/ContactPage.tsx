@@ -41,10 +41,7 @@ export const ContactPage = () => {
         />
         {/* Grid overlay */}
         <div
-          className="absolute inset-0 bg-size-[60px_60px] opacity-[0.07]"
-          style={{
-            backgroundImage: `linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)`,
-          }}
+          className="bg-grid-gold absolute inset-0 bg-size-[60px_60px] opacity-[0.07]"
           aria-hidden="true"
         />
         {/* Maroon tint on top of photo */}
@@ -326,12 +323,7 @@ export const ContactPage = () => {
               animate={{ scale: [1.2, 0.8, 1.2] }}
               transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
             />
-            <div
-              className="absolute inset-0 bg-size-[40px_40px] opacity-5"
-              style={{
-                backgroundImage: `linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)`,
-              }}
-            />
+            <div className="bg-grid-white absolute inset-0 bg-size-[40px_40px] opacity-5" />
           </div>
           <div className="relative z-10 p-12 text-center text-white md:p-16">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">

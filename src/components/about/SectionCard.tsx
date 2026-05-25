@@ -219,12 +219,7 @@ export const SectionCard = ({ section, index }: SectionCardProps) => {
           {GraphicPattern(hovered)}
         </motion.div>
         {/* Grid overlay */}
-        <div
-          className="absolute inset-0 bg-size-[30px_30px] opacity-5"
-          style={{
-            backgroundImage: `linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)`,
-          }}
-        />
+        <div className="bg-grid-gold absolute inset-0 bg-size-[30px_30px] opacity-5" />
         {/* Tag pill */}
         <motion.div
           className="bg-maroon/70 absolute top-5 left-5 rounded-full border border-white/30 px-3 py-1 text-xs font-bold tracking-widest text-white uppercase backdrop-blur-md"

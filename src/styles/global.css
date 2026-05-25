@@ -3,10 +3,6 @@
 @theme inline {
   --font-sans: var(--font-roboto), sans-serif;
   --font-sans-condensed: var(--font-roboto-condensed), sans-serif;
-
-  --color-muted: #f8f9fa;
-  --color-muted-foreground: #495057;
-  --color-foreground: #111;
   --color-background: hsl(var(--background));
   --color-maroon: hsl(var(--maroon));
   --color-gold: hsl(var(--gold));
@@ -33,7 +29,7 @@
   }
 
   body {
-    @apply text-foreground;
+    @apply text-gray-900;
   }
 
   h1,

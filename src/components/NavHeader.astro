@@ -8,35 +8,39 @@ import crceLogo from "@/images/crce-logo.png"
 
 <header
   role="banner"
-  class="flex items-center justify-between gap-x-12 gap-y-4 bg-linear-to-b from-white/90 from-85% to-gray-600/20 px-6 py-6 pb-4 sm:px-8 md:px-12 lg:px-20"
+  class="bg-linear-to-b from-white/90 from-85% to-gray-600/20"
 >
-  <a
-    href="https://www.mcmaster.ca/"
-    rel="noopener noreferrer"
-    target="_blank"
-    aria-label="McMaster University (opens in new tab)"
+  <div
+    class="mx-auto flex max-w-7xl items-center justify-between gap-x-12 gap-y-4 p-4 sm:px-6 sm:py-6 lg:px-8"
   >
-    <Icon name="mcmaster-logo" class="h-20 w-36" aria-hidden="true" />
-  </a>
-  <a
-    id="crce-logo"
-    href="/"
-    class="relative mx-auto max-w-[min(100%,394px)] object-contain md:-top-1"
-    aria-label={`${SITE_TITLE} (CRCE) homepage`}
-  >
-    <Image
-      src={crceLogo}
-      alt={`${SITE_TITLE} (CRCE) logo`}
-      quality={100}
-      loading="eager"
-    />
-  </a>
-  <SearchButton />
+    <a
+      href="https://www.mcmaster.ca/"
+      rel="noopener noreferrer"
+      target="_blank"
+      aria-label="McMaster University (opens in new tab)"
+    >
+      <Icon name="mcmaster-logo" class="h-20 w-36" aria-hidden="true" />
+    </a>
+    <a
+      id="crce-logo"
+      href="/"
+      class="relative mx-auto max-w-[min(100%,394px)] object-contain md:-top-1"
+      aria-label={`${SITE_TITLE} (CRCE) homepage`}
+    >
+      <Image
+        src={crceLogo}
+        alt={`${SITE_TITLE} (CRCE) logo`}
+        quality={100}
+        loading="eager"
+      />
+    </a>
+    <SearchButton />
+  </div>
 </header>
 
 <style>
   @media screen and (max-width: 815px) {
-    header {
+    div {
       flex-wrap: wrap;
     }
 

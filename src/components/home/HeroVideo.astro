@@ -4,7 +4,7 @@ import { Image } from "astro:assets"
 ---
 
 <div
-  class="border-b-gold bg-foreground relative h-full max-h-125 overflow-hidden border-b-[6px]"
+  class="border-b-gold relative h-full max-h-125 overflow-hidden border-b-[6px] bg-gray-900"
 >
   <video
     autoplay
@@ -23,7 +23,7 @@ import { Image } from "astro:assets"
   />
   <button
     type="button"
-    class="video-button group border-gold bg-foreground/40 hover:bg-foreground absolute bottom-4 left-1/2 flex h-9 w-9 -translate-x-1/2 items-center justify-center rounded-full border-2 p-2.5 transition-colors duration-250"
+    class="video-button group border-gold absolute bottom-4 left-1/2 flex h-9 w-9 -translate-x-1/2 items-center justify-center rounded-full border-2 bg-gray-900/40 p-2.5 transition-colors duration-250 hover:bg-gray-900"
   >
     <img src="pause.svg" class="invert" alt="Play/Pause" />
   </button>

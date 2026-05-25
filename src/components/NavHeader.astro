@@ -24,7 +24,7 @@ import crceLogo from "@/images/crce-logo.png"
     <a
       id="crce-logo"
       href="/"
-      class="relative mx-auto max-w-[min(100%,394px)] object-contain md:-top-1"
+      class="relative mx-auto max-w-[min(100%,394px)] md:-top-1"
       aria-label={`${SITE_TITLE} (CRCE) homepage`}
     >
       <Image
@@ -32,6 +32,7 @@ import crceLogo from "@/images/crce-logo.png"
         alt={`${SITE_TITLE} (CRCE) logo`}
         quality={100}
         loading="eager"
+        class="w-full object-contain"
       />
     </a>
     <SearchButton />
@@ -39,7 +40,7 @@ import crceLogo from "@/images/crce-logo.png"
 </header>
 
 <style>
-  @media screen and (max-width: 815px) {
+  @media screen and (max-width: 750px) {
     div {
       flex-wrap: wrap;
     }

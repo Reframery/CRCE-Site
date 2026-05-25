@@ -84,11 +84,6 @@ export const PodcastsPage = () => {
           >
             <motion.div
               className="mb-6 inline-block rounded-full border border-white/20 bg-white/10 px-6 py-2 backdrop-blur-xs"
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "rgba(255,255,255,0.15)",
-                borderColor: "rgba(255,255,255,0.4)",
-              }}
               animate={{
                 boxShadow: [
                   "0 0 20px hsl(var(--gold) / 0.2)",
@@ -151,15 +146,7 @@ export const PodcastsPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <motion.div
-                className="cursor-pointer rounded-full border border-white/20 bg-white/10 px-6 py-3 backdrop-blur-xs"
-                whileHover={{
-                  scale: 1.05,
-                  backgroundColor: "rgba(255,255,255,0.15)",
-                  y: -3,
-                }}
-                whileTap={{ scale: 0.98 }}
-              >
+              <div className="rounded-full border border-white/20 bg-white/10 px-6 py-3 backdrop-blur-xs">
                 <div className="flex items-center gap-2">
                   <motion.div
                     animate={{ rotate: [0, 360] }}
@@ -176,16 +163,8 @@ export const PodcastsPage = () => {
                     New episodes coming soon
                   </span>
                 </div>
-              </motion.div>
-              <motion.div
-                className="cursor-pointer rounded-full border border-white/20 bg-white/10 px-6 py-3 backdrop-blur-xs"
-                whileHover={{
-                  scale: 1.05,
-                  backgroundColor: "rgba(255,255,255,0.15)",
-                  y: -3,
-                }}
-                whileTap={{ scale: 0.98 }}
-              >
+              </div>
+              <div className="rounded-full border border-white/20 bg-white/10 px-6 py-3 backdrop-blur-xs">
                 <div className="flex items-center gap-2">
                   <motion.div
                     animate={{ scale: [1, 1.2, 1] }}
@@ -198,7 +177,7 @@ export const PodcastsPage = () => {
                     Expert guests & researchers
                   </span>
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
           </motion.div>
         </div>

@@ -99,7 +99,6 @@ export const RisePage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1 + i * 0.1, type: "spring" }}
-                whileHover={{ scale: 1.08, y: -4 }}
                 className="cursor-default rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-center shadow-lg backdrop-blur-md"
               >
                 <div className="text-gold text-sm font-extrabold">

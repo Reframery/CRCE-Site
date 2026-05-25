@@ -316,12 +316,12 @@ export const ConferencePage = () => {
               }}
             >
               <div className="relative h-96 overflow-hidden">
-                <motion.img
+                <img
                   src={mcmasterHub.src}
+                  width={mcmasterHub.width}
+                  height={mcmasterHub.height}
                   alt="The Hub at McMaster University"
                   className="h-full w-full object-cover"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.6 }}
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-[rgba(13,0,8,0.9)] to-transparent to-60%" />
@@ -601,11 +601,6 @@ export const ConferencePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                whileHover={{
-                  y: -6,
-                  boxShadow:
-                    "0 0 30px hsl(var(--maroon)/0.5), 0 0 60px hsl(var(--maroon)/0.2)",
-                }}
                 className="border-maroon relative z-10 flex items-center gap-6 rounded-2xl border-2 bg-linear-to-br from-[#1a0010] to-[#2d0020] p-7"
                 style={{
                   boxShadow: "0 0 20px hsl(var(--maroon)/0.4)",
@@ -629,11 +624,6 @@ export const ConferencePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                whileHover={{
-                  y: -6,
-                  boxShadow:
-                    "0 0 30px hsl(var(--maroon)/0.5), 0 0 60px hsl(var(--maroon)/0.2)",
-                }}
                 className="border-maroon relative z-10 flex items-center gap-6 rounded-2xl border-2 p-7"
                 style={{
                   background:

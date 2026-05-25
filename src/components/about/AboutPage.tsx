@@ -117,7 +117,6 @@ export const AboutPage = () => {
                   type: "spring",
                   stiffness: 150,
                 }}
-                whileHover={{ scale: 1.1, y: -5 }}
                 className="cursor-default rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-center shadow-lg backdrop-blur-md"
               >
                 <div className="text-gold text-sm font-extrabold">{s.val}</div>

@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import { motion, useInView } from "motion/react"
 import { Target } from "lucide-react"
+import { hexPattern } from "@/lib/background-patterns"
 import { about } from "@/content/about"
 
 export const StatsBar = () => {
@@ -15,12 +16,9 @@ export const StatsBar = () => {
         transition={{ duration: 0.7, type: "spring", stiffness: 70 }}
         className="from-maroon relative overflow-hidden rounded-3xl bg-linear-to-br to-[#5a0029] shadow-2xl"
       >
-        {/* Hex pattern bg */}
         <div
           className="absolute inset-0 bg-size-[28px_50px] opacity-10"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 0 L56 16 L56 50 L28 66 L0 50 L0 16 Z' fill='none' stroke='rgb(253,191,87)' stroke-width='1'/%3E%3Cpath d='M28 66 L56 50 L56 84 L28 100 L0 84 L0 50 Z' fill='none' stroke='rgb(253,191,87)' stroke-width='1'/%3E%3C/svg%3E")`,
-          }}
+          style={{ backgroundImage: hexPattern("rgb(253,191,87)", 1) }}
         />
         <motion.div
           className="bg-gold absolute -top-16 -right-16 h-64 w-64 rounded-full opacity-25 blur-3xl"

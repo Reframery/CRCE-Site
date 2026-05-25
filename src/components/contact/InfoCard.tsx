@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
 import { motion, useInView } from "motion/react"
 import { ArrowRight } from "lucide-react"
+import { hexPattern } from "@/lib/background-patterns"
 import type { Info } from "@/content/contact"
 
 type InfoCardProps = {
@@ -34,12 +35,9 @@ export const InfoCard = ({ card, index }: InfoCardProps) => {
         className="relative flex h-20 items-end overflow-hidden bg-linear-to-br from-[#9a0050] to-[#5a0029] px-6 pb-3"
         aria-hidden="true"
       >
-        {/* Animated hex pattern */}
         <motion.div
           className="absolute inset-0 bg-size-[28px_50px]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 0 L56 16 L56 50 L28 66 L0 50 L0 16 Z' fill='none' stroke='rgba(253,191,87,0.25)' stroke-width='1.5'/%3E%3Cpath d='M28 66 L56 50 L56 84 L28 100 L0 84 L0 50 Z' fill='none' stroke='rgba(253,191,87,0.25)' stroke-width='1.5'/%3E%3C/svg%3E")`,
-          }}
+          style={{ backgroundImage: hexPattern("rgba(253,191,87,0.25)", 1.5) }}
           animate={{ opacity: hovered ? 0.6 : 0.3 }}
           transition={{ duration: 0.4 }}
         />

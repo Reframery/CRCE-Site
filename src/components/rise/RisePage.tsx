@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "motion/react"
 import { ArrowRight, ChevronDown } from "lucide-react"
 import { sections, stats } from "@/content/rise"
 import { SectionCard } from "./SectionCard"
+import { FloatingOrbs } from "./FloatingOrbs"
 
 export const RisePage = () => {
   const heroRef = useRef(null)
@@ -29,50 +30,7 @@ export const RisePage = () => {
             backgroundImage: `linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)`,
           }}
         />
-        {/* Floating orbs */}
-        {[
-          {
-            size: 500,
-            color: "hsl(var(--gold) / 0.15)",
-            x: -200,
-            y: -100,
-            dur: 12,
-          },
-          {
-            size: 400,
-            color: "rgba(255,255,255,0.06)",
-            x: 300,
-            y: 200,
-            dur: 15,
-          },
-          {
-            size: 300,
-            color: "rgba(52,152,219,0.12)",
-            x: 100,
-            y: 300,
-            dur: 10,
-          },
-        ].map((orb, i) => (
-          <motion.div
-            key={i}
-            className="pointer-events-none absolute rounded-full blur-3xl"
-            style={{
-              width: orb.size,
-              height: orb.size,
-              backgroundColor: orb.color,
-              left: `calc(50% + ${orb.x}px)`,
-              top: `calc(50% + ${orb.y}px)`,
-              transform: "translate(-50%,-50%)",
-            }}
-            animate={{ scale: [1, 1.3, 1], x: [0, 40, 0], y: [0, -30, 0] }}
-            transition={{
-              duration: orb.dur,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 2,
-            }}
-          />
-        ))}
+        <FloatingOrbs />
         <motion.div className="relative z-10 px-4 py-14 text-center text-white md:py-20">
           {/* RISE Logo + wordmark */}
           <motion.div

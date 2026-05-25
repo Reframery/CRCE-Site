@@ -8,6 +8,7 @@ import {
   studentTeam,
 } from "@/content/team"
 import { Breadcrumbs } from "../ui/Breadcrumbs"
+import { AnimatedOrbs } from "./AnimatedOrbs"
 import { PersonCard } from "./PersonCard"
 import { SectionHeader } from "./SectionHeader"
 import { StudentCard } from "./StudentCard"
@@ -49,44 +50,7 @@ export const TeamPage = () => {
           className="from-maroon/50 via-maroon/25 to-maroon/90 absolute inset-0 bg-linear-to-b via-45%"
           aria-hidden="true"
         />
-        {/* Orbs */}
-        {[
-          {
-            size: 500,
-            color: "hsl(var(--gold) / 0.12)",
-            x: -200,
-            y: -100,
-            dur: 14,
-          },
-          {
-            size: 400,
-            color: "rgba(255,255,255,0.05)",
-            x: 300,
-            y: 150,
-            dur: 17,
-          },
-        ].map((orb, i) => (
-          <motion.div
-            key={i}
-            className="pointer-events-none absolute rounded-full blur-3xl"
-            style={{
-              width: orb.size,
-              height: orb.size,
-              backgroundColor: orb.color,
-              left: `calc(50% + ${orb.x}px)`,
-              top: `calc(50% + ${orb.y}px)`,
-              transform: "translate(-50%,-50%)",
-            }}
-            animate={{ scale: [1, 1.35, 1], x: [0, 50, 0], y: [0, -40, 0] }}
-            transition={{
-              duration: orb.dur,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 2,
-            }}
-            aria-hidden="true"
-          />
-        ))}
+        <AnimatedOrbs />
         {/* Hero content */}
         <motion.div className="relative z-10 mx-auto w-full max-w-4xl px-4 py-14 text-center text-white md:py-20">
           <motion.div

@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "motion/react"
 import { ArrowRight, ChevronDown, Handshake, Target } from "lucide-react"
 import { sections } from "@/content/about"
 import { Breadcrumbs } from "../ui/Breadcrumbs"
+import { AnimatedOrbs } from "./AnimatedOrbs"
 import { SectionCard } from "./SectionCard"
 import { StatsBar } from "./StatsBar"
 import { Ticker } from "./Ticker"
@@ -18,7 +19,7 @@ export const AboutPage = () => {
 
   return (
     <div className="bg-background min-h-screen overflow-hidden">
-      {/* ── Hero ── */}
+      {/* Hero */}
       <section
         ref={heroRef}
         className="min-height-[65vh] bg-maroon relative flex flex-col items-center justify-center overflow-hidden"
@@ -45,58 +46,7 @@ export const AboutPage = () => {
           className="from-maroon/50 via-maroon/25 to-maroon/90 absolute inset-0 bg-linear-to-b via-45%"
           aria-hidden="true"
         />
-        {/* Animated orbs */}
-        {[
-          {
-            size: 600,
-            color: "hsl(var(--gold) / 0.12)",
-            x: -250,
-            y: -120,
-            dur: 14,
-          },
-          {
-            size: 450,
-            color: "rgba(255,255,255,0.05)",
-            x: 350,
-            y: 220,
-            dur: 17,
-          },
-          {
-            size: 350,
-            color: "hsl(var(--maroon) / 0.18)",
-            x: 120,
-            y: 320,
-            dur: 11,
-          },
-          {
-            size: 200,
-            color: "hsl(var(--gold) / 0.1)",
-            x: -100,
-            y: 280,
-            dur: 9,
-          },
-        ].map((orb, i) => (
-          <motion.div
-            key={i}
-            className="pointer-events-none absolute rounded-full blur-3xl"
-            style={{
-              width: orb.size,
-              height: orb.size,
-              backgroundColor: orb.color,
-              left: `calc(50% + ${orb.x}px)`,
-              top: `calc(50% + ${orb.y}px)`,
-              transform: "translate(-50%,-50%)",
-            }}
-            animate={{ scale: [1, 1.35, 1], x: [0, 50, 0], y: [0, -40, 0] }}
-            transition={{
-              duration: orb.dur,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 1.8,
-            }}
-            aria-hidden="true"
-          />
-        ))}
+        <AnimatedOrbs />
         <motion.div className="relative z-10 mx-auto w-full max-w-5xl px-4 py-14 text-center text-white md:py-20">
           {/* Badge */}
           <motion.div

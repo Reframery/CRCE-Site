@@ -13,6 +13,7 @@ import mcmasterHub from "@/images/conference/mcmaster-hub.png"
 import { ActivityCard } from "./ActivityCard"
 import { AnimatedCounter } from "./AnimatedCounter"
 import { AnimatedGlobe } from "./AnimateGlobe"
+import { FloatingOrbs } from "./FloatingOrbs"
 
 export const ConferencePage = () => {
   const heroRef = useRef(null)
@@ -32,6 +33,7 @@ export const ConferencePage = () => {
           background:
             "linear-gradient(160deg, #12000c 0%, hsl(var(--maroon)) 50%, #3a0020 100%)",
         }}
+        aria-hidden="true"
       >
         {/* Animated dot grid */}
         <div className="absolute inset-0 bg-[radial-gradient(circle,hsl(var(--gold)/0.8)_1px,transparent_1px)] bg-size-[40px_40px] opacity-15" />
@@ -41,52 +43,9 @@ export const ConferencePage = () => {
           style={{
             backgroundImage: `linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)`,
           }}
+          aria-hidden="true"
         />
-        {/* Floating orbs */}
-        {[
-          {
-            size: 800,
-            color: "hsl(var(--gold) / 0.08)",
-            x: -400,
-            y: -200,
-            dur: 18,
-          },
-          {
-            size: 600,
-            color: "hsl(var(--maroon) / 0.4)",
-            x: 400,
-            y: 200,
-            dur: 22,
-          },
-          {
-            size: 400,
-            color: "hsl(var(--gold) / 0.06)",
-            x: 100,
-            y: 350,
-            dur: 14,
-          },
-          { size: 300, color: "rgba(180,0,80,0.2)", x: -200, y: 300, dur: 16 },
-        ].map((orb, i) => (
-          <motion.div
-            key={i}
-            className="pointer-events-none absolute rounded-full blur-3xl"
-            style={{
-              width: orb.size,
-              height: orb.size,
-              backgroundColor: orb.color,
-              left: `calc(50% + ${orb.x}px)`,
-              top: `calc(50% + ${orb.y}px)`,
-              transform: "translate(-50%,-50%)",
-            }}
-            animate={{ scale: [1, 1.4, 1], x: [0, 50, 0], y: [0, -40, 0] }}
-            transition={{
-              duration: orb.dur,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 3,
-            }}
-          />
-        ))}
+        <FloatingOrbs />
         <motion.div
           className="relative z-10 mx-auto w-full max-w-5xl px-4 py-14 text-center text-white md:py-20"
           style={{ y: heroY }}
@@ -191,6 +150,7 @@ export const ConferencePage = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.3 }}
+          aria-hidden="true"
         >
           <motion.div
             animate={{ y: [0, 9, 0] }}
@@ -200,7 +160,10 @@ export const ConferencePage = () => {
           </motion.div>
         </motion.div>
         {/* Bottom wave into dark */}
-        <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-10">
+        <div
+          className="pointer-events-none absolute right-0 bottom-0 left-0 z-10"
+          aria-hidden="true"
+        >
           <svg viewBox="0 0 1440 80" className="h-auto w-full fill-[#0d0008]">
             <path d="M0,40L60,36C120,32,240,24,360,28C480,32,600,48,720,52C840,56,960,48,1080,40C1200,32,1320,24,1380,20L1440,16L1440,80L0,80Z" />
           </svg>
@@ -272,6 +235,7 @@ export const ConferencePage = () => {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.3 }}
+                aria-hidden="true"
               />
             </motion.div>
             {/* Globe graphic */}
@@ -280,6 +244,7 @@ export const ConferencePage = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1, type: "spring", stiffness: 60 }}
+              aria-hidden="true"
             >
               <AnimatedGlobe />
             </motion.div>
@@ -480,17 +445,20 @@ export const ConferencePage = () => {
           style={{
             backgroundImage: `linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)`,
           }}
+          aria-hidden="true"
         />
         {/* Animated orbs */}
         <motion.div
           className="bg-gold/15 pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full blur-3xl"
           animate={{ scale: [1, 1.4, 1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          aria-hidden="true"
         />
         <motion.div
           className="pointer-events-none absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-black/30 blur-3xl"
           animate={{ scale: [1.2, 0.8, 1.2] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          aria-hidden="true"
         />
         <div className="relative z-10 mx-auto max-w-5xl px-4 text-center text-white sm:px-6">
           <motion.div
@@ -510,6 +478,7 @@ export const ConferencePage = () => {
               animate={{ rotate: [0, 5, -5, 0], scale: [1, 1.05, 1] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="mb-6 inline-block"
+              aria-hidden="true"
             >
               <Mic
                 className="text-gold mx-auto h-14 w-14"
@@ -546,7 +515,10 @@ export const ConferencePage = () => {
             transition={{ duration: 0.5 }}
             className="border-gold/25 flex items-start gap-5 rounded-2xl border bg-linear-to-br from-[#1a0a00] to-[#2a1500] p-8"
           >
-            <div className="bg-gold/15 border-gold/30 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border">
+            <div
+              className="bg-gold/15 border-gold/30 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border"
+              aria-hidden="true"
+            >
               <Calendar className="text-gold h-6 w-6" />
             </div>
             <div>
@@ -591,6 +563,7 @@ export const ConferencePage = () => {
                 className="pointer-events-none absolute -inset-12"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                aria-hidden="true"
               >
                 <div className="border-maroon absolute inset-0 rounded-full border border-dashed opacity-30" />
               </motion.div>
@@ -598,6 +571,7 @@ export const ConferencePage = () => {
                 className="pointer-events-none absolute -inset-20"
                 animate={{ rotate: -360 }}
                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                aria-hidden="true"
               >
                 <div className="border-gold absolute inset-0 rounded-full border border-dotted opacity-20" />
               </motion.div>
@@ -623,6 +597,7 @@ export const ConferencePage = () => {
                     repeat: Infinity,
                     ease: "linear",
                   }}
+                  aria-hidden="true"
                 />
               ))}
               {/* McMaster & DeGroote */}

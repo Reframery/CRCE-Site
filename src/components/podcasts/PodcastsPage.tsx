@@ -53,6 +53,7 @@ export const PodcastsPage = () => {
           className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-size-[50px_50px] opacity-10"
           animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
           transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+          aria-hidden="true"
         />
         {/* Floating animated shapes */}
         <motion.div
@@ -63,6 +64,7 @@ export const PodcastsPage = () => {
             scale: [1, 1.1, 1],
           }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          aria-hidden="true"
         />
         <motion.div
           className="border-gold/30 absolute bottom-20 left-20 h-16 w-16 rounded-lg border-2"
@@ -72,6 +74,7 @@ export const PodcastsPage = () => {
             scale: [1, 1.2, 1],
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          aria-hidden="true"
         />
         <div className="relative z-10 mx-auto max-w-5xl text-center">
           <motion.div
@@ -94,6 +97,7 @@ export const PodcastsPage = () => {
                 ],
               }}
               transition={{ boxShadow: { duration: 3, repeat: Infinity } }}
+              aria-hidden="true"
             >
               <div className="flex items-center gap-2">
                 <motion.div
@@ -164,6 +168,7 @@ export const PodcastsPage = () => {
                       repeat: Infinity,
                       ease: "linear",
                     }}
+                    aria-hidden="true"
                   >
                     <Sparkles className="text-gold h-4 w-4" />
                   </motion.div>
@@ -185,6 +190,7 @@ export const PodcastsPage = () => {
                   <motion.div
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
+                    aria-hidden="true"
                   >
                     <UserCheck className="text-gold h-4 w-4" />
                   </motion.div>

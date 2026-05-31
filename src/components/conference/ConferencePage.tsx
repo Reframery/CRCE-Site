@@ -5,6 +5,7 @@ import {
   Calendar,
   ChevronDown,
   Clock,
+  Mail,
   MapPin,
   Mic,
 } from "lucide-react"
@@ -110,10 +111,36 @@ export const ConferencePage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
-            className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed font-medium text-white/70 md:text-xl"
+            className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed font-medium text-white/70 md:text-xl"
           >
             Rethinking Entrepreneurship Beyond Traditional Growth Models
           </motion.p>
+          {/* Registration Button */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mb-10"
+          >
+            <motion.a
+              href="https://global-majority2026.base44.app/register"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{
+                scale: 1.05,
+                boxShadow:
+                  "0 0 40px rgba(253,191,56,0.6), 0 20px 40px rgba(253,191,56,0.3)",
+              }}
+              className="from-gold inline-flex items-center gap-3 rounded-full bg-linear-to-br to-[#f5d76e] px-6 py-3 text-lg font-bold text-[#1a0010] backdrop-blur-md"
+              style={{
+                background: "linear-gradient(135deg, #FDBF38 0%, #f5d76e 100%)",
+                boxShadow: "0 10px 30px hsl(var(--gold)/0.4)",
+              }}
+            >
+              Register Now
+              <ArrowRight className="h-5 w-5" />
+            </motion.a>
+          </motion.div>
           {/* Date / Time / Location pills */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -535,7 +562,7 @@ export const ConferencePage = () => {
           background:
             "linear-gradient(135deg, #f4ebe0 0%, #f9f3eb 50%, #f0e8dd 100%)",
         }}
-        className="py-16 pb-24"
+        className="py-16 pb-12"
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid items-center gap-12 md:grid-cols-2">
@@ -647,6 +674,57 @@ export const ConferencePage = () => {
               </motion.div>
             </div>
           </div>
+        </div>
+      </section>
+      {/* Contact */}
+      <section className="relative overflow-hidden bg-[#f5ede2] pt-12 pb-24">
+        {/* Decorative top border accent */}
+        <div className="absolute top-0 right-0 left-0 h-1 bg-[linear-gradient(90deg,transparent,hsl(var(--maroon)),hsl(var(--gold)),hsl(var(--maroon)),transparent)]" />
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="border-maroon/60 relative overflow-hidden rounded-3xl border-2 bg-linear-to-br from-[#1a0010] to-[#2d0020] p-12 text-center"
+            style={{
+              boxShadow:
+                "0 0 60px hsl(var(--maroon)/0.3), 0 20px 60px rgba(0,0,0,0.3)",
+            }}
+          >
+            <div className="absolute inset-0 rounded-3xl bg-[radial-gradient(circle,hsl(var(--gold)/0.6)_1px,transparent_1px)] bg-size-[30px_30px] opacity-10" />
+            <div className="bg-gold absolute top-0 left-1/2 h-0.5 w-24 -translate-x-1/2 rounded-full" />
+            <div className="relative z-10">
+              <div className="mb-4 flex items-center justify-center gap-3">
+                <div className="bg-gold/40 h-px w-10 rounded-full" />
+                <span className="text-gold/70 text-xs font-bold tracking-widest uppercase">
+                  Get in Touch
+                </span>
+                <div className="bg-gold/40 h-px w-10 rounded-full" />
+              </div>
+
+              <h2 className="mb-4 text-4xl leading-tight font-black text-[#e8dcc8] md:text-5xl">
+                Have Questions?
+              </h2>
+              <p className="mx-auto mb-10 max-w-xl text-base leading-relaxed text-[#c9b5a0]">
+                Reach out to us for more information about the conference,
+                submissions, or partnership opportunities.
+              </p>
+              <motion.a
+                href="mailto:reframe@mcmaster.ca"
+                whileHover={{
+                  y: -4,
+                  boxShadow:
+                    "0 0 30px hsl(var(--maroon)/0.6), 0 20px 40px hsl(var(--maroon)/0.3)",
+                }}
+                className="bg-maroon border-gold/30 inline-flex items-center gap-3 rounded-2xl border px-8 py-4 text-base font-bold text-[#e8dcc8] transition-all"
+                style={{ boxShadow: "0 0 20px hsl(var(--maroon)/0.4)" }}
+              >
+                <Mail className="text-gold h-5 w-5" />
+                reframe@mcmaster.ca
+              </motion.a>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

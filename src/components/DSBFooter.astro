@@ -43,15 +43,18 @@ import dsbLogo from "@/images/mcm-dsb-crce.png"
       <h2 class="font-sans-condensed mb-1.5 text-xl font-semibold">
         Contact Information
       </h2>
-      {
-        emails.map((email) => (
-          <p>
-            <a href={`mailto:${email}`} class="underline hover:no-underline">
+      <div class="space-y-1">
+        {
+          emails.map((email) => (
+            <a
+              href={`mailto:${email}`}
+              class="block underline hover:no-underline"
+            >
               {email}
             </a>
-          </p>
-        ))
-      }
+          ))
+        }
+      </div>
     </div>
   </div>
 </footer>

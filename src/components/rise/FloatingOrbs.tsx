@@ -1,6 +1,6 @@
 import { motion } from "motion/react"
 
-export const orbs = [
+const orbs = [
   {
     size: 500,
     color: "hsl(var(--gold) / 0.15)",

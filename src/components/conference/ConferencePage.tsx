@@ -34,10 +34,12 @@ export const ConferencePage = () => {
           background:
             "linear-gradient(160deg, #12000c 0%, hsl(var(--maroon)) 50%, #3a0020 100%)",
         }}
-        aria-hidden="true"
       >
         {/* Animated dot grid */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle,hsl(var(--gold)/0.8)_1px,transparent_1px)] bg-size-[40px_40px] opacity-15" />
+        <div
+          className="absolute inset-0 bg-[radial-gradient(circle,hsl(var(--gold)/0.8)_1px,transparent_1px)] bg-size-[40px_40px] opacity-15"
+          aria-hidden="true"
+        />
         {/* Fine grid */}
         <div
           className="bg-grid-gold absolute inset-0 bg-size-[100px_100px] opacity-[0.05]"

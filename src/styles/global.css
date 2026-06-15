@@ -6,6 +6,7 @@
   --color-background: hsl(var(--background));
   --color-maroon: hsl(var(--maroon));
   --color-gold: hsl(var(--gold));
+  --breakpoint-xs: 32rem; /* 512px */
 }
 
 @utility container {

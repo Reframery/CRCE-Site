@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Megaphone } from "lucide-react"
 import { cards, directorsMessage, visionMission } from "@/content/home"
 import benson from "@/images/home/benson.jpg"
 import { HeroVideo } from "./HeroVideo"
@@ -64,7 +64,7 @@ export const HomePage = () => (
             }}
             className="shrink-0 text-2xl"
           >
-            📣
+            <Megaphone className="text-gold rotate-[-30deg]" />
           </motion.div>
           <p className="text-center text-base leading-relaxed font-medium text-white sm:text-left sm:text-lg">
             <span className="text-gold mr-3 font-black">
@@ -164,6 +164,7 @@ export const HomePage = () => (
                 src={benson.src}
                 alt="Benson Honig, CRCE Director"
                 className="max-h-110 w-full object-cover"
+                loading="lazy"
               />
               <div
                 className="absolute inset-0"
@@ -254,6 +255,7 @@ export const HomePage = () => (
                   src={item.src}
                   alt={item.title}
                   className="h-full w-full object-cover"
+                  loading="lazy"
                 />
                 <div
                   className="absolute inset-0"

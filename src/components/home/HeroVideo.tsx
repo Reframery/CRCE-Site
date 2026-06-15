@@ -64,6 +64,7 @@ export const HeroVideo = () => {
           src={image.src}
           alt="McMaster University | DeGroote School of Business | CRCE"
           className="w-full max-w-2xl px-8 drop-shadow-2xl"
+          loading="eager"
         />
       </motion.div>
       <div

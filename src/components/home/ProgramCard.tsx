@@ -44,6 +44,7 @@ export const ProgramCard = ({
         className="h-full w-full object-cover"
         whileHover={{ scale: 1.07 }}
         transition={{ duration: 0.5 }}
+        loading="lazy"
       />
       <div className="absolute inset-0 h-52 bg-linear-to-b from-transparent from-50% to-[rgba(26,0,16,0.4)]" />
     </div>

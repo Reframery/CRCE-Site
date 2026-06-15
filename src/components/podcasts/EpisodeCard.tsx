@@ -15,7 +15,7 @@ export const EpisodeCard = ({
     className="relative overflow-hidden rounded-2xl border-2 border-gray-200 bg-white shadow-xl"
   >
     <div className="xs:p-6 relative z-10 p-4">
-      <div className="grid items-start gap-8 md:grid-cols-10">
+      <div className="grid items-start gap-6 md:grid-cols-10">
         <div className="self-stretch md:col-span-4 lg:col-span-3">
           <div className="flex h-full flex-col rounded-xl border border-gray-200 bg-gray-50 p-6">
             <div className="mb-4 flex flex-col gap-2">

@@ -5,10 +5,20 @@ import sitemap from "@astrojs/sitemap"
 import icon from "astro-icon"
 import tailwindcss from "@tailwindcss/vite"
 
+const SITE_URL = "https://www.crce.info"
+const RESTRICTED_PATHS = ["artist-enterprises-incubator"]
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.crce.info",
-  integrations: [react(), icon(), sitemap()],
+  site: SITE_URL,
+  integrations: [
+    react(),
+    icon(),
+    sitemap({
+      filter: (page) =>
+        !RESTRICTED_PATHS.map((path) => `${SITE_URL}/${path}/`).includes(page),
+    }),
+  ],
   fonts: [
     {
       name: "Roboto",

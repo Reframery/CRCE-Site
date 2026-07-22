@@ -1,244 +1,17 @@
-import { useRef, useState, useEffect } from "react"
-import { motion, useInView, useScroll, useTransform } from "motion/react"
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "motion/react"
 import {
   Palette,
-  Users,
-  BookOpen,
-  FileText,
   ArrowRight,
-  ChevronDown,
   Calendar,
   MapPin,
   Clock,
-  DollarSign,
   CheckCircle2,
-  Sparkles,
-  Handshake,
-  Building2,
 } from "lucide-react"
-
-/* ─── DATA ─────────────────────────────────────────────────────────── */
-const criteria = [
-  {
-    label: "Earn Through Your Practice",
-    desc: "You currently have an artistic practice and want to develop ways of earning income through your work.",
-  },
-  {
-    label: "A Developed Idea",
-    desc: "You have a specific and reasonably developed idea for an arts-based product, service, project, or business and have already begun exploring or working on it.",
-  },
-  {
-    label: "Already Selling Your Work",
-    desc: "You have already taken steps to sell, exhibit, promote, commission, license, teach, perform, or otherwise generate income through your artistic work.",
-  },
-  {
-    label: "Strengthen Your Business",
-    desc: "You currently operate an arts practice or creative business and want support strengthening, improving, or expanding it.",
-  },
-  {
-    label: "Community-Based Initiative",
-    desc: "You are developing a social enterprise, collective, cooperative, or community-based initiative centred on artistic or creative work.",
-  },
-]
-
-const topics = [
-  {
-    label: "Audience Building",
-    desc: "Audience building through and beyond social media.",
-    Icon: Users,
-  },
-  {
-    label: "Pricing & Sales",
-    desc: "Pricing, sales, and communicating the value of creative work.",
-    Icon: DollarSign,
-  },
-  {
-    label: "Revenue Stacking",
-    desc: "Revenue stacking and sustainable income streams.",
-    Icon: Sparkles,
-  },
-  {
-    label: "Bookkeeping",
-    desc: "Bookkeeping and financial management.",
-    Icon: BookOpen,
-  },
-  {
-    label: "Grant Writing",
-    desc: "Grant writing and funding opportunities.",
-    Icon: FileText,
-  },
-  {
-    label: "Business Models",
-    desc: "Business model development for artists.",
-    Icon: Handshake,
-  },
-  {
-    label: "Social Enterprise",
-    desc: "Social enterprise and community-based creative work.",
-    Icon: Building2,
-  },
-  {
-    label: "Cooperative Models",
-    desc: "Artist collectives and cooperative models.",
-    Icon: Users,
-  },
-  {
-    label: "Institutional Partners",
-    desc: "Working with galleries, institutions, funders, and community partners.",
-    Icon: Building2,
-  },
-]
-
-const keyDetails = [
-  { Icon: Calendar, label: "Program Length", value: "12 weeks" },
-  { Icon: Clock, label: "Schedule", value: "One session per week" },
-  { Icon: Building2, label: "Format", value: "Hybrid (in-person + online)" },
-  {
-    Icon: MapPin,
-    label: "Location",
-    value: "McMaster Main Campus (1280 Main St W) + Zoom",
-  },
-  {
-    Icon: Calendar,
-    label: "Program Dates",
-    value: "Mid–late September 2026 (TBA)",
-  },
-  { Icon: DollarSign, label: "Cost", value: "Free" },
-  { Icon: FileText, label: "Application Deadline", value: "August 23" },
-]
-
-const partners = [
-  {
-    name: "CRCE",
-    sub: "McMaster University's Reframery Incubator",
-    role: "Lead",
-    logo: "https://www.crce.info/_astro/mcm-dsb-crce.DBTae_cN.png",
-    link: "https://www.crce.info/",
-  },
-  {
-    name: "The Hamilton Artists Inc.",
-    role: "Lead",
-    logo: "https://media.base44.com/images/public/69573a816ee3f6e4126a3794/3e18d5931_AltLogo.png",
-    link: "https://www.theinc.ca/",
-  },
-  {
-    name: "Marinucci Entrepreneurial Bridge",
-    sub: "DeGroote School of Business",
-    role: "Collaborator",
-    logo: "https://www.crce.info/_astro/McMaster_Logo.BKwD_I6F_1HZu29.webp",
-    link: "https://degroote.mcmaster.ca/tag/marinucci-entrepreneurial-bridge/",
-  },
-  {
-    name: "McMaster Museum of Art",
-    role: "Collaborator",
-    logo: "https://www.crce.info/_astro/McMaster_Logo.BKwD_I6F_1HZu29.webp",
-    link: "https://museum.mcmaster.ca/",
-  },
-]
-
-/* ─── ANIMATED COUNTER ─────────────────────────────────────────────── */
-function AnimatedCounter({ value, suffix }: any) {
-  const [display, setDisplay] = useState(0)
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  const num = parseInt(value)
-
-  useEffect(() => {
-    if (!isInView) return
-    let start = 0
-    const step = Math.ceil(num / 30)
-    const timer = setInterval(() => {
-      start += step
-      if (start >= num) {
-        setDisplay(num)
-        clearInterval(timer)
-      } else setDisplay(start)
-    }, 40)
-    return () => clearInterval(timer)
-  }, [isInView, num])
-
-  return (
-    <span ref={ref}>
-      {display}
-      {suffix}
-    </span>
-  )
-}
-
-const stats = [
-  { value: "12", suffix: " Weeks", label: "of Training" },
-  { value: "9", suffix: "+", label: "Topics Covered" },
-  { value: "0", suffix: "", label: "Cost — Free" },
-]
-
-/* ─── TOPIC CARD ────────────────────────────────────────────────────── */
-function TopicCard({ item, index }: any) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-40px" })
-  const [hovered, setHovered] = useState(false)
-  const { Icon } = item
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{
-        duration: 0.6,
-        delay: index * 0.08,
-        type: "spring",
-        stiffness: 80,
-      }}
-      whileHover={{ y: -8, scale: 1.02 }}
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
-      className="group relative cursor-default overflow-hidden rounded-2xl p-7"
-      style={{
-        background: "linear-gradient(135deg, #1a0010 0%, #2d0020 100%)",
-        border: "1px solid rgba(122,0,60,0.4)",
-      }}
-    >
-      <motion.div
-        className="pointer-events-none absolute inset-0 rounded-2xl"
-        style={{
-          background:
-            "radial-gradient(circle at 70% 30%, rgba(253,191,56,0.12) 0%, transparent 70%)",
-        }}
-        animate={{ opacity: hovered ? 1 : 0 }}
-        transition={{ duration: 0.4 }}
-      />
-      <motion.div
-        className="absolute top-0 left-0 h-0.5 rounded-b-full"
-        style={{ backgroundColor: "#FDBF38" }}
-        animate={{ width: hovered ? "100%" : "30%" }}
-        transition={{ duration: 0.4 }}
-      />
-      <motion.div
-        className="mb-5 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl"
-        style={{
-          backgroundColor: "rgba(253,191,56,0.12)",
-          border: "1px solid rgba(253,191,56,0.3)",
-        }}
-        animate={{ scale: hovered ? 1.1 : 1 }}
-        transition={{ duration: 0.3 }}
-      >
-        <Icon className="h-7 w-7" style={{ color: "#FDBF38" }} />
-      </motion.div>
-      <h3
-        className="mb-2 text-lg leading-snug font-black"
-        style={{ color: "#e8dcc8" }}
-      >
-        {item.label}
-      </h3>
-      <p className="text-sm leading-relaxed" style={{ color: "#c9b5a0" }}>
-        {item.desc}
-      </p>
-    </motion.div>
-  )
-}
+import { partners } from "./content"
 
 /* ─── MAIN PAGE ─────────────────────────────────────────────────────── */
-export default function IncubatorPage() {
+export default function Incubator() {
   const heroRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -254,7 +27,7 @@ export default function IncubatorPage() {
         ref={heroRef}
         className="relative flex flex-col items-center justify-center overflow-hidden"
         style={{
-          minHeight: "100vh",
+          minHeight: "auto",
           background:
             "linear-gradient(160deg, #12000c 0%, #7A003C 50%, #3a0020 100%)",
         }}
@@ -270,8 +43,7 @@ export default function IncubatorPage() {
             <img
               src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/1ee4e49a7_CRCElogo_maroonandblack.png"
               alt="CRCE"
-              className="block w-auto"
-              style={{ height: "52px" }}
+              className="block h-13 w-auto"
             />
           </a>
           <a
@@ -283,8 +55,7 @@ export default function IncubatorPage() {
             <img
               src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/99644ae97_AltLogo.png"
               alt="Hamilton Artists Inc."
-              className="block w-auto"
-              style={{ height: "52px" }}
+              className="block h-13 w-auto"
             />
           </a>
         </div>
@@ -340,14 +111,14 @@ export default function IncubatorPage() {
           />
         ))}
         <motion.div
-          className="relative z-10 mx-auto w-full max-w-5xl px-4 py-20 text-center text-white"
+          className="relative z-10 mx-auto w-full max-w-5xl px-4 pt-32 pb-16 text-center text-white"
           style={{ opacity: heroOpacity, y: heroY }}
         >
           <motion.div
             initial={{ opacity: 0, y: -30, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.7, type: "spring" }}
-            className="mb-10 inline-flex items-center gap-3 rounded-full border border-white/20 px-5 py-2.5 backdrop-blur-md"
+            className="mt-6 mb-6 inline-flex items-center gap-3 rounded-full border border-white/20 px-5 py-2.5 backdrop-blur-md"
             style={{ background: "rgba(253,191,56,0.1)" }}
           >
             <motion.span
@@ -369,12 +140,11 @@ export default function IncubatorPage() {
               type: "spring",
               stiffness: 80,
             }}
-            className="mb-6 inline-block"
+            className="mb-4 inline-block"
           >
             <Palette
-              className="mx-auto h-16 w-16"
+              className="mx-auto h-14 w-14 text-[#FDBF38]"
               style={{
-                color: "#FDBF38",
                 filter: "drop-shadow(0 0 20px rgba(253,191,56,0.6))",
               }}
             />
@@ -388,21 +158,9 @@ export default function IncubatorPage() {
               type: "spring",
               stiffness: 60,
             }}
-            className="mb-3 text-5xl leading-none font-black tracking-tight md:text-7xl"
+            className="mb-6 text-4xl leading-none font-black tracking-tight md:text-6xl"
           >
-            Artist Enterprise
-          </motion.h1>
-          <motion.h1
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.9,
-              delay: 0.28,
-              type: "spring",
-              stiffness: 60,
-            }}
-            className="mb-8 text-5xl leading-none font-black tracking-tight md:text-7xl"
-          >
+            Artist Enterprise{" "}
             <span
               style={{
                 color: "#FDBF38",
@@ -417,37 +175,11 @@ export default function IncubatorPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
-            className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed font-medium text-white/70 md:text-xl"
+            className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed font-medium text-white/70 md:text-xl"
           >
             A 12-week entrepreneurship training program for Hamilton-based
             artists building a sustainable creative practice.
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mb-10"
-          >
-            <motion.a
-              href="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=B2M3RCm0rUKMJSjNSW9HclC_bAUK1g1NjWtdr3u9J9lUNDVDOVEzTFYxNlE5VzJDVFJOQk1LMkQzVC4u"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{
-                scale: 1.05,
-                boxShadow:
-                  "0 0 40px rgba(253,191,56,0.6), 0 20px 40px rgba(253,191,56,0.3)",
-              }}
-              className="inline-flex items-center gap-3 rounded-full px-8 py-4 text-lg font-bold backdrop-blur-md"
-              style={{
-                background: "linear-gradient(135deg, #FDBF38 0%, #f5d76e 100%)",
-                color: "#1a0010",
-                boxShadow: "0 10px 30px rgba(253,191,56,0.4)",
-              }}
-            >
-              Submit Expression of Interest
-              <ArrowRight className="h-5 w-5" />
-            </motion.a>
-          </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -470,31 +202,12 @@ export default function IncubatorPage() {
                   border: "1px solid rgba(255,255,255,0.12)",
                 }}
               >
-                <Icon
-                  className="h-4 w-4 shrink-0"
-                  style={{ color: "#FDBF38" }}
-                />
+                <Icon className="h-4 w-4 shrink-0 text-[#FDBF38]" />
                 <span className="text-sm font-semibold text-white/90">
                   {text}
                 </span>
               </motion.div>
             ))}
-          </motion.div>
-        </motion.div>
-        <motion.div
-          className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5 text-white/40"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.6 }}
-        >
-          <span className="text-xs font-semibold tracking-widest uppercase">
-            Scroll
-          </span>
-          <motion.div
-            animate={{ y: [0, 9, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ChevronDown className="h-5 w-5" />
           </motion.div>
         </motion.div>
         <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-10">
@@ -507,44 +220,8 @@ export default function IncubatorPage() {
           </svg>
         </div>
       </section>
-      {/* ── STATS BAND ── */}
-      <section
-        style={{
-          backgroundColor: "#f5ede2",
-          borderTop: "1px solid rgba(122,0,60,0.15)",
-          borderBottom: "1px solid rgba(122,0,60,0.15)",
-        }}
-      >
-        <div className="mx-auto max-w-6xl px-4 py-14">
-          <div className="grid grid-cols-3 justify-items-center gap-12">
-            {stats.map((s, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="text-center"
-              >
-                <div
-                  className="mb-1 text-3xl font-black md:text-5xl"
-                  style={{ color: "#7A003C" }}
-                >
-                  <AnimatedCounter value={s.value} suffix={s.suffix} />
-                </div>
-                <div
-                  className="text-xs font-bold tracking-widest uppercase"
-                  style={{ color: "#7A003C" }}
-                >
-                  {s.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
       {/* ── PROGRAM OVERVIEW ── */}
-      <section style={{ backgroundColor: "#f5ede2" }} className="py-28">
+      <section style={{ backgroundColor: "#f5ede2" }} className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -553,31 +230,18 @@ export default function IncubatorPage() {
             transition={{ duration: 0.8 }}
           >
             <div className="mb-5 flex items-center gap-3">
-              <div
-                className="h-1 w-12 rounded-full"
-                style={{ backgroundColor: "#7A003C" }}
-              />
-              <span
-                className="text-xs font-bold tracking-widest uppercase"
-                style={{ color: "#7A003C" }}
-              >
+              <div className="h-1 w-12 rounded-full bg-[#7A003C]" />
+              <span className="text-xs font-bold tracking-widest text-[#7A003C] uppercase">
                 Program Overview
               </span>
             </div>
-            <h2
-              className="mb-8 text-3xl leading-tight font-black md:text-4xl"
-              style={{ color: "#1a1a1a" }}
-            >
-              Building a{" "}
+            <h2 className="mb-8 text-3xl leading-tight font-black text-[#1a1a1a] md:text-4xl">
+              Build your Art Practice.{" "}
               <span style={{ color: "#7A003C" }}>
-                sustainable creative practice.
+                Strengthen Your Creative Business
               </span>
             </h2>
-
-            <div
-              className="space-y-5 text-base leading-relaxed md:text-lg"
-              style={{ color: "#4a4a4a" }}
-            >
+            <div className="space-y-5 text-base leading-relaxed text-[#4a4a4a] md:text-lg">
               <p>
                 Artists are often expected to do much more than create. They may
                 need to manage money, apply for grants, promote their work,
@@ -619,7 +283,6 @@ export default function IncubatorPage() {
                 the DeGroote School of Business and the McMaster Museum of Art.
               </p>
             </div>
-
             <motion.div
               className="mt-8 h-px w-full rounded-full"
               style={{
@@ -634,229 +297,158 @@ export default function IncubatorPage() {
           </motion.div>
         </div>
       </section>
-
       {/* ── IS THIS PROGRAM FOR YOU ── */}
-      <section
-        className="relative overflow-hidden py-28"
-        style={{
-          background: "linear-gradient(135deg, #7A003C 0%, #4a0024 100%)",
-        }}
-      >
-        <div
-          className="absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(253,191,56,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,56,1) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <motion.div
-          className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full blur-3xl"
-          style={{ backgroundColor: "rgba(253,191,56,0.15)" }}
-          animate={{ scale: [1, 1.4, 1] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <div className="relative z-10 mx-auto max-w-5xl px-4 text-white sm:px-6">
+      <section style={{ backgroundColor: "#f5ede2" }} className="pt-4 pb-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="mb-12 text-center"
+            transition={{ duration: 0.8 }}
           >
-            <div className="mb-4 flex items-center justify-center gap-3">
-              <div className="h-px w-10 rounded-full bg-white/30" />
-              <span className="text-xs font-bold tracking-widest text-white/60 uppercase">
+            <div className="mb-5 flex items-center gap-3">
+              <div className="h-1 w-12 rounded-full bg-[#7A003C]" />
+              <span className="text-xs font-bold tracking-widest text-[#7A003C] uppercase">
                 Eligibility
               </span>
-              <div className="h-px w-10 rounded-full bg-white/30" />
             </div>
-            <h2 className="mb-5 text-3xl leading-tight font-black md:text-5xl">
-              Is This Program for You?
+            <h2 className="mb-8 text-3xl leading-tight font-black text-[#1a1a1a] md:text-4xl">
+              Is This Program <span style={{ color: "#7A003C" }}>for You?</span>
             </h2>
-            <p className="mx-auto max-w-2xl leading-relaxed text-white/70">
-              This program is useful for artists who want to better understand
-              the financial, strategic, and business dimensions of sustaining
-              artistic work. It is especially intended for artists who face
-              barriers to sustaining their creative work.
-            </p>
-            <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-white/60">
-              This may include social, economic, racial, cultural,
-              disability-related, gender-based, immigration-related,
-              language-related, or other barriers. Applicants do not need to fit
-              into one fixed category or disclose personal information they are
-              not comfortable sharing.
-            </p>
-          </motion.div>
-          <div className="mb-10 space-y-4">
-            {criteria.map((c, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="flex items-start gap-4 rounded-2xl p-5"
-                style={{
-                  background: "rgba(0,0,0,0.25)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  backdropFilter: "blur(10px)",
-                }}
-              >
-                <CheckCircle2
-                  className="mt-0.5 h-6 w-6 shrink-0"
-                  style={{ color: "#FDBF38" }}
-                />
-                <div>
-                  <h4
-                    className="mb-1 text-lg font-black"
-                    style={{ color: "#e8dcc8" }}
-                  >
-                    {c.label}
-                  </h4>
-                  <p
-                    className="text-sm leading-relaxed"
-                    style={{ color: "#c9b5a0" }}
-                  >
-                    {c.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="rounded-2xl p-8 text-center"
-            style={{
-              background: "rgba(253,191,56,0.08)",
-              border: "1px solid rgba(253,191,56,0.3)",
-              backdropFilter: "blur(10px)",
-            }}
-          >
-            <p className="text-lg leading-relaxed text-white/90">
-              You do not need to have a registered business, formal business
-              training, a completed business plan, or a consistent source of
-              revenue. However, applicants should be able to describe their
-              current artistic practice or creative business idea, the steps
-              they have taken so far, and what they hope to develop through the
-              program.
-            </p>
+            <div className="space-y-5 text-base leading-relaxed text-[#4a4a4a] md:text-lg">
+              <p>
+                This program is useful for artists who want to better understand
+                the financial, strategic, and business dimensions of sustaining
+                artistic work.
+              </p>
+              <p>
+                This program is especially intended for artists who face
+                barriers to sustaining their creative work. This may include
+                social, economic, racial, cultural, disability-related,
+                gender-based, immigration-related, language-related, or other
+                barriers. Applicants do not need to fit into one fixed category
+                or disclose personal information they are not comfortable
+                sharing.
+              </p>
+              <p>
+                The program may be a good fit if you meet{" "}
+                <strong style={{ color: "#7A003C" }}>at least one</strong> of
+                the following criteria:
+              </p>
+              <ul className="space-y-3 pl-1">
+                {[
+                  "You currently have an artistic practice and want to develop ways of earning income through your work.",
+                  "You have a specific and reasonably developed idea for an arts-based product, service, project, or business and have already begun exploring or working on it.",
+                  "You have already taken steps to sell, exhibit, promote, commission, license, teach, perform, or otherwise generate income through your artistic work.",
+                  "You currently operate an arts practice or creative business and want support strengthening, improving, or expanding it.",
+                  "You are developing a social enterprise, collective, cooperative, or community-based initiative centred on artistic or creative work.",
+                ].map((c, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#7A003C]" />
+                    <span>{c}</span>
+                  </li>
+                ))}
+              </ul>
+              <p>
+                You do not need to have a registered business, formal business
+                training, a completed business plan, or a consistent source of
+                revenue. However, applicants should be able to describe their
+                current artistic practice or creative business idea, the steps
+                they have taken so far, and what they hope to develop through
+                the program.
+              </p>
+            </div>
+            <motion.div
+              className="mt-8 h-px w-full rounded-full"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(253,191,56,0.5), transparent)",
+              }}
+              initial={{ scaleX: 0, originX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            />
           </motion.div>
         </div>
       </section>
-      {/* ── TOPICS GRID ── */}
-      <section className="py-24" style={{ backgroundColor: "#f5ede2" }}>
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      {/* ── WHAT THE PROGRAM COVERS ── */}
+      <section style={{ backgroundColor: "#f5ede2" }} className="pt-4 pb-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="mb-16 text-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            <div className="mb-4 flex items-center justify-center gap-3">
-              <div
-                className="h-px w-10 rounded-full"
-                style={{ backgroundColor: "#7A003C" }}
-              />
-              <span
-                className="text-xs font-bold tracking-widest uppercase"
-                style={{ color: "#7A003C" }}
-              >
+            <div className="mb-5 flex items-center gap-3">
+              <div className="h-1 w-12 rounded-full bg-[#7A003C]" />
+              <span className="text-xs font-bold tracking-widest text-[#7A003C] uppercase">
                 Curriculum
               </span>
-              <div
-                className="h-px w-10 rounded-full"
-                style={{ backgroundColor: "#7A003C" }}
-              />
             </div>
             <h2
-              className="mb-3 text-3xl font-black md:text-4xl"
+              className="mb-8 text-3xl leading-tight font-black md:text-4xl"
               style={{ color: "#1a1a1a" }}
             >
-              What The Program Covers
+              What The Program <span style={{ color: "#7A003C" }}>Covers</span>
             </h2>
-            <p
-              className="mx-auto max-w-2xl text-base leading-relaxed"
-              style={{ color: "#4a4a4a" }}
-            >
-              You will take part in practical and discussion-based sessions on
-              topics such as:
-            </p>
+            <div className="space-y-5 text-base leading-relaxed text-[#4a4a4a] md:text-lg">
+              <p>
+                You will take part in practical and discussion-based sessions on
+                topics such as:
+              </p>
+              <ul className="space-y-3 pl-1">
+                {[
+                  "Audience building through and beyond social media",
+                  "Pricing, sales, and communicating the value of creative work",
+                  "Revenue stacking and sustainable income streams",
+                  "Bookkeeping and financial management",
+                  "Grant writing and funding opportunities",
+                  "Business model development for artists",
+                  "Social enterprise and community-based creative work",
+                  "Artist collectives and cooperative models",
+                  "Working with galleries, institutions, funders, and community partners",
+                ].map((t, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#7A003C]" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <motion.div
+              className="mt-8 h-px w-full rounded-full"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(253,191,56,0.5), transparent)",
+              }}
+              initial={{ scaleX: 0, originX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            />
           </motion.div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {topics.map((item, i) => (
-              <TopicCard key={i} item={item} index={i} />
-            ))}
-          </div>
         </div>
       </section>
       {/* ── FIRST STEP (IMPORTANT) ── */}
-      <section
-        className="relative overflow-hidden py-24"
-        style={{
-          background: "linear-gradient(135deg, #1a0010 0%, #2d0020 100%)",
-        }}
-      >
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `radial-gradient(circle, rgba(253,191,56,0.6) 1px, transparent 1px)`,
-            backgroundSize: "30px 30px",
-          }}
-        />
-        <motion.div
-          className="absolute top-0 left-1/2 h-0.5 w-24 -translate-x-1/2 rounded-full"
-          style={{ backgroundColor: "#FDBF38" }}
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        />
-        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6">
+      <section style={{ backgroundColor: "#f5ede2" }} className="pt-4 pb-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="mb-10 text-center"
+            className="mb-8"
           >
-            <motion.div
-              animate={{ rotate: [0, 5, -5, 0], scale: [1, 1.05, 1] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="mb-5 inline-block"
-            >
-              <FileText
-                className="mx-auto h-14 w-14"
-                style={{
-                  color: "#FDBF38",
-                  filter: "drop-shadow(0 0 20px rgba(253,191,56,0.6))",
-                }}
-              />
-            </motion.div>
-            <div className="mb-4 flex items-center justify-center gap-3">
-              <div
-                className="h-px w-10 rounded-full"
-                style={{ backgroundColor: "rgba(253,191,56,0.4)" }}
-              />
-              <span
-                className="text-xs font-bold tracking-widest uppercase"
-                style={{ color: "#FDBF38" }}
-              >
+            <div className="mb-5 flex items-center gap-3">
+              <div className="h-1 w-12 rounded-full bg-[#7A003C]" />
+              <span className="text-xs font-bold tracking-widest text-[#7A003C] uppercase">
                 Important
               </span>
-              <div
-                className="h-px w-10 rounded-full"
-                style={{ backgroundColor: "rgba(253,191,56,0.4)" }}
-              />
             </div>
-            <h2
-              className="mb-4 text-3xl leading-tight font-black md:text-5xl"
-              style={{ color: "#e8dcc8" }}
-            >
-              First Step!
+            <h2 className="mb-8 text-3xl leading-tight font-black text-[#1a1a1a] md:text-4xl">
+              First <span style={{ color: "#7A003C" }}>Step!</span>
             </h2>
           </motion.div>
           <div className="space-y-5">
@@ -867,15 +459,11 @@ export default function IncubatorPage() {
               transition={{ duration: 0.5 }}
               className="rounded-2xl p-7"
               style={{
-                background: "rgba(253,191,56,0.08)",
+                backgroundColor: "#7A003C",
                 border: "1px solid rgba(253,191,56,0.3)",
-                backdropFilter: "blur(10px)",
               }}
             >
-              <p
-                className="text-lg leading-relaxed text-white/80"
-                style={{ color: "#c9b5a0" }}
-              >
+              <p className="text-lg leading-relaxed text-[#e8dcc8]">
                 First, you need to submit an{" "}
                 <strong style={{ color: "#FDBF38" }}>
                   expression of interest
@@ -893,17 +481,12 @@ export default function IncubatorPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-2xl p-7"
+              className="rounded-2xl bg-[#7A003C] p-7"
               style={{
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                backdropFilter: "blur(10px)",
+                border: "1px solid rgba(253,191,56,0.3)",
               }}
             >
-              <p
-                className="leading-relaxed text-white/80"
-                style={{ color: "#c9b5a0" }}
-              >
+              <p className="leading-relaxed" style={{ color: "#e8dcc8" }}>
                 The purpose of this conversation is to understand whether the
                 program is suitable for your needs and whether it can provide
                 the kind of entrepreneurship training and support that would be
@@ -915,14 +498,12 @@ export default function IncubatorPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="rounded-2xl p-7"
+              className="rounded-2xl bg-[#7A003C] p-7"
               style={{
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                backdropFilter: "blur(10px)",
+                border: "1px solid rgba(253,191,56,0.3)",
               }}
             >
-              <p className="leading-relaxed" style={{ color: "#c9b5a0" }}>
+              <p className="leading-relaxed" style={{ color: "#e8dcc8" }}>
                 This project is funded by the{" "}
                 <strong style={{ color: "#FDBF38" }}>
                   Social Sciences and Humanities Research Council (SSHRC)
@@ -936,7 +517,7 @@ export default function IncubatorPage() {
                 research. You will be asked separately whether you consent to
                 take part in the research.
               </p>
-              <p className="mt-4 leading-relaxed" style={{ color: "#c9b5a0" }}>
+              <p className="mt-4 leading-relaxed" style={{ color: "#e8dcc8" }}>
                 Taking part in the research component is{" "}
                 <strong style={{ color: "#FDBF38" }}>
                   completely voluntary
@@ -951,93 +532,74 @@ export default function IncubatorPage() {
         </div>
       </section>
       {/* ── KEY DETAILS ── */}
-      <section className="py-24" style={{ backgroundColor: "#f5ede2" }}>
-        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+      <section style={{ backgroundColor: "#f5ede2" }} className="pt-4 pb-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="mb-14 text-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            <div className="mb-4 flex items-center justify-center gap-3">
-              <div
-                className="h-px w-10 rounded-full"
-                style={{ backgroundColor: "#7A003C" }}
-              />
-              <span
-                className="text-xs font-bold tracking-widest uppercase"
-                style={{ color: "#7A003C" }}
-              >
+            <div className="mb-5 flex items-center gap-3">
+              <div className="h-1 w-12 rounded-full bg-[#7A003C]" />
+              <span className="text-xs font-bold tracking-widest text-[#7A003C] uppercase">
                 At a Glance
               </span>
-              <div
-                className="h-px w-10 rounded-full"
-                style={{ backgroundColor: "#7A003C" }}
-              />
             </div>
-            <h2
-              className="text-3xl font-black md:text-4xl"
-              style={{ color: "#1a1a1a" }}
-            >
-              Key Details
+            <h2 className="mb-8 text-3xl leading-tight font-black text-[#1a1a1a] md:text-4xl">
+              Key <span style={{ color: "#7A003C" }}>Details</span>
             </h2>
-          </motion.div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {keyDetails.map((d, i) => {
-              const { Icon } = d
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.07 }}
-                  whileHover={{
-                    y: -6,
-                    boxShadow:
-                      "0 0 30px rgba(122,0,60,0.4), 0 0 60px rgba(122,0,60,0.15)",
-                  }}
-                  className="rounded-2xl p-6"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #1a0010 0%, #2d0020 100%)",
-                    border: "2px solid #7A003C",
-                    boxShadow: "0 0 20px rgba(122,0,60,0.3)",
-                  }}
-                >
+
+            <div className="text-base leading-relaxed text-[#4a4a4a] md:text-lg">
+              <dl
+                className="divide-y"
+                style={{ borderColor: "rgba(122,0,60,0.15)" }}
+              >
+                {[
+                  ["Program length", "3 months"],
+                  ["Schedule", "One session per week"],
+                  ["Format", "Hybrid, a mix of in-person and online sessions"],
+                  [
+                    "Locations",
+                    "McMaster University's Main Campus (1280 Main St W, Hamilton) + Zoom",
+                  ],
+                  [
+                    "Program dates",
+                    "Scheduled for mid-late September 2026, detailed schedule TBA.",
+                  ],
+                  ["Cost", "Free"],
+                  ["Application deadline", "August 23"],
+                ].map(([label, value]) => (
                   <div
-                    className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl"
-                    style={{
-                      backgroundColor: "rgba(253,191,56,0.12)",
-                      border: "1px solid rgba(253,191,56,0.3)",
-                    }}
+                    key={label}
+                    className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:gap-6"
                   >
-                    <Icon className="h-5 w-5" style={{ color: "#FDBF38" }} />
+                    <dt className="shrink-0 font-bold text-[#7A003C] sm:w-56">
+                      {label}
+                    </dt>
+                    <dd className="flex-1">{value}</dd>
                   </div>
-                  <p
-                    className="mb-1 text-xs font-bold tracking-widest uppercase"
-                    style={{ color: "rgba(253,191,56,0.7)" }}
-                  >
-                    {d.label}
-                  </p>
-                  <p
-                    className="text-base leading-snug font-black"
-                    style={{ color: "#e8dcc8" }}
-                  >
-                    {d.value}
-                  </p>
-                </motion.div>
-              )
-            })}
-          </div>
+                ))}
+              </dl>
+            </div>
+            <motion.div
+              className="mt-8 h-px w-full rounded-full"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(253,191,56,0.5), transparent)",
+              }}
+              initial={{ scaleX: 0, originX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            />
+          </motion.div>
         </div>
       </section>
       {/* ── APPLY CTA ── */}
       <section
         id="apply"
-        className="relative overflow-hidden py-24"
-        style={{ backgroundColor: "#f5ede2" }}
+        className="relative overflow-hidden bg-[#f5ede] py-24"
       >
         <div
           className="absolute top-0 right-0 left-0 h-1"
@@ -1088,10 +650,7 @@ export default function IncubatorPage() {
                   style={{ backgroundColor: "rgba(253,191,56,0.4)" }}
                 />
               </div>
-              <h2
-                className="mb-4 text-4xl leading-tight font-black md:text-5xl"
-                style={{ color: "#e8dcc8" }}
-              >
+              <h2 className="mb-4 text-4xl leading-tight font-black text-[#e8dcc8] md:text-5xl">
                 Ready to Apply?
               </h2>
               <p
@@ -1130,8 +689,7 @@ export default function IncubatorPage() {
                 Or email us at{" "}
                 <a
                   href="mailto:reframe@mcmaster.ca"
-                  className="underline"
-                  style={{ color: "#FDBF38" }}
+                  className="text-[#FDBF38] underline"
                 >
                   reframe@mcmaster.ca
                 </a>{" "}
@@ -1141,114 +699,78 @@ export default function IncubatorPage() {
           </motion.div>
         </div>
       </section>
-      {/* ── MAP ── */}
-      <section className="pb-24" style={{ backgroundColor: "#f5ede2" }}>
-        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+      {/* ── PROGRAM PARTNERS ── */}
+      <section className="bg-[#f5ede2] pt-2 pb-10">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="overflow-hidden rounded-3xl"
-            style={{
-              border: "2px solid #7A003C",
-              boxShadow:
-                "0 0 40px rgba(122,0,60,0.3), 0 20px 60px rgba(0,0,0,0.15)",
-            }}
+            transition={{ duration: 0.8 }}
           >
-            <div
-              className="flex items-center gap-4 p-6"
-              style={{
-                background: "linear-gradient(135deg, #1a0010 0%, #2d0020 100%)",
-              }}
-            >
-              <div
-                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
-                style={{ backgroundColor: "#7A003C" }}
-              >
-                <MapPin className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-black" style={{ color: "#e8dcc8" }}>
-                  McMaster University — Main Campus
-                </h3>
-                <p className="text-sm" style={{ color: "#c9b5a0" }}>
-                  1280 Main St W, Hamilton, ON · In-person sessions take place
-                  here.
-                </p>
-              </div>
+            <div className="mb-3 flex items-center gap-3">
+              <div className="h-1 w-12 rounded-full bg-[#7A003C]" />
+              <span className="text-xs font-bold tracking-widest text-[#7A003C] uppercase">
+                Led &amp; Collaborated By
+              </span>
             </div>
-            <iframe
-              title="McMaster University Main Campus Map"
-              src="https://www.google.com/maps?q=McMaster+University,1280+Main+St+W,Hamilton,ON&output=embed"
-              width="100%"
-              height="380"
-              style={{ border: 0, display: "block" }}
-              loading="lazy"
+            <h2 className="mb-4 text-2xl leading-tight font-black text-[#1a1a1a] md:text-3xl">
+              Program <span style={{ color: "#7A003C" }}>Partners</span>
+            </h2>
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+              {partners.map((p, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  className="flex items-center justify-between gap-3 rounded-2xl bg-[#3B0D1B] p-4"
+                >
+                  <div>
+                    <p className="mb-1 text-[10px] font-bold tracking-widest text-[#D4A017] uppercase">
+                      {p.role}
+                    </p>
+                    <p className="text-sm leading-snug font-black text-white">
+                      {p.name}
+                    </p>
+                    {p.sub && (
+                      <p className="mt-0.5 text-xs text-[#D1CFCF]">{p.sub}</p>
+                    )}
+                  </div>
+                  <motion.a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{
+                      y: -2,
+                      boxShadow: "0 6px 18px rgba(253,191,56,0.3)",
+                    }}
+                    className="inline-flex shrink-0 items-center gap-2 rounded-xl px-3 py-1.5 text-xs font-bold"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #FDBF38 0%, #f5d76e 100%)",
+                      color: "#1a0010",
+                    }}
+                  >
+                    Visit
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </motion.a>
+                </motion.div>
+              ))}
+            </div>
+            <motion.div
+              className="mt-8 h-px w-full rounded-full"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(253,191,56,0.5), transparent)",
+              }}
+              initial={{ scaleX: 0, originX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
             />
           </motion.div>
-        </div>
-      </section>
-      {/* ── PROGRAM PARTNERS ── */}
-      <section className="py-24" style={{ backgroundColor: "#F7F2EB" }}>
-        <div className="mx-auto max-w-5xl px-4 sm:px-6">
-          <motion.div
-            className="mb-14 text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <p
-              className="mb-3 text-xs font-bold tracking-widest uppercase"
-              style={{ color: "#8D2534" }}
-            >
-              — Led &amp; Collaborated By —
-            </p>
-            <h2
-              className="text-3xl font-black md:text-4xl"
-              style={{ color: "#211D1C" }}
-            >
-              Program Partners
-            </h2>
-          </motion.div>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            {partners.map((p, i) => (
-              <motion.a
-                key={i}
-                href={p.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{
-                  y: -6,
-                  boxShadow: "0 12px 32px rgba(59,13,27,0.4)",
-                }}
-                className="flex flex-col rounded-2xl p-8"
-                style={{ backgroundColor: "#3B0D1B" }}
-              >
-                <div>
-                  <p
-                    className="mb-2 text-xs font-bold tracking-widest uppercase"
-                    style={{ color: "#D4A017" }}
-                  >
-                    {p.role}
-                  </p>
-                  <p className="text-xl leading-snug font-black text-white">
-                    {p.name}
-                  </p>
-                  {p.sub && (
-                    <p className="mt-1.5 text-sm" style={{ color: "#D1CFCF" }}>
-                      {p.sub}
-                    </p>
-                  )}
-                </div>
-              </motion.a>
-            ))}
-          </div>
         </div>
       </section>
     </div>

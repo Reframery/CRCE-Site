@@ -10,8 +10,7 @@ import {
 } from "lucide-react"
 import { partners } from "./content"
 
-/* ─── MAIN PAGE ─────────────────────────────────────────────────────── */
-export default function Incubator() {
+export default function IncubatorPage() {
   const heroRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -55,6 +54,18 @@ export default function Incubator() {
             <img
               src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/99644ae97_AltLogo.png"
               alt="Hamilton Artists Inc."
+              className="block h-13 w-auto"
+            />
+          </a>
+          <a
+            href="https://degroote.mcmaster.ca/tag/marinucci-entrepreneurial-bridge/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center rounded-2xl bg-white px-5 py-3 shadow-lg"
+          >
+            <img
+              src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/32b9f15cd_image.png"
+              alt="Marinucci Entrepreneurial Bridge"
               className="block h-13 w-auto"
             />
           </a>
@@ -122,8 +133,7 @@ export default function Incubator() {
             style={{ background: "rgba(253,191,56,0.1)" }}
           >
             <motion.span
-              className="h-2 w-2 rounded-full"
-              style={{ backgroundColor: "#FDBF38" }}
+              className="h-2 w-2 rounded-full bg-[#FDBF38]"
               animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             />
@@ -387,10 +397,7 @@ export default function Incubator() {
                 Curriculum
               </span>
             </div>
-            <h2
-              className="mb-8 text-3xl leading-tight font-black md:text-4xl"
-              style={{ color: "#1a1a1a" }}
-            >
+            <h2 className="mb-8 text-3xl leading-tight font-black text-[#1a1a1a] md:text-4xl">
               What The Program <span style={{ color: "#7A003C" }}>Covers</span>
             </h2>
             <div className="space-y-5 text-base leading-relaxed text-[#4a4a4a] md:text-lg">
@@ -457,9 +464,8 @@ export default function Incubator() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="rounded-2xl p-7"
+              className="rounded-2xl bg-[#7A003C] p-7"
               style={{
-                backgroundColor: "#7A003C",
                 border: "1px solid rgba(253,191,56,0.3)",
               }}
             >
@@ -599,7 +605,7 @@ export default function Incubator() {
       {/* ── APPLY CTA ── */}
       <section
         id="apply"
-        className="relative overflow-hidden bg-[#f5ede] py-24"
+        className="relative overflow-hidden bg-[#f5ede2] py-24"
       >
         <div
           className="absolute top-0 right-0 left-0 h-1"
@@ -629,10 +635,7 @@ export default function Incubator() {
                 backgroundSize: "30px 30px",
               }}
             />
-            <div
-              className="absolute top-0 left-1/2 h-0.5 w-24 -translate-x-1/2 rounded-full"
-              style={{ backgroundColor: "#FDBF38" }}
-            />
+            <div className="absolute top-0 left-1/2 h-0.5 w-24 -translate-x-1/2 rounded-full bg-[#FDBF38]" />
             <div className="relative z-10">
               <div className="mb-4 flex items-center justify-center gap-3">
                 <div
@@ -653,10 +656,7 @@ export default function Incubator() {
               <h2 className="mb-4 text-4xl leading-tight font-black text-[#e8dcc8] md:text-5xl">
                 Ready to Apply?
               </h2>
-              <p
-                className="mx-auto mb-3 max-w-xl text-base leading-relaxed"
-                style={{ color: "#c9b5a0" }}
-              >
+              <p className="mx-auto mb-3 max-w-xl text-base leading-relaxed text-[#c9b5a0]">
                 Submit your expression of interest to begin the process.
                 Applications close{" "}
                 <strong style={{ color: "#FDBF38" }}>August 23</strong>.
@@ -674,24 +674,23 @@ export default function Incubator() {
                   boxShadow:
                     "0 0 30px rgba(253,191,56,0.6), 0 20px 40px rgba(253,191,56,0.3)",
                 }}
-                className="inline-flex items-center gap-3 rounded-2xl px-8 py-4 text-base font-bold transition-all"
+                className="inline-flex items-center gap-3 rounded-2xl px-8 py-4 text-base font-bold text-[#1a0010] transition-all"
                 style={{
                   background:
                     "linear-gradient(135deg, #FDBF38 0%, #f5d76e 100%)",
-                  color: "#1a0010",
                   boxShadow: "0 10px 30px rgba(253,191,56,0.4)",
                 }}
               >
                 Submit Expression of Interest
                 <ArrowRight className="h-5 w-5" />
               </motion.a>
-              <p className="mt-6 text-xs" style={{ color: "#9a8a78" }}>
+              <p className="mt-6 text-sm text-[#9a8a78]">
                 Or email us at{" "}
                 <a
-                  href="mailto:reframe@mcmaster.ca"
+                  href="mailto:nafarij@mcmaster.ca"
                   className="text-[#FDBF38] underline"
                 >
-                  reframe@mcmaster.ca
+                  nafarij@mcmaster.ca
                 </a>{" "}
                 with any questions.
               </p>
@@ -700,7 +699,7 @@ export default function Incubator() {
         </div>
       </section>
       {/* ── PROGRAM PARTNERS ── */}
-      <section className="bg-[#f5ede2] pt-2 pb-10">
+      <section className="pt-2 pb-10" style={{ backgroundColor: "#f5ede2" }}>
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -746,11 +745,10 @@ export default function Incubator() {
                       y: -2,
                       boxShadow: "0 6px 18px rgba(253,191,56,0.3)",
                     }}
-                    className="inline-flex shrink-0 items-center gap-2 rounded-xl px-3 py-1.5 text-xs font-bold"
+                    className="inline-flex shrink-0 items-center gap-2 rounded-xl px-3 py-1.5 text-xs font-bold text-[#1a0010]"
                     style={{
                       background:
                         "linear-gradient(135deg, #FDBF38 0%, #f5d76e 100%)",
-                      color: "#1a0010",
                     }}
                   >
                     Visit

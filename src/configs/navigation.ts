@@ -9,12 +9,16 @@ export const siteLinks = [
   { label: "Upcoming Conferences", pathname: "/upcoming-conferences" },
   {
     label: "Reframery",
-    pathname: "https://reframery.org/",
+    pathname: "https://reframery.org",
     isExternal: true,
   },
   {
     label: "RISE",
     pathname: "/research-inclusion-and-social-entrepreneurship",
+  },
+  {
+    label: "Artist Incubator",
+    pathname: "/artist-enterprises-incubator",
   },
   { label: "Contact Us", pathname: "/contact" },
 ]

@@ -55,7 +55,7 @@ export const activities: Activity[] = [
 ]
 
 export const stats = [
-  { value: "3", suffix: " Days", label: "of Programming" },
+  { value: "2", suffix: " Days", label: "of Programming" },
   { value: "6", suffix: "+", label: "Activity Types" },
   { value: "2", suffix: "", label: "Keynote Speakers" },
 ]

@@ -1,3 +1,5 @@
+import tabithaLothian from "@/images/student-training/tabitha-lothian.jpg"
+
 export type Person = {
   name: string
   role: string
@@ -268,6 +270,14 @@ export const externalAdvisory: Person[] = [
 
 export const studentTeam: Person[] = [
   {
+    name: "Tabitha Lothian",
+    role: "Centre Manager",
+    email: "lothiant@mcmaster.ca",
+    linkedin: "tabitha-lothian",
+    image: tabithaLothian.src,
+    bio: "Tabitha Lothian is a Project Manager at McMaster University, supporting research, program development, and community-based initiatives with Reframery and the Centre for Community-Oriented Entrepreneurship.",
+  },
+  {
     name: "Veerash Palanichamy",
     role: "Software Developer",
     email: "palanicv@mcmaster.ca",
@@ -424,13 +434,6 @@ export const studentTeam: Person[] = [
     image:
       "https://reframery.org/_next/static/media/rafi-lambert-greene.4cbc7ee4.jpg",
     bio: "Rafi Lambert-Greene is a student in the Integrated Business & Humanities Program at DeGroote School of Business with a focus on Sustainability, Global Peace and Social Justice. He develops research and curriculum materials for Reframery's entrepreneurship programs.",
-  },
-  {
-    name: "Tabitha Lothian",
-    role: "Research & Curriculum Development Specialist",
-    email: "lothiant@mcmaster.ca",
-    image: PLACEHOLDER + "Tabitha+Lothian",
-    bio: "Tabitha Lothian is a Research & Curriculum Development Specialist at McMaster University, contributing to the development of educational materials for Reframery's global entrepreneurship programs.",
   },
   {
     name: "Musfirah Muzafar",

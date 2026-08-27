@@ -1,0 +1,10 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import Agenda from "@/components/conference/agenda/AgendaPage"
+
+const title = "Agenda"
+---
+
+<Layout {title} description="Agenda">
+  <Agenda client:load />
+</Layout>

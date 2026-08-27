@@ -61,7 +61,7 @@ export const AnimatedGlobe = () => (
         <Globe
           className="text-gold h-14 w-14 md:h-18 md:w-18"
           style={{
-            filter: "drop-shadow(0 0 12px hsl(var(--gold) / 0.9)",
+            filter: "drop-shadow(0 0 12px hsl(var(--gold) / 0.9))",
           }}
         />
       </motion.div>

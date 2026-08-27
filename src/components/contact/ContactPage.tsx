@@ -260,13 +260,13 @@ export const ContactPage = () => {
               <div className="min-h-65 flex-1 overflow-hidden rounded-2xl shadow-lg">
                 <iframe
                   title="CRCE Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.5!2d-79.9214528!3d43.2621339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c853aa640c501%3A0x79c3ae03596c42e5!2sTandem%20Accelerator%20Building!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d351.8332296000805!2d-79.91686446895793!3d43.26393225670924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9b538001b7a1%3A0x4324d39e38d2098c!2sDeGroote%20School%20of%20Business!5e0!3m2!1sen!2sca!4v1787850182380!5m2!1sen!2sca"
                   width="100%"
                   height="100%"
                   style={{ border: 0, display: "block", minHeight: "260px" }}
                   allowFullScreen
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
+                  referrerPolicy="strict-origin-when-cross-origin"
                 />
               </div>
               <motion.div
@@ -279,16 +279,16 @@ export const ContactPage = () => {
                 </div>
                 <div className="flex-1">
                   <p className="font-extrabold text-gray-900">
-                    Tandem Accelerator Building
+                    CRCE DeGroote School of Business (DSB)
                   </p>
+                  <p className="text-sm text-gray-500">Room A113</p>
+                  <p className="text-sm text-gray-500">McMaster University</p>
+                  <p className="text-sm text-gray-500">1280 Main Street West</p>
                   <p className="text-sm text-gray-500">
-                    1280 Main St W, Building #32
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    Hamilton, ON L8S 4K1, Canada
+                    Hamilton, ON L8S 4M4, Canada
                   </p>
                   <a
-                    href="https://www.google.com/maps/place/?q=place_id:ChIJAcVApjqFLIgR5UJsWQOuw3k"
+                    href="https://www.google.com/maps/place/?q=place_id:ChIJobcBgFObLIgRjAnSOJ7TJEM"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-maroon mt-3 inline-flex items-center gap-1.5 text-sm font-bold hover:underline"

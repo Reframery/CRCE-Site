@@ -2,6 +2,7 @@
 import { Image } from "astro:assets"
 import { emails } from "@/configs/contact"
 import dsbLogo from "@/images/mcm-dsb-crce.png"
+import dsbFloorMap from "@/images/dsb-floor-map.jpg"
 ---
 
 <footer
@@ -14,7 +15,7 @@ import dsbLogo from "@/images/mcm-dsb-crce.png"
   >
   </div>
   <div
-    class="mx-auto flex max-w-7xl flex-wrap gap-8 max-lg:justify-center sm:gap-10 lg:gap-32"
+    class="mx-auto flex max-w-7xl flex-wrap justify-center gap-8 sm:gap-10 lg:gap-x-20"
   >
     <div class="flex flex-col items-center">
       <Image
@@ -23,21 +24,29 @@ import dsbLogo from "@/images/mcm-dsb-crce.png"
         class="w-72 brightness-200"
       />
     </div>
-    <div class="text-sm max-lg:text-center">
-      <h2 class="font-sans-condensed mb-1.5 text-xl font-semibold">
-        Address Information
-      </h2>
-      <a
-        href="https://www.google.com/maps/place/?q=place_id:ChIJAcVApjqFLIgR5UJsWQOuw3k"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="underline hover:no-underline"
-      >
-        McMaster University<br />
-        Tandem Accelerator Building<br />
-        1280 Main St W Building # 32<br />
-        Hamilton, ON L8S 4K1, Canada<br />
-      </a>
+    <div class="flex flex-wrap justify-center gap-4 text-sm max-lg:text-center">
+      <div>
+        <h2 class="font-sans-condensed mb-1.5 text-xl font-semibold">
+          Address Information
+        </h2>
+        <a
+          href="https://www.google.com/maps/place/?q=place_id:ChIJobcBgFObLIgRjAnSOJ7TJEM"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline hover:no-underline"
+        >
+          CRCE DeGroote School of Business (DSB)<br />
+          Room A113<br />
+          McMaster University<br />
+          1280 Main Street West<br />
+          Hamilton, ON L8S 4M4, Canada<br />
+        </a>
+      </div>
+      <Image
+        src={dsbFloorMap}
+        alt="Floor map showing Room A113 location"
+        class="max-w-50 rounded-md object-contain"
+      />
     </div>
     <div class="text-sm max-lg:text-center">
       <h2 class="font-sans-condensed mb-1.5 text-xl font-semibold">

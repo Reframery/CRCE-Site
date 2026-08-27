@@ -100,6 +100,34 @@ export const HomePage = () => (
         >
           Learn More <ArrowRight className="h-4 w-4" />
         </motion.span>
+        <motion.a
+          href="/upcoming-conferences/agenda"
+          onClick={(e) => {
+            e.stopPropagation()
+          }}
+          className="text-gold flex shrink-0 items-center gap-2 rounded-lg px-6 py-3 text-sm font-black whitespace-nowrap sm:text-base"
+          style={{
+            backgroundColor: "rgba(253,191,56,0.15)",
+            border: "1.5px solid rgba(253,191,56,0.5)",
+            boxShadow: "0 0 20px rgba(253,191,56,0.2)",
+          }}
+          animate={{
+            boxShadow: [
+              "0 0 20px rgba(253,191,56,0.2)",
+              "0 0 40px rgba(253,191,56,0.4)",
+              "0 0 20px rgba(253,191,56,0.2)",
+            ],
+          }}
+          transition={{ duration: 2, repeat: Infinity }}
+          whileHover={{
+            backgroundColor: "rgba(253,191,56,0.25)",
+            boxShadow:
+              "0 0 50px rgba(253,191,56,0.6), 0 0 20px rgba(253,191,56,0.3)",
+            scale: 1.05,
+          }}
+        >
+          View Schedule <ArrowRight className="h-4 w-4" />
+        </motion.a>
       </div>
     </motion.a>
     {/* ── THREE PROGRAM CARDS ── */}

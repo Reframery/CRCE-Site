@@ -228,15 +228,19 @@ function SessionCard({ session, bookmarked, onToggleBookmark, index }: any) {
 }
 
 const initialData = () => {
-  const parsedData = JSON.parse(
-    typeof window !== "undefined"
-      ? (localStorage.getItem("bookmarks") ?? "[]")
-      : "[]"
-  )
-  if (!Array.isArray(parsedData)) return []
-  return parsedData.filter(
-    (v) => typeof v === "string" && day1.find((item) => item.title === v)
-  )
+  try {
+    const parsedData = JSON.parse(
+      typeof window !== "undefined"
+        ? (localStorage.getItem("bookmarks") ?? "[]")
+        : "[]"
+    )
+    if (!Array.isArray(parsedData)) return []
+    return parsedData.filter(
+      (v) => typeof v === "string" && day1.find((item) => item.title === v)
+    )
+  } catch {
+    return []
+  }
 }
 
 export default function Agenda() {

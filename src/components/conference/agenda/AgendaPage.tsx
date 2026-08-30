@@ -105,7 +105,120 @@ const day1 = [
     location: "Alumni Hall",
     signup: true,
   },
-] as const
+]
+
+const day2 = [
+  {
+    time: "8:00 AM – 9:00 AM",
+    type: "Registration",
+    title: "Breakfast, Coffee, and Registration",
+    desc: "",
+    location: "LR Wilson Lobby",
+    signup: false,
+  },
+  {
+    time: "9:00 AM – 9:15 AM",
+    type: "Ceremony",
+    title: "Day 2 Welcome & Recap",
+    desc: "",
+    location: "LR Wilson Concert Hall",
+    signup: false,
+  },
+  {
+    time: "9:15 AM – 10:00 AM",
+    type: "Keynote",
+    title: "Secondary Keynote",
+    desc: "",
+    location: "LR Wilson Concert Hall",
+    speaker: "Trish Ruebottom",
+    signup: false,
+  },
+  {
+    time: "10:00 AM – 10:15 AM",
+    type: "Networking",
+    title: "Scheduled Networking Block 1",
+    desc: "",
+    location: "LR Wilson Concert Hall",
+    signup: false,
+  },
+  {
+    time: "10:15 AM – 11:15 AM",
+    type: "Presentation",
+    title:
+      "Presentation Session: Beyond the Formal Economy — Understanding Informal Entrepreneurship",
+    desc: "Presentation length: 20 minutes. Q&A: 5–10 minutes.",
+    location: "LR Wilson Concert Hall",
+    signup: true,
+  },
+  {
+    time: "11:20 AM – 12:20 PM",
+    type: "Presentation",
+    title:
+      "Presentation Session: University Incubation — Universities as Launchpads for Entrepreneurship",
+    desc: "Presentation length: 20 minutes. Q&A: 5–10 minutes.",
+    location: "LR Wilson Concert Hall",
+    signup: true,
+  },
+  {
+    time: "12:20 PM – 1:20 PM",
+    type: "Break / Meal",
+    title: "Lunch and Networking",
+    desc: "",
+    location: "LR Wilson Lobby",
+    signup: false,
+  },
+  {
+    time: "1:20 PM – 2:20 PM",
+    type: "Presentation",
+    title:
+      "Presentation Session: Implications of AI in Entrepreneurship — Opportunity, Disruption, and the Future of Business",
+    desc: "Presentation length: 20 minutes. Q&A: 5–10 minutes.",
+    location: "LR Wilson Concert Hall",
+    signup: true,
+  },
+  {
+    time: "2:20 PM – 2:40 PM",
+    type: "Networking",
+    title: "Scheduled Networking Block 2",
+    desc: "",
+    location: "LR Wilson Concert Hall",
+    signup: false,
+  },
+  {
+    time: "2:40 PM – 3:10 PM",
+    type: "Panel",
+    title: "Panel Session: Global Health",
+    desc: "Panel participation and composition to be confirmed.",
+    location: "LR Wilson Concert Hall",
+    signup: true,
+  },
+  {
+    time: "3:15 PM – 4:15 PM",
+    type: "Presentation",
+    title:
+      "Presentation Session: Rural Entrepreneurship in Canada — Building Stronger Local Ecosystems",
+    desc: "Presentation length: 20 minutes. Q&A: 5–10 minutes.",
+    location: "LR Wilson Concert Hall",
+    signup: true,
+  },
+  {
+    time: "4:15 PM – 5:00 PM",
+    type: "Ceremony",
+    title: "Closing Ceremony",
+    desc: "Conference wrap-up and closing remarks. A small dinner will be offered in the lobby for attendees who remain following the conference.",
+    location: "LR Wilson Concert Hall",
+    signup: false,
+  },
+  {
+    time: "5:00 PM – 6:00 PM",
+    type: "Roundtable",
+    title: "Discussion of PG Grant Opportunity",
+    desc: "Invite Only.",
+    location: "TBD",
+    speaker: "Benson Honig & Javid Nafari",
+    signup: false,
+  },
+]
 
 /* ─── TYPE STYLES ─────────────────────────────────────────────────── */
 const typeStyles = {
@@ -132,7 +245,7 @@ const typeStyles = {
     text: "#57534e",
     dot: "#a8a29e",
   },
-} as const
+}
 
 const legendItems = [
   { label: "Keynote", color: "#7A003C" },
@@ -141,7 +254,7 @@ const legendItems = [
   { label: "Roundtable", color: "#9333ea" },
   { label: "Pitch Contest", color: "#ec4899" },
   { label: "Networking", color: "#22c55e" },
-] as const
+]
 
 /* ─── SESSION CARD ────────────────────────────────────────────────── */
 function SessionCard({ session, bookmarked, onToggleBookmark, index }: any) {
@@ -227,43 +340,21 @@ function SessionCard({ session, bookmarked, onToggleBookmark, index }: any) {
   )
 }
 
-const initialData = () => {
-  try {
-    const parsedData = JSON.parse(
-      typeof window !== "undefined"
-        ? (localStorage.getItem("bookmarks") ?? "[]")
-        : "[]"
-    )
-    if (!Array.isArray(parsedData)) return []
-    return parsedData.filter(
-      (v) => typeof v === "string" && day1.find((item) => item.title === v)
-    )
-  } catch {
-    return []
-  }
-}
-
+/* ─── MAIN PAGE ────────────────────────────────────────────────────── */
 export default function Agenda() {
   const [activeTab, setActiveTab] = useState("day1")
-  const [bookmarks, setBookmarks] = useState<string[]>(initialData)
+  const [bookmarks, setBookmarks] = useState<string[]>([])
 
   const toggleBookmark = (title: string) => {
-    const newBookmarks = bookmarks.includes(title)
-      ? bookmarks.filter((t) => t !== title)
-      : [...bookmarks, title]
-    setBookmarks(newBookmarks)
-    localStorage.setItem("bookmarks", JSON.stringify(newBookmarks))
+    setBookmarks((prev) =>
+      prev.includes(title) ? prev.filter((t) => t !== title) : [...prev, title]
+    )
   }
 
   const tabs = [
     { id: "day1", label: "Day 1", sub: "Mon, 21 Sept" },
     { id: "day2", label: "Day 2", sub: "Tue, 22 Sept" },
-    { id: "mine", label: "My Sessions", sub: "" },
-    { id: "presentations", label: "Presentation Schedule", sub: "" },
   ]
-
-  const mySessions = day1.filter((s) => bookmarks.includes(s.title))
-  const presentations = day1.filter((s) => s.type === "Presentation")
 
   const renderList = (list: any) => (
     <div className="space-y-3">
@@ -271,11 +362,7 @@ export default function Agenda() {
         <div className="rounded-xl border border-gray-200 bg-white p-10 text-center">
           <Star className="mx-auto mb-3 h-8 w-8 text-gray-300" />
           <p className="text-sm text-gray-500">
-            {activeTab === "mine"
-              ? "No sessions bookmarked yet. Tap the star icon on any session to save it here."
-              : activeTab === "day2"
-                ? "Day 2 programme is being finalized. Check back soon."
-                : "No presentations scheduled."}
+            Day 2 programme is being finalized. Check back soon.
           </p>
         </div>
       ) : (
@@ -322,7 +409,6 @@ export default function Agenda() {
           </p>
         </div>
       </header>
-
       {/* ── TABS ── */}
       <div className="sticky top-0 z-20 border-b border-gray-200 bg-white shadow-sm">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
@@ -337,10 +423,7 @@ export default function Agenda() {
                     : "text-gray-500 hover:text-gray-700"
                 }`}
               >
-                {tab.label}{" "}
-                {tab.id === "mine" && bookmarks.length
-                  ? `(${bookmarks.length})`
-                  : null}
+                {tab.label}
                 {tab.sub && (
                   <span className="hidden font-normal text-gray-400 sm:inline">
                     {" "}
@@ -394,15 +477,6 @@ export default function Agenda() {
             </h2>
           </div>
         )}
-        {activeTab === "mine" && (
-          <h2 className="mb-5 text-xl font-black text-gray-900">My Sessions</h2>
-        )}
-        {activeTab === "presentations" && (
-          <h2 className="mb-5 text-xl font-black text-gray-900">
-            Presentation Schedule
-          </h2>
-        )}
-
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -411,15 +485,7 @@ export default function Agenda() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            {renderList(
-              activeTab === "day1"
-                ? day1
-                : activeTab === "day2"
-                  ? []
-                  : activeTab === "mine"
-                    ? mySessions
-                    : presentations
-            )}
+            {renderList(activeTab === "day1" ? day1 : day2)}
           </motion.div>
         </AnimatePresence>
 

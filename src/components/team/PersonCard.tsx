@@ -115,7 +115,7 @@ export const PersonCard = ({
             ))}
           </div>
         )}
-        {person.email && !person.linkedin && (
+        {person.email && (
           <a
             href={`mailto:${person.email}`}
             className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold hover:underline"

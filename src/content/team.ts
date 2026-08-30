@@ -42,6 +42,15 @@ export const coreTeam: Person[] = [
     linkedin: "toli",
     image: "https://reframery.org/_next/static/media/toli-amare.8e162363.jpg",
   },
+  {
+    name: "Tabitha Lothian",
+    role: "Centre Manager",
+    email: "lothiant@mcmaster.ca",
+    linkedin: "tabitha-lothian",
+    details: ["Bachelor of Commerce", "DeGreoote School of Business"],
+    image: tabithaLothian.src,
+    bio: "Tabitha Lothian is a Project Manager at McMaster University, supporting research, program development, and community-based initiatives with Reframery and the Centre for Community-Oriented Entrepreneurship.",
+  },
 ]
 
 export const internalAdvisory: Person[] = [
@@ -269,14 +278,6 @@ export const externalAdvisory: Person[] = [
 ]
 
 export const studentTeam: Person[] = [
-  {
-    name: "Tabitha Lothian",
-    role: "Centre Manager",
-    email: "lothiant@mcmaster.ca",
-    linkedin: "tabitha-lothian",
-    image: tabithaLothian.src,
-    bio: "Tabitha Lothian is a Project Manager at McMaster University, supporting research, program development, and community-based initiatives with Reframery and the Centre for Community-Oriented Entrepreneurship.",
-  },
   {
     name: "Veerash Palanichamy",
     role: "Software Developer",

@@ -71,7 +71,7 @@ export const HomePage = () => (
               Upcoming Conference:
             </span>
             <span className="font-semibold">
-              Entrepreneurship in the Global Majority — Sep 21–23, 2026 · The
+              Entrepreneurship in the Global Majority — Sep 21–22, 2026 · The
               Hub, McMaster University
             </span>
           </p>

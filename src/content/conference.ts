@@ -1,7 +1,6 @@
 import {
   BookOpen,
   Handshake,
-  Lightbulb,
   Mic,
   Network,
   Users,
@@ -18,7 +17,7 @@ export type Activity = {
 export const activities: Activity[] = [
   {
     label: "Keynote Speakers",
-    desc: "Two invited individuals from Kenya will share their entrepreneurial stories — including the challenges they faced and how they overcame hardship.",
+    desc: "Trish Ruebottom and Anna Kim will share their entrepreneurial stories — including the challenges they faced and how they overcame hardship.",
     Icon: Mic,
     number: "01",
   },
@@ -33,12 +32,6 @@ export const activities: Activity[] = [
     desc: "Cutting-edge academic and applied work exploring current field impacts and innovations in Global Majority entrepreneurship contexts.",
     Icon: BookOpen,
     number: "03",
-  },
-  {
-    label: "Interactive Workshops",
-    desc: "Hands-on sessions on field-building, next steps, and calls to action — moving from insight to impact.",
-    Icon: Lightbulb,
-    number: "04",
   },
   {
     label: "Networking Sessions",

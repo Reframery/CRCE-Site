@@ -32,58 +32,71 @@ export default function IncubatorPage() {
         }}
       >
         {/* Header logos */}
-        <div className="absolute top-6 left-6 z-20 flex items-stretch gap-4">
-          <a
-            href="https://www.crce.info/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center rounded-2xl bg-white px-5 py-3 shadow-lg"
-          >
-            <img
-              src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/1ee4e49a7_CRCElogo_maroonandblack.png"
-              alt="CRCE"
-              className="block h-13 w-auto"
-            />
-          </a>
-          <a
-            href="https://www.theinc.ca/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center rounded-2xl bg-white px-5 py-3 shadow-lg"
-          >
-            <img
-              src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/99644ae97_AltLogo.png"
-              alt="Hamilton Artists Inc."
-              className="block h-13 w-auto"
-            />
-          </a>
-          <a
-            href="https://degroote.mcmaster.ca/tag/marinucci-entrepreneurial-bridge/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center rounded-2xl bg-white px-5 py-3 shadow-lg"
-          >
-            <img
-              src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/32b9f15cd_image.png"
-              alt="Marinucci Entrepreneurial Bridge"
-              className="block h-13 w-auto"
-            />
-          </a>
-        </div>
-        <div
-          className="absolute inset-0 opacity-15"
-          style={{
-            backgroundImage: `radial-gradient(circle, rgba(253,191,56,0.8) 1px, transparent 1px)`,
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(253,191,56,1) 1px, transparent 1px), linear-gradient(90deg, rgba(253,191,56,1) 1px, transparent 1px)`,
-            backgroundSize: "100px 100px",
-          }}
-        />
+<div className="absolute top-6 left-6 z-20 flex items-stretch gap-4">
+  <a
+    href="https://www.crce.info/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center rounded-2xl bg-white px-5 py-3 shadow-lg"
+  >
+    <img
+      src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/1ee4e49a7_CRCElogo_maroonandblack.png"
+      alt="CRCE"
+      className="block h-13 w-auto"
+    />
+  </a>
+  <a
+    href="https://www.theinc.ca/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center rounded-2xl bg-white px-5 py-3 shadow-lg"
+  >
+    <img
+      src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/99644ae97_AltLogo.png"
+      alt="Hamilton Artists Inc."
+      className="block h-13 w-auto"
+    />
+  </a>
+  <a
+    href="https://degroote.mcmaster.ca/tag/marinucci-entrepreneurial-bridge/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center rounded-2xl bg-white px-5 py-3 shadow-lg"
+  >
+    <img
+      src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/32b9f15cd_image.png"
+      alt="Marinucci Entrepreneurial Bridge"
+      className="block h-13 w-auto"
+    />
+  </a>
+
+  {/* Added logos */}
+  <a
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center rounded-2xl bg-white px-5 py-3 shadow-lg"
+  >
+    <img
+      src="./mma_footer_logo_mma.png"
+      alt="McMaster Museum of Art"
+      className="block h-13 w-auto"
+    />
+  </a>
+  <a
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center rounded-2xl bg-white px-5 py-3 shadow-lg"
+  >
+    <img
+      src="./Tune-In-Foundation_Full-Colour_O.png"
+      alt="Tune In Foundation"
+      className="block h-13 w-auto"
+    />
+  </a>
+</div>
+
         {[
           {
             size: 800,
@@ -665,6 +678,9 @@ export default function IncubatorPage() {
                 After submitting, you'll be invited to a short conversation with
                 the program lead.
               </p>
+              <p className="mt-6 text-sm" style={{ color: "#c9b5a0" }}>
+              Community Partner: <strong>Tune In Foundation</strong>
+            </p>
               <motion.a
                 href="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=B2M3RCm0rUKMJSjNSW9HclC_bAUK1g1NjWtdr3u9J9lUNDVDOVEzTFYxNlE5VzJDVFJOQk1LMkQzVC4u"
                 target="_blank"

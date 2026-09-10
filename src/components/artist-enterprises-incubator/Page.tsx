@@ -187,7 +187,7 @@ export default function IncubatorPage() {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed font-medium text-white/70 md:text-xl"
           >
-            A 12-week entrepreneurship training program for Hamilton-based
+            A 10-week entrepreneurship training program for Hamilton-based
             artists building a sustainable creative practice.
           </motion.p>
           <motion.div
@@ -198,7 +198,7 @@ export default function IncubatorPage() {
           >
             {[
               { Icon: Calendar, text: "Mid–Late September 2026" },
-              { Icon: Clock, text: "12 Weeks · Weekly Sessions" },
+              { Icon: Clock, text: "10 Weeks · Weekly Sessions" },
               { Icon: MapPin, text: "McMaster University + Zoom" },
             ].map(({ Icon, text }, i) => (
               <motion.div
@@ -267,7 +267,7 @@ export default function IncubatorPage() {
               <p>
                 This{" "}
                 <strong style={{ color: "#7A003C" }}>
-                  12-week entrepreneurship training program
+                  10-week entrepreneurship training program
                 </strong>{" "}
                 is designed for Hamilton-based artists who want to build a more
                 sustainable creative practice, arts business, or

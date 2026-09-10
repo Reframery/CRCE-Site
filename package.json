@@ -3,7 +3,6 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "predev": "cp -r dist/pagefind public/",
     "dev": "astro dev",
     "format": "prettier --write .",
     "start": "astro dev",
@@ -16,7 +15,6 @@
     "@astrojs/react": "^6.0.1",
     "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.1.1",
     "astro-icon": "^1.1.5",
     "lucide-react": "^0.562.0",
     "motion": "^12.42.2",
@@ -29,6 +27,7 @@
     "@iconify-json/lucide": "^1.2.118",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
+    "astro": "^7.3.2",
     "pagefind": "^1.5.2",
     "prettier": "^3.9.5",
     "prettier-plugin-astro": "^0.14.1",

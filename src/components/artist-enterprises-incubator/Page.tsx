@@ -31,21 +31,22 @@ export default function Incubator() {
         style={{ minHeight: 'auto', background: 'linear-gradient(160deg, #12000c 0%, #7A003C 50%, #3a0020 100%)' }}
       >
         {/* Header logos */}
-        <div className="absolute top-6 left-6 z-20 flex items-stretch gap-4">
-          <a href="https://www.crce.info/" target="_blank" rel="noopener noreferrer" className="flex items-center rounded-2xl px-5 py-3 bg-white shadow-lg">
-            <img src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/1ee4e49a7_CRCElogo_maroonandblack.png" alt="CRCE" className="block w-auto" style={{ height: '52px' }} />
+        #To accomodate for mobile view
+        <div className="absolute top-4 left-4 right-4 z-20 flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4">
+          <a href="https://www.crce.info/" target="_blank" rel="noopener noreferrer" className="flex items-center rounded-xl sm:rounded-2xl px-3 sm:px-4 md:px-5 py-2 sm:py-3 bg-white shadow-lg">
+            <img src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/1ee4e49a7_CRCElogo_maroonandblack.png" alt="CRCE" className="block w-auto" style={{ height: '32px' }} data-h="32" />
           </a>
-          <a href="https://www.theinc.ca/" target="_blank" rel="noopener noreferrer" className="flex items-center rounded-2xl px-5 py-3 bg-white shadow-lg">
-            <img src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/99644ae97_AltLogo.png" alt="Hamilton Artists Inc." className="block w-auto" style={{ height: '52px' }} />
+          <a href="https://www.theinc.ca/" target="_blank" rel="noopener noreferrer" className="flex items-center rounded-xl sm:rounded-2xl px-3 sm:px-4 md:px-5 py-2 sm:py-3 bg-white shadow-lg">
+            <img src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/99644ae97_AltLogo.png" alt="Hamilton Artists Inc." className="block w-auto" style={{ height: '32px' }} />
           </a>
-          <a href="https://degroote.mcmaster.ca/tag/marinucci-entrepreneurial-bridge/" target="_blank" rel="noopener noreferrer" className="flex items-center rounded-2xl px-5 py-3 bg-white shadow-lg">
-            <img src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/32b9f15cd_image.png" alt="Marinucci Entrepreneurial Bridge" className="block w-auto" style={{ height: '52px' }} />
+          <a href="https://degroote.mcmaster.ca/tag/marinucci-entrepreneurial-bridge/" target="_blank" rel="noopener noreferrer" className="flex items-center rounded-xl sm:rounded-2xl px-3 sm:px-4 md:px-5 py-2 sm:py-3 bg-white shadow-lg">
+            <img src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/32b9f15cd_image.png" alt="Marinucci Entrepreneurial Bridge" className="block w-auto" style={{ height: '32px' }} />
           </a>
-          <a href="https://www.tuneinfoundation.org/" target="_blank" rel="noopener noreferrer" className="flex items-center rounded-2xl px-5 py-3 bg-white shadow-lg">
-            <img src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/b952d891f_Tune-In-Foundation_Full-Colour_On-White_2000px.png" alt="Tune In Foundation" className="block w-auto" style={{ height: '52px' }} />
+          <a href="https://www.tuneinfoundation.org/" target="_blank" rel="noopener noreferrer" className="flex items-center rounded-xl sm:rounded-2xl px-3 sm:px-4 md:px-5 py-2 sm:py-3 bg-white shadow-lg">
+            <img src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/b952d891f_Tune-In-Foundation_Full-Colour_On-White_2000px.png" alt="Tune In Foundation" className="block w-auto" style={{ height: '32px' }} />
           </a>
-          <a href="https://museum.mcmaster.ca/" target="_blank" rel="noopener noreferrer" className="flex items-center rounded-2xl px-5 py-3 bg-white shadow-lg">
-            <img src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/2022803e9_image.png" alt="McMaster Museum of Art" className="block w-auto" style={{ height: '52px' }} />
+          <a href="https://museum.mcmaster.ca/" target="_blank" rel="noopener noreferrer" className="flex items-center rounded-xl sm:rounded-2xl px-3 sm:px-4 md:px-5 py-2 sm:py-3 bg-white shadow-lg">
+            <img src="https://media.base44.com/images/public/69573a816ee3f6e4126a3794/2022803e9_image.png" alt="McMaster Museum of Art" className="block w-auto" style={{ height: '32px' }} />
           </a>
         </div>
 

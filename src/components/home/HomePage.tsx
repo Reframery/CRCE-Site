@@ -5,7 +5,7 @@ import benson from "@/images/home/benson.jpg"
 import { HeroVideo } from "./HeroVideo"
 import { ProgramCard } from "./ProgramCard"
 import { SectionLabel } from "./SectionLabel"
-import HubDiagram from "@/components/HubDiagram"
+import HubDiagram from "./HubDiagram"
 
 export const HomePage = () => (
   <div className="min-h-screen" style={{ backgroundColor: "#f5ede2" }}>

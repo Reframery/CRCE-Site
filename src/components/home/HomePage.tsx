@@ -38,18 +38,7 @@ export const HomePage = () => (
         </p>
       </motion.div>
       <HubDiagram />
-        <motion.div
-          className="mb-14 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <SectionLabel text="Our Programs" />
-          <h2 className="text-3xl font-black text-[#1a1a1a] md:text-4xl">
-            What We Do
-          </h2>
-        </motion.div>
+
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {cards.map((card, i) => (
             <ProgramCard key={card.title} card={card} index={i} />

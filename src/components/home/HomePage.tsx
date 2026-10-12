@@ -5,14 +5,39 @@ import benson from "@/images/home/benson.jpg"
 import { HeroVideo } from "./HeroVideo"
 import { ProgramCard } from "./ProgramCard"
 import { SectionLabel } from "./SectionLabel"
+import HubDiagram from "@/components/HubDiagram"
 
 export const HomePage = () => (
   <div className="min-h-screen" style={{ backgroundColor: "#f5ede2" }}>
     <HeroVideo />
 
+
     {/* ── THREE PROGRAM CARDS ── */}
     <section className="bg-[#f5ede2] py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+        className="text-center mb-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <p
+          className="max-w-5xl mx-auto text-base md:text-lg leading-relaxed"
+          style={{ color: "#4a4a4a" }}
+        >
+          The{" "}
+          <strong style={{ color: "#7A003C" }}>
+            Centre for Research on Community-oriented Entrepreneurship (CRCE)
+          </strong>{" "}
+          is the central hub for advancing inclusive and sustainable entrepreneurship
+          through its initiatives, including{" "}
+          <strong style={{ color: "#7A003C" }}>Reframery</strong> and{" "}
+          <strong style={{ color: "#7A003C" }}>RISE</strong>, which empower entrepreneurs
+          and foster research, mentorship, and interdisciplinary learning.
+        </p>
+      </motion.div>
+      <HubDiagram />
         <motion.div
           className="mb-14 text-center"
           initial={{ opacity: 0, y: 30 }}

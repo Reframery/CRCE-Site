@@ -1,4 +1,5 @@
 import { activities, stats } from "@/content/conference"
+
 import {
   ArrowRight,
   Calendar,
@@ -13,6 +14,7 @@ import { useRef } from "react"
 import { ActivityCard } from "./ActivityCard"
 import { AnimatedCounter } from "./AnimatedCounter"
 import { AnimatedGlobe } from "./AnimateGlobe"
+import ConferenceRecap from "./ConferenceRecap"
 
 export function ConferencePage() {
   const heroRef = useRef(null)
@@ -269,6 +271,10 @@ export function ConferencePage() {
           </svg>
         </div>
       </section>
+
+      {/* ── CONFERENCE RECAP CAROUSEL ── */}
+      <ConferenceRecap />
+
       {/* ── STATS BAND ── */}
       <section
         style={{

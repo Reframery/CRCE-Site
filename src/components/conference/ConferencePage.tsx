@@ -346,8 +346,8 @@ export function ConferencePage() {
                 className="text-base leading-relaxed md:text-lg"
                 style={{ color: "#4a4a4a" }}
               >
-                Hosted by CRCE at McMaster University, this international conference brings together scholars, practitioners, advocates, policymakers, and community leaders committed to understanding entrepreneurship as it is lived and practised across the Global Majority — challenging dominant frameworks shaped by high-income, formally institutionalized contexts.
-              </p>
+                Hosted by CRCE at McMaster University, this international conference brought together scholars, practitioners, advocates, policymakers, and community leaders committed to understanding entrepreneurship as it is lived and practised across the Global Majority — challenging dominant frameworks shaped by high-income, formally institutionalized contexts.
+             </p>
               <motion.div
                 className="mt-8 h-px w-full rounded-full"
                 style={{

@@ -6,7 +6,7 @@ export const siteLinks = [
     pathname: "/people-researchers-students-faculty",
   },
   { label: "Podcasts", pathname: "/podcasts" },
-  { label: "Upcoming Conferences", pathname: "/upcoming-conferences" },
+  { label: "Conferences", pathname: "/upcoming-conferences" },
   {
     label: "Reframery",
     pathname: "https://reframery.org",

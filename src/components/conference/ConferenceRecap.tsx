@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "motion/react";
 import { Camera, ChevronLeft, ChevronRight } from "lucide-react";
 
 const recapImages = [
-  { url: 'https://media.base44.com/images/public/69573a816ee3f6e4126a3794/7581df1b8_CRCE_conf_pic116.png', caption: 'Keynote Speaker' },
   { url: 'https://media.base44.com/images/public/69573a816ee3f6e4126a3794/68a3295c3_CRCE_conf_pic118.png', caption: 'Panel Discussion' },
   { url: 'https://media.base44.com/images/public/69573a816ee3f6e4126a3794/b83a36537_CRCE_conf_pic110.png', caption: 'Plenary Address' },
   { url: 'https://media.base44.com/images/public/69573a816ee3f6e4126a3794/cfe82f7fe_CRCE_conf_pic107.png', caption: 'Featured Presentation' },

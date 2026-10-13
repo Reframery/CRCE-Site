@@ -126,42 +126,48 @@ export function ConferencePage() {
             </span>
           </motion.div>
 
-          {/* Main title — letters stagger in */}
-          <motion.h1
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.9,
-              delay: 0.15,
-              type: "spring",
-              stiffness: 60,
+          
+        {/* Main title — letters stagger in */}
+        <motion.h1
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 0.9,
+            delay: 0.15,
+            type: "spring",
+            stiffness: 60,
+          }}
+          className="mb-3 text-5xl leading-none font-black tracking-tight md:text-7xl lg:text-8xl"
+        >
+          Entrepreneurship
+        </motion.h1>
+
+        <motion.h1
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 0.9,
+            delay: 0.28,
+            type: "spring",
+            stiffness: 60,
+          }}
+          className="mb-8 text-3xl leading-tight font-black tracking-tight sm:text-4xl md:text-5xl lg:text-6xl"
+        >
+          in the{" "}
+          <span
+            style={{
+              color: "#FDBF38",
+              filter:
+                "drop-shadow(0 0 20px rgba(253,191,56,0.9)) drop-shadow(0 0 40px rgba(253,191,56,0.6))",
             }}
-            className="mb-3 text-5xl leading-none font-black tracking-tight md:text-7xl lg:text-8xl"
           >
-            Entrepreneurship
-          </motion.h1>
-          <motion.h1
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.9,
-              delay: 0.28,
-              type: "spring",
-              stiffness: 60,
-            }}
-            className="mb-8 text-5xl leading-none font-black tracking-tight md:text-7xl lg:text-8xl"
-          >
-            in the{" "}
-            <span
-              style={{
-                color: "#FDBF38",
-                filter:
-                  "drop-shadow(0 0 20px rgba(253,191,56,0.9)) drop-shadow(0 0 40px rgba(253,191,56,0.6))",
-              }}
-            >
-              Global Majority
-            </span>
-          </motion.h1>
+            Global Majority
+          </span>
+          <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+            Conference — 2026
+          </span>
+        </motion.h1>
+
 
           {/* Subtitle */}
           <motion.p
@@ -352,12 +358,7 @@ export function ConferencePage() {
                 className="text-base leading-relaxed md:text-lg"
                 style={{ color: "#4a4a4a" }}
               >
-                Hosted by CRCE at McMaster University, this international
-                conference brings together scholars, practitioners, advocates,
-                policymakers, and community leaders committed to understanding
-                entrepreneurship as it is lived and practised across the Global
-                Majority — challenging dominant frameworks shaped by
-                high-income, formally institutionalized contexts.
+                Hosted by CRCE at McMaster University, this international conference brings together scholars, practitioners, advocates, policymakers, and community leaders committed to understanding entrepreneurship as it is lived and practised across the Global Majority — challenging dominant frameworks shaped by high-income, formally institutionalized contexts.
               </p>
               <motion.div
                 className="mt-8 h-px w-full rounded-full"

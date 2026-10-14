@@ -167,34 +167,6 @@ export function ConferencePage() {
             Rethinking Entrepreneurship Beyond Traditional Growth Models
           </motion.p>
 
-          {/* Registration Button */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mb-10"
-          >
-            <motion.a
-              href="https://global-majority2026.base44.app/register"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{
-                scale: 1.05,
-                boxShadow:
-                  "0 0 40px rgba(253,191,56,0.6), 0 20px 40px rgba(253,191,56,0.3)",
-              }}
-              className="inline-flex items-center gap-3 rounded-full px-8 py-4 text-lg font-bold backdrop-blur-md"
-              style={{
-                background: "linear-gradient(135deg, #FDBF38 0%, #f5d76e 100%)",
-                color: "#1a0010",
-                boxShadow: "0 10px 30px rgba(253,191,56,0.4)",
-              }}
-            >
-              Register Now
-              <ArrowRight className="h-5 w-5" />
-            </motion.a>
-          </motion.div>
-
           {/* Date / Time / Location pills */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

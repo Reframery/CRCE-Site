@@ -48,7 +48,7 @@ export const coreTeam: Person[] = [
     email: "lothiant@mcmaster.ca",
     linkedin: "tabitha-lothian",
     details: ["Bachelor of Commerce", "DeGroote School of Business"],
-    image:  'https://media.base44.com/images/public/69573a816ee3f6e4126a3794/74fc641ef_LinkedIn.png',
+    image: tabithaLothian.src,
     bio: "Tabitha Lothian is a Project Manager at McMaster University, supporting research, program development, and community-based initiatives with Reframery and the Centre for Community-Oriented Entrepreneurship.",
   },
 ]

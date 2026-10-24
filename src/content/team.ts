@@ -14,6 +14,11 @@ export type Person = {
 const PLACEHOLDER =
   "https://ui-avatars.com/api/?background=7A003C&color=fff&size=200&bold=true&name="
 
+const isFormerResearchAssistant = (person: Person) =>
+  /former/i.test(person.role) &&
+  /research assistant|research & curriculum|business research|project development/i.test(
+    person.role
+  )
 export const coreTeam: Person[] = [
   {
     name: "Benson Honig, Ph.D.",
@@ -278,7 +283,7 @@ export const externalAdvisory: Person[] = [
   },
 ]
 
-export const studentTeam: Person[] = [
+const allStudentTeam: Person[] = [
   {
     name: "Veerash Palanichamy",
     role: "Software Developer",
@@ -316,7 +321,7 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Wonu Adelusi",
-    role: "Business Research Advisor",
+    role: "Former Research Assistant; Specialization: Business Research Advisor ",
     email: "adelusio@mcmaster.ca",
     linkedin: "wonu-adelusi",
     image:
@@ -325,7 +330,7 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Hala Arafeh",
-    role: "Curriculum Design and Instruction Co-Lead",
+    role: "Former Research Assistant; Specialization: Curriculum Design and Instruction Co-Lead",
     email: "arafehh@mcmaster.ca",
     linkedin: "hala-arafeh",
     image:
@@ -334,7 +339,7 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Ayat Atif",
-    role: "Media Strategy Specialist",
+    role: "Former Research Assistant; Specialization: Media Strategy Specialist",
     email: "atifa6@mcmaster.ca",
     linkedin: "ayatatif",
     image:
@@ -343,7 +348,7 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Shayla Bird",
-    role: "Research Assistant",
+    role: "Former Research Assistant",
     email: "birds8@mcmaster.ca",
     linkedin: "shayla-bird",
     image:
@@ -369,7 +374,7 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Aoife Cummins",
-    role: "PhD Research Assistant",
+    role: "Former PhD Research Assistant",
     email: "cummia2@mcmaster.ca",
     linkedin: "aoife-cummins-0a9924233",
     image:
@@ -413,7 +418,7 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Sehyeon (Julie) Hong",
-    role: "Research & Curriculum Development Specialist",
+    role: "Former Research Assistant; Specialization: Research & Curriculum Development",
     email: "hongs39@mcmaster.ca",
     linkedin: "hong-sehyeon",
     image:
@@ -430,7 +435,7 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Rafi Lambert-Greene",
-    role: "Research & Curriculum Development Specialist",
+    role: "Former Research & Curriculum Development Specialist",
     email: "lamber4@mcmaster.ca",
     linkedin: "rafi-lambert-greene",
     image:
@@ -439,7 +444,7 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Musfirah Muzafar",
-    role: "Business Research & Development Strategist",
+    role: "Former Business Research & Development Strategist",
     email: "muzafarm@mcmaster.ca",
     linkedin: "musfirahmuzafar",
     image:
@@ -448,7 +453,7 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Hayden Piper",
-    role: "Project Development Officer",
+    role: "FormerProject Development Officer",
     email: "piperh@mcmaster.ca",
     linkedin: "haleycpiper",
     image:
@@ -457,7 +462,7 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Allison Preyra",
-    role: "Business Research Advisor",
+    role: "Former Business Research Advisor",
     email: "preyraa@mcmaster.ca",
     linkedin: "allisonpreyra",
     image:
@@ -504,3 +509,11 @@ export const studentTeam: Person[] = [
     bio: "As a Research Assistant, I play a crucial role in the collection, compilation, and analysis of firsthand research data. My responsibilities include creating detailed reports based on my findings and utilizing this information to advance ongoing research projects.",
   },
 ]
+
+export const studentTeam: Person[] = allStudentTeam.filter(
+  (person) => !isFormerResearchAssistant(person)
+)
+
+export const formerResearchAssistants: Person[] = allStudentTeam
+  .filter(isFormerResearchAssistant)
+  .sort((a, b) => a.name.localeCompare(b.name))

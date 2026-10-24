@@ -6,6 +6,7 @@ import {
   internalAdvisory,
   externalAdvisory,
   studentTeam,
+  formerResearchAssistants,
 } from "@/content/team"
 import { Breadcrumbs } from "../ui/Breadcrumbs"
 import { AnimatedOrbs } from "./AnimatedOrbs"
@@ -197,6 +198,22 @@ export const TeamPage = () => {
         />
         <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {studentTeam.map((person, i) => (
+            <StudentCard key={person.name} person={person} index={i} />
+          ))}
+        </div>
+      </section>
+            {/* Former Research Assistants */}
+      <section
+        className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8"
+      >
+        <SectionHeader
+          icon={GraduationCap}
+          label="Student Training"
+          title="Former Research Assistants"
+          color="hsl(var(--gold))"
+        />
+        <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {formerResearchAssistants.map((person, i) => (
             <StudentCard key={person.name} person={person} index={i} />
           ))}
         </div>

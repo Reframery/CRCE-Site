@@ -25,5 +25,10 @@ export const siteLinks = [
     pathname: "/newsletter",
   },
   
+ {
+    label: "Publications",
+    pathname: "/publications",
+  },
+  
   { label: "Contact Us", pathname: "/contact" },
 ]

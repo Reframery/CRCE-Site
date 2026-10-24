@@ -1,0 +1,10 @@
+---
+
+import Layout from "@/layouts/Layout.astro"
+import { SITE_DESCRIPTION } from "@/configs/site.ts"
+import DonatePage from "@/components/Donate/donate"
+---
+
+<Layout title="Donate" description={SITE_DESCRIPTION}>
+  <DonatePage client:load />
+</Layout>

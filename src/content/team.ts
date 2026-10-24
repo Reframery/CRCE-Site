@@ -491,9 +491,9 @@ export const studentTeam: Person[] = [
     bio: "Margaux Williams-Kelly completed an MSc in Global Health at McMaster University. She served as a Graduate Research Assistant at Reframery, contributing to research on inclusive entrepreneurship and global health.",
   },
   {
-    name: "Diya Shah ",
+    name: "Diya Shah", // Removed the extra space after her name
     role: "Knowledge translation of academic contents",
-    image: tabithaLothian.src,
+    image: diyashah.src, // Changed this from tabithaLothian.src to diyashah.src
     linkedin: "https://www.linkedin.com/in/diyashahc/?isSelfProfile=false",
     bio: "As a Research Assistant, I play a crucial role in the collection, compilation, and analysis of firsthand research data. My responsibilities include creating detailed reports based on my findings and utilizing this information to advance ongoing research projects.",
   },

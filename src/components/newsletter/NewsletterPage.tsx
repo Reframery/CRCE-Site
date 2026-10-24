@@ -23,62 +23,9 @@ type Issue = {
   publish_date: string;
 };
 
-// Sample data — replace with your own source (CMS, JSON, API) when you wire this up.
-const SAMPLE_ISSUES: Issue[] = [
-  {
-    id: 'issue-1',
-    title: 'Community Entrepreneurship in Motion',
-    month_year: 'September 2026',
-    summary:
-      'A look at the research, partnerships and student work that shaped CRCE this month, from new scholarship on inclusive enterprise to the launch of our community mentorship series.',
-    highlights: [
-      'Our researchers launched a new study on community-oriented entrepreneurship in Hamilton',
-      'We welcomed five new student team members to the Centre',
-      'CRCE received a grant supporting inclusive business research',
-      'A celebration of our community partners who made this year of programming possible',
-    ].join('\n'),
-    publish_date: '2026-09-15',
-  },
-  {
-    id: 'issue-2',
-    title: 'Summer of Scholarship and Storytelling',
-    month_year: 'August 2026',
-    summary:
-      'Highlights from a busy summer: conference planning, podcast recordings, and the mentors and students who carried CRCE work forward through the break.',
-    highlights: [
-      'Registration opened for the Entrepreneurship in the Global Majority Conference',
-      'New episodes of Entrepreneurship for the Rest of Us began streaming',
-      'Two CRCE projects were recognized at an international research forum',
-    ].join('\n'),
-    publish_date: '2026-08-12',
-  },
-  {
-    id: 'issue-3',
-    title: 'RISE Mentorship Reaches New Communities',
-    month_year: 'June 2026',
-    summary:
-      'The RISE program expanded its mentorship network, connecting entrepreneurs with advisors across Canada and beyond while students built practical training experience.',
-    highlights: [
-      'RISE mentors were matched with entrepreneurs in four new regions',
-      'Student training placements grew across the summer term',
-      'A welcome to the newest members of the CRCE advisory committees',
-    ].join('\n'),
-    publish_date: '2026-06-18',
-  },
-  {
-    id: 'issue-4',
-    title: 'Building the Reframery Community',
-    month_year: 'March 2026',
-    summary:
-      'Reframery continues to grow as a space where diverse entrepreneurs develop ideas, skills and confidence — a milestone we celebrate with the community that built it.',
-    highlights: [
-      'Reframery surpassed a new milestone in active community members',
-      'Our launch of a mentorship series welcomed its first cohort',
-      'Award recognition for inclusion-focused entrepreneurship research',
-    ].join('\n'),
-    publish_date: '2026-03-20',
-  },
-];
+// No issues published yet — add entries here (or fetch them from your CMS, JSON or API)
+// as they go live. While this is empty the page shows its "coming soon" states.
+const ISSUES: Issue[] = [];
 
 type SectionLabelProps = {
   text: string;
@@ -126,7 +73,7 @@ function highlightIcon(line: string) {
 }
 
 export default function NewsletterPage() {
-  const [issues] = useState<Issue[]>(SAMPLE_ISSUES);
+  const issues = ISSUES;
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 

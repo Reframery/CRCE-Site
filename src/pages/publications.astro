@@ -1,0 +1,12 @@
+---
+// Astro page for CRCE publications, e.g. src/pages/publications.astro
+// Place the exported component at src/components/publications/PublicationsPage.tsx
+// and adjust the import path below to match wherever you put it.
+import Layout from "@/layouts/Layout.astro"
+import { SITE_DESCRIPTION } from "@/configs/site.ts"
+import PublicationsPage from "@/components/publications/PublicationsPage"
+---
+
+<Layout title="Publications" description={SITE_DESCRIPTION}>
+  <PublicationsPage client:load />
+</Layout>

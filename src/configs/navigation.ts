@@ -27,7 +27,7 @@ export const siteLinks = [
 
   {
     label: "Publications",
-    pathname: "/publications",
+    pathname: "/Publications",
   },
 
   {

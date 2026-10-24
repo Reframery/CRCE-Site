@@ -20,20 +20,20 @@ export const siteLinks = [
     label: "Artist Incubator",
     pathname: "/artist-enterprises-incubator",
   },
- {
+  {
     label: "Newsletter",
     pathname: "/newsletter",
   },
-  
- {
+
+  {
     label: "Publications",
     pathname: "/publications",
   },
-  
-   {
+
+  {
     label: "Donate",
     pathname: "/donate",
   },
-  
+
   { label: "Contact Us", pathname: "/contact" },
 ]

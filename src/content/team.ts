@@ -1,4 +1,5 @@
 import tabithaLothian from "@/images/student-training/tabitha-lothian.jpg"
+import diyashah from "@/images/student-training/diya-shah.jpg"
 
 export type Person = {
   name: string
@@ -289,7 +290,7 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Saad Tariq",
-    role: "Software Developer",
+    role: "Web Developer",
     email: "tariqs26@mcmaster.ca",
     linkedin: "saad-tariq-ca",
     image: "https://reframery.org/_next/static/media/saad-tariq.ce4358b4.jpg",
@@ -306,7 +307,7 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Mana Abolghasemi",
-    role: "Research Assistant",
+    role: "Research Assistant; responsible for writing the CRCE/Reframery Book ",
     email: "abolghas@mcmaster.ca",
     linkedin: "mana-abolghasemi",
     image:
@@ -351,11 +352,11 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Paulina Farida Caprani",
-    role: "Curriculum Development Specialist",
+    role: "Podcast Development & Production ",
     email: "capranip@mcmaster.ca",
     linkedin: "paulinacaprani",
     image: PLACEHOLDER + "Paulina+Caprani",
-    bio: "Paulina Farida Caprani is a Curriculum Development Specialist at McMaster University, developing educational materials that support Reframery's entrepreneurship programs for marginalized communities.",
+    bio: "Paulina Farida Caprani is a Podcast Development & Production at McMaster University, developing educational materials that support Reframery's entrepreneurship programs for marginalized communities.",
   },
   {
     name: "Raniya Chowdhury",
@@ -386,7 +387,7 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Fatima Gohar",
-    role: "Research & Curriculum Development Specialist",
+    role: "Curriculum Development",
     email: "goharf@mcmaster.ca",
     linkedin: "-fatimagohar",
     image: "https://reframery.org/_next/static/media/fatima-gohar.73b919aa.jpg",
@@ -394,21 +395,21 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Alessia Garcia",
-    role: "Curriculum Development Specialist",
+    role: "Marketing Development & Communications ",
     email: "garcia25@mcmaster.ca",
     linkedin: "alessia-garcia",
     image:
       "https://reframery.org/_next/static/media/alessia-garcia.ef46ce10.jpg",
-    bio: "Alessia Garcia is a Curriculum Development Specialist at McMaster University, creating educational resources that help entrepreneurs in marginalized communities develop business skills.",
+    bio: "Alessia Garcia is a Marketing Development & Communications  at McMaster University, creating educational resources that help entrepreneurs in marginalized communities develop business skills.",
   },
   {
     name: "Dilrose Grewal",
-    role: "Media Strategy Specialist",
+    role: "Podcast Development  & Production ",
     email: "grewad16@mcmaster.ca",
     linkedin: "dilrosegrewal",
     image:
       "https://reframery.org/_next/static/media/dilrose-grewal.0db48416.jpg",
-    bio: "Dilrose Grewal is a Media Strategy Specialist at McMaster University, helping shape Reframery's communications and outreach to amplify its impact on marginalized entrepreneurial communities.",
+    bio: "Dilrose Grewal is a Podcast Development  & Production  at McMaster University, helping shape Reframery's communications and outreach to amplify its impact on marginalized entrepreneurial communities.",
   },
   {
     name: "Sehyeon (Julie) Hong",
@@ -421,11 +422,11 @@ export const studentTeam: Person[] = [
   },
   {
     name: "Neha Kazi",
-    role: "Curriculum Development Specialist",
+    role: "Monthly CRCE Newsletter ",
     email: "kazin3@mcmaster.ca",
     linkedin: "neha-kazi",
     image: "https://reframery.org/_next/static/media/neha-kazi.59636f7b.jpg",
-    bio: "Neha Kazi is a Curriculum Development Specialist at McMaster University, developing learning materials that advance Reframery's mission of inclusive entrepreneurship education.",
+    bio: "Neha Kazi is incharge of the Monthly CRCE Newsletter at McMaster University, developing learning materials that advance Reframery's mission of inclusive entrepreneurship education.",
   },
   {
     name: "Rafi Lambert-Greene",
@@ -490,8 +491,15 @@ export const studentTeam: Person[] = [
     bio: "Margaux Williams-Kelly completed an MSc in Global Health at McMaster University. She served as a Graduate Research Assistant at Reframery, contributing to research on inclusive entrepreneurship and global health.",
   },
   {
+    name: "Diya Shah ",
+    role: "Knowledge translation of academic contents",
+    image: tabithaLothian.src,
+    linkedin: "https://www.linkedin.com/in/diyashahc/?isSelfProfile=false",
+    bio: "As a Research Assistant, I play a crucial role in the collection, compilation, and analysis of firsthand research data. My responsibilities include creating detailed reports based on my findings and utilizing this information to advance ongoing research projects.",
+  },
+  {
     name: "Mia Aamir",
-    role: "Research Assistant (Independent)",
+    role: "Research Assistant",
     image: PLACEHOLDER + "Mia+Aamir",
     bio: "As a Research Assistant, I play a crucial role in the collection, compilation, and analysis of firsthand research data. My responsibilities include creating detailed reports based on my findings and utilizing this information to advance ongoing research projects.",
   },

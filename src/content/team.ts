@@ -321,7 +321,7 @@ const allStudentTeam: Person[] = [
   },
   {
     name: "Wonu Adelusi",
-    role: "Former Research Assistant; Specialization: Business Research Advisor ",
+    role: "Former Business Research Advisor ",
     email: "adelusio@mcmaster.ca",
     linkedin: "wonu-adelusi",
     image:
@@ -330,7 +330,7 @@ const allStudentTeam: Person[] = [
   },
   {
     name: "Hala Arafeh",
-    role: "Former Research Assistant; Specialization: Curriculum Design and Instruction Co-Lead",
+    role: "Former Curriculum Design and Instruction Co-Lead",
     email: "arafehh@mcmaster.ca",
     linkedin: "hala-arafeh",
     image:
@@ -339,7 +339,7 @@ const allStudentTeam: Person[] = [
   },
   {
     name: "Ayat Atif",
-    role: "Former Research Assistant; Specialization: Media Strategy Specialist",
+    role: "Former Media Strategy Specialist",
     email: "atifa6@mcmaster.ca",
     linkedin: "ayatatif",
     image:
@@ -418,7 +418,7 @@ const allStudentTeam: Person[] = [
   },
   {
     name: "Sehyeon (Julie) Hong",
-    role: "Former Research Assistant; Specialization: Research & Curriculum Development",
+    role: "Former Research & Curriculum Developmernt Specialist",
     email: "hongs39@mcmaster.ca",
     linkedin: "hong-sehyeon",
     image:
@@ -453,7 +453,7 @@ const allStudentTeam: Person[] = [
   },
   {
     name: "Hayden Piper",
-    role: "FormerProject Development Officer",
+    role: "Former Project Development Officer",
     email: "piperh@mcmaster.ca",
     linkedin: "haleycpiper",
     image:

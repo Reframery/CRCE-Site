@@ -1,5 +1,12 @@
 ---
-import NewsletterPage from '../components/newsletter/NewsletterPage';
+// Astro page for the CRCE newsletter, e.g. src/pages/newsletter.astro
+// Place the exported component at src/components/newsletter/NewsletterPage.tsx
+// and adjust the import path below to match wherever you put it.
+import Layout from "@/layouts/Layout.astro"
+import { SITE_DESCRIPTION } from "@/configs/site.ts"
+import NewsletterPage from "@/components/newsletter/NewsletterPage"
 ---
 
-<NewsletterPage client:load />
+<Layout title="Newsletter" description={SITE_DESCRIPTION}>
+  <NewsletterPage client:load />
+</Layout>

@@ -1,21 +1,25 @@
 ---
-// Astro page for CRCE funding, e.g. src/pages/funding.astro
-// Place the exported component (see src/exports/funding.txt) at
-// src/components/funding/FundingPage.tsx and adjust the import path below
-// to match wherever you put it.
-import Layout from "@/layouts/Layout.astro"
-import { SITE_DESCRIPTION } from "@/configs/site.ts"
-import FundingPage from "@/components/Funding/FundingPage"
+// src/pages/Funding.astro — an Astro PAGE.
+// IMPORTANT: only frontmatter (this block) + markup below. No component definitions here.
+// An .astro file is HTML/Astro markup, not JSX — pasting the TSX component into it is what
+// produced hundreds of errors. The React UI lives in:
+//     src/components/funding/FundingPage.tsx   (copy of src/exports/FundingPage.tsx)
+// Adjust the import path below if you put the component somewhere else.
+import Layout from "@/layouts/Layout.astro";
+import { SITE_DESCRIPTION } from "@/configs/site.ts";
+import FundingPage from "@/components/Funding/Funding";
 ---
 
 <Layout title="Funding" description={SITE_DESCRIPTION}>
-  <FundingPage client:load />
+  <main class="funding-page">
+    <FundingPage client:load />
+  </main>
 </Layout>
 
+<!-- Same fonts as crce.info: Roboto (body) + Roboto Condensed (headings) -->
 <style is:global>
   @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Condensed:wght@400;500;600;700;900&display=swap");
 
-  body,
   .funding-page {
     font-family: "Roboto", ui-sans-serif, system-ui, sans-serif;
   }

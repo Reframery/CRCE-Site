@@ -35,5 +35,10 @@ export const siteLinks = [
     pathname: "/Donate",
   },
 
+    {
+    label: "Funding",
+    pathname: "/Funding",
+  },
+
   { label: "Contact Us", pathname: "/contact" },
 ]

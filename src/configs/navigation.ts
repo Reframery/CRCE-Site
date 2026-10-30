@@ -32,7 +32,7 @@ export const siteLinks = [
 
   {
     label: "Donate",
-    pathname: "/donate",
+    pathname: "/Donate",
   },
 
   { label: "Contact Us", pathname: "/contact" },

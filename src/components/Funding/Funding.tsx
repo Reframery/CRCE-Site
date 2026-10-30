@@ -513,7 +513,7 @@ function AwardedGrants() {
               whileHover={liftHover}
               transition={{ duration: 0.4, ease: EASE }}
               className="flex items-start gap-5 rounded-2xl border bg-white p-8 sm:p-9"
-              style={cardRest()}
+              style={cardRest() as any}
               onMouseEnter={hoverCard}
               onMouseLeave={restCard}
             >
@@ -597,7 +597,7 @@ function ProposalsUnderReview() {
               whileHover={liftHover}
               transition={{ duration: 0.4, ease: EASE }}
               className="flex flex-col items-start rounded-2xl border bg-white p-8"
-              style={cardRest()}
+              style={cardRest() as any}
               onMouseEnter={hoverCard}
               onMouseLeave={restCard}
             >

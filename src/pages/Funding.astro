@@ -1,0 +1,28 @@
+---
+// Astro page for CRCE funding, e.g. src/pages/funding.astro
+// Place the exported component (see src/exports/funding.txt) at
+// src/components/funding/FundingPage.tsx and adjust the import path below
+// to match wherever you put it.
+import Layout from "@/layouts/Layout.astro"
+import { SITE_DESCRIPTION } from "@/configs/site.ts"
+import FundingPage from "@/components/Funding/FundingPage"
+---
+
+<Layout title="Funding" description={SITE_DESCRIPTION}>
+  <FundingPage client:load />
+</Layout>
+
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Condensed:wght@400;500;600;700;900&display=swap");
+
+  body,
+  .funding-page {
+    font-family: "Roboto", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .funding-page h1,
+  .funding-page h2,
+  .funding-page h3 {
+    font-family: "Roboto Condensed", "Roboto", ui-sans-serif, system-ui, sans-serif;
+  }
+</style>

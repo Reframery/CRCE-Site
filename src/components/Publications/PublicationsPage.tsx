@@ -1,55 +1,43 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { ComponentType, SVGProps } from 'react';
+import type { CSSProperties } from 'react';
 import { motion, useInView } from 'framer-motion';
 import {
+  ArrowUpRight,
   BookOpen,
+  CalendarDays,
   CheckCircle2,
   Clock,
-  ExternalLink,
   FileText,
   Layers,
   PenLine,
   Quote,
   Search,
   Sparkles,
+  Users,
 } from 'lucide-react';
 
+/* ──────────────────────────────────────────────────────────────
+   CRCE Publications page — standalone export
+   Drop this file into your Astro/React site (e.g.
+   src/components/publications/PublicationsPage.tsx) and pair it
+   with publications.astro. It has no app-specific imports: swap
+   PUBLICATIONS for your own CMS, JSON or API source when ready.
+   ────────────────────────────────────────────────────────────── */
 
 type Status = 'published' | 'work_in_progress' | 'under_review';
 type FilterKey = 'all' | Status;
-type IconType = ComponentType<SVGProps<SVGSVGElement>>;
 
 type Publication = {
   title: string;
   authors?: string;
   journal_or_venue?: string;
+  image_url?: string;
   summary?: string;
   tags?: string;
   status: Status;
   publication_date?: string;
   link?: string;
   featured?: boolean;
-};
-
-const STATUS_CONFIG: Record<Status, { label: string; color: string; badge: string; Icon: IconType }> = {
-  published: {
-    label: 'Published',
-    color: '#7A003C',
-    badge: 'bg-emerald-100 text-emerald-700',
-    Icon: CheckCircle2,
-  },
-  work_in_progress: {
-    label: 'Work in Progress',
-    color: '#B45309',
-    badge: 'bg-amber-100 text-amber-700',
-    Icon: PenLine,
-  },
-  under_review: {
-    label: 'Under Review',
-    color: '#1D4ED8',
-    badge: 'bg-blue-100 text-blue-700',
-    Icon: Clock,
-  },
 };
 
 const FILTER_TABS: { key: FilterKey; label: string }[] = [
@@ -214,18 +202,86 @@ function AnimatedCounter({ value, duration = 1.4 }: { value: number; duration?: 
 
 function formatMonth(date?: string) {
   if (!date) return '';
-  return new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+  return new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+}
+
+const DEFAULT_COVER_PALETTE: { from: string; to: string } = { from: '#7A003C', to: '#3D0020' };
+
+const COVER_PALETTES = [
+  { from: '#7A003C', to: '#3D0020' },
+  { from: '#5C0028', to: '#2B0616' },
+  { from: '#8B0A46', to: '#4A0024' },
+  { from: '#3D0B2A', to: '#12000C' },
+  { from: '#2A0416', to: '#0F0208' },
+];
+
+function hashString(value: string) {
+  let hash = 0;
+  for (let i = 0; i < value.length; i += 1) {
+    hash = (hash * 31 + value.charCodeAt(i)) | 0;
+  }
+  return Math.abs(hash);
+}
+
+const clamp = (lines: number): CSSProperties => ({
+  display: '-webkit-box',
+  WebkitLineClamp: lines,
+  WebkitBoxOrient: 'vertical',
+  overflow: 'hidden',
+});
+
+const titleCase = (value: string) => value.replace(/\b\w/g, (char) => char.toUpperCase());
+
+/** Themed editorial cover used when a paper has no image_url yet. */
+function PublicationCover({ pub, label }: { pub: Publication; label: string }) {
+  const palette =
+    COVER_PALETTES[hashString(pub.title) % COVER_PALETTES.length] ?? DEFAULT_COVER_PALETTE;
+
+  return (
+    <div
+      className="relative flex h-full w-full items-center justify-center overflow-hidden"
+      style={{ background: `linear-gradient(135deg, ${palette.from} 0%, ${palette.to} 100%)` }}
+      aria-hidden="true"
+    >
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px)',
+          backgroundSize: '22px 22px',
+        }}
+      />
+      <div
+        className="absolute -right-10 -top-12 h-36 w-36 rounded-full"
+        style={{ backgroundColor: 'rgba(253,191,56,0.14)' }}
+      />
+      <div
+        className="absolute -bottom-14 -left-10 h-32 w-32 rounded-full"
+        style={{ backgroundColor: 'rgba(255,255,255,0.06)' }}
+      />
+      <div className="relative flex flex-col items-center gap-2.5 px-6 text-center">
+        <FileText className="h-7 w-7" style={{ color: '#FDBF38' }} />
+        <span
+          className="text-[10px] font-bold uppercase leading-relaxed"
+          style={{ color: 'rgba(255,255,255,0.78)', letterSpacing: '0.22em' }}
+        >
+          {label}
+        </span>
+      </div>
+    </div>
+  );
 }
 
 function PublicationCard({ pub, index, featured }: { pub: Publication; index: number; featured?: boolean }) {
-  const status = STATUS_CONFIG[pub.status] || STATUS_CONFIG.published;
-  const Icon = status.Icon;
   const tags = pub.tags
     ? pub.tags
         .split(',')
         .map((t) => t.trim())
         .filter(Boolean)
     : [];
+
+  const category = tags[0] ? titleCase(tags[0]) : pub.journal_or_venue || 'Research';
+  const date = formatMonth(pub.publication_date);
+  const excerpt = pub.summary?.trim() || (pub.journal_or_venue ? `${pub.journal_or_venue}.` : '');
 
   return (
     <motion.article
@@ -234,97 +290,110 @@ function PublicationCard({ pub, index, featured }: { pub: Publication; index: nu
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, delay: Math.min(index * 0.06, 0.4), ease: [0.22, 1, 0.36, 1] }}
       whileHover={{
-        y: -5,
-        boxShadow: featured ? '0 16px 50px rgba(253,191,56,0.25)' : '0 12px 40px rgba(122,0,60,0.12)',
+        y: -6,
+        boxShadow: featured ? '0 20px 50px rgba(253,191,56,0.28)' : '0 16px 44px rgba(122,0,60,0.14)',
       }}
-      className="relative rounded-2xl p-6 overflow-hidden"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl"
       style={{
         backgroundColor: '#fff',
         border: featured ? '2px solid #FDBF38' : '1px solid rgba(122,0,60,0.12)',
         boxShadow: featured ? '0 8px 30px rgba(253,191,56,0.18)' : '0 2px 12px rgba(0,0,0,0.04)',
       }}
     >
-      <motion.div
-        className="absolute inset-0 pointer-events-none opacity-0"
-        style={{
-          background: 'linear-gradient(120deg, transparent 30%, rgba(122,0,60,0.04) 50%, transparent 70%)',
-        }}
-        whileHover={{ opacity: 1 }}
-      />
+      {/* Cover */}
+      <div className="relative aspect-[16/10] w-full overflow-hidden">
+        {pub.image_url ? (
+          <img
+            src={pub.image_url}
+            alt={pub.title}
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+          />
+        ) : (
+          <PublicationCover pub={pub} label={category} />
+        )}
 
-      {featured && (
-        <div
-          className="absolute top-0 right-0 px-3 py-1 rounded-bl-xl text-xs font-bold"
-          style={{ backgroundColor: '#FDBF38', color: '#1a0010' }}
+        <span
+          className="absolute left-3 top-3 rounded-full px-3 py-1 text-[10px] font-bold uppercase shadow-sm"
+          style={{ backgroundColor: 'rgba(255,255,255,0.94)', color: '#7A003C', letterSpacing: '0.12em' }}
         >
-          ★ Featured
-        </div>
-      )}
+          {category}
+        </span>
 
-      <div className="relative flex flex-col sm:flex-row sm:items-start gap-4">
-        <div className="flex-1">
-          <div className="flex items-center gap-2 mb-2 flex-wrap">
-            <span
-              className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold ${status.badge}`}
-            >
-              <Icon className="w-3 h-3" />
-              {status.label}
+        {featured && (
+          <span
+            className="absolute right-3 top-3 rounded-full px-3 py-1 text-[10px] font-bold uppercase shadow-sm"
+            style={{ backgroundColor: '#FDBF38', color: '#1a0010', letterSpacing: '0.12em' }}
+          >
+            ★ Featured
+          </span>
+        )}
+      </div>
+
+      {/* Body */}
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-gray-500">
+          {date && (
+            <span className="inline-flex items-center gap-1.5">
+              <CalendarDays className="h-3.5 w-3.5" />
+              {date}
             </span>
-            {pub.journal_or_venue && (
-              <span className="text-xs font-medium" style={{ color: '#7A003C' }}>
-                {pub.journal_or_venue}
-              </span>
-            )}
-            {pub.publication_date && (
-              <span className="text-xs text-gray-400">{formatMonth(pub.publication_date)}</span>
-            )}
-          </div>
-
-          <h3 className="text-lg md:text-xl font-black mb-2 leading-snug" style={{ color: '#1a1a1a' }}>
-            {pub.title}
-          </h3>
-
+          )}
           {pub.authors && (
-            <p className="text-sm font-medium mb-2" style={{ color: '#6b5b4a' }}>
-              {pub.authors}
-            </p>
+            <span className="inline-flex max-w-full items-center gap-1.5">
+              <Users className="h-3.5 w-3.5 shrink-0" />
+              <span className="truncate">{pub.authors}</span>
+            </span>
           )}
+        </div>
 
-          {pub.summary && (
-            <p className="text-sm leading-relaxed mb-3" style={{ color: '#4a4a4a' }}>
-              {pub.summary}
-            </p>
-          )}
+        <h3
+          className="mt-2.5 text-base font-black leading-snug transition-colors duration-300 group-hover:text-[#7A003C] sm:text-lg"
+          style={{ ...clamp(3), color: '#1a1a1a' }}
+        >
+          {pub.title}
+        </h3>
 
-          {tags.length > 0 && (
-            <div className="flex flex-wrap gap-1.5 mb-3">
-              {tags.map((tag) => (
+        {excerpt && (
+          <p className="mt-2.5 text-sm leading-relaxed" style={{ ...clamp(3), color: '#4a4a4a' }}>
+            {excerpt}
+          </p>
+        )}
+
+        <div className="mt-auto pt-4">
+          {tags.length > 1 && (
+            <div className="mb-3 flex flex-wrap gap-1.5">
+              {tags.slice(1, 4).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-0.5 rounded-md text-xs"
-                  style={{ backgroundColor: 'rgba(122,0,60,0.08)', color: '#7A003C' }}
+                  className="rounded-md px-2 py-0.5 text-[11px]"
+                  style={{ backgroundColor: 'rgba(122,0,60,0.07)', color: '#7A003C' }}
                 >
                   {tag}
                 </span>
               ))}
             </div>
           )}
-        </div>
 
-        {pub.link && (
-          <motion.a
-            href={pub.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex-shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-bold"
-            style={{ backgroundColor: '#7A003C', color: 'white' }}
-          >
-            Read
-            <ExternalLink className="w-3.5 h-3.5" />
-          </motion.a>
-        )}
+          {pub.link ? (
+            <a
+              href={pub.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-bold hover:underline"
+              style={{ color: '#7A003C' }}
+            >
+              Read paper
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          ) : (
+            <span
+              className="inline-flex items-center gap-1.5 text-sm font-semibold"
+              style={{ color: 'rgba(122,0,60,0.45)' }}
+            >
+              {pub.journal_or_venue || 'Publication details on request'}
+            </span>
+          )}
+        </div>
       </div>
     </motion.article>
   );
@@ -417,7 +486,7 @@ export default function PublicationsPage() {
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
         />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -489,7 +558,7 @@ export default function PublicationsPage() {
         className="z-30 border-b backdrop-blur-md"
         style={{ backgroundColor: 'rgba(245,237,226,0.92)', borderColor: 'rgba(122,0,60,0.12)' }}
       >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
             <div className="flex flex-wrap gap-1.5">
               {FILTER_TABS.map((tab) => (
@@ -536,7 +605,7 @@ export default function PublicationsPage() {
 
       {/* ── LIST ── */}
       <section className="py-12">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {results.length === 0 ? (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -566,7 +635,7 @@ export default function PublicationsPage() {
                       Featured
                     </span>
                   </div>
-                  <div className="space-y-4">
+                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {featured.map((pub, i) => (
                       <PublicationCard key={pub.title} pub={pub} index={i} featured />
                     ))}
@@ -577,7 +646,7 @@ export default function PublicationsPage() {
                 </div>
               )}
 
-              <div className="space-y-4">
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {shown.map((pub, i) => (
                   <PublicationCard key={pub.title} pub={pub} index={i} />
                 ))}

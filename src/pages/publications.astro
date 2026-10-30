@@ -2,9 +2,13 @@
 // Astro page for CRCE publications, e.g. src/pages/publications.astro
 // Place the exported component at src/components/publications/PublicationsPage.tsx
 // and adjust the import path below to match wherever you put it.
+// The component renders the full page itself: dark maroon hero, sticky filter bar,
+// and a responsive three-column grid of blog-style cards (cover, topic badge,
+// title, short description, "Read paper"). Cards use each paper's image_url and
+// fall back to a themed maroon/gold cover when none is set.
 import Layout from "@/layouts/Layout.astro"
 import { SITE_DESCRIPTION } from "@/configs/site.ts"
-import PublicationsPage from "@/components/Publications/PublicationsPage"
+import PublicationsPage from "@/components/publications/PublicationsPage"
 ---
 
 <Layout title="Publications" description={SITE_DESCRIPTION}>

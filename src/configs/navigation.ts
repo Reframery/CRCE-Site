@@ -5,39 +5,60 @@ export const siteLinks = [
     label: "Our Team",
     pathname: "/people-researchers-students-faculty",
   },
-  { label: "Podcasts", pathname: "/podcasts" },
-  { label: "Conferences", pathname: "/upcoming-conferences" },
-  {
-    label: "Reframery",
-    pathname: "https://reframery.org",
-    isExternal: true,
-  },
-  {
-    label: "RISE",
-    pathname: "/research-inclusion-and-social-entrepreneurship",
-  },
-  {
-    label: "Artist Incubator",
-    pathname: "/artist-enterprises-incubator",
-  },
-  {
-    label: "Newsletter",
-    pathname: "/newsletter",
-  },
 
   {
-    label: "Publications",
-    pathname: "/Publications",
+    label: "Programs",
+    children: [
+      {
+        label: "RISE",
+        pathname: "/research-inclusion-and-social-entrepreneurship",
+      },
+      {
+        label: "Artist Incubator",
+        pathname: "/artist-enterprises-incubator",
+      },
+      {
+        label: "Reframery",
+        pathname: "https://reframery.org",
+        isExternal: true,
+      },
+    ],
   },
+
+    {
+    label: "Research",
+    children: [
+      {
+        label: "Publications",
+        pathname: "/publications",
+      },
+      {
+        label: "Funding",
+        pathname: "/funding",
+      },
+
+    ],
+  },
+
+{
+    label: "Media",
+    children: [
+      {
+        label: "Podcasts",
+        pathname: "/podcasts",
+      },
+      {
+        label: "Newsletter",
+        pathname: "/newsletter",
+      },
+    ],
+  },
+
+  { label: "Conferences", pathname: "/upcoming-conferences" },
 
   {
     label: "Donate",
     pathname: "/Donate",
-  },
-
-  {
-    label: "Funding",
-    pathname: "/Funding",
   },
 
   { label: "Contact Us", pathname: "/contact" },

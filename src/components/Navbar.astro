@@ -14,6 +14,58 @@ const pathname = new URL(Astro.request.url).pathname
   >
     {
       siteLinks.map((link) => {
+        // --- CASE 1: Dropdown Item (Has children) ---
+        if ("children" in link) {
+          // Check if any of the child paths are active to highlight the main parent button
+          const isGroupActive = link.children.some((child) => isActive(child.pathname, pathname))
+
+          return (
+            <div class="dropdown-container relative self-stretch">
+              <button
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                class={cn(
+                  "dropdown-trigger relative inline-flex items-center gap-2 h-full px-6 py-3 text-center transition-colors duration-250 hover:bg-white/90 hover:text-gray-900 hover:shadow-lg bg-transparent border-none text-white cursor-pointer font-sans-condensed text-xl",
+                  isGroupActive &&
+                    "after:bg-gold after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-[80%] after:-translate-x-1/2 after:content-['']"
+                )}
+              >
+                {link.label}
+                <Icon size={16} name="lucide:chevron-down" class="transition-transform duration-200" aria-hidden="true" />
+              </button>
+
+              {/* The absolute dropdown list panel */}
+              <div class="dropdown-menu pointer-events-none absolute left-0 top-full z-50 min-w-[220px] translate-y-2 rounded-md bg-white p-2 opacity-0 shadow-xl transition-all duration-200 ease-out border border-gray-100">
+                {link.children.map((child) => {
+                  const childActive = isActive(child.pathname, pathname)
+                  const isExternal = child.pathname.startsWith("http")
+                  
+                  return (
+                    <a
+                      href={child.pathname}
+                      class={cn(
+                        "block rounded px-4 py-2.5 text-left text-base text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900",
+                        childActive && "bg-gray-50 font-bold text-maroon"
+                      )}
+                      aria-current={childActive ? "page" : undefined}
+                      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    >
+                      <div class="flex items-center justify-between gap-2">
+                        <span>{child.label}</span>
+                        {isExternal && (
+                          <Icon size={14} name="lucide:external-link" class="text-gray-400" aria-hidden="true" />
+                        )}
+                      </div>
+                    </a>
+                  )
+                })}
+              </div>
+            </div>
+          )
+        }
+
+        // --- CASE 2: Single Link Item (No children) ---
         const active = isActive(link.pathname, pathname)
         return (
           <a
@@ -24,24 +76,11 @@ const pathname = new URL(Astro.request.url).pathname
             )}
             href={link.pathname}
             aria-current={active ? "page" : undefined}
-            {...(link.isExternal
-              ? { target: "_blank", rel: "noopener noreferrer" }
-              : {})}
           >
             {link.pathname === "/" && (
               <Icon size={20} name="lucide:home" aria-hidden="true" />
             )}
             {link.label}
-            {link.isExternal && (
-              <>
-                <Icon
-                  size={20}
-                  name="lucide:external-link"
-                  aria-hidden="true"
-                />
-                <span class="sr-only">(opens in new tab)</span>
-              </>
-            )}
           </a>
         )
       })
@@ -49,3 +88,57 @@ const pathname = new URL(Astro.request.url).pathname
   </nav>
   <MobileNavbar pathname={pathname} client:load />
 </div>
+
+<!-- Scoped styling to handle panel animations smoothly -->
+<style>
+  /* When the wrapper has the dynamic 'open' class, show the panel and rotate chevron arrow */
+  .dropdown-container.open .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .dropdown-container.open .dropdown-trigger :global(svg) {
+    transform: rotate(180deg);
+  }
+</style>
+
+<!-- Client-side script handles user clicks on the browser safely -->
+<script>
+  function setupDropdowns() {
+    const containers = document.querySelectorAll('.dropdown-container');
+
+    containers.forEach((container) => {
+      const trigger = container.querySelector('.dropdown-trigger');
+
+      trigger?.addEventListener('click', (event) => {
+        event.stopPropagation();
+        
+        // Close all other dropdown blocks first
+        containers.forEach((other) => {
+          if (other !== container) {
+            other.classList.remove('open');
+            other.querySelector('.dropdown-trigger')?.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Toggle state on current menu item
+        const isOpen = container.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+
+    // Close any visible menus if the user clicks anywhere else on screen
+    document.addEventListener('click', () => {
+      containers.forEach((container) => {
+        container.classList.remove('open');
+        container.querySelector('.dropdown-trigger')?.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // Runs on initial page generation load
+  setupDropdowns();
+  
+  // Re-run fallback setup if you use Astro View Transitions routing transitions
+  document.addEventListener('astro:after-swap', setupDropdowns);
+</script>

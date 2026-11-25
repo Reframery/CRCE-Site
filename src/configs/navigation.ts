@@ -45,7 +45,7 @@ export const siteLinks: NavItem[] = [
       { label: "Newsletter", pathname: "/newsletter" },
     ],
   },
-  { label: "Conferences", pathname: "/upcoming-conferences" },
+  { label: "Events", pathname: "/upcoming-conferences" },
   { label: "Donate", pathname: "/Donate" },
   { label: "Contact Us", pathname: "/contact" },
 ];

@@ -4,6 +4,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "@/configs/site"
 import SearchDialog from "@/components/SearchDialog.astro"
 import PageLayout from "./PageLayout.astro"
 import "@/styles/global.css"
+import DonationPopup from "@/components/DonationPopup"
 
 interface Props {
   title: string
@@ -58,9 +59,9 @@ const imageURL = new URL(image, Astro.url)
     <meta property="twitter:image" content={imageURL} />
   </head>
   <body>
-    <PageLayout>
-      <slot />
-      <SearchDialog />
-    </PageLayout>
-  </body>
-</html>
+  <PageLayout>
+    <slot />
+    <SearchDialog />
+  </PageLayout>
+  <DonationPopup client:load />
+</body>
